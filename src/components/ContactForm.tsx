@@ -6,9 +6,13 @@ import { SITE } from "@/lib/site";
 const types = [
   "RCA",
   "CASCO",
-  "Locuință",
-  "Călătorie",
-  "Sănătate / Viață",
+  "Locuință - PAD",
+  "Locuință - facultativă",
+  "Călătorie / Travel",
+  "Sănătate",
+  "Viață",
+  "Accidente",
+  "Răspundere civilă / profesională",
   "Asigurări firme",
   "Alt tip de asigurare",
 ];

@@ -15,32 +15,47 @@ export const insuranceTypes = [
   {
     title: "RCA",
     href: "/asigurare-rca",
-    description: "Pentru persoane fizice și firme, cu explicații clare despre opțiuni și documente necesare.",
+    description: "Obligatorie pentru circulație, cu explicații despre acoperire, bonus-malus, verificări și documente necesare.",
   },
   {
     title: "CASCO",
     href: "/asigurare-casco",
-    description: "Alegi mai informat: acoperiri, franșiză, excluderi, service-uri și opțiuni suplimentare.",
+    description: "Protecție facultativă pentru propriul vehicul: avarii, furt, fenomene naturale, franșiză și service.",
   },
   {
     title: "Locuință",
     href: "/asigurare-locuinta",
-    description: "PAD și facultativă explicate simplu pentru apartament, casă sau locuință cu credit.",
+    description: "PAD și facultativă pentru casă sau apartament: clădire, bunuri, răspundere civilă și asistență.",
   },
   {
     title: "Călătorie",
-    href: "/contact?tip=calatorie",
-    description: "Asigurări pentru vacanțe, city break-uri, business travel sau călătorii în familie.",
+    href: "/asigurare-calatorie",
+    description: "Travel insurance pentru vacanțe, business, familie, bagaje, storno și situații medicale neprevăzute.",
   },
   {
-    title: "Sănătate și viață",
-    href: "/contact?tip=sanatate-viata",
-    description: "Discuție inițială fără colectarea datelor sensibile direct în formularul public.",
+    title: "Sănătate",
+    href: "/asigurare-sanatate",
+    description: "Orientare pentru servicii medicale private, spitalizare, rețele, rambursare și beneficii pentru angajați.",
+  },
+  {
+    title: "Viață",
+    href: "/asigurare-viata",
+    description: "Protecție financiară pentru familie, credit, copii, economisire sau riscuri majore, în funcție de obiectiv.",
   },
   {
     title: "Asigurări firme",
-    href: "/contact?tip=firme",
-    description: "Soluții pentru răspundere civilă, bunuri, flote, angajați sau activități profesionale.",
+    href: "/asigurari-firme",
+    description: "Soluții pentru IMM-uri: clădiri, bunuri, stocuri, echipamente, răspunderi, flote și angajați.",
+  },
+  {
+    title: "Răspundere civilă",
+    href: "/asigurare-raspundere-civila",
+    description: "Răspundere față de terți, răspundere profesională și cerințe contractuale pentru PFA/SRL/profesii.",
+  },
+  {
+    title: "Accidente",
+    href: "/asigurare-accidente",
+    description: "Protecție pentru evenimente accidentale: invaliditate, spitalizare, intervenții, familie sau angajați.",
   },
 ];
 

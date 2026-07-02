@@ -1,6 +1,29 @@
-# Site consultant asigurări
+# Consultant Asigurări - site Next.js
 
-MVP Next.js + Tailwind pentru un consultant de asigurări, cu pagini de prezentare, formular de lead, WhatsApp CTA și asistent AI orientativ.
+Site de prezentare pentru consultant/broker de asigurări, construit cu Next.js + Tailwind CSS.
+
+## Ce conține
+
+- Homepage cu formular de contact și asistent AI.
+- Pagini comerciale/educaționale:
+  - `/asigurare-rca`
+  - `/asigurare-casco`
+  - `/asigurare-locuinta`
+  - `/asigurare-calatorie`
+  - `/asigurare-sanatate`
+  - `/asigurare-viata`
+  - `/asigurari-firme`
+  - `/asigurare-raspundere-civila`
+  - `/asigurare-accidente`
+- Ghid RCA educațional:
+  - `/ghid-rca`
+  - `/ghid-rca/ce-acopera-rca`
+  - `/ghid-rca/cum-cumperi-rca`
+  - `/ghid-rca/bonus-malus`
+  - `/ghid-rca/accident-si-daune`
+- Articol SEO: `/blog/ce-acte-rca`.
+- Formular de contact cu WhatsApp fallback.
+- API route pentru AI advisor: `/api/ai-advisor`.
 
 ## Rulare locală
 
@@ -9,57 +32,47 @@ npm install
 npm run dev
 ```
 
-Deschide `http://localhost:3000`.
-
-## Configurare date consultant
-
-Editează `src/lib/site.ts`:
-
-```ts
-consultantName: "Numele Tău",
-city: "Cluj și Bihor",
-phoneDisplay: "+40 700 000 000",
-phoneRaw: "40700000000",
-email: "contact@numeletau.ro",
-company: "Broker / companie parteneră",
-url: "https://numeletau.ro",
-```
-
-## Asistent AI pentru recomandări orientative
-
-Componenta vizibilă este în:
+Apoi deschide:
 
 ```text
-src/components/AIAdvisor.tsx
+http://localhost:3000
 ```
 
-API route-ul server-side este în:
+## Configurare date site
+
+Editează:
 
 ```text
-src/app/api/ai-advisor/route.ts
+src/lib/site.ts
 ```
 
-Baza de cunoștințe și produsele/categoriile recomandabile se editează în:
+Acolo setezi numele consultantului, telefonul, emailul, orașele/zona și URL-ul site-ului.
+
+## Configurare OpenAI
+
+Creează local fișierul `.env.local` și adaugă cheia reală:
+
+```env
+OPENAI_API_KEY=cheia_ta_reala
+OPENAI_MODEL=gpt-5.4-mini
+```
+
+Nu urca `.env.local` în GitHub. Fișierul `.env.example` trebuie să conțină doar valori demonstrative, niciodată cheia reală.
+
+## Unde modifici textele produselor
+
+Textele generale pentru CASCO, Locuință, Călătorie, Sănătate, Viață, Firme, Răspundere civilă și Accidente sunt centralizate în:
+
+```text
+src/lib/general-insurance-content.ts
+```
+
+Cunoștințele folosite de AI advisor sunt în:
 
 ```text
 src/lib/ai-knowledge.ts
 ```
 
-Important: asistentul este gândit ca instrument de orientare, nu ca ofertă finală, emitere poliță sau consultanță complet automatizată. Promptul îi spune să nu ceară CNP, documente, date medicale sau alte informații sensibile în chatul public.
+## Notă compliance
 
-## Cheia OpenAI
-
-Creează local un fișier `.env.local` pe baza `.env.example`:
-
-```bash
-OPENAI_API_KEY=cheia_ta
-OPENAI_MODEL=gpt-5.4-mini
-```
-
-Pe Vercel: Project → Settings → Environment Variables → adaugă `OPENAI_API_KEY` și, opțional, `OPENAI_MODEL`, apoi redeploy.
-
-Nu pune cheia API în cod și nu o publica în GitHub.
-
-## Deploy
-
-Proiectul este pregătit pentru Vercel. După push în GitHub, Vercel va face deploy automat.
+Textele sunt educaționale și generalizate din produse și condiții întâlnite la mai mulți asigurători. Ele nu trebuie prezentate ca descriere contractuală a unui anumit produs. Verifică periodic legislația, condițiile asigurătorilor și statutul tău de consultant/intermediar/broker. Nu promite prețuri finale, acoperiri garantate sau consultanță juridică.

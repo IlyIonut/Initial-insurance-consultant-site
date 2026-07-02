@@ -2,12 +2,22 @@ import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { ButtonLink } from "./ButtonLink";
 
-const links = [
+const mainLinks = [
   { href: "/asigurare-rca", label: "RCA" },
   { href: "/asigurare-casco", label: "CASCO" },
   { href: "/asigurare-locuinta", label: "Locuință" },
-  { href: "/blog/ce-acte-rca", label: "Ghiduri" },
+  { href: "/asigurare-calatorie", label: "Călătorie" },
+  { href: "/asigurari-firme", label: "Firme" },
   { href: "/#asistent-ai", label: "Asistent AI" },
+];
+
+const mobileLinks = [
+  ...mainLinks,
+  { href: "/asigurare-sanatate", label: "Sănătate" },
+  { href: "/asigurare-viata", label: "Viață" },
+  { href: "/asigurare-raspundere-civila", label: "Răspundere civilă" },
+  { href: "/asigurare-accidente", label: "Accidente" },
+  { href: "/ghid-rca", label: "Ghid RCA" },
 ];
 
 export function Navbar() {
@@ -19,19 +29,19 @@ export function Navbar() {
           <span className="leading-tight">{SITE.name}</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
-          {links.map((link) => (
+        <nav className="hidden items-center gap-5 lg:flex">
+          {mainLinks.map((link) => (
             <Link key={link.href} href={link.href} className="text-sm font-medium text-slate-600 hover:text-slate-950">
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <ButtonLink href="/contact">Cere ofertă</ButtonLink>
         </div>
 
-        <details className="group relative md:hidden">
+        <details className="group relative lg:hidden">
           <summary className="flex cursor-pointer list-none items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm [&::-webkit-details-marker]:hidden">
             Meniu
             <span className="flex h-5 w-5 flex-col justify-center gap-1">
@@ -41,9 +51,9 @@ export function Navbar() {
             </span>
           </summary>
 
-          <div className="absolute right-0 mt-3 w-64 rounded-3xl border border-slate-200 bg-white p-3 shadow-xl">
+          <div className="absolute right-0 mt-3 max-h-[75vh] w-72 overflow-y-auto rounded-3xl border border-slate-200 bg-white p-3 shadow-xl">
             <nav className="grid gap-1">
-              {links.map((link) => (
+              {mobileLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}

@@ -1,55 +1,64 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
+import { rcaPolicyChecks, rcaQuoteData } from "@/lib/rca-content";
 
 export const metadata: Metadata = {
   title: "Ce acte sunt necesare pentru RCA?",
-  description: "Ghid simplu despre datele și documentele necesare pentru solicitarea unei oferte RCA.",
+  description: "Ghid simplu despre datele și documentele necesare pentru solicitarea unei oferte RCA și verificările importante de pe poliță.",
 };
 
 export default function BlogRcaDocsPage() {
   return (
     <main>
-      <article className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
+      <article className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Ghid RCA</p>
         <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
-          Ce acte sunt necesare pentru RCA?
+          Ce acte și date sunt necesare pentru RCA?
         </h1>
         <p className="mt-6 text-lg leading-8 text-slate-600">
-          Pentru o ofertă RCA, datele necesare pot varia în funcție de situație, dar în general ai nevoie de informații despre proprietar și vehicul. Mai jos ai o listă orientativă.
+          Pentru emiterea unei polițe RCA sunt necesare date despre proprietar și vehicul. Pentru primul contact, trimite doar solicitarea și datele de contact; documentele concrete se stabilesc în discuția de ofertare.
         </p>
 
-        <div className="mt-10 space-y-8 text-slate-700">
-          <h2 className="text-2xl font-bold text-slate-950">Pentru persoană fizică</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-base leading-7">
-            <li>datele proprietarului;</li>
-            <li>datele vehiculului;</li>
-            <li>talonul sau cartea vehiculului, după caz;</li>
-            <li>perioada pentru care dorești asigurarea;</li>
-            <li>date de contact pentru transmiterea ofertei.</li>
+        <section className="mt-12 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="text-2xl font-bold text-slate-950">Date utile pentru ofertă RCA</h2>
+          <ul className="mt-5 list-disc space-y-3 pl-6 text-sm leading-6 text-slate-600">
+            {rcaQuoteData.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
+        </section>
 
-          <h2 className="text-2xl font-bold text-slate-950">Pentru firmă</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-base leading-7">
-            <li>datele firmei;</li>
-            <li>datele vehiculului sau ale flotei;</li>
-            <li>documente auto relevante;</li>
-            <li>persoana de contact;</li>
-            <li>perioada dorită.</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold text-slate-950">Important</h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">
-            Nu trimite documente sau date sensibile prin formulare nesecurizate. Pentru început este suficient să transmiți solicitarea, iar consultantul îți spune exact ce este necesar.
+        <section className="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-6">
+          <h2 className="text-2xl font-bold text-slate-950">Condiții generale pentru RCA</h2>
+          <p className="mt-4 text-sm leading-6 text-slate-600">
+            Vehiculul trebuie să fie înmatriculat, supus înmatriculării sau înregistrat, iar asiguratul trebuie să fie persoana fizică sau juridică înscrisă în documentele vehiculului ori persoana pe numele căreia urmează înmatricularea.
           </p>
-        </div>
+        </section>
 
-        <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-bold text-slate-950">Vrei o ofertă RCA?</h2>
-          <p className="mt-3 text-sm leading-6 text-slate-600">Trimite o cerere scurtă și te contactez pentru detalii.</p>
-          <div className="mt-5">
-            <ButtonLink href="/contact?tip=RCA">Cere ofertă RCA</ButtonLink>
+        <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="text-2xl font-bold text-slate-950">Ce verifici pe poliță înainte de confirmare</h2>
+          <ul className="mt-5 list-disc space-y-3 pl-6 text-sm leading-6 text-slate-600">
+            {rcaPolicyChecks.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mt-8 rounded-3xl border border-slate-200 bg-slate-950 p-6 text-white">
+          <h2 className="text-2xl font-bold">Important</h2>
+          <p className="mt-4 text-sm leading-6 text-slate-300">
+            Nu trimite CNP, poze cu acte sau documente sensibile prin formularul public. Pentru început este suficient să ceri oferta, iar consultantul îți spune ce date sunt necesare în mod sigur.
+          </p>
+          <div className="mt-6">
+            <ButtonLink href="/contact?tip=RCA" variant="secondary">Cere ofertă RCA</ButtonLink>
           </div>
-        </div>
+        </section>
+
+        <nav className="mt-12 flex flex-col gap-3 border-t border-slate-200 pt-8 text-sm font-semibold sm:flex-row sm:justify-between">
+          <Link href="/asigurare-rca" className="text-slate-600 hover:text-slate-950">← Pagina RCA</Link>
+          <Link href="/ghid-rca" className="text-slate-950 underline underline-offset-4">Vezi ghidul RCA complet →</Link>
+        </nav>
       </article>
     </main>
   );
