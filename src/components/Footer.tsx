@@ -1,49 +1,12 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
-
+import { Icon } from "./Icon";
+import { Brand } from "./Brand";
 export function Footer() {
-  return (
-    <footer className="border-t border-slate-200 bg-slate-950 text-white">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-4 lg:px-8">
-        <div>
-          <p className="text-lg font-bold">{SITE.name}</p>
-          <p className="mt-3 text-sm leading-6 text-slate-300">{SITE.description}</p>
-        </div>
-        <div>
-          <p className="font-semibold">Persoane fizice</p>
-          <div className="mt-3 grid gap-2 text-sm text-slate-300">
-            <Link href="/asigurare-rca" className="hover:text-white">Asigurare RCA</Link>
-            <Link href="/asigurare-casco" className="hover:text-white">Asigurare CASCO</Link>
-            <Link href="/asigurare-locuinta" className="hover:text-white">Asigurare locuință</Link>
-            <Link href="/asigurare-calatorie" className="hover:text-white">Asigurare călătorie</Link>
-            <Link href="/asigurare-sanatate" className="hover:text-white">Asigurare sănătate</Link>
-            <Link href="/asigurare-viata" className="hover:text-white">Asigurare viață</Link>
-          </div>
-        </div>
-        <div>
-          <p className="font-semibold">Ghiduri și firme</p>
-          <div className="mt-3 grid gap-2 text-sm text-slate-300">
-            <Link href="/ghid-rca" className="hover:text-white">Ghid RCA</Link>
-            <Link href="/asigurari-firme" className="hover:text-white">Asigurări firme</Link>
-            <Link href="/asigurare-raspundere-civila" className="hover:text-white">Răspundere civilă</Link>
-            <Link href="/asigurare-accidente" className="hover:text-white">Accidente</Link>
-            <Link href="/confidentialitate" className="hover:text-white">Confidențialitate</Link>
-            <Link href="/cookies" className="hover:text-white">Cookies</Link>
-          </div>
-        </div>
-        <div>
-          <p className="font-semibold">Contact</p>
-          <div className="mt-3 grid gap-2 text-sm text-slate-300">
-            <a href={`tel:${SITE.phoneRaw}`} className="hover:text-white">{SITE.phoneDisplay}</a>
-            <a href={`mailto:${SITE.email}`} className="hover:text-white">{SITE.email}</a>
-            <p>{SITE.company}</p>
-            <Link href="/contact" className="hover:text-white">Cere ofertă</Link>
-          </div>
-        </div>
-      </div>
-      <div className="border-t border-slate-800 px-4 py-5 text-center text-xs text-slate-400">
-        © {new Date().getFullYear()} {SITE.name}. Informațiile de pe site au caracter general și nu înlocuiesc condițiile contractuale ale asigurătorilor.
-      </div>
-    </footer>
-  );
+  return <footer className="site-footer"><div className="shell"><div className="footer-top"><Link href="/" className="brand brand-light" aria-label={`${SITE.name} — pagina principală`}><Brand inverse /></Link><p>Mai multă claritate.<br />Decizii mai bine protejate.</p><Link href="/contact" className="footer-cta">Să vorbim despre ce contează <Icon name="diagonal" size={25} /></Link></div>
+    <div className="footer-grid"><div><p className="footer-label">APROAPE DE AFACEREA TA</p><p>Consultanță pentru IMM-uri, profesii liberale și persoane fizice în Cluj, Bihor și online.</p><div className="footer-location"><Icon name="pin" size={17} /> Cluj · Oradea · Bihor</div>{SITE.consultantName && <p>{SITE.consultantName}</p>}{SITE.company && <p>{SITE.company}{SITE.registration && ` · ${SITE.registration}`}</p>}</div>
+    <div><p className="footer-label">PENTRU FIRME</p><Link href="/asigurari-firme/bunuri-si-echipamente">Bunuri și echipamente</Link><Link href="/asigurari-firme/raspundere-civila-profesionala">Răspunderi</Link><Link href="/asigurari-firme/flote-auto">Flote auto</Link><Link href="/asigurari-firme/sanatate-angajati">Sănătatea angajaților</Link><Link href="/asigurari-firme/intreruperea-activitatii">Întreruperea activității</Link><Link href="/asigurari-firme/riscuri-cibernetice">Riscuri cibernetice</Link></div>
+    <div><p className="footer-label">PENTRU TINE</p><Link href="/asigurare-rca">RCA</Link><Link href="/asigurare-casco">CASCO</Link><Link href="/asigurare-locuinta">Locuință</Link><Link href="/asigurare-calatorie">Călătorie</Link><Link href="/asigurare-sanatate">Sănătate</Link><Link href="/asigurare-viata">Viață</Link></div>
+    <div><p className="footer-label">SĂ PĂSTRĂM LEGĂTURA</p><Link href="/contact">Solicită o discuție</Link><Link href="/despre">Cum lucrăm</Link><Link href="/domenii">Domenii de activitate</Link><Link href="/ghiduri">Ghiduri pentru antreprenori</Link>{SITE.email && <a href={`mailto:${SITE.email}`}>{SITE.email}</a>}{SITE.phoneRaw && <a href={`tel:+${SITE.phoneRaw}`}>{SITE.phoneDisplay || `+${SITE.phoneRaw}`}</a>}</div></div>
+    <div className="footer-bottom"><span>© {new Date().getFullYear()} {SITE.name}</span><div><Link href="/confidentialitate">Confidențialitate</Link><Link href="/cookies">Cookies</Link><a href="https://asfromania.ro" target="_blank" rel="noopener noreferrer">ASF ↗</a></div></div><p className="footer-note">Informațiile sunt orientative. Acoperirea, limitele, franșizele și excluderile se stabilesc prin contractul de asigurare. Recomandarea finală presupune analiza cerințelor și nevoilor tale.</p></div></footer>;
 }

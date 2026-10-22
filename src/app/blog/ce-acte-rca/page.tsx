@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { rcaPolicyChecks, rcaQuoteData } from "@/lib/rca-content";
 
-export const metadata: Metadata = {
-  title: "Ce acte sunt necesare pentru RCA?",
-  description: "Ghid simplu despre datele și documentele necesare pentru solicitarea unei oferte RCA și verificările importante de pe poliță.",
-};
+export const metadata = pageMetadata("Ce acte sunt necesare pentru RCA?", "Ce informații și documente pot fi necesare pentru o ofertă RCA. Pregătește datele corecte și evită transmiterea actelor prin formularul public.", "/blog/ce-acte-rca");
 
 export default function BlogRcaDocsPage() {
   return (
@@ -51,7 +48,7 @@ export default function BlogRcaDocsPage() {
             Nu trimite CNP, poze cu acte sau documente sensibile prin formularul public. Pentru început este suficient să ceri oferta, iar consultantul îți spune ce date sunt necesare în mod sigur.
           </p>
           <div className="mt-6">
-            <ButtonLink href="/contact?tip=RCA" variant="secondary">Cere ofertă RCA</ButtonLink>
+            <ButtonLink href="/contact?pentru=personal&tip=RCA" variant="secondary">Cere ofertă RCA</ButtonLink>
           </div>
         </section>
 

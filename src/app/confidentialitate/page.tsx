@@ -1,31 +1,6 @@
-import type { Metadata } from "next";
+import Link from "next/link";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { pageMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
-
-export const metadata: Metadata = {
-  title: "Politică de confidențialitate",
-  description: "Informații generale despre datele colectate prin formularul de contact.",
-};
-
-export default function PrivacyPage() {
-  return (
-    <main className="bg-white">
-      <section className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold tracking-tight text-slate-950">Politică de confidențialitate</h1>
-        <div className="mt-8 space-y-6 text-base leading-8 text-slate-600">
-          <p>
-            Această pagină este un model de pornire și trebuie adaptată cu datele reale ale operatorului, firma/brokerul prin care lucrezi și modul exact de prelucrare a datelor.
-          </p>
-          <p>
-            Prin formularul de contact putem colecta nume, telefon, email, tipul asigurării solicitate și mesajul transmis voluntar. Aceste date sunt folosite pentru a răspunde solicitării tale.
-          </p>
-          <p>
-            Nu transmite prin formular date medicale, copii de documente, CNP sau alte date sensibile. Pentru informații suplimentare, vei fi contactat ulterior pe un canal adecvat.
-          </p>
-          <p>
-            Pentru întrebări legate de datele tale, ne poți contacta la <a className="underline" href={`mailto:${SITE.email}`}>{SITE.email}</a>.
-          </p>
-        </div>
-      </section>
-    </main>
-  );
-}
+export const metadata=pageMetadata("Confidențialitate și date personale", "Informații despre datele introduse în formular, solicitările de consultanță și asistentul orientativ al site-ului.", "/confidentialitate");
+export default function PrivacyPage(){const sending=!!process.env.NEXT_PUBLIC_CONTACT_ENDPOINT;return <main><section className="page-hero"><div className="shell"><Breadcrumbs items={[{label:"Confidențialitate",href:"/confidentialitate"}]}/><h1>Confidențialitate<br />și date personale.</h1><p className="lead">Informații despre folosirea formularului și a asistentului orientativ. Actualizat la 21 octombrie 2026.</p></div></section><section className="section"><div className="shell prose"><h2>Solicitările de consultanță</h2><p>Formularul poate include numele, emailul, telefonul opțional, localitatea, domeniul de activitate și informații generale despre nevoia de asigurare. Nu introduce CNP, date medicale, copii ale actelor sau informații confidențiale despre alte persoane.</p><p>{sending?"Datele se transmit prin canalul de contact configurat pentru preluarea solicitării. Sunt folosite pentru a răspunde cererii și pentru clarificarea pașilor necesari. Solicitarea nu presupune acceptarea comunicărilor de marketing.":"În această versiune, formularul pregătește cererea în browser și nu o trimite automat. O poți copia sau descărca. Dacă alegi să continui printr-un canal de contact disponibil, verifică destinatarul înainte de a transmite cererea."}</p><h2>Asistentul orientativ</h2><p>Întrebarea introdusă este transmisă serviciului site-ului pentru pregătirea răspunsului. Când este activată generarea asistată de AI, textul poate fi procesat și de furnizorul OpenAI. Folosește întrebări generale, fără date personale sau documente. Răspunsul are rol informativ și nu reprezintă o ofertă.</p><h2>Contact și solicitări privind datele</h2><p>{SITE.company?`Entitatea indicată pentru activitate: ${SITE.company}. `:""}{SITE.consultantName?`Persoana de contact: ${SITE.consultantName}. `:""}Pentru întrebări despre folosirea datelor, utilizează datele de contact afișate pe site.{SITE.email&&<> Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</>}</p><p>În funcție de prelucrarea concretă și de condițiile aplicabile, poți solicita informații, acces, rectificare ori ștergere și poți formula o sesizare către autoritatea competentă. Pentru orice transmitere ulterioară necesară ofertării, informațiile despre destinatari și scop trebuie clarificate înainte de furnizarea documentelor.</p><h2>Servicii externe</h2><p>Linkurile către WhatsApp, email și alte site-uri deschid servicii externe, care au propriile politici. Site-ul nu integrează în această versiune publicitate sau instrumente de analiză de marketing.</p><p>Vezi și <Link href="/cookies">informațiile despre cookies</Link>.</p></div></section></main>;}

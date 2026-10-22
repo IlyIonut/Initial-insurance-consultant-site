@@ -1,5 +1,2 @@
-import { redirect } from "next/navigation";
-
-export default function TravelRedirect() {
-  redirect("/asigurare-calatorie");
-}
+import { permanentRedirect } from "next/navigation";
+export default function Page(){permanentRedirect("/asigurare-calatorie");}

@@ -1,0 +1,2 @@
+import { ButtonLink } from "@/components/ButtonLink";
+export default function NotFound(){return <main className="not-found"><p className="eyebrow" style={{justifyContent:"center"}}>PAGINĂ NEGĂSITĂ</p><h1 style={{marginTop:20}}>Să revenim pe drumul potrivit.</h1><p>Pagina căutată nu există. Poți porni de la soluțiile pentru firme sau de la pagina principală.</p><ButtonLink href="/" arrow>Înapoi la început</ButtonLink></main>;}

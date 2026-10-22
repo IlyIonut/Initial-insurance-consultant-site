@@ -1,37 +1,7 @@
-import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
+import { Icon } from "@/components/Icon";
 import { SITE } from "@/lib/site";
-
-export const metadata: Metadata = {
-  title: "Contact și cerere ofertă",
-  description: "Trimite o solicitare pentru RCA, CASCO, locuință, călătorie, sănătate, viață sau asigurări pentru firme.",
-};
-
-export default function ContactPage() {
-  return (
-    <main>
-      <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Contact</p>
-            <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
-              Cere o ofertă sau o recomandare inițială
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              Completează formularul cu date minime. Pentru date suplimentare, documente sau detalii sensibile, te contactez ulterior pe un canal potrivit.
-            </p>
-
-            <div className="mt-8 grid gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-700">
-              <p><strong>Telefon:</strong> <a href={`tel:${SITE.phoneRaw}`} className="underline">{SITE.phoneDisplay}</a></p>
-              <p><strong>Email:</strong> <a href={`mailto:${SITE.email}`} className="underline">{SITE.email}</a></p>
-              <p><strong>Zonă:</strong> {SITE.city}</p>
-              <p><strong>Reprezentare:</strong> {SITE.company}</p>
-            </div>
-          </div>
-
-          <ContactForm />
-        </div>
-      </section>
-    </main>
-  );
-}
+import { pageMetadata } from "@/lib/seo";
+export const metadata=pageMetadata("Contact — asigurări pentru firma ta sau pentru tine", "Solicită o discuție despre asigurările firmei sau cele personale. Consultanță în Cluj, Bihor și online. Pregătim împreună informațiile pentru ofertă.", "/contact");
+export default function ContactPage(){return <main><div className="shell"><Breadcrumbs items={[{label:"Contact",href:"/contact"}]}/><div className="contact-layout"><div className="contact-intro"><p className="eyebrow">SĂ ÎNCEPĂM CU O CONVERSAȚIE</p><h1>Ce ai construit<br />merită protejat.</h1><p>Spune-mi despre firma ta sau despre asigurarea personală pe care o cauți. Clarificăm nevoia și informațiile necesare pentru pașii următori.</p><div className="contact-checks"><ul className="check-list">{["O discuție despre situația ta reală", "Explicații despre acoperiri, limite și excluderi", "Fără documente sensibile la primul contact", "Cluj, Bihor și disponibilitate online"].map(t=><li key={t}><Icon name="check" size={18}/><span>{t}</span></li>)}</ul></div><div className="contact-channel">{SITE.phoneRaw&&<a href={`tel:+${SITE.phoneRaw}`}><Icon name="phone" size={20}/>{SITE.phoneDisplay||`+${SITE.phoneRaw}`}</a>}{SITE.email&&<a href={`mailto:${SITE.email}`}><Icon name="mail" size={20}/>{SITE.email}</a>}<p className="hero-local"><Icon name="pin" size={18}/>Cluj și Bihor · online</p></div>{SITE.consultantName&&<p style={{marginTop:30,fontSize:13}}>{SITE.consultantName}{SITE.company&&` · ${SITE.company}`}{SITE.registration&&` · ${SITE.registration}`}</p>}</div><ContactForm/></div></div></main>;}

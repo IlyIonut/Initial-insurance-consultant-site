@@ -1,100 +1,32 @@
-import { AIAdvisor } from "@/components/AIAdvisor";
+import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
-import { ContactForm } from "@/components/ContactForm";
 import { FAQ } from "@/components/FAQ";
-import { InsuranceCard } from "@/components/InsuranceCard";
-import { SectionHeader } from "@/components/SectionHeader";
-import { faqs, insuranceTypes, SITE } from "@/lib/site";
-
+import { Icon } from "@/components/Icon";
+import { IndustryFinder } from "@/components/IndustryFinder";
+import { SolutionCards } from "@/components/SolutionCards";
+import { faqs } from "@/lib/site";
+import { industries } from "@/lib/business-content";
+import { guides } from "@/lib/guides";
+import { pageMetadata } from "@/lib/seo";
+export const metadata = pageMetadata("Asigurări pentru firme și IMM-uri în Cluj și Bihor", "Asigurări pentru afacerea ta: bunuri, răspunderi, flote, angajați și continuitate. Consultanță în Cluj, Bihor și online. Soluții și pentru persoane fizice.", "/");
 const steps = [
-  "Îmi spui ce tip de asigurare cauți.",
-  "Te contactez pentru datele necesare, fără formulare complicate.",
-  "Îți explic variantele, acoperirile și limitările importante.",
-  "Alegi polița potrivită și rămân disponibil pentru reînnoiri sau întrebări.",
+  ["01", "Înțelegem afacerea", "Discutăm despre activitate, bunuri, oameni și ce ar putea întrerupe munca."],
+  ["02", "Comparăm protecția", "Privim acoperirile, limitele, franșizele și excluderile din variantele disponibile."],
+  ["03", "Decizi în cunoștință de cauză", "Primești explicații clare și alegi o soluție potrivită cerințelor tale."],
+  ["04", "Revizuim când apar schimbări", "Reînnoirile, investițiile și modificările din firmă sunt momente bune pentru o nouă analiză."],
 ];
-
 export default function Home() {
-  return (
-    <main>
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-slate-100">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-28">
-          <div>
-            <p className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm">
-              Consultant asigurări în {SITE.city}
-            </p>
-            <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-950 sm:text-6xl">
-              Asigurări explicate clar, fără timp pierdut.
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              Te ajut să alegi o poliță potrivită pentru RCA, CASCO, locuință, călătorie, sănătate sau firmă. Nu primești doar un preț, ci și explicații despre ce acoperă polița.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/contact">Cere ofertă</ButtonLink>
-              <ButtonLink href={`https://wa.me/${SITE.phoneRaw}`} variant="secondary">Scrie-mi pe WhatsApp</ButtonLink>
-            </div>
-            <div className="mt-8 grid gap-3 text-sm text-slate-600 sm:grid-cols-3">
-              <p className="rounded-2xl bg-white p-4 shadow-sm">Consultanță personalizată</p>
-              <p className="rounded-2xl bg-white p-4 shadow-sm">Explicații pe înțelesul tău</p>
-              <p className="rounded-2xl bg-white p-4 shadow-sm">Suport la reînnoire</p>
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Cerere rapidă</p>
-            <h2 className="mt-3 text-2xl font-bold text-slate-950">Primește o recomandare inițială</h2>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Completează datele minime și te contactez pentru detalii. Formularul nu cere documente sau date sensibile.
-            </p>
-            <div className="mt-6">
-              <ContactForm />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <AIAdvisor />
-
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <SectionHeader
-          eyebrow="Tipuri de asigurări"
-          title="Cu ce te pot ajuta"
-          description="Începem simplu: alegi categoria, îmi spui situația ta, iar eu îți explic variantele potrivite."
-        />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {insuranceTypes.map((item) => (
-            <InsuranceCard key={item.title} {...item} />
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Proces"
-            title="Cum funcționează colaborarea"
-            description="Scopul este să primești rapid o direcție bună, nu să pierzi timp comparând termeni greu de citit."
-          />
-          <div className="mt-12 grid gap-5 md:grid-cols-4">
-            {steps.map((step, index) => (
-              <div key={step} className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-slate-950 text-sm font-bold text-white">{index + 1}</span>
-                <p className="mt-5 text-sm leading-6 text-slate-700">{step}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Întrebări frecvente</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Întrebări pe care le are aproape orice client</h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">
-            Aceste întrebări ajută și la SEO, dar mai ales cresc încrederea înainte ca omul să te contacteze.
-          </p>
-        </div>
-        <FAQ items={faqs} />
-      </section>
-    </main>
-  );
+  return <main>
+    <section className="home-hero"><div className="shell hero-layout"><div className="hero-copy"><p className="eyebrow"><span className="tiny-line" />ASIGURĂRI PENTRU IMM-URI</p><h1>Asigurări care<br />țin pasul cu<br /><span className="highlight-word">afacerea ta.</span></h1><p className="hero-description">Ai construit ceva care merită protejat. Te ajut să înțelegi riscurile și să alegi asigurările potrivite pentru firma ta.</p><div className="hero-actions"><ButtonLink href="/contact" arrow>Hai să vorbim despre firma ta</ButtonLink><Link href="/asigurari-firme" className="text-link">Descoperă soluțiile <Icon name="arrow" size={18} /></Link></div><IndustryFinder /><p className="hero-local"><Icon name="pin" size={16} />Cluj, Bihor și oriunde lucrăm împreună online.</p></div>
+    <div className="hero-visual"><div className="hero-mint-shape" /><div className="hero-photo"><img src="/images/antreprenori-atelier.webp" width="1122" height="1402" fetchPriority="high" alt="Doi antreprenori discută despre activitatea unui atelier de ceramică" /><span className="photo-caption">PENTRU CE CONSTRUIEȘTI, ZI DE ZI.</span></div><div className="hero-stamp"><Icon name="spark" size={27} /><span>PLANURI MARI.<br /><strong>GRIJĂ PENTRU DETALII.</strong></span></div><div className="protection-note"><span className="note-shield"><Icon name="shield" size={27} /></span><div><strong>Afacerea ta, privită în ansamblu.</strong><p>Bunuri <span>·</span> Răspunderi <span>·</span> Oameni</p></div></div><div className="hero-coral-dot" /></div></div></section>
+    <section className="benefits-strip" aria-label="Cum te ajut"><div className="shell benefits-grid">{[["document", "Analiza nevoilor reale"], ["scale", "Comparație pe acoperiri"], ["people", "Un singur interlocutor"], ["clock", "Atenție la reînnoire"]].map(([icon, text]) => <div key={text}><Icon name={icon} size={23} /><span>{text}</span></div>)}</div></section>
+    <section className="section solutions-section"><div className="shell"><div className="section-heading split-heading"><div><p className="eyebrow">PROTECȚIE CU SENS</p><h2>Firma ta are planuri.<br />Asigurările au un rol în ele.</h2></div><p>De la echipamente și spații, până la răspunderi și oameni. Începem cu ce contează pentru activitatea ta.</p></div><SolutionCards /><div className="section-bottom"><span>Ai deja un portofoliu de polițe?</span><Link href="/contact?motiv=analiza" className="text-link">Să vedem dacă ține pasul cu firma ta <Icon name="arrow" size={18} /></Link></div></div></section>
+    <section className="continuity-section"><div className="shell continuity-layout"><div><p className="eyebrow light-eyebrow">DINCOLO DE PAGUBA MATERIALĂ</p><h2>Un incendiu se stinge.<br /><span>Efectele lui pot continua.</span></h2><p>Cât ar dura să redeschizi? Ce se întâmplă cu chiria, salariile și veniturile în perioada de refacere? Protecția pentru întreruperea activității merită discutată separat.</p><ButtonLink href="/asigurari-firme/intreruperea-activitatii" variant="mint" arrow>Înțelege protecția pentru continuitate</ButtonLink></div><div className="continuity-example"><span className="example-label">EXEMPLU ORIENTATIV</span><Icon name="clock" size={43} /><h3>Ușa este închisă.<br />Cheltuielile continuă.</h3><div className="example-row"><span>Refacerea spațiului și a bunurilor</span><Icon name="box" size={20} /></div><div className="example-row"><span>Pierderile din oprirea activității</span><Icon name="clock" size={20} /></div><p>Două nevoi de analizat. Acoperirea depinde de evenimentul asigurat și de condițiile poliței.</p></div></div></section>
+    <section className="section industry-section"><div className="shell industry-layout"><div className="industry-intro"><p className="eyebrow">ACTIVITĂȚI DIFERITE. NEVOI DIFERITE.</p><h2>Începem cu<br />afacerea ta.</h2><p>Un atelier, o firmă IT și o cafenea au expuneri diferite. Descoperă punctele de pornire pentru domeniul tău.</p><Link href="/domenii" className="text-link">Explorează domeniile <Icon name="arrow" size={18} /></Link><div className="local-note"><Icon name="pin" size={23} /><div><strong>Aproape, în Cluj și Bihor.</strong><p>O discuție directă. Și opțiunea de a lucra online.</p></div></div></div><div className="industry-list">{industries.map((item, i) => <Link key={item.slug} href={`/domenii/${item.slug}`} className="industry-row"><span className="industry-index">0{i + 1}</span><span className="industry-row-icon"><Icon name={item.icon} size={24} /></span><span><strong>{item.name}</strong><small>{item.description}</small></span><Icon name="diagonal" size={21} /></Link>)}</div></div></section>
+    <section className="section process-section"><div className="shell"><div className="section-heading"><p className="eyebrow">CLARITATE LA FIECARE PAS</p><h2>De la „oare ce-mi trebuie?”<br />la o alegere înțeleasă.</h2></div><div className="process-grid">{steps.map(([number, title, body]) => <div className="process-step" key={number}><span>{number}</span><h3>{title}</h3><p>{body}</p></div>)}</div></div></section>
+    <section className="personal-section"><div className="shell personal-banner"><div><p className="eyebrow">ȘI PENTRU TINE, PERSONAL</p><h2>Pentru omul din<br />spatele afacerii.</h2><p>Mașina, casa, călătoriile și familia ta merită aceeași atenție. Am păstrat un loc dedicat asigurărilor personale.</p><ButtonLink href="/persoane-fizice" variant="secondary" arrow>Vezi asigurările pentru tine</ButtonLink></div><div className="personal-links">{[["RCA & CASCO", "car", "/asigurare-rca"], ["Locuință", "home", "/asigurare-locuinta"], ["Sănătate & viață", "heart", "/asigurare-sanatate"], ["Călătorie", "plane", "/asigurare-calatorie"]].map(([label, icon, href]) => <Link href={href} key={label}><span><Icon name={icon} size={26} /></span><strong>{label}</strong><Icon name="diagonal" size={19} /></Link>)}</div></div></section>
+    <section className="section resources-section"><div className="shell"><div className="section-heading split-heading"><div><p className="eyebrow">DECIZII INFORMATE</p><h2>Mai ușor de înțeles.<br />Mai simplu de ales.</h2></div><Link href="/ghiduri" className="text-link">Toate ghidurile <Icon name="arrow" size={18} /></Link></div><div className="guides-grid">{guides.slice(0, 3).map((guide, i) => <Link href={`/ghiduri/${guide.slug}`} key={guide.slug} className={`guide-card guide-tone-${i}`}><div className="guide-art"><Icon name={guide.icon} size={65} /><span>GHID PENTRU ANTREPRENORI</span></div><div className="guide-body"><span className="guide-category">{guide.category} <span>·</span> {guide.readTime} min de citit</span><h3>{guide.title}</h3><p>{guide.description}</p><span className="text-link">Citește ghidul <Icon name="arrow" size={18} /></span></div></Link>)}</div></div></section>
+    <section className="section faq-section"><div className="shell faq-layout"><div><p className="eyebrow">ÎNTREBĂRI FIREȘTI</p><h2>Hai să clarificăm<br />de la început.</h2><p>O alegere bună începe cu întrebările potrivite.</p><Link href="/contact" className="text-link">Ai o altă întrebare? <Icon name="arrow" size={18} /></Link></div><FAQ items={faqs} /></div></section>
+    <section className="closing-section"><div className="shell closing-inner"><div><p className="eyebrow">URMĂTORUL PAS E O CONVERSAȚIE</p><h2>Tu te ocupi de afacere.<br />Să discutăm despre protecția ei.</h2></div><ButtonLink href="/contact" arrow>Hai să discutăm</ButtonLink></div></section>
+  </main>;
 }

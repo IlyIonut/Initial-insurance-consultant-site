@@ -1,24 +1,4 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Politică de cookies",
-  description: "Informații generale despre utilizarea cookie-urilor pe site.",
-};
-
-export default function CookiesPage() {
-  return (
-    <main className="bg-white">
-      <section className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold tracking-tight text-slate-950">Politică de cookies</h1>
-        <div className="mt-8 space-y-6 text-base leading-8 text-slate-600">
-          <p>
-            Această pagină este un model de pornire. Completeaz-o după ce decizi ce servicii folosești pentru analiză, formulare, chat sau marketing.
-          </p>
-          <p>
-            În varianta inițială, site-ul nu setează cookie-uri de marketing. Dacă vei adăuga Google Analytics, Meta Pixel sau alte servicii similare, trebuie să actualizezi această politică și mecanismul de consimțământ.
-          </p>
-        </div>
-      </section>
-    </main>
-  );
-}
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { pageMetadata } from "@/lib/seo";
+export const metadata=pageMetadata("Informații despre cookies", "Informații despre funcționarea site-ului și folosirea serviciilor externe. Fără instrumente de publicitate sau analiză de marketing integrate.", "/cookies");
+export default function CookiesPage(){return <main><section className="page-hero"><div className="shell"><Breadcrumbs items={[{label:"Cookies",href:"/cookies"}]}/><h1>Informații despre cookies.</h1></div></section><section className="section"><div className="shell prose"><h2>Funcționarea site-ului</h2><p>Aplicația nu integrează cookies de publicitate sau instrumente de analiză de marketing. Selecțiile din formular și conversația orientativă sunt păstrate în memoria paginii cât timp o folosești.</p><p>Platforma de găzduire poate utiliza mecanisme tehnice necesare funcționării și accesului la site. De exemplu, accesul la o versiune privată poate necesita autentificare.</p><h2>Servicii externe</h2><p>Deschiderea linkurilor către WhatsApp sau alte site-uri te conduce la servicii cu propriile reguli și politici. Fișierele descărcate prin formular sunt create la cererea ta.</p><h2>Opțiunile browserului</h2><p>Poți gestiona cookies din setările browserului. Restricționarea mecanismelor strict necesare ale platformei poate afecta accesul sau funcționarea paginii.</p></div></section></main>;}

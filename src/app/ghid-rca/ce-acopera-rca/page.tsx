@@ -1,13 +1,9 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { rcaCoverage, rcaNotCoverage } from "@/lib/rca-content";
 
-export const metadata: Metadata = {
-  title: "Ce acoperă RCA? Daune, limite și diferența față de CASCO",
-  description:
-    "Explicație simplă despre ce acoperă asigurarea RCA, ce nu acoperă și de ce RCA nu înlocuiește CASCO.",
-};
+export const metadata = pageMetadata("Ce acoperă RCA și ce verifici în poliță", "Înțelege rolul RCA, prejudiciile produse terților și diferența față de CASCO. Verifică acoperirile și documentele înainte de alegerea poliței.", "/ghid-rca/ce-acopera-rca");
 
 export default function RcaCoveragePage() {
   return (
@@ -47,7 +43,7 @@ export default function RcaCoveragePage() {
             RCA este obligatorie și se referă la prejudiciile produse terților. CASCO este facultativă și poate proteja propriul vehicul, în funcție de produsul ales. De aceea, chiar dacă ai CASCO, ai nevoie și de RCA.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/contact?tip=RCA" variant="secondary">Cere ofertă RCA</ButtonLink>
+            <ButtonLink href="/contact?pentru=personal&tip=RCA" variant="secondary">Cere ofertă RCA</ButtonLink>
             <ButtonLink href="/asigurare-casco" variant="secondary">Vezi CASCO</ButtonLink>
           </div>
         </section>

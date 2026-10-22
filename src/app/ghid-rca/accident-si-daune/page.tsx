@@ -1,13 +1,9 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { rcaAccidentSteps } from "@/lib/rca-content";
 
-export const metadata: Metadata = {
-  title: "Ce faci după accident? Constatare amiabilă și daună RCA",
-  description:
-    "Pași orientativi după un accident auto: 112, constatare amiabilă, poliție, avizare daună RCA și documente utile.",
-};
+export const metadata = pageMetadata("Accident și daună RCA: pași de urmat", "Repere orientative după un accident: constatare, documente și deschiderea dosarului de daună RCA. Verifică procedura aplicabilă situației tale.", "/ghid-rca/accident-si-daune");
 
 const amiabilaRules = [
   "accidentul are doar pagube materiale, fără victime;",

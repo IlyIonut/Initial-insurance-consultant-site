@@ -1,83 +1,33 @@
 export const SITE = {
-  name: "Consultant Asigurări",
-  consultantName: "Numele Tău",
+  name: "IlyAsig",
+  consultantName: process.env.NEXT_PUBLIC_CONSULTANT_NAME || "",
   city: "Cluj și Bihor",
-  phoneDisplay: "+40 700 000 000",
-  phoneRaw: "40700000000",
-  email: "contact@numeletau.ro",
-  company: "Broker / companie parteneră",
-  description:
-    "Consultanță clară pentru RCA, CASCO, locuință, călătorie, sănătate și asigurări pentru firme.",
-  url: "https://numeletau.ro",
+  serviceAreas: ["Cluj", "Bihor", "Cluj-Napoca", "Oradea", "Florești", "Turda", "Beiuș"],
+  phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || "",
+  phoneRaw: (process.env.NEXT_PUBLIC_PHONE || "").replace(/\D/g, ""),
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
+  company: process.env.NEXT_PUBLIC_BROKER_COMPANY || "",
+  registration: process.env.NEXT_PUBLIC_REGISTRATION || "",
+  description: "Asigurări pentru firme și IMM-uri în Cluj și Bihor: bunuri, echipamente, răspunderi, flote și angajați. Consultanță și pentru persoane fizice.",
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://initial-insurance-consultant-site.vercel.app").replace(/\/$/, ""),
 };
 
 export const insuranceTypes = [
-  {
-    title: "RCA",
-    href: "/asigurare-rca",
-    description: "Obligatorie pentru circulație, cu explicații despre acoperire, bonus-malus, verificări și documente necesare.",
-  },
-  {
-    title: "CASCO",
-    href: "/asigurare-casco",
-    description: "Protecție facultativă pentru propriul vehicul: avarii, furt, fenomene naturale, franșiză și service.",
-  },
-  {
-    title: "Locuință",
-    href: "/asigurare-locuinta",
-    description: "PAD și facultativă pentru casă sau apartament: clădire, bunuri, răspundere civilă și asistență.",
-  },
-  {
-    title: "Călătorie",
-    href: "/asigurare-calatorie",
-    description: "Travel insurance pentru vacanțe, business, familie, bagaje, storno și situații medicale neprevăzute.",
-  },
-  {
-    title: "Sănătate",
-    href: "/asigurare-sanatate",
-    description: "Orientare pentru servicii medicale private, spitalizare, rețele, rambursare și beneficii pentru angajați.",
-  },
-  {
-    title: "Viață",
-    href: "/asigurare-viata",
-    description: "Protecție financiară pentru familie, credit, copii, economisire sau riscuri majore, în funcție de obiectiv.",
-  },
-  {
-    title: "Asigurări firme",
-    href: "/asigurari-firme",
-    description: "Soluții pentru IMM-uri: clădiri, bunuri, stocuri, echipamente, răspunderi, flote și angajați.",
-  },
-  {
-    title: "Răspundere civilă",
-    href: "/asigurare-raspundere-civila",
-    description: "Răspundere față de terți, răspundere profesională și cerințe contractuale pentru PFA/SRL/profesii.",
-  },
-  {
-    title: "Accidente",
-    href: "/asigurare-accidente",
-    description: "Protecție pentru evenimente accidentale: invaliditate, spitalizare, intervenții, familie sau angajați.",
-  },
+  { title: "RCA", href: "/asigurare-rca", icon: "car", tag: "Auto", description: "Oferte RCA, verificarea datelor și explicații despre bonus-malus." },
+  { title: "CASCO", href: "/asigurare-casco", icon: "shield", tag: "Auto", description: "Avarii, furt, franșize și opțiuni de reparație pentru mașina ta." },
+  { title: "Locuință", href: "/asigurare-locuinta", icon: "home", tag: "Acasă", description: "PAD și asigurare facultativă pentru locuință, bunuri și răspundere." },
+  { title: "Călătorie", href: "/asigurare-calatorie", icon: "plane", tag: "În deplasare", description: "Protecție medicală și opțiuni pentru călătoriile tale." },
+  { title: "Sănătate", href: "/asigurare-sanatate", icon: "heart", tag: "Pentru tine", description: "Consultații, investigații și spitalizare, în funcție de plan." },
+  { title: "Viață", href: "/asigurare-viata", icon: "people", tag: "Familie", description: "Protecție financiară pentru tine și oamenii care depind de tine." },
+  { title: "Accidente", href: "/asigurare-accidente", icon: "check", tag: "Protecție", description: "Soluții pentru consecințele financiare ale unui accident." },
+  { title: "Răspundere civilă", href: "/asigurare-raspundere-civila", icon: "scale", tag: "Față de terți", description: "Acoperiri pentru prejudicii accidentale produse altor persoane." },
 ];
 
 export const faqs = [
-  {
-    question: "Mă costă consultanța?",
-    answer:
-      "De regulă, discuția inițială și orientarea către o ofertă potrivită sunt gratuite. Condițiile exacte se discută transparent înainte de emiterea poliței.",
-  },
-  {
-    question: "Pot primi oferta pe WhatsApp?",
-    answer:
-      "Da. Completezi formularul sau îmi scrii direct pe WhatsApp, iar eu te contactez pentru datele necesare.",
-  },
-  {
-    question: "Primești cea mai ieftină ofertă?",
-    answer:
-      "Scopul nu este doar prețul minim, ci o variantă potrivită pentru situația ta. Îți explic diferențele dintre opțiuni, acoperiri și limitări.",
-  },
-  {
-    question: "Ce date sunt necesare?",
-    answer:
-      "Depinde de tipul asigurării. Pentru primul contact cer doar date minime: nume, telefon, email și tipul asigurării dorite.",
-  },
+  { question: "Cu ce tipuri de firme putem începe o discuție?", answer: "Cu IMM-uri, SRL-uri, PFA-uri și profesii liberale. Începem cu activitatea efectivă, locațiile și riscurile relevante. Disponibilitatea unei soluții depinde de activitate și de acceptarea asigurătorului." },
+  { question: "Am deja polițe. Mai are sens o analiză?", answer: "Da. Putem verifica ce bunuri și activități sunt declarate, sumele și limitele asigurate, franșizele, excluderile și schimbările apărute în firmă. O analiză poate confirma o protecție adecvată sau poate identifica aspecte de clarificat." },
+  { question: "Pot primi o singură poliță pentru toată firma?", answer: "Unele produse reunesc mai multe protecții, dar nu toate riscurile intră în același contract. Pentru flote, răspundere profesională, sănătate de grup sau riscuri cibernetice pot fi necesare polițe distincte." },
+  { question: "Lucrați doar în Cluj și Bihor?", answer: "Acestea sunt zonele principale de consultanță. Discuția inițială și analiza documentelor se pot desfășura și online. Posibilitatea unei vizite la locație se stabilește în funcție de situație." },
+  { question: "Ce pregătesc pentru prima discuție?", answer: "Domeniul de activitate, localitatea, ce vrei să protejezi și, dacă ai polițe, data următoarei reînnoiri. Documentele și datele suplimentare se cer ulterior, în funcție de soluția analizată." },
+  { question: "Pot solicita și asigurări pentru mine sau familie?", answer: "Da. Secțiunea pentru persoane fizice include RCA, CASCO, locuință, călătorie, sănătate, viață și accidente. Poți începe din pagina dedicată sau din formularul de contact." },
 ];

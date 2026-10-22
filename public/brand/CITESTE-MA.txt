@@ -1,0 +1,10 @@
+IlyAsig — logo, varianta 3
+
+ilyasig-logo.svg: versiune principală, fundal transparent.
+ilyasig-logo-invers.svg: versiune albă cu accent coral pentru fundal închis.
+ilyasig-logo-monocrom.svg: versiune într-o singură culoare.
+ilyasig-simbol.svg: simbolul A, pentru utilizări compacte.
+Fișierele SVG conțin forme vectoriale reale; nu includ imagini raster și nu depind de fonturi instalate.
+
+Paletă: bleumarin #14263d, albastru #164cf5, coral #ff795d.
+Păstrează proporțiile și un spațiu liber în jurul logo-ului. Nu aplica umbre sau deformări.

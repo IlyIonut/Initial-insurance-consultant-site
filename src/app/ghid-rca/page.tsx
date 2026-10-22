@@ -1,15 +1,11 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { SectionHeader } from "@/components/SectionHeader";
 import { SITE } from "@/lib/site";
 import { rcaGuideCards, rcaHighlights } from "@/lib/rca-content";
 
-export const metadata: Metadata = {
-  title: "Ghid RCA | Informații utile înainte de ofertă",
-  description:
-    "Ghid RCA cu explicații despre ce acoperă asigurarea obligatorie auto, cum cumperi RCA, bonus-malus, constatare amiabilă și dosar de daună.",
-};
+export const metadata = pageMetadata("Ghid RCA: acoperiri, bonus-malus și daune", "Ghid RCA pentru persoane fizice și firme: ce acoperă polița, cum o cumperi, bonus-malus și pașii după un accident. Explicații clare și verificări utile.", "/ghid-rca");
 
 export default function RcaGuideIndexPage() {
   return (
@@ -24,8 +20,8 @@ export default function RcaGuideIndexPage() {
             Am organizat informațiile importante despre RCA în pagini scurte, utile pentru șoferi, proprietari de vehicule și firme. Ghidul te ajută să întrebi mai bine înainte de ofertă.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/contact?tip=RCA">Cere ofertă RCA</ButtonLink>
-            <ButtonLink href={`https://wa.me/${SITE.phoneRaw}?text=Bună! Doresc să discut despre RCA.`} variant="secondary">
+            <ButtonLink href="/contact?pentru=personal&tip=RCA">Cere ofertă RCA</ButtonLink>
+            <ButtonLink href={SITE.phoneRaw ? `https://wa.me/${SITE.phoneRaw}?text=Bună! Doresc să discut despre RCA.` : "/contact?pentru=personal&tip=RCA"} variant="secondary">
               Întreabă pe WhatsApp
             </ButtonLink>
           </div>

@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 
-export const metadata: Metadata = {
-  title: "Bonus-malus RCA explicat simplu",
-  description:
-    "Află ce înseamnă bonus-malus la RCA, cum influențează prețul și de ce istoricul de daune contează la reînnoirea poliței.",
-};
+export const metadata = pageMetadata("Bonus-malus RCA: ce merită să știi", "Explicații despre sistemul bonus-malus RCA și informațiile care merită verificate la ofertare și reînnoire. Ghid orientativ pentru șoferi.", "/ghid-rca/bonus-malus");
 
 const principles = [
   {
@@ -68,7 +64,7 @@ export default function BonusMalusPage() {
             Trimite o cerere scurtă, iar la discuția de ofertare verificăm datele necesare și ce apare pentru situația ta.
           </p>
           <div className="mt-6">
-            <ButtonLink href="/contact?tip=RCA" variant="secondary">Cere ofertă RCA</ButtonLink>
+            <ButtonLink href="/contact?pentru=personal&tip=RCA" variant="secondary">Cere ofertă RCA</ButtonLink>
           </div>
         </section>
 

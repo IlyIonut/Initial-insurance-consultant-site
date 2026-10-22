@@ -1,14 +1,10 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { SITE } from "@/lib/site";
 import { rcaPolicyChecks, rcaQuoteData } from "@/lib/rca-content";
 
-export const metadata: Metadata = {
-  title: "Cum cumperi RCA corect | Date necesare și verificări",
-  description:
-    "Ghid practic despre cum cumperi RCA, ce date sunt necesare, ce verifici pe poliță și cum eviți erorile sau polițele neverificate.",
-};
+export const metadata = pageMetadata("Cum cumperi RCA: pași și verificări", "Pași pentru cumpărarea unei polițe RCA: informații, perioadă, verificarea datelor și documentele primite. Consultanță în Cluj, Bihor și online.", "/ghid-rca/cum-cumperi-rca");
 
 const buyingSteps = [
   {
@@ -84,8 +80,8 @@ export default function RcaBuyingPage() {
             Scrie-mi ce vehicul ai și te contactez pentru datele necesare. Nu trimite CNP, documente sau poze cu acte în mesajul inițial.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/contact?tip=RCA" variant="secondary">Cere ofertă RCA</ButtonLink>
-            <ButtonLink href={`https://wa.me/${SITE.phoneRaw}?text=Bună! Doresc să cumpăr RCA.`} variant="secondary">WhatsApp</ButtonLink>
+            <ButtonLink href="/contact?pentru=personal&tip=RCA" variant="secondary">Cere ofertă RCA</ButtonLink>
+            <ButtonLink href={SITE.phoneRaw ? `https://wa.me/${SITE.phoneRaw}?text=Bună! Doresc să cumpăr RCA.` : "/contact?pentru=personal&tip=RCA"} variant="secondary">Discută despre RCA</ButtonLink>
           </div>
         </section>
 

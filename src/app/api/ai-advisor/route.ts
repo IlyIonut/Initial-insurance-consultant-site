@@ -1,104 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
-import { advisorKnowledge, advisorProducts } from "@/lib/ai-knowledge";
-import { SITE } from "@/lib/site";
-
-export const runtime = "nodejs";
-
-type OpenAITextContent = { type?: string; text?: string };
-type OpenAIOutputItem = { content?: OpenAITextContent[] };
-type OpenAIResponse = {
-  output_text?: string;
-  output?: OpenAIOutputItem[];
-  error?: { message?: string };
-};
-
-function extractOutputText(data: OpenAIResponse): string {
-  if (typeof data.output_text === "string" && data.output_text.trim()) {
-    return data.output_text.trim();
-  }
-
-  const text = data.output
-    ?.flatMap((item) => item.content ?? [])
-    .map((content) => content.text)
-    .filter((value): value is string => Boolean(value))
-    .join("\n")
-    .trim();
-
-  return text || "Nu am putut genera un răspuns acum. Te rog folosește formularul de contact sau WhatsApp.";
+import { businessSolutions } from "@/lib/business-content";
+const catalog=businessSolutions.map(s=>({name:s.name,slug:s.slug,description:s.description,note:s.note}));
+function orientation(question:string){const q=question.toLocaleLowerCase("ro-RO").normalize("NFD").replace(/[\u0300-\u036f]/g,"");let slugs:string[];let answer:string;
+ if(/\brca\b|casco|masin|vehicul|flot/.test(q)){slugs=["flote-auto"];answer="RCA privește răspunderea pentru prejudiciile produse terților. CASCO poate proteja propriul vehicul pentru riscurile incluse în poliță. Pentru o firmă, merită verificate utilizarea vehiculelor, franșizele, condițiile de reparație și cerințele de leasing.";}
+ else if(/intrerup|continuit|oprir|incend/.test(q)){slugs=["intreruperea-activitatii","bunuri-si-echipamente"];answer="Protecția pentru întreruperea activității poate viza anumite pierderi financiare după un eveniment asigurat. Este distinctă de refacerea bunurilor. Verifică evenimentul care activează acoperirea, definițiile financiare, limita, franșiza temporală și perioada de despăgubire. Nu este o protecție pentru orice scădere a vânzărilor.";}
+ else if(/cyber|cibern|date|informat|\bit\b/.test(q)){slugs=["riscuri-cibernetice","raspundere-civila-profesionala"];answer="Pentru activitatea digitală pot fi relevante protecția cyber și răspunderea profesională. Acestea au roluri diferite. Activitatea, contractele și măsurile de securitate trebuie analizate înainte de ofertă. Frauda, ransomware și toate pierderile nu sunt automat acoperite.";}
+ else if(/sanatat|angajat|echipa|medical/.test(q)){slugs=["sanatate-angajati"];answer="Pentru echipă, poți analiza un plan de sănătate de grup. Compară serviciile, limitele, rețeaua medicală din localitățile relevante și regulile de acces. Asigurarea de sănătate și abonamentul medical au mecanisme diferite. Nu trimite date medicale în această conversație.";}
+ else if(/raspund|eroar|profesion|consultant|contract/.test(q)){slugs=["raspundere-civila-profesionala"];answer="Răspunderea civilă generală și cea profesională trebuie diferențiate. Contează activitatea declarată, tipul prejudiciului, limitele, excluderile, teritoriul și momentul notificării reclamației. Pregătește cerințele din contract pentru o discuție asupra ofertelor concrete.";}
+ else if(/locuint|casa|calator|viata|personal/.test(q)){return {answer:"Pentru asigurările personale poți începe cu pagina dedicată. Alegerea depinde de bunurile și nevoile tale; acoperirile se verifică pe oferta și condițiile concrete.",links:[{label:"Asigurări pentru persoane fizice",href:"/persoane-fizice"},{label:"Discută situația ta",href:"/contact?pentru=personal"}]};}
+ else{slugs=["bunuri-si-echipamente","raspundere-civila-profesionala","intreruperea-activitatii"];answer="Pentru început, privește trei direcții: bunurile și echipamentele firmei, prejudiciile pe care activitatea le-ar putea produce altora și efectele unei opriri după un eveniment asigurat. Descrie activitatea și locațiile înainte de a compara polițe. Vehiculele, angajații și sistemele informatice pot aduce nevoi suplimentare.";}
+ return {answer,links:slugs.map(slug=>({label:businessSolutions.find(s=>s.slug===slug)!.name,href:`/asigurari-firme/${slug}`}))};
 }
-
-export async function POST(request: NextRequest) {
-  try {
-    const body = (await request.json()) as { question?: unknown };
-    const question = typeof body.question === "string" ? body.question.trim() : "";
-
-    if (question.length < 4) {
-      return NextResponse.json({ error: "Scrie o întrebare puțin mai detaliată." }, { status: 400 });
-    }
-
-    if (question.length > 900) {
-      return NextResponse.json({ error: "Întrebarea este prea lungă. Te rog rezumă situația în maximum câteva fraze." }, { status: 400 });
-    }
-
-    const apiKey = process.env.OPENAI_API_KEY;
-
-    if (!apiKey) {
-      return NextResponse.json(
-        {
-          answer:
-            "Asistentul AI nu este configurat încă. Pentru moment, te rog folosește formularul de contact sau WhatsApp pentru o recomandare personalizată.",
-        },
-        { status: 200 }
-      );
-    }
-
-    const model = process.env.OPENAI_MODEL || "gpt-5.4-mini";
-    const products = JSON.stringify(advisorProducts, null, 2);
-
-    const prompt = `${advisorKnowledge}\n\nDate consultant:\n- Nume site: ${SITE.name}\n- Zonă: ${SITE.city}\n- Telefon/WhatsApp: ${SITE.phoneDisplay}\n- Email: ${SITE.email}\n\nCatalog produse/categorii disponibile:\n${products}`;
-
-    const response = await fetch("https://api.openai.com/v1/responses", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model,
-        store: false,
-        max_output_tokens: 450,
-        input: [
-          {
-            role: "system",
-            content: [{ type: "input_text", text: prompt }],
-          },
-          {
-            role: "user",
-            content: [{ type: "input_text", text: question }],
-          },
-        ],
-      }),
-    });
-
-    const data = (await response.json()) as OpenAIResponse;
-
-    if (!response.ok) {
-      console.error("OpenAI advisor error", data.error?.message ?? data);
-      return NextResponse.json(
-        {
-          error:
-            "Asistentul nu poate răspunde acum. Te rog folosește formularul de contact sau WhatsApp.",
-        },
-        { status: 502 }
-      );
-    }
-
-    return NextResponse.json({ answer: extractOutputText(data) });
-  } catch (error) {
-    console.error("AI advisor route error", error);
-    return NextResponse.json(
-      { error: "A apărut o eroare. Te rog încearcă din nou sau scrie direct pe WhatsApp." },
-      { status: 500 }
-    );
-  }
+export async function POST(request:NextRequest){
+ try{const body=await request.json() as {question?:unknown};const q=typeof body.question==="string"?body.question.trim():"";if(q.length<4||q.length>900)return NextResponse.json({error:"Folosește o întrebare între 4 și 900 de caractere."},{status:400});const fallback=orientation(q);const apiKey=process.env.OPENAI_API_KEY;if(!apiKey)return NextResponse.json(fallback);
+  const response=await fetch("https://api.openai.com/v1/responses",{method:"POST",headers:{Authorization:`Bearer ${apiKey}`,"Content-Type":"application/json"},signal:AbortSignal.timeout(20000),body:JSON.stringify({model:process.env.OPENAI_MODEL||"gpt-4.1-mini",store:false,max_output_tokens:380,input:[{role:"system",content:[{type:"input_text",text:`Răspunde în română, scurt și clar, ca asistent informativ pentru un site de asigurări orientat spre IMM-uri din România. Nu emite oferte sau recomandări contractuale, nu inventa prețuri, asigurători disponibili, parteneriate sau garanții de despăgubire. Nu solicita CNP ori date medicale. Explică dependența de condițiile poliței și îndrumă spre discuția cu consultantul. Folosește acest catalog: ${JSON.stringify(catalog)}. Pentru întrebări din afara asigurărilor oferă doar o redirecționare politicoasă către subiect.`}]},{role:"user",content:[{type:"input_text",text:q}]}]})});
+  if(!response.ok)return NextResponse.json(fallback);const data=await response.json() as {output_text?:string;output?:{content?:{text?:string}[]}[]};const answer=data.output_text||data.output?.flatMap(x=>x.content||[]).map(x=>x.text||"").join("\n").trim();return NextResponse.json({answer:answer||fallback.answer,links:fallback.links});
+ }catch{return NextResponse.json({answer:"Pentru o orientare generală, pornește din paginile pentru firme sau persoane fizice. Situația concretă se clarifică printr-o discuție.",links:[{label:"Pentru firme",href:"/asigurari-firme"},{label:"Contact",href:"/contact"}]});}
 }
