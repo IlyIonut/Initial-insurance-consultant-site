@@ -1,3 +1,5 @@
+import { QuestionSection } from "@/components/QuestionSection";
+import { rcaArticleFaqs } from "@/lib/faq-content";
 import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
@@ -7,7 +9,7 @@ export const metadata = pageMetadata("Accident și daună RCA: pași de urmat", 
 
 const amiabilaRules = [
   "accidentul are doar pagube materiale, fără victime;",
-  "sunt implicate doar două vehicule;",
+  "sunt implicate doar două vehicule asigurate, fără alte prejudicii care impun o altă procedură;",
   "ambii conducători sunt de acord să folosească formularul;",
   "formularul este completat lizibil, semnat de ambii șoferi și depus la asigurător.",
 ];
@@ -75,7 +77,7 @@ export default function RcaAccidentPage() {
             Îți pot explica orientativ ce documente sunt utile și cui trebuie să te adresezi. Pentru soluționarea dosarului, se respectă procedura asigurătorului și legislația aplicabilă.
           </p>
           <div className="mt-6">
-            <ButtonLink href="/contact?tip=dauna-rca" variant="secondary">Cere îndrumare</ButtonLink>
+            <ButtonLink href="/contact?pentru=personal&tip=RCA" variant="secondary">Cere îndrumare</ButtonLink>
           </div>
         </section>
 
@@ -84,6 +86,6 @@ export default function RcaAccidentPage() {
           <Link href="/ghid-rca" className="text-slate-950 underline underline-offset-4">Înapoi la ghidul RCA →</Link>
         </nav>
       </article>
-    </main>
+    <QuestionSection items={rcaArticleFaqs.accident}/></main>
   );
 }

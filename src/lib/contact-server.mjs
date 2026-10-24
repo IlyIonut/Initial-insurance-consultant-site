@@ -32,7 +32,8 @@ export function validateContact(body) {
   if (!(audience === 'business' ? businessTypes : personalTypes).includes(insuranceType)) throw new Error('Alege o asigurare din listă.');
   const renewal = audience === 'business' ? text('renewal', 7) : '';
   if (renewal && !/^20\d{2}-(0[1-9]|1[0-2])$/.test(renewal)) throw new Error('Verifică luna reînnoirii.');
-  if (body.consent !== 'accepted') throw new Error('Este necesar acordul pentru a te contacta despre cerere.');
+  if (body.consent !== 'accepted') throw new Error('Confirmă citirea termenilor și a informării de confidențialitate.');
+  if (body.noticeVersion !== privacyVersion) throw new Error('Informarea a fost actualizată. Reîncarcă pagina și verifică termenii înainte de a trimite.');
   return { requestId, audience, name, email, phone, business, city: text('city', 100), insuranceType, renewal, message: text('message', 1800), consent: 'accepted', privacyVersion };
 }
 

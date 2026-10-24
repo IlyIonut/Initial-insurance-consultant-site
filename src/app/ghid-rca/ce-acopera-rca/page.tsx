@@ -1,3 +1,5 @@
+import { QuestionSection } from "@/components/QuestionSection";
+import { rcaArticleFaqs } from "@/lib/faq-content";
 import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
@@ -60,6 +62,6 @@ export default function RcaCoveragePage() {
           <Link href="/ghid-rca/cum-cumperi-rca" className="text-slate-950 underline underline-offset-4">Următorul: cum cumperi RCA →</Link>
         </nav>
       </article>
-    </main>
+    <QuestionSection items={rcaArticleFaqs.coverage}/></main>
   );
 }

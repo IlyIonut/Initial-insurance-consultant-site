@@ -1,15 +1,16 @@
+import { QuestionSection } from "@/components/QuestionSection";
+import { rcaArticleFaqs } from "@/lib/faq-content";
 import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
-import { SITE } from "@/lib/site";
 import { rcaPolicyChecks, rcaQuoteData } from "@/lib/rca-content";
 
-export const metadata = pageMetadata("Cum cumperi RCA: pași și verificări", "Pași pentru cumpărarea unei polițe RCA: informații, perioadă, verificarea datelor și documentele primite. Consultanță în Cluj, Bihor și online.", "/ghid-rca/cum-cumperi-rca");
+export const metadata = pageMetadata("Cum cumperi RCA: pași și verificări", "Pași pentru cumpărarea unei polițe RCA: informații, perioadă, verificarea datelor și documentele primite. Consultanță în toată România.", "/ghid-rca/cum-cumperi-rca");
 
 const buyingSteps = [
   {
     title: "Verifică dacă vehiculul are nevoie de RCA",
-    text: "RCA se încheie la înscrierea în circulație și la expirarea poliței existente. Polița trebuie menținută valabilă cât timp vehiculul este înmatriculat sau înregistrat.",
+    text: "RCA se încheie la înscrierea în circulație și la expirarea poliței existente. Obligația se verifică potrivit categoriei vehiculului și situației legale; simpla neutilizare nu echivalează cu o suspendare legală a asigurării.",
   },
   {
     title: "Alege un canal autorizat",
@@ -81,7 +82,7 @@ export default function RcaBuyingPage() {
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/contact?pentru=personal&tip=RCA" variant="secondary">Cere ofertă RCA</ButtonLink>
-            <ButtonLink href={SITE.phoneRaw ? `https://wa.me/${SITE.phoneRaw}?text=Bună! Doresc să cumpăr RCA.` : "/contact?pentru=personal&tip=RCA"} variant="secondary">Discută despre RCA</ButtonLink>
+            <ButtonLink href="/contact?pentru=personal&tip=RCA" variant="secondary">Discută despre RCA</ButtonLink>
           </div>
         </section>
 
@@ -90,6 +91,6 @@ export default function RcaBuyingPage() {
           <Link href="/ghid-rca/bonus-malus" className="text-slate-950 underline underline-offset-4">Următorul: bonus-malus →</Link>
         </nav>
       </article>
-    </main>
+    <QuestionSection items={rcaArticleFaqs.buying}/></main>
   );
 }

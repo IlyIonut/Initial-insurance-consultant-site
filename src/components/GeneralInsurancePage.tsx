@@ -1,3 +1,4 @@
+import { EditorialNote } from "@/components/EditorialNote";
 import Link from "next/link";
 import { ButtonLink } from "./ButtonLink";
 import { Breadcrumbs } from "./Breadcrumbs";
@@ -12,5 +13,5 @@ export function GeneralInsurancePage({content:c}:{content:InsuranceContentPage})
  <section className="section"><div className="shell"><div className="content-grid"><div className="content-card"><h2>Cui i se poate potrivi</h2><CheckList items={c.suitableFor}/></div><div className="content-card"><h2>Acoperiri de analizat</h2><CheckList items={c.commonCoverages}/></div></div><div className="info-note"><strong>De reținut: </strong>{c.importantNote}</div></div></section>
  <section className="section process-section"><div className="shell article-columns"><div className="prose">{c.sections.map(s=><section key={s.title}><h2>{s.title}</h2><p>{s.body}</p>{s.items&&<CheckList items={s.items}/>}</section>)}</div><aside className="content-card"><h2>Ce comparăm în ofertă</h2><CheckList items={c.compareChecklist}/></aside></div></section>
  <section className="section"><div className="shell article-columns"><div><p className="eyebrow">DATE PENTRU OFERTĂ</p><h2 style={{margin:"20px 0 25px"}}>Pregătim informațiile<br />necesare, pas cu pas.</h2><CheckList items={c.offerData}/><div className="info-note">Pentru primul contact sunt suficiente informațiile generale. Nu trimite CNP, date medicale sau copii ale actelor prin formularul public.</div></div><ContactForm initialAudience="personal" initialType={c.eyebrow}/></div></section>
- <section className="section faq-section"><div className="shell faq-layout"><div><p className="eyebrow">ÎNTREBĂRI FRECVENTE</p><h2 style={{marginTop:20}}>Înainte să alegi.</h2></div><FAQ items={c.faqs}/></div></section></main>;
+ <section className="section faq-section"><div className="shell faq-layout"><div><p className="eyebrow">ÎNTREBĂRI FRECVENTE</p><h2 style={{marginTop:20}}>Înainte să alegi.</h2><EditorialNote/></div><FAQ items={c.faqs}/></div></section></main>;
 }

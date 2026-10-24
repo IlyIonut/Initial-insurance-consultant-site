@@ -1,111 +1,72 @@
-# IlyAsig — Business & personal · v8
+# IlyAsig — firme și persoane fizice
 
-Site Next.js cu orientare predominantă spre firme și IMM-uri în Cluj și Bihor. Secțiunea pentru persoane fizice și adresele paginilor vechi au fost păstrate.
+Site Next.js pentru clienți din toată România. Prioritatea SEO rămâne Cluj și Bihor, prin metadate și date structurate, fără mesaje care limitează serviciile la anumite județe.
 
-## Ce s-a schimbat
+## Revizia din 25 octombrie 2026
 
-- Identitate IlyAsig, logo varianta 3 în SVG vectorial, favicon A, versiune inversă pentru subsol, export transparent și actualizarea metadatelor sociale.
+- Eliminate asistentul, componenta, ruta API, baza lui de texte și configurarea AI.
+- Eliminate linkurile publice către site-uri terțe. Navigarea informativă rămâne internă; emailul și telefonul sunt canale directe.
+- Revizuite paginile și completate întrebări tematice pentru produse personale, soluțiile business, domenii, ghiduri și contact.
+- Corectate explicațiile despre PAD/facultativă, RCA, bonus-malus PF/PJ și procedura după accident.
+- Adăugați termeni pentru site/formular și rescrisă confidențialitatea pentru fluxul real Vercel → Apps Script → Sheets/email.
+- Formularul cere confirmarea termenilor și informării, fără acord de marketing. Serverul respinge o versiune veche sau lipsă a informării înainte de transmiterea către Google.
+- Actualizate sitemap-ul, revizia editorială și imaginea socială generată la /og.
 
-- Design nou: albastru intens, verde mentă și accente coral, fotografie editorială originală, iconuri SVG și versiune adaptată telefoanelor.
-- Prima pagină pentru firme, cu selector de domeniu și trasee către soluțiile relevante.
-- Șase pagini de soluții: bunuri și echipamente, răspundere civilă/profesională, flote, sănătatea angajaților, întreruperea activității și riscuri cibernetice.
-- Cinci pagini pe domenii: comerț și servicii, producție și ateliere, IT și consultanță, HoReCa, cabinete medicale.
-- Trei ghiduri pentru antreprenori și păstrarea ghidurilor RCA.
-- Secțiune distinctă `/persoane-fizice`, cu toate categoriile personale.
-- Formular adaptat pentru firmă/persoană fizică și preselectarea interesului din pagina de origine.
-- Asistent orientativ cu răspunsuri generale disponibile și fără o cheie AI. Integrarea AI de pe server rămâne opțională.
-- Titluri și descrieri distincte, adrese canonice, Open Graph/Twitter, sitemap și robots generate din domeniul configurat.
-- Date structurate InsuranceAgency, BreadcrumbList, Service și Article, în funcție de pagină.
+Sursele și limitele verificării sunt în [docs/content-review.md](docs/content-review.md). Selecția întrebărilor este editorială, fără clasament pretins al volumelor de căutare.
 
-## Pornire
+## Dezvoltare
 
-Necesită Node.js 22 LTS. Proiectul folosește Next.js 16.3.4, React 19.2.6 și Tailwind CSS 4.2.1.
+Node.js 22.x, Next.js 16.3.4, React 19.2.6. Dependențele sunt fixate în package-lock.json.
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Pentru build și rulare:
-
 ```bash
+node --test tests/*.test.mjs
 npm run build
 npm start
 ```
 
-Fișierul `package-lock.json` fixează dependențele pentru instalări reproductibile.
+Build-ul verifică TypeScript. Testele folosesc date fictive și un serviciu Google simulat. Pe Vercel, vercel.json rulează testele înainte de build.
 
-## Publicare pe Vercel
+## Vercel
 
-Proiectul existent este legat la repository-ul `IlyIonut/Initial-insurance-consultant-site`, ramura `main`. `vercel.json` selectează Next.js, instalarea prin `npm ci` și build-ul prin `npm run build`. Vercel gestionează paginile și ruta API; nu este necesar un export static sau un director de publicare Netlify.
+Repository: IlyIonut/Initial-insurance-consultant-site, ramura main. Producție: https://initial-insurance-consultant-site.vercel.app. Nu este un proiect Netlify. Se păstrează conexiunea Git și secretele formularului.
 
-Adresa de producție implicită este `https://initial-insurance-consultant-site.vercel.app`. Pentru un domeniu propriu, setează `NEXT_PUBLIC_SITE_URL` în mediul Production din Vercel și redeployează. Nu seta această variabilă la adresa unei previzualizări. Previzualizările Vercel emit `noindex`; versiunea de producție permite indexarea.
+NEXT_PUBLIC_SITE_URL este domeniul canonic; previzualizările emit noindex. Variabilele publice sunt evaluate la build și schimbarea lor cere un build nou.
 
-Variabilele de contact și cheia AI se configurează în Vercel. Nu se comit fișiere `.env.local`, credențiale sau starea locală `.vercel`.
+## Identitate și informare juridică
 
-## Datele reale ale activității
+Completează numai date reale, verificate, din .env.example:
 
-Copiază `.env.example` în `.env.local` și completează:
+- NEXT_PUBLIC_OPERATOR_NAME, NEXT_PUBLIC_PROFESSIONAL_ADDRESS, NEXT_PUBLIC_TAX_ID și NEXT_PUBLIC_TRADE_REGISTER, după situație;
+- NEXT_PUBLIC_CONSULTANT_NAME, NEXT_PUBLIC_INTERMEDIARY_ROLE, NEXT_PUBLIC_BROKER_COMPANY și NEXT_PUBLIC_REGISTRATION;
+- NEXT_PUBLIC_CONTACT_EMAIL, NEXT_PUBLIC_COMPLAINTS_EMAIL, NEXT_PUBLIC_PHONE și NEXT_PUBLIC_PHONE_DISPLAY.
 
-- `NEXT_PUBLIC_SITE_URL`: domeniul final, cu `https://`;
-- `NEXT_PUBLIC_CONSULTANT_NAME`: numele real al persoanei de contact;
-- `NEXT_PUBLIC_BROKER_COMPANY`: compania prin care se desfășoară activitatea;
-- `NEXT_PUBLIC_REGISTRATION`: informația de înregistrare relevantă, după verificare;
-- `NEXT_PUBLIC_PHONE`: numărul internațional, numai cifre, de exemplu prefixul 40 urmat de număr;
-- `NEXT_PUBLIC_PHONE_DISPLAY`: forma în care se afișează telefonul;
-- `NEXT_PUBLIC_CONTACT_EMAIL`: adresa de contact;
-- `CONTACT_GOOGLE_SCRIPT_URL` și `CONTACT_SHARED_SECRET`: setări private pentru integrarea formularului, exclusiv pe server.
+În lipsa adresei publice configurate, contactul este contul indicat pentru experiment: iliesionut3@gmail.com. Codul nu inventează operatori, adrese, coduri ASF/RIS, afilieri, remunerații sau autorizări.
 
-Reexecută build-ul după modificarea variabilelor publice. În lipsa unui domeniu configurat, metadatele folosesc adresa de producție Vercel indicată mai sus.
+Textele sunt o implementare pentru fluxul actual, nu o certificare de conformitate. Rămân de finalizat identitatea și procedurile intermediarului, condițiile reale ale conturilor Google/Vercel și validarea responsabilului juridic/compliance al brokerului.
 
-Nu sunt inventate numere de telefon, recenzii, clienți, asigurători parteneri, autorizări sau vechime profesională. Completează identitatea reală și informațiile aplicabile activității înainte de o lansare publică.
+Politica prevede revizuirea și ștergerea manuală a cererilor fără contract în cel mult 12 luni de la ultima comunicare relevantă, în lipsa unui motiv documentat pentru păstrare suplimentară. Nu există ștergere automată. Administratorul gestionează registrul, emailurile și exporturile.
 
-## Formularul de contact
+## Formular și registru
 
-Integrarea Google Sheets + email este pregătită în `google-apps-script/`. După configurarea `CONTACT_GOOGLE_SCRIPT_URL` și `CONTACT_SHARED_SECRET` pe server, formularul afișează „Trimite cererea”, înregistrează datele în registrul privat și notifică proprietarul prin email. Fără aceste setări păstrează modul de pregătire/copiere/descărcare.
+Setări exclusiv pe server: CONTACT_GOOGLE_SCRIPT_URL și CONTACT_SHARED_SECRET. Nu le include în variabile publice ori Git. Nu se schimbă pentru revizia de conținut.
 
-Ruta `/api/contact` validează datele pe server și semnează solicitarea; URL-ul Google și cheia comună nu ajung în browser. Un identificator stabil previne rândurile duplicate la reîncercare. Confirmarea de pe site apare numai după confirmarea salvării. Apps Script păstrează și reîncearcă separat notificările nereușite.
+Ruta /api/contact validează, semnează și confirmă numai salvarea confirmată de Google. UUID-ul stabil împiedică dublarea la reîncercare. Apps Script notifică doar proprietarul configurat și reîncearcă notificările nereușite.
 
-Registrul include statusuri și observații editabile și se descarcă din Google Sheets în Excel sau CSV. Instrucțiunile de activare și verificare sunt în `google-apps-script/README.md`. Nu se solicită și nu se încarcă documente sensibile.
+Versiunea 2026-10-25 identifică perechea termeni/informare confirmată de formular. Coloana existentă Acord contact păstrează această versiune. La cererile noi înseamnă solicitarea de contact și citirea documentelor, nu acord pentru marketing.
 
-Verificări: `node --test tests/*.test.mjs`, apoi `npm run build`. Activarea în contul Google și o cerere reală de test sunt necesare pentru confirmarea fluxului complet.
+Registrul rămâne privat și se poate exporta din Sheets în Excel ori CSV. Administrare: [google-apps-script/README.md](google-apps-script/README.md). Fără secrete, formularul oferă pregătire/copiere/descărcare, fără să pretindă trimiterea.
 
-## Asistentul orientativ
+## Conținut
 
-Ruta `/api/ai-advisor` oferă orientare generală și legături către paginile relevante. În lipsa `OPENAI_API_KEY`, folosește răspunsuri locale pregătite. Pentru generare AI, setează cheia numai pe server. Nu o include într-o variabilă `NEXT_PUBLIC_*` și nu urca `.env.local` în Git.
+- src/lib/faq-content.ts: întrebări și răspunsuri tematice;
+- src/lib/business-content.ts, general-insurance-content.ts, rca-content.ts și guides.ts: paginile;
+- src/lib/site.ts: identitate, contact și metadate;
+- src/app/termeni-si-conditii, confidentialitate și cookies: documentele publice;
+- src/app/globals.css: stiluri și adaptare mobilă.
 
-Răspunsurile nu sunt oferte, confirmări de acoperire sau recomandări contractuale. Formularul și asistentul nu sunt destinate CNP-urilor, datelor medicale ori documentelor sensibile.
-
-## Unde modifici conținutul
-
-- `src/lib/site.ts`: identitate, contact și categorii personale;
-- `src/lib/business-content.ts`: soluții pentru firme și domenii de activitate;
-- `src/lib/guides.ts`: cele trei ghiduri pentru antreprenori;
-- `src/lib/general-insurance-content.ts`: conținutul produselor personale păstrate;
-- `src/lib/seo.ts`: generatorul de metadate;
-- `src/app/globals.css`: culori, compoziție și reguli pentru mobil;
-- `src/app/page.tsx`: pagina principală;
-- `src/app/sitemap.ts` și `src/app/robots.ts`: fișierele pentru motoarele de căutare.
-
-## Verificări efectuate
-
-- Build de producție Next.js, inclusiv verificarea TypeScript și generarea paginilor statice.
-- Build-ul versiunii găzduite și verificare TypeScript.
-- Verificarea în browser a celor 37 de pagini din sitemap: un H1, titlu și descriere unice, canonical, Open Graph, limba română și JSON-LD valid.
-- Verificarea efectivă a sitemap-ului și robots.txt.
-- Navigarea prin selectorul de domeniu, meniul mobil și secțiunea pentru persoane fizice.
-- Preselectarea formularului, câmpurile pentru firme și pregătirea unei cereri de test.
-- Răspunsul orientativ pentru o întrebare despre un atelier.
-- Verificarea afișării la o lățime mobilă, inclusiv lipsa depășirilor orizontale pe paginile inspectate.
-
-Verificarea reală Google Sheets/email se efectuează după autorizarea proiectului Apps Script și configurarea secretelor Vercel. Generarea AI cu o cheie reală nu a fost testată.
-
-## SEO și lansare
-
-Detaliile sunt în `SEO_NOTES.md`. Versiunea de previzualizare este privată și nu poate servi ca site public indexabil. Implementarea tehnică SEO nu garantează poziții în Google; indexarea presupune un site public accesibil și un domeniu configurat corect.
-
-## Elemente vizuale
-
-Fotografia din `public/images/antreprenori-atelier.webp` a fost creată cu instrumentul integrat de generare de imagini. Este un vizual ilustrativ, nu o fotografie a consultantului sau a unor clienți reali. Promptul este în `DESIGN_ASSETS.md`.
-
-Structura de navigare și prezentarea pe domenii sunt inspirate de modele uzuale din Hiscox și Simply Business. Textele, identitatea, iconurile și compoziția au fost realizate pentru acest proiect; nu au fost preluate recenzii, statistici comerciale, logo-uri sau afirmații despre acele companii.
+Logo-ul vectorial și fotografia ilustrativă au fost păstrate. Fotografia nu reprezintă clienți reali. Nu sunt inventate recenzii, statistici sau parteneriate.

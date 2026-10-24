@@ -1,7 +1,7 @@
 export const rcaHighlights = [
   {
     title: "RCA este obligatorie",
-    text: "Ai nevoie de o poliță RCA valabilă pentru vehiculul înmatriculat sau înregistrat, chiar dacă îl folosești rar.",
+    text: "Obligația RCA se verifică pentru categoriile de vehicule și situațiile prevăzute de lege. Simpla neutilizare nu echivalează cu o suspendare legală a obligației.",
   },
   {
     title: "RCA protejează terții păgubiți",
@@ -27,7 +27,7 @@ export const rcaCoverage = [
 export const rcaNotCoverage = [
   "daunele la propriul vehicul al celui vinovat — acestea țin, de regulă, de CASCO;",
   "situațiile excluse prin legislație și prin condițiile contractuale aplicabile;",
-  "cazurile în care datele poliței sau ale vehiculului nu corespund realității, până la clarificarea situației cu asigurătorul.",
+  "vătămarea ori decesul conducătorului răspunzător pentru accident, prin propria poliță RCA pentru acel eveniment.",
 ];
 
 export const rcaQuoteData = [
@@ -54,7 +54,7 @@ export const rcaAccidentSteps = [
   },
   {
     title: "Pentru accidente ușoare, stabilește procedura",
-    text: "Dacă sunt doar pagube materiale și sunt implicate două vehicule, se poate folosi constatarea amiabilă, dacă ambii șoferi sunt de acord. Altfel, se merge la poliție.",
+    text: "Constatarea amiabilă poate fi folosită în condițiile legii pentru două vehicule asigurate și numai pagube materiale, cu acordul ambilor conducători. Dacă nu se aplică o excepție legală, accidentul de circulație cu pagube materiale se declară poliției competente în cel mult 24 de ore.",
   },
   {
     title: "Păstrează documentele",
@@ -85,7 +85,7 @@ export const rcaFaqs = [
   {
     question: "Ce se întâmplă dacă nu am RCA?",
     answer:
-      "Lipsa RCA poate atrage sancțiuni, iar în caz de accident poți ajunge să suporți personal prejudiciile produse. De aceea polița trebuie menținută valabilă continuu.",
+      "Lipsa RCA, când asigurarea este obligatorie, poate atrage sancțiuni și recuperarea de la persoana responsabilă a prejudiciilor plătite în condițiile legii. Parcarea sau neutilizarea nu suspendă automat obligația.",
   },
   {
     question: "Cum se calculează prețul RCA?",

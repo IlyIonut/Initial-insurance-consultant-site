@@ -1,3 +1,5 @@
+import { QuestionSection } from "@/components/QuestionSection";
+import { rcaArticleFaqs } from "@/lib/faq-content";
 import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
@@ -29,7 +31,7 @@ export default function BlogRcaDocsPage() {
         <section className="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-6">
           <h2 className="text-2xl font-bold text-slate-950">Condiții generale pentru RCA</h2>
           <p className="mt-4 text-sm leading-6 text-slate-600">
-            Vehiculul trebuie să fie înmatriculat, supus înmatriculării sau înregistrat, iar asiguratul trebuie să fie persoana fizică sau juridică înscrisă în documentele vehiculului ori persoana pe numele căreia urmează înmatricularea.
+            Datele de proprietar și utilizator trebuie să corespundă documentelor și situației legale. Pentru înmatriculare, leasing și regim temporar pot exista documente și reguli diferite. Obligația RCA se verifică pentru categoria și situația concretă.
           </p>
         </section>
 
@@ -57,6 +59,6 @@ export default function BlogRcaDocsPage() {
           <Link href="/ghid-rca" className="text-slate-950 underline underline-offset-4">Vezi ghidul RCA complet →</Link>
         </nav>
       </article>
-    </main>
+    <QuestionSection items={rcaArticleFaqs.documents}/></main>
   );
 }

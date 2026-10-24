@@ -1,43 +1,13 @@
-# SEO — structură și configurare
+# SEO — acoperire națională, prioritate Cluj/Bihor
 
-Poziționare principală: asigurări pentru firme și IMM-uri în Cluj și Bihor. Poziționare secundară: asigurări pentru persoane fizice.
+Serviciile sunt prezentate pentru clienți din toată România. Cluj și Bihor rămân în titlurile și descrierile relevante și în datele structurate. Service.areaServed și organizația includ România. Nu sunt inventate adrese sau sedii locale.
 
-## Structura comercială
+Sitemap-ul include 38 de pagini, inclusiv /termeni-si-conditii. Se păstrează cele șase soluții business, cinci domenii, trei ghiduri pentru antreprenori, opt pagini personale și ghidurile RCA. /asigurare-travel redirecționează permanent la /asigurare-calatorie.
 
-- `/asigurari-firme`: pagina centrală pentru firme.
-- `/asigurari-firme/bunuri-si-echipamente`
-- `/asigurari-firme/raspundere-civila-profesionala`
-- `/asigurari-firme/flote-auto`
-- `/asigurari-firme/sanatate-angajati`
-- `/asigurari-firme/intreruperea-activitatii`
-- `/asigurari-firme/riscuri-cibernetice`
+Titlurile și descrierile sunt distincte, cu un H1 pe pagină. Datele structurate folosesc organizație, breadcrumb, servicii și articole. Întrebările sunt vizibile în HTML cu details/summary. Nu se promit rich snippets sau poziții Google.
 
-Cele cinci pagini din `/domenii/` explică riscuri și informații specifice activității și conduc la soluțiile relevante. Cele trei articole din `/ghiduri/` răspund întrebărilor de început ale antreprenorilor și au legături către paginile comerciale.
+Revizia este din 25 octombrie 2026. Imaginea PNG socială este generată la /og cu mesaj național. Canonical, Open Graph, sitemap și robots folosesc NEXT_PUBLIC_SITE_URL, implicit domeniul Vercel de producție. Previzualizările emit noindex.
 
-`/persoane-fizice` reunește paginile personale. Adresele lor vechi și ghidurile RCA au fost păstrate. `/asigurare-travel` redirecționează permanent la `/asigurare-calatorie`.
+Întrebările au fost selectate din teme întâlnite în FAQ-uri publicate și documente de produs și de autorități. Nu au fost măsurate volume ori clasamente de căutare. Sursele sunt păstrate în docs/content-review.md, fără linkuri externe în paginile publice.
 
-## Implementare
-
-- Conținut HTML generat pe server și, în exportul Next.js, pagini publice pre-randate.
-- Titluri și descrieri distincte pentru cele 37 de pagini din sitemap.
-- Canonical și Open Graph pe fiecare adresă.
-- Imagine de distribuire de 1200 × 630 și favicon propriu.
-- Sitemap și robots.txt generate din domeniul real configurat.
-- Domeniu implicit de producție: `https://initial-insurance-consultant-site.vercel.app`; poate fi înlocuit prin `NEXT_PUBLIC_SITE_URL` în Vercel.
-- Previzualizările Vercel emit `noindex` prin `VERCEL_ENV=preview`.
-- Date structurate pentru organizație, breadcrumb, servicii și articole, fără recenzii sau ratinguri inventate.
-- Legături între domenii, soluții, ghiduri și formular.
-- Conținut local inclus natural; fără multiplicarea unor pagini aproape identice pe localități.
-- Imagine principală WebP, dimensiuni declarate și prioritate de încărcare pentru vizualul principal.
-
-## Înainte de lansarea pe domeniul final
-
-1. Completează `NEXT_PUBLIC_SITE_URL`, datele reale de contact și identitatea profesională.
-2. Reexecută build-ul și verifică domeniul din canonical, Open Graph, sitemap și JSON-LD.
-3. Configurează recepția formularului și testează o solicitare completă.
-4. Actualizează informațiile de confidențialitate pentru operatorul și serviciile efectiv folosite.
-5. Dacă schimbi adresele unui site deja public, păstrează redirecționări permanente către echivalentele lor.
-6. După lansarea publică, trimite sitemap-ul în Google Search Console și verifică indexarea.
-7. Completează în timp conținutul cu experiență și exemple reale, publicabile, fără promisiuni de despăgubire.
-
-Nu au fost estimate volume de căutare, costuri Google Ads sau poziții viitoare. Versiunea privată de previzualizare nu este indexabilă ca un site public.
+La un domeniu nou actualizează URL-ul canonic, reexecută build-ul și configurează redirecționările. Completează identitatea profesională și validează informarea juridică. Revizuiește conținutul la schimbări legislative sau de produs, mai ales valorile PAD, regulile RCA și obligațiile precontractuale.

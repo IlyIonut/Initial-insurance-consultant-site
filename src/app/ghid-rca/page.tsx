@@ -1,8 +1,9 @@
+import { QuestionSection } from "@/components/QuestionSection";
+import { rcaFaqs } from "@/lib/rca-content";
 import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { SectionHeader } from "@/components/SectionHeader";
-import { SITE } from "@/lib/site";
 import { rcaGuideCards, rcaHighlights } from "@/lib/rca-content";
 
 export const metadata = pageMetadata("Ghid RCA: acoperiri, bonus-malus și daune", "Ghid RCA pentru persoane fizice și firme: ce acoperă polița, cum o cumperi, bonus-malus și pașii după un accident. Explicații clare și verificări utile.", "/ghid-rca");
@@ -21,8 +22,8 @@ export default function RcaGuideIndexPage() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/contact?pentru=personal&tip=RCA">Cere ofertă RCA</ButtonLink>
-            <ButtonLink href={SITE.phoneRaw ? `https://wa.me/${SITE.phoneRaw}?text=Bună! Doresc să discut despre RCA.` : "/contact?pentru=personal&tip=RCA"} variant="secondary">
-              Întreabă pe WhatsApp
+            <ButtonLink href="/contact?pentru=personal&tip=RCA" variant="secondary">
+              Discută despre RCA
             </ButtonLink>
           </div>
         </div>
@@ -49,7 +50,7 @@ export default function RcaGuideIndexPage() {
           <SectionHeader
             eyebrow="Pagini RCA"
             title="Alege subiectul care te interesează"
-            description="Aceste pagini pot fi folosite și ca articole SEO pentru clienții care caută răspunsuri concrete pe Google."
+            description="Găsește răspunsuri despre acoperiri, cumpărare, istoricul de daune și pașii după un accident."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {rcaGuideCards.map((card) => (
@@ -71,6 +72,6 @@ export default function RcaGuideIndexPage() {
           </p>
         </div>
       </section>
-    </main>
+    <QuestionSection items={rcaFaqs.slice(0, 3)}/></main>
   );
 }

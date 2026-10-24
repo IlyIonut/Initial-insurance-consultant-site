@@ -1,3 +1,5 @@
+import { QuestionSection } from "@/components/QuestionSection";
+import { rcaArticleFaqs } from "@/lib/faq-content";
 import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
@@ -15,11 +17,11 @@ const principles = [
   },
   {
     title: "Istoricul se urmărește pe vehicul/asigurat",
-    text: "Dacă ai mai multe vehicule, aplicarea bonus-malus se analizează individual, în funcție de datele disponibile și regulile aplicabile.",
+    text: "Pentru persoanele fizice se aplică aceeași clasă bonus-malus vehiculelor deținute, potrivit normei. Pentru persoanele juridice, încadrarea este distinctă pe vehicul.",
   },
   {
     title: "La schimbarea vehiculului, întreabă de transfer",
-    text: "În anumite situații, când vinzi sau radiezi un vehicul și cumperi altul, poți solicita transferul bonusului pe noul vehicul, cu documente justificative.",
+    text: "Pentru persoanele juridice, transferul clasei de pe un vehicul înstrăinat sau radiat pe unul nou-dobândit se verifică pe baza solicitării și documentelor justificative. Pentru persoanele fizice se aplică regulile clasei comune.",
   },
 ];
 
@@ -73,6 +75,6 @@ export default function BonusMalusPage() {
           <Link href="/ghid-rca/accident-si-daune" className="text-slate-950 underline underline-offset-4">Următorul: accident și daune →</Link>
         </nav>
       </article>
-    </main>
+    <QuestionSection items={rcaArticleFaqs.bonus}/></main>
   );
 }

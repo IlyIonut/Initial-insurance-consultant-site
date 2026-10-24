@@ -1,3 +1,4 @@
+import { personalFaqExtras } from "./faq-content";
 export type InsuranceContentSection = {
   title: string;
   body: string;
@@ -54,9 +55,9 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
     compareChecklist: [
       "riscurile incluse în pachetul de bază și opțiunile suplimentare",
       "franșiza: valoare fixă, procentuală sau pe anumite tipuri de daune",
-      "excluderile: utilizare comercială, șoferi neautorizați, neglijență, uzură, daune anterioare",
+      "excluderile și condițiile pentru utilizare comercială, șoferi, uzură și daune anterioare",
       "modul de stabilire a valorii asigurate și a despăgubirii",
-      "service agreat / service ales / decontare directă",
+      "service agreat, service ales și modul de decontare a reparației",
       "acoperirea în afara României și eventualele limite teritoriale",
     ],
     offerData: [
@@ -81,10 +82,10 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
           "În piață există pachete de bază, pachete extinse și clauze opționale. Unele includ doar riscuri limitate, altele adaugă furt, vandalism, fenomene naturale, elemente vitrate, asistență rutieră sau extindere teritorială. Recomandarea trebuie făcută după nevoia clientului, nu după un singur beneficiu promovat de un asigurător.",
       },
     ],
-    faqs: [
+    faqs: [...[
       {
-        question: "CASCO este obligatorie?",
-        answer: "Nu. CASCO este facultativă, dar poate fi cerută de finanțator în cazul leasingului sau creditului auto.",
+        question: "Cât costă CASCO și este obligatorie?",
+        answer: "CASCO este facultativă, dar poate fi cerută contractual de finanțator. Prima depinde de vehicul, valoare, utilizare, istoric, riscuri, franșiză și service. Nu există un tarif universal fără evaluarea datelor.",
       },
       {
         question: "CASCO acoperă orice daună?",
@@ -98,7 +99,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
         question: "Pot alege service-ul?",
         answer: "Depinde de poliță. Unele produse lucrează cu service-uri agreate, altele permit o libertate mai mare. Acest aspect trebuie verificat din ofertă.",
       },
-    ],
+    ], ...personalFaqExtras["casco"]],
   },
 
   locuinta: {
@@ -150,7 +151,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       {
         title: "PAD, pe scurt",
         body:
-          "PAD este polița obligatorie pentru locuințe. Pentru locuințele de tip A, suma asigurată este 100.000 lei, cu primă anuală de 130 lei. Pentru locuințele de tip B, suma asigurată este 50.000 lei, cu primă anuală de 50 lei. Valorile trebuie verificate periodic, pentru că pot exista modificări legislative.",
+          "PAD privește construcțiile cu destinație de locuință, în condițiile și cu excepțiile legale. La 25 octombrie 2026, pentru tip A suma asigurată este 100.000 lei și prima anuală 130 lei; pentru tip B, 50.000 lei și 50 lei. Tipul este determinat de caracteristicile construcției conform legii, nu de valoarea aleasă de proprietar.",
       },
       {
         title: "Facultativa de locuință",
@@ -158,14 +159,14 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
           "Asigurarea facultativă nu trebuie prezentată ca un produs unic universal. În funcție de asigurător și pachet, poate include clădirea, bunurile, instalațiile, riscuri de apă, incendiu, furt, fenomene naturale, răspundere civilă sau servicii de asistență la domiciliu.",
       },
     ],
-    faqs: [
+    faqs: [...[
       {
         question: "PAD este suficientă pentru locuință?",
         answer: "PAD acoperă doar riscurile obligatorii prevăzute de lege. Pentru protecție extinsă este utilă o poliță facultativă.",
       },
       {
         question: "Pot face facultativă fără PAD?",
-        answer: "În practică, facultativa se analizează împreună cu existența PAD. Recomand să verificăm situația exactă înainte de ofertare.",
+        answer: "Regula legală este că asigurarea facultativă a locuinței se încheie dacă există PAD valabilă, cu excepțiile prevăzute de lege. Facultativa nu înlocuiește PAD. Situațiile speciale, inclusiv cele privind riscul seismic, se verifică înainte de emitere.",
       },
       {
         question: "Pot asigura și bunurile?",
@@ -175,7 +176,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
         question: "Ce înseamnă răspundere civilă față de vecini?",
         answer: "Este acoperirea care poate ajuta dacă produci accidental prejudicii altor persoane, de exemplu o daună de apă către un vecin, dacă riscul este inclus.",
       },
-    ],
+    ], ...personalFaqExtras["locuinta"]],
   },
 
   calatorie: {
@@ -236,10 +237,10 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
           "Nu alegem doar după cel mai mic preț. Pentru o familie, o călătorie în SUA/Canada sau o vacanță la schi, criteriile importante pot fi diferite. De aceea discutăm perioada, destinația, activitățile și acoperirile suplimentare dorite.",
       },
     ],
-    faqs: [
+    faqs: [...[
       {
         question: "Este suficient cardul european de sănătate?",
-        answer: "Cardul european poate fi util în anumite situații în UE, dar nu înlocuiește automat o asigurare de călătorie cu asistență, bagaje sau storno. Depinde de destinație și de nevoia ta.",
+        answer: "Cardul oferă acces la îngrijiri medicale necesare în sistemul public în statele și condițiile aplicabile unei șederi temporare. Nu acoperă prin el însuși repatrierea, serviciile private, bagajele sau anularea călătoriei. Nu înlocuiește o asigurare de călătorie adecvată.",
       },
       {
         question: "Bagajele sunt incluse automat?",
@@ -247,13 +248,13 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       },
       {
         question: "Pot include anularea călătoriei?",
-        answer: "Da, la anumite produse există clauză de tip storno/anulare, dar condițiile și momentul încheierii poliței sunt importante.",
+        answer: "Anumite produse oferă storno pentru cauzele de anulare expres prevăzute. Nu înseamnă anulare din orice motiv. Verifică momentul încheierii, cauzele, sumele nerambursabile, franșiza și documentele justificative.",
       },
       {
         question: "Am nevoie de clauză pentru sporturi?",
         answer: "Dacă mergi la schi, sporturi nautice, drumeții dificile sau alte activități speciale, trebuie verificată acoperirea dedicată.",
       },
-    ],
+    ], ...personalFaqExtras["calatorie"]],
   },
 
   sanatate: {
@@ -280,7 +281,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       "servicii în rețea medicală parteneră sau prin rambursare",
       "a doua opinie medicală sau tratament în străinătate, la produse specializate",
       "beneficii de grup pentru angajați, în funcție de contract",
-      "limite anuale, sub-limite pe servicii și perioade de așteptare",
+      "servicii de prevenție sau beneficii în sumă fixă, numai dacă sunt incluse",
     ],
     compareChecklist: [
       "ce servicii sunt incluse: ambulatoriu, spitalizare, chirurgie, investigații",
@@ -299,7 +300,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       "nu trimite diagnostice, analize sau documente medicale prin formularul public",
     ],
     importantNote:
-      "Pentru sănătate, datele medicale sunt sensibile. Site-ul trebuie să colecteze doar o solicitare de contact; detaliile medicale, dacă sunt necesare, se gestionează ulterior prin canalele și documentele asigurătorului.",
+      "Pentru primul contact, descrie doar nevoia generală. Datele medicale sunt sensibile și nu se transmit prin formularul public; dacă sunt necesare, se gestionează ulterior prin canalele și documentele asigurătorului.",
     sections: [
       {
         title: "Asigurare de sănătate vs. abonament medical",
@@ -312,7 +313,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
           "Pentru companii, asigurarea de sănătate poate fi un beneficiu pentru angajați. Analiza pornește de la numărul de persoane, profilul echipei, localități, buget și nivelul de acoperire dorit.",
       },
     ],
-    faqs: [
+    faqs: [...[
       {
         question: "Trebuie să trimit analize sau diagnostice prin formular?",
         answer: "Nu. Formularul public trebuie folosit doar pentru solicitarea de contact. Datele medicale se tratează separat, conform procedurilor asigurătorului.",
@@ -329,7 +330,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
         question: "Pot face asigurare pentru angajați?",
         answer: "Da, există soluții de grup pentru companii, cu condiții stabilite în funcție de echipă și acoperiri.",
       },
-    ],
+    ], ...personalFaqExtras["sanatate"]],
   },
 
   viata: {
@@ -389,7 +390,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
           "Pentru credite, unele polițe urmăresc protejarea soldului datoriei, uneori cu sumă asigurată descrescătoare. Este important să verificăm cerințele băncii, beneficiarul și perioada creditului.",
       },
     ],
-    faqs: [
+    faqs: [...[
       {
         question: "Ce sumă asigurată ar trebui să aleg?",
         answer: "Depinde de venit, datorii, persoane dependente și perioada în care familia ar avea nevoie de sprijin. Se calculează orientativ în discuția de consultanță.",
@@ -406,85 +407,10 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
         question: "Pot acoperi un credit ipotecar?",
         answer: "Da, există produse dedicate sau adaptabile pentru credite, dar trebuie verificate cerințele băncii.",
       },
-    ],
+    ], ...personalFaqExtras["viata"]],
   },
 
-  firme: {
-    slug: "/asigurari-firme",
-    eyebrow: "Firme",
-    title: "Asigurări pentru firme: bunuri, răspunderi, angajați și activitate",
-    description:
-      "Pentru firme, asigurarea potrivită depinde de activitate, locații, bunuri, echipamente, stocuri, angajați, vehicule și riscurile față de clienți sau terți. Scopul este să identificăm riscurile reale, nu să alegem un pachet generic.",
-    metaTitle: "Asigurări firme | IMM, bunuri, răspundere civilă, flote și angajați",
-    metaDescription:
-      "Consultanță asigurări pentru firme: clădiri, bunuri, echipamente, stocuri, răspundere civilă, răspundere profesională, flote, transport, angajați.",
-    ctaLabel: "Cere ofertă pentru firmă",
-    whatsappMessage: "Bună! Doresc o discuție despre asigurări pentru firmă.",
-    heroBullets: ["Pentru SRL, PFA, cabinete, magazine, birouri, HoReCa sau servicii", "Analizăm riscurile activității, nu doar denumirea produsului", "Pot fi combinate mai multe tipuri de protecție"],
-    suitableFor: [
-      "IMM-uri, PFA-uri și profesii liberale",
-      "magazine, restaurante, birouri, cabinete, depozite sau ateliere",
-      "firme cu echipamente, stocuri sau clădiri",
-      "firme care lucrează cu clienți, vizitatori sau parteneri contractuali",
-      "companii cu autovehicule, transporturi sau angajați pentru care se doresc beneficii",
-    ],
-    commonCoverages: [
-      "clădiri, bunuri, echipamente, stocuri și amenajări",
-      "incendiu, explozie, fenomene naturale, apă de conductă, furt sau vandalism, în funcție de poliță",
-      "întreruperea activității, dacă este inclusă sau atașată",
-      "răspundere civilă legală față de terți",
-      "răspundere profesională pentru anumite profesii",
-      "flote, transporturi, CMR/cargo, accidente angajați sau sănătate de grup, dacă sunt relevante",
-    ],
-    compareChecklist: [
-      "activitatea exactă și codurile CAEN relevante",
-      "locațiile unde se desfășoară activitatea și măsurile de siguranță",
-      "valorile clădirilor, bunurilor, stocurilor și echipamentelor",
-      "limitele de răspundere cerute de contracte sau de lege",
-      "excluderi pentru activități speciale, depozitare, substanțe sau lucrări cu risc ridicat",
-      "dacă este nevoie de polițe separate pentru auto, transport, răspundere profesională sau angajați",
-    ],
-    offerData: [
-      "denumire firmă și domeniul de activitate, fără documente sensibile în primă fază",
-      "tipul locației: birou, magazin, depozit, cabinet, atelier etc.",
-      "valorile orientative ale bunurilor, stocurilor, echipamentelor și clădirilor",
-      "numărul de angajați, dacă se dorește protecție de grup",
-      "cerințe contractuale de la clienți, bănci, furnizori sau autorități",
-      "vehicule, transporturi sau activități speciale, dacă există",
-    ],
-    importantNote:
-      "Pentru firme, un produs standard poate fi insuficient dacă activitatea are riscuri specifice. De aceea, înainte de ofertă trebuie clarificate activitatea, locația, valorile asigurate și limitele de răspundere necesare.",
-    sections: [
-      {
-        title: "O firmă poate avea mai multe riscuri simultan",
-        body:
-          "O companie poate avea nevoie de protecție pentru bunuri, răspundere civilă, vehicule, transporturi, angajați și contracte. Nu toate acestea intră într-o singură poliță, deci consultanța constă în maparea riscurilor.",
-      },
-      {
-        title: "Răspunderea civilă și profesională",
-        body:
-          "Răspunderea civilă legală poate acoperi prejudicii accidentale produse terților. Răspunderea profesională este relevantă pentru profesii sau servicii unde o eroare poate produce pierderi clientului. Limitele și excluderile contează mult.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Pot asigura doar echipamentele firmei?",
-        answer: "Da, în funcție de produs, pot fi asigurate echipamente, stocuri, bunuri sau clădiri. Trebuie stabilite valorile și riscurile dorite.",
-      },
-      {
-        question: "Ce este răspunderea civilă pentru firmă?",
-        answer: "Este protecția pentru anumite prejudicii produse terților prin activitatea firmei, în limitele și condițiile poliței.",
-      },
-      {
-        question: "Am nevoie de răspundere profesională?",
-        answer: "Depinde de profesie, contracte și obligații legale. Este relevantă mai ales când oferi servicii specializate și poți produce pierderi clientului printr-o eroare profesională.",
-      },
-      {
-        question: "Poți analiza o flotă mică?",
-        answer: "Da. Pentru flote contează numărul de vehicule, utilizarea lor, șoferii, istoricul de daune și tipul activității.",
-      },
-    ],
-  },
+
 
   raspundere: {
     slug: "/asigurare-raspundere-civila",
@@ -543,7 +469,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
           "Limita de răspundere este suma maximă până la care asigurătorul poate despăgubi, conform poliței. O limită prea mică poate face polița insuficientă pentru contracte sau riscuri reale.",
       },
     ],
-    faqs: [
+    faqs: [...[
       {
         question: "Este obligatorie răspunderea profesională?",
         answer: "Pentru unele profesii poate fi obligatorie sau cerută de organizații profesionale/contracte. Trebuie verificat cazul concret.",
@@ -560,7 +486,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
         question: "Pot asigura o activitate desfășurată și în afara României?",
         answer: "Depinde de teritoriul și jurisdicția acceptate de asigurător. Trebuie menționat înainte de ofertare.",
       },
-    ],
+    ], ...personalFaqExtras["raspundere"]],
   },
 
   accidente: {
@@ -620,7 +546,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
           "Nu compara doar prima. Uită-te la sumele asigurate pe fiecare risc, excluderi, activități acoperite și modul de despăgubire.",
       },
     ],
-    faqs: [
+    faqs: [...[
       {
         question: "Este același lucru cu asigurarea de viață?",
         answer: "Nu. Poate include deces din accident, dar este concentrată pe evenimente accidentale și consecințele lor, conform condițiilor.",
@@ -637,6 +563,6 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
         question: "Pot face pentru angajați?",
         answer: "Da, există soluții de grup pentru angajați, în funcție de asigurător și condiții.",
       },
-    ],
+    ], ...personalFaqExtras["accidente"]],
   },
 };
