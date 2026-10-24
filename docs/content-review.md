@@ -120,6 +120,10 @@ După deconectare, sursa a fost pregătită prin conectorul GitHub. Varianta fin
 
 ## Observație despre build și imaginea socială
 
-Auditul npm din Vercel a semnalat un advisory critic pe versiunea Next.js existentă. Advisory-ul oficial GHSA-vcvr-r3jv-pc5j privește ImageResponse pe Node cu date controlate de atacator și exclude explicit implementarea Edge. Ruta nouă /og folosește implementarea Edge, doar valori constante și logo-ul din repository; nu citește parametri, headere sau date de clienți. Nu s-a schimbat versiunea framework-ului în această revizie. O actualizare de dependențe se tratează separat.
+Auditul npm din Vercel a semnalat un advisory critic pe versiunea Next.js existentă. Advisory-ul oficial GHSA-vcvr-r3jv-pc5j privește ImageResponse pe Node când valori controlate de atacator ajung în SVG. Vendorul exclude explicit aplicațiile care nu transmit asemenea valori și indică evitarea lor ca workaround.
+
+Ruta /og folosește exclusiv text constant și logo-ul din repository, nu primește Request și nu citește parametri, headere, date de formular sau alte valori de la vizitatori. Este declarată force-static și este generată la build pe Node. Aceasta corespunde excepției descrise de vendor; nu este o afirmație că pachetul a fost actualizat ori că toate vulnerabilitățile au fost auditate.
+
+A fost încercată și implementarea Edge, dar deploymentul a depășit limita funcției pentru planul existent (1,07 MB față de 1 MB). S-a păstrat generarea statică pe Node cu intrări constante. Nu s-a schimbat sau cumpărat un plan. Actualizarea de dependențe se tratează separat.
 
 Referință: https://github.com/vercel/next.js/security/advisories/GHSA-vcvr-r3jv-pc5j
