@@ -117,3 +117,9 @@ După deconectare, sursa a fost pregătită prin conectorul GitHub. Varianta fin
 - **L3** — [ANSPDCP — întrebări frecvente și temeiuri](https://www.dataprotection.ro/?page=IntrebariFrecvente1)
 - **L4** — [Vercel — Data Processing Addendum](https://vercel.com/legal/dpa)
 - **L5** — [Google — politica de confidențialitate](https://policies.google.com/privacy?hl=en-US)
+
+## Observație despre build și imaginea socială
+
+Auditul npm din Vercel a semnalat un advisory critic pe versiunea Next.js existentă. Advisory-ul oficial GHSA-vcvr-r3jv-pc5j privește ImageResponse pe Node cu date controlate de atacator și exclude explicit implementarea Edge. Ruta nouă /og folosește implementarea Edge, doar valori constante și logo-ul din repository; nu citește parametri, headere sau date de clienți. Nu s-a schimbat versiunea framework-ului în această revizie. O actualizare de dependențe se tratează separat.
+
+Referință: https://github.com/vercel/next.js/security/advisories/GHSA-vcvr-r3jv-pc5j
