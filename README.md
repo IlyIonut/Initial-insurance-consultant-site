@@ -54,7 +54,7 @@ Copiază `.env.example` în `.env.local` și completează:
 - `NEXT_PUBLIC_PHONE`: numărul internațional, numai cifre, de exemplu prefixul 40 urmat de număr;
 - `NEXT_PUBLIC_PHONE_DISPLAY`: forma în care se afișează telefonul;
 - `NEXT_PUBLIC_CONTACT_EMAIL`: adresa de contact;
-- `NEXT_PUBLIC_CONTACT_ENDPOINT`: opțional, serviciul HTTPS care recepționează formularul.
+- `CONTACT_GOOGLE_SCRIPT_URL` și `CONTACT_SHARED_SECRET`: setări private pentru integrarea formularului, exclusiv pe server.
 
 Reexecută build-ul după modificarea variabilelor publice. În lipsa unui domeniu configurat, metadatele folosesc adresa de producție Vercel indicată mai sus.
 
@@ -62,11 +62,13 @@ Nu sunt inventate numere de telefon, recenzii, clienți, asigurători parteneri,
 
 ## Formularul de contact
 
-Fără `NEXT_PUBLIC_CONTACT_ENDPOINT`, formularul pregătește o cerere care poate fi copiată sau descărcată și precizează că nu a fost transmisă automat. Nu pretinde că a trimis un mesaj.
+Integrarea Google Sheets + email este pregătită în `google-apps-script/`. După configurarea `CONTACT_GOOGLE_SCRIPT_URL` și `CONTACT_SHARED_SECRET` pe server, formularul afișează „Trimite cererea”, înregistrează datele în registrul privat și notifică proprietarul prin email. Fără aceste setări păstrează modul de pregătire/copiere/descărcare.
 
-Dacă este completat telefonul sau emailul, cererea pregătită poate fi continuată și pe WhatsApp sau prin clientul de email. Utilizatorul efectuează trimiterea în serviciul ales.
+Ruta `/api/contact` validează datele pe server și semnează solicitarea; URL-ul Google și cheia comună nu ajung în browser. Un identificator stabil previne rândurile duplicate la reîncercare. Confirmarea de pe site apare numai după confirmarea salvării. Apps Script păstrează și reîncearcă separat notificările nereușite.
 
-Cu un endpoint configurat, formularul trimite JSON prin POST și confirmă trimiterea numai după un răspuns HTTP reușit. Serviciul receptor trebuie să aplice validare pe server și protecție anti-abuz, să aibă accesul și destinatarii stabiliți corect și să gestioneze datele conform politicii efective a activității. Completează politica de confidențialitate pentru fluxul real.
+Registrul include statusuri și observații editabile și se descarcă din Google Sheets în Excel sau CSV. Instrucțiunile de activare și verificare sunt în `google-apps-script/README.md`. Nu se solicită și nu se încarcă documente sensibile.
+
+Verificări: `node --test tests/*.test.mjs`, apoi `npm run build`. Activarea în contul Google și o cerere reală de test sunt necesare pentru confirmarea fluxului complet.
 
 ## Asistentul orientativ
 
@@ -96,7 +98,7 @@ Răspunsurile nu sunt oferte, confirmări de acoperire sau recomandări contract
 - Răspunsul orientativ pentru o întrebare despre un atelier.
 - Verificarea afișării la o lățime mobilă, inclusiv lipsa depășirilor orizontale pe paginile inspectate.
 
-Trimiterea către un endpoint extern și generarea AI cu o cheie reală nu au fost testate, deoarece aceste servicii nu au fost configurate.
+Verificarea reală Google Sheets/email se efectuează după autorizarea proiectului Apps Script și configurarea secretelor Vercel. Generarea AI cu o cheie reală nu a fost testată.
 
 ## SEO și lansare
 

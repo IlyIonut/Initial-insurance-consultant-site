@@ -1,17 +1,26 @@
 "use client";
 import Link from "next/link";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { SITE } from "@/lib/site";
 import { Icon } from "./Icon";
-const businessTypes = ["Analiza polițelor existente", "Bunuri și echipamente", "Răspundere civilă / profesională", "Flote auto", "Sănătate pentru angajați", "Întreruperea activității", "Riscuri cibernetice", "Nu știu încă ce mi se potrivește"];
-const personalTypes = ["RCA", "CASCO", "Locuință", "Călătorie", "Sănătate", "Viață", "Accidente", "Răspundere civilă"];
+import { businessTypes, personalTypes } from "@/lib/contact-fields.mjs";
 export function ContactForm({ initialAudience = "business", initialType = "" }: { initialAudience?: "business" | "personal"; initialType?: string }) {
   const [audience, setAudience] = useState(initialAudience);
   const [type, setType] = useState(initialType);
   const [status, setStatus] = useState<"idle" | "loading" | "sent" | "prepared" | "error">("idle");
   const [prepared, setPrepared] = useState("");
   const [copied, setCopied] = useState(false);
-  const endpoint = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT || "";
+  const [sendingAvailable, setSendingAvailable] = useState<boolean | null>(null);
+  const lastSubmission = useRef<{ snapshot: string; id: string } | null>(null);
+  const submitting = useRef(false);
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch("/api/contact", { cache: "no-store", signal: controller.signal })
+      .then(response => response.ok ? response.json() : Promise.reject())
+      .then(data => setSendingAvailable(data.available === true))
+      .catch(() => { if (!controller.signal.aborted) setSendingAvailable(false); });
+    return () => controller.abort();
+  }, []);
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const selectedAudience = params.get("pentru") === "personal" ? "personal" : initialAudience;
@@ -25,18 +34,25 @@ export function ContactForm({ initialAudience = "business", initialType = "" }: 
   }, [initialAudience, initialType]);
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submitting.current || sendingAvailable === null) return;
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
     if (data.website) return;
     const message = `Solicitare de consultanță în asigurări\n\nPentru: ${audience === "business" ? "Firmă" : "Persoană fizică"}\nNume: ${data.name}\nEmail: ${data.email}\nTelefon: ${data.phone || "-"}\n${audience === "business" ? `Firmă / activitate: ${data.business || "-"}\n` : ""}Localitate: ${data.city || "-"}\nInteres: ${data.insuranceType}\n${data.renewal ? `Reînnoire: ${data.renewal}\n` : ""}Mesaj: ${data.message || "-"}`;
     setPrepared(message); setCopied(false);
-    if (endpoint) {
+    if (sendingAvailable) {
+      const snapshot = JSON.stringify({ ...data, audience });
+      if (lastSubmission.current?.snapshot !== snapshot) lastSubmission.current = { snapshot, id: crypto.randomUUID() };
+      const requestId = lastSubmission.current!.id;
+      submitting.current = true;
       setStatus("loading");
       try {
-        const response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...data, audience }) });
-        if (!response.ok) throw new Error("delivery");
-        setStatus("sent"); form.reset(); setType("");
+        const response = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...data, audience, requestId }), signal: AbortSignal.timeout(28000) });
+        const result = await response.json();
+        if (!response.ok || result.ok !== true || result.stored !== true || result.requestId !== requestId) throw new Error("delivery");
+        setStatus("sent"); form.reset(); setType(""); lastSubmission.current = null;
       } catch { setStatus("error"); }
+      finally { submitting.current = false; }
       return;
     }
     setStatus("prepared");
@@ -57,8 +73,8 @@ export function ContactForm({ initialAudience = "business", initialType = "" }: 
     <label className="field-wide">Ce ar fi util să știu? <span className="optional">opțional</span><textarea name="message" rows={3} maxLength={1800} placeholder={audience === "business" ? "Ex. Avem echipamente și un spațiu închiriat. Vrem să verificăm ce protecție ne trebuie." : "Spune-mi pe scurt ce asigurare cauți."} /></label></div>
     <div className="honeypot" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
     <label className="consent"><input type="checkbox" required name="consent" value="accepted" /><span>Am citit <Link href="/confidentialitate">politica de confidențialitate</Link> și sunt de acord să fiu contactat în legătură cu solicitarea mea.</span></label>
-    <button type="submit" className="button button-primary form-submit" disabled={status === "loading"}>{status === "loading" ? "Se trimite…" : endpoint ? "Trimite solicitarea" : "Pregătește solicitarea"}<Icon name="arrow" size={19} /></button><p className="form-footnote">Fără obligația de a încheia o poliță. Nu introduce CNP, date medicale sau documente.</p>
-    <div aria-live="polite">{status === "sent" && <div className="form-result success"><strong>Solicitarea a fost trimisă.</strong><p>Te voi contacta pentru a clarifica detaliile.</p></div>}
+    <button type="submit" className="button button-primary form-submit" disabled={status === "loading" || sendingAvailable === null}>{status === "loading" ? "Se trimite…" : sendingAvailable === null ? "Se încarcă…" : sendingAvailable ? "Trimite cererea" : "Pregătește solicitarea"}<Icon name="arrow" size={19} /></button><p className="form-footnote">Fără obligația de a încheia o poliță. Nu introduce CNP, date medicale sau documente.</p>
+    <div aria-live="polite">{status === "sent" && <div className="form-result success"><strong>Cererea ta a fost înregistrată.</strong><p>Te voi contacta pentru a clarifica detaliile.</p></div>}
     {status === "prepared" && <div className="form-result"><strong>Cererea ta este pregătită.</strong><p>O poți copia sau descărca. Nu a fost transmisă automat.</p><div className="result-actions"><button type="button" onClick={copy}>{copied ? "Copiată ✓" : "Copiază cererea"}</button><button type="button" onClick={download}>Descarcă cererea</button>{SITE.phoneRaw && <a target="_blank" rel="noopener noreferrer" href={`https://wa.me/${SITE.phoneRaw}?text=${encodeURIComponent(prepared)}`}>Continuă pe WhatsApp ↗</a>}{SITE.email && <a href={`mailto:${SITE.email}?subject=${encodeURIComponent("Solicitare asigurări")}&body=${encodeURIComponent(prepared)}`}>Continuă prin email ↗</a>}</div></div>}
-    {status === "error" && <div className="form-result error"><strong>Solicitarea nu a putut fi trimisă.</strong><p>Poți salva cererea și încerca din nou.</p><button type="button" onClick={download}>Descarcă cererea</button></div>}</div></form>;
+    {status === "error" && <div className="form-result error"><strong>Înregistrarea cererii nu a putut fi confirmată.</strong><p>Încearcă din nou. Poți descărca o copie a cererii înainte de a reveni.</p><button type="button" onClick={download}>Descarcă cererea</button></div>}</div></form>;
 }
