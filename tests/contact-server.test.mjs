@@ -34,7 +34,7 @@ test('Configuration is private and missing configuration cannot report success',
 });
 
 test('Validation rejects missing consent, mismatched insurance, malformed dates and header injection', async () => {
-  for (const patch of [{ consent: '' }, { noticeVersion: '' }, { noticeVersion: '2026-10-24' }, { audience: 'other' }, { insuranceType: 'RCA' }, { renewal: '2027-99' }, { email: 'ok@example.com\nBcc: other@example.com' }, { message: 'x'.repeat(1801) }, { business: '' }, { website: 'bot.example' }]) {
+  for (const patch of [{ consent: '' }, { noticeVersion: '' }, { noticeVersion: '2026-10-24' }, { noticeVersion: '2026-10-25' }, { audience: 'other' }, { insuranceType: 'RCA' }, { renewal: '2027-99' }, { email: 'ok@example.com\nBcc: other@example.com' }, { message: 'x'.repeat(1801) }, { business: '' }, { website: 'bot.example' }]) {
     const response = await submitContact(request({ ...valid(), ...patch }), { env, fetcher: () => assert.fail('Must not forward invalid data') });
     assert.equal(response.status, 400, JSON.stringify(patch).slice(0, 90));
   }

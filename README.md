@@ -47,7 +47,9 @@ Completează numai date reale, verificate, din .env.example:
 
 În lipsa adresei publice configurate, contactul este contul indicat pentru experiment: iliesionut3@gmail.com. Codul nu inventează operatori, adrese, coduri ASF/RIS, afilieri, remunerații sau autorizări.
 
-Textele sunt o implementare pentru fluxul actual, nu o certificare de conformitate. Rămân de finalizat identitatea și procedurile intermediarului, condițiile reale ale conturilor Google/Vercel și validarea responsabilului juridic/compliance al brokerului.
+Identitatea publică este configurată în Vercel: Ilies Ionut Cristian — PFI, intermediar secundar în asigurări, RAF 527814, prin Kunden Broker Companie de Brokeraj S.R.L. Codul și numele au fost găsite în registrul publicat de broker. Identificatorul personal fiscal nu este publicat și nu se introduce într-o variabilă NEXT_PUBLIC_. Adresa profesională a titularului rămâne de furnizat.
+
+Textele sunt o implementare pentru fluxul actual, nu o certificare de conformitate. Rămân de validat procedurile intermediarului, rolurile GDPR, condițiile reale ale conturilor Google/Vercel și cerințele responsabilului juridic/compliance al brokerului.
 
 Politica prevede revizuirea și ștergerea manuală a cererilor fără contract în cel mult 12 luni de la ultima comunicare relevantă, în lipsa unui motiv documentat pentru păstrare suplimentară. Nu există ștergere automată. Administratorul gestionează registrul, emailurile și exporturile.
 
@@ -57,7 +59,7 @@ Setări exclusiv pe server: CONTACT_GOOGLE_SCRIPT_URL și CONTACT_SHARED_SECRET.
 
 Ruta /api/contact validează, semnează și confirmă numai salvarea confirmată de Google. UUID-ul stabil împiedică dublarea la reîncercare. Apps Script notifică doar proprietarul configurat și reîncearcă notificările nereușite.
 
-Versiunea 2026-10-25 identifică perechea termeni/informare confirmată de formular. Coloana existentă Acord contact păstrează această versiune. La cererile noi înseamnă solicitarea de contact și citirea documentelor, nu acord pentru marketing.
+Versiunea 2026-10-25.1 identifică perechea termeni/informare cu identitatea profesională, confirmată de formular. Coloana existentă Acord contact păstrează această versiune. La cererile noi înseamnă solicitarea de contact și citirea documentelor, nu acord pentru marketing.
 
 Registrul rămâne privat și se poate exporta din Sheets în Excel ori CSV. Administrare: [google-apps-script/README.md](google-apps-script/README.md). Fără secrete, formularul oferă pregătire/copiere/descărcare, fără să pretindă trimiterea.
 

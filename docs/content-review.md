@@ -63,7 +63,13 @@ Redirectul /asigurare-travel este păstrat. /og generează imaginea socială PNG
 
 ## Puncte juridice care nu sunt închise prin text
 
-Proprietarul a indicat că lucrează ca intermediar autorizat, dar nu a furnizat denumirea/numele juridic complet, adresa profesională, CUI/înregistrarea, codul ASF/RIS, calitatea exactă și brokerul reprezentat. Nu sunt inventate și nu se pretinde verificarea lor. Câmpurile sunt pregătite pentru completare și rebuild.
+Titularul a furnizat identitatea publică: Ilies Ionut Cristian, persoană fizică independentă (PFI), intermediar secundar în asigurări, prin Kunden Broker Companie de Brokeraj S.R.L. Registrul publicat de broker conține numele exact și codul 527814 la coloana „Cod RAF”, fără dată de încetare pe rândul consultat. Afișarea publică folosește RAF 527814, nu un cod RIS dedus. Verificarea este în registrul publicat de broker; nu este prezentată ca verificare separată în baza ASF.
+
+Datele publice sunt configurate în Vercel pentru Production. Nu se publică identificatorul personal folosit fiscal de titular și nu se folosește CUI-ul brokerului ca identificator al PFI. Adresa profesională a titularului nu a fost furnizată; sediul brokerului nu este utilizat ca înlocuitor. Aceasta rămâne de completat.
+
+Surse pentru identificare, consultate la 25 octombrie 2026: https://www.kundenbroker.ro/brokeri-in-asigurari-personal-propriu/ și https://www.kundenbroker.ro/impressum/. Nu sunt adăugate linkuri externe în paginile publice.
+
+Perechea termeni/informare cu identitatea completată este versiunea 2026-10-25.1. Formularul și serverul folosesc aceeași versiune, iar testul de validare respinge inclusiv formularul vechi din 2026-10-25.
 
 Trebuie validate de operator și broker: identitatea operatorului GDPR și rolurile în distribuție, procedura reală de petiții, natura serviciului și remunerației, informarea precontractuală, durata documentelor supuse obligațiilor legale și orice informație obligatorie pentru calitatea concretă a intermediarului.
 

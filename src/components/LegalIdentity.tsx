@@ -8,7 +8,7 @@ export function LegalIdentity() {
     {SITE.tradeRegister && <p>Înregistrare în registrul comerțului: {SITE.tradeRegister}.</p>}
     {SITE.consultantName && <p>Persoană de contact: {SITE.consultantName}.</p>}
     {SITE.intermediaryRole && <p>Calitate profesională: {SITE.intermediaryRole}.</p>}
-    {SITE.company && <p>Entitatea de distribuție reprezentată: {SITE.company}.</p>}
+    {SITE.company && <p>Broker partener: {SITE.company}.</p>}
     {SITE.registration && <p>Înregistrare profesională: {SITE.registration}. Înregistrarea și statutul se verifică în registrele publice ale Autorității de Supraveghere Financiară, prin denumire sau cod.</p>}
     <p>Contact: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>{SITE.phoneRaw && <> · <a href={`tel:+${SITE.phoneRaw}`}>{SITE.phoneDisplay || `+${SITE.phoneRaw}`}</a></>}</p>
   </div>;
