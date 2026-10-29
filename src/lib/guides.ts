@@ -1,4 +1,10 @@
 import { guideFaqs } from "./faq-content";
+export function guideHref(slug: string) {
+  return slug === "bunuri-versus-intreruperea-activitatii"
+    ? "/asigurari-firme/intreruperea-activitatii#bunuri-si-continuitate"
+    : `/ghiduri#${slug}`;
+}
+
 export const guides = [
   {
     slug: "ce-asigurari-are-nevoie-un-imm", title: "Ce asigurări merită să analizezi pentru un IMM?", description: "Un punct de pornire pentru bunuri, răspunderi, vehicule și echipă. Fără o listă universală de polițe.", category: "Primii pași", icon: "document", readTime: 4,

@@ -99,25 +99,57 @@ export const rcaFaqs = [
   },
 ];
 
-export const rcaGuideCards = [
+
+export const rcaBuyingSteps = [
   {
-    title: "Ce acoperă RCA",
-    href: "/ghid-rca/ce-acopera-rca",
-    description: "Pe scurt: ce daune acoperă RCA, ce nu acoperă și de ce nu trebuie confundată cu CASCO.",
+    title: "Verifică dacă vehiculul are nevoie de RCA",
+    text: "RCA se încheie la înscrierea în circulație și la expirarea poliței existente. Obligația se verifică potrivit categoriei vehiculului și situației legale; simpla neutilizare nu echivalează cu o suspendare legală a asigurării.",
   },
   {
-    title: "Cum cumperi RCA corect",
-    href: "/ghid-rca/cum-cumperi-rca",
-    description: "Condiții, date necesare, ce verifici pe poliță și cum eviți polițele greșite sau neverificate.",
+    title: "Alege un canal autorizat",
+    text: "RCA trebuie cumpărată printr-un asigurător sau intermediar autorizat. Rolul brokerului este să caute variante, să îți explice diferențele și să emită polița aleasă.",
   },
   {
-    title: "Bonus-malus explicat",
-    href: "/ghid-rca/bonus-malus",
-    description: "De ce un istoric fără daune poate reduce prima și de ce daunele plătite pot majora prețul.",
+    title: "Verifică datele înainte de emitere",
+    text: "Erorile în datele proprietarului sau ale vehiculului pot crea probleme la verificare, bonus-malus sau daună. Verifică atent polița înainte de confirmare.",
   },
   {
-    title: "Accident și daună RCA",
-    href: "/ghid-rca/accident-si-daune",
-    description: "Ce faci după accident, când folosești constatarea amiabilă și cum începe dosarul de daună.",
+    title: "Păstrează documentele",
+    text: "După emitere, păstrează polița, documentul de Carte Verde și datele de contact ale asigurătorului sau consultantului.",
   },
+];
+
+export const rcaBonusPrinciples = [
+  {
+    title: "Fără daune plătite, poți primi bonus",
+    text: "Dacă în perioada de referință nu apar daune plătite pe RCA, la reînnoire poți beneficia de o reducere a primei, conform regulilor sistemului bonus-malus.",
+  },
+  {
+    title: "Daunele plătite pot aduce malus",
+    text: "Dacă sunt înregistrate daune plătite, prima RCA poate fi majorată la reînnoire. În general contează dauna plătită, nu doar producerea accidentului.",
+  },
+  {
+    title: "Istoricul se urmărește pe vehicul/asigurat",
+    text: "Pentru persoanele fizice se aplică aceeași clasă bonus-malus vehiculelor deținute, potrivit normei. Pentru persoanele juridice, încadrarea este distinctă pe vehicul.",
+  },
+  {
+    title: "La schimbarea vehiculului, întreabă de transfer",
+    text: "Pentru persoanele juridice, transferul clasei de pe un vehicul înstrăinat sau radiat pe unul nou-dobândit se verifică pe baza solicitării și documentelor justificative. Pentru persoanele fizice se aplică regulile clasei comune.",
+  },
+];
+
+export const rcaAmiabilaRules = [
+  "accidentul are doar pagube materiale, fără victime;",
+  "sunt implicate doar două vehicule asigurate, fără alte prejudicii care impun o altă procedură;",
+  "ambii conducători sunt de acord să folosească formularul;",
+  "formularul este completat lizibil, semnat de ambii șoferi și depus la asigurător.",
+];
+
+export const rcaDamageDocs = [
+  "constatarea amiabilă completată sau documentele eliberate de poliție, după caz;",
+  "polița RCA a vehiculului considerat vinovat, în copie;",
+  "permisul de conducere al persoanei implicate, original și copie, după caz;",
+  "certificatul de înmatriculare/talonul vehiculului păgubit;",
+  "împuternicire sau înștiințare dacă vehiculul aparține unei persoane juridice sau societăți de leasing;",
+  "alte documente cerute în scris de asigurător pentru clarificarea dosarului.",
 ];

@@ -69,7 +69,7 @@ Datele publice sunt configurate în Vercel pentru Production. Nu se publică ide
 
 Surse pentru identificare, consultate la 25 octombrie 2026: https://www.kundenbroker.ro/brokeri-in-asigurari-personal-propriu/ și https://www.kundenbroker.ro/impressum/. Nu sunt adăugate linkuri externe în paginile publice.
 
-Perechea termeni/informare cu identitatea completată este versiunea 2026-10-25.1. Formularul și serverul folosesc aceeași versiune, iar testul de validare respinge inclusiv formularul vechi din 2026-10-25.
+Perechea termeni/informare cu identitatea completată și contactul profesional este versiunea 2026-10-29. Formularul și serverul folosesc aceeași versiune, iar testul de validare respinge inclusiv versiunile vechi 2026-10-25 și 2026-10-25.1.
 
 Trebuie validate de operator și broker: identitatea operatorului GDPR și rolurile în distribuție, procedura reală de petiții, natura serviciului și remunerației, informarea precontractuală, durata documentelor supuse obligațiilor legale și orice informație obligatorie pentru calitatea concretă a intermediarului.
 
@@ -133,3 +133,9 @@ Ruta /og folosește exclusiv text constant și logo-ul din repository, nu prime�
 A fost încercată și implementarea Edge, dar deploymentul a depășit limita funcției pentru planul existent (1,07 MB față de 1 MB). S-a păstrat generarea statică pe Node cu intrări constante. Nu s-a schimbat sau cumpărat un plan. Actualizarea de dependențe se tratează separat.
 
 Referință: https://github.com/vercel/next.js/security/advisories/GHSA-vcvr-r3jv-pc5j
+
+## Revizie de structură și contact — 29 octombrie 2026
+
+Cele șapte pagini RCA din tabelul reviziei inițiale au fost reunite în `/asigurare-rca`, cu păstrarea listelor de acoperiri, actelor, verificărilor, principiilor bonus-malus, pașilor după accident și tuturor celor 21 de întrebări distincte. Ghidurile generale pentru firme sunt reunite pe `/ghiduri`; ghidul despre bunuri și întrerupere este inclus integral în produsul de întrerupere a activității. Informațiile contractuale nu au fost extinse cu promisiuni noi de acoperire. Datele reviziei factuale rămân cele originale, distincte de revizia de prezentare.
+
+Adresa profesională de contact public este `Ionut.Ilies@kbagencies.ro`. Notificările formularului și registrul Google nu au fost modificate. Versiunea informării și a termenilor formularului a fost actualizată la `2026-10-29`; formularul respinge versiunile vechi. Identificarea profesională și punctele juridice de validat cu brokerul rămân în evidența de mai sus.

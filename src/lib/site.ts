@@ -6,7 +6,8 @@ export const SITE = {
   seoAreas: ["Cluj", "Bihor"],
   phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || "",
   phoneRaw: (process.env.NEXT_PUBLIC_PHONE || "").replace(/\D/g, ""),
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "iliesionut3@gmail.com",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "Ionut.Ilies@kbagencies.ro",
+  requestEmail: process.env.NEXT_PUBLIC_REQUEST_EMAIL || "",
   company: process.env.NEXT_PUBLIC_BROKER_COMPANY || "",
   registration: process.env.NEXT_PUBLIC_REGISTRATION || "",
   operatorName: process.env.NEXT_PUBLIC_OPERATOR_NAME || "",
@@ -14,7 +15,7 @@ export const SITE = {
   taxId: process.env.NEXT_PUBLIC_TAX_ID || "",
   tradeRegister: process.env.NEXT_PUBLIC_TRADE_REGISTER || "",
   intermediaryRole: process.env.NEXT_PUBLIC_INTERMEDIARY_ROLE || "",
-  complaintsEmail: process.env.NEXT_PUBLIC_COMPLAINTS_EMAIL || process.env.NEXT_PUBLIC_CONTACT_EMAIL || "iliesionut3@gmail.com",
+  complaintsEmail: process.env.NEXT_PUBLIC_COMPLAINTS_EMAIL || process.env.NEXT_PUBLIC_CONTACT_EMAIL || "Ionut.Ilies@kbagencies.ro",
   description: "Asigurări pentru firme și IMM-uri: bunuri, răspunderi, flote și angajați. Consultanță în toată România, inclusiv Cluj și Bihor. Soluții și pentru persoane fizice.",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://initial-insurance-consultant-site.vercel.app").replace(/\/$/, ""),
 };

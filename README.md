@@ -45,7 +45,7 @@ Completează numai date reale, verificate, din .env.example:
 - NEXT_PUBLIC_CONSULTANT_NAME, NEXT_PUBLIC_INTERMEDIARY_ROLE, NEXT_PUBLIC_BROKER_COMPANY și NEXT_PUBLIC_REGISTRATION;
 - NEXT_PUBLIC_CONTACT_EMAIL, NEXT_PUBLIC_COMPLAINTS_EMAIL, NEXT_PUBLIC_PHONE și NEXT_PUBLIC_PHONE_DISPLAY.
 
-În lipsa adresei publice configurate, contactul este contul indicat pentru experiment: iliesionut3@gmail.com. Codul nu inventează operatori, adrese, coduri ASF/RIS, afilieri, remunerații sau autorizări.
+Adresa publică este Ionut.Ilies@kbagencies.ro, distinctă de contul personal folosit pentru notificările formularului. Codul nu inventează operatori, adrese, coduri ASF/RIS, afilieri, remunerații sau autorizări.
 
 Identitatea publică este configurată în Vercel: Ilies Ionut Cristian — PFI, intermediar secundar în asigurări, RAF 527814, prin Kunden Broker Companie de Brokeraj S.R.L. Codul și numele au fost găsite în registrul publicat de broker. Identificatorul personal fiscal nu este publicat și nu se introduce într-o variabilă NEXT_PUBLIC_. Adresa profesională a titularului rămâne de furnizat.
 
@@ -59,7 +59,7 @@ Setări exclusiv pe server: CONTACT_GOOGLE_SCRIPT_URL și CONTACT_SHARED_SECRET.
 
 Ruta /api/contact validează, semnează și confirmă numai salvarea confirmată de Google. UUID-ul stabil împiedică dublarea la reîncercare. Apps Script notifică doar proprietarul configurat și reîncearcă notificările nereușite.
 
-Versiunea 2026-10-25.1 identifică perechea termeni/informare cu identitatea profesională, confirmată de formular. Coloana existentă Acord contact păstrează această versiune. La cererile noi înseamnă solicitarea de contact și citirea documentelor, nu acord pentru marketing.
+Versiunea 2026-10-29 identifică perechea termeni/informare cu identitatea profesională și noua adresă publică, confirmată de formular. Coloana existentă Acord contact păstrează această versiune. La cererile noi înseamnă solicitarea de contact și citirea documentelor, nu acord pentru marketing.
 
 Registrul rămâne privat și se poate exporta din Sheets în Excel ori CSV. Administrare: [google-apps-script/README.md](google-apps-script/README.md). Fără secrete, formularul oferă pregătire/copiere/descărcare, fără să pretindă trimiterea.
 
@@ -72,3 +72,11 @@ Registrul rămâne privat și se poate exporta din Sheets în Excel ori CSV. Adm
 - src/app/globals.css: stiluri și adaptare mobilă.
 
 Logo-ul vectorial și fotografia ilustrativă au fost păstrate. Fotografia nu reprezintă clienți reali. Nu sunt inventate recenzii, statistici sau parteneriate.
+
+## Organizarea paginilor — 29 octombrie 2026
+
+Fiecare produs are o singură pagină cu acoperiri, comparație, informații de pregătit și întrebări frecvente. RCA este la `/asigurare-rca`; vechile pagini de ghid și articolul despre acte au redirecționări permanente către secțiunile relevante. Ghidurile generale pentru firme sunt reunite în `/ghiduri`, iar explicația despre bunuri și continuitate este inclusă în pagina întreruperii activității. Maparea adreselor vechi se află în `src/lib/product-redirects.mjs`. Sitemap-ul include numai paginile canonice.
+
+Paginile de produs păstrează un singur buton de solicitare la final; cuprinsurile navighează în aceeași pagină. Formularul este centralizat pe `/contact`.
+
+Adresa publică este configurabilă prin `NEXT_PUBLIC_CONTACT_EMAIL`. Fallback-ul manual prin email al formularului poate folosi separat `NEXT_PUBLIC_REQUEST_EMAIL`, fără o adresă personală implicită în sursa publică. Dacă nu este configurat, rămân copierea și descărcarea cererii. Destinatarul notificărilor automate este stabilit exclusiv de proprietatea privată `NOTIFICATION_EMAIL` din Google Apps Script; schimbarea adresei publice nu îl modifică.
