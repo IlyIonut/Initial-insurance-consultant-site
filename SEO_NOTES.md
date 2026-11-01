@@ -6,7 +6,7 @@ Sitemap-ul include 29 de pagini canonice, inclusiv /termeni-si-conditii. Se păs
 
 Titlurile și descrierile sunt distincte, cu un H1 pe pagină. Datele structurate folosesc organizație, breadcrumb, servicii și articole. Întrebările sunt vizibile în HTML cu details/summary. Nu se promit rich snippets sau poziții Google.
 
-Revizia este din 25 octombrie 2026. Imaginea PNG socială este generată la /og cu mesaj național. Canonical, Open Graph, sitemap și robots folosesc NEXT_PUBLIC_SITE_URL, implicit domeniul Vercel de producție. Previzualizările emit noindex.
+Revizia este din 25 octombrie 2026. Imaginea PNG socială este generată la /og cu mesaj național. Canonical, Open Graph, sitemap și robots folosesc NEXT_PUBLIC_SITE_URL, implicit https://ilyasig.ro. Previzualizările emit noindex.
 
 Întrebările au fost selectate din teme întâlnite în FAQ-uri publicate și documente de produs și de autorități. Nu au fost măsurate volume ori clasamente de căutare. Sursele sunt păstrate în docs/content-review.md, fără linkuri externe în paginile publice.
 

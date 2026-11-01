@@ -6,7 +6,7 @@ import { contactConfigured, submitContact } from '../src/lib/contact-server.mjs'
 
 const env = { CONTACT_GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/test-deployment/exec', CONTACT_SHARED_SECRET: 'a'.repeat(64) };
 const valid = () => ({ requestId: randomUUID(), audience: 'business', name: 'Test integrare', email: 'test@example.com', business: 'Atelier test', phone: '', city: 'Cluj', insuranceType: 'Bunuri și echipamente', renewal: '2027-01', message: 'Cerere de test', consent: 'accepted', noticeVersion: privacyVersion, website: '' });
-const request = (data, origin = 'https://initial-insurance-consultant-site.vercel.app') => new Request('https://initial-insurance-consultant-site.vercel.app/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json', origin, 'x-vercel-forwarded-for': '192.0.2.1' }, body: JSON.stringify(data) });
+const request = (data, origin = 'https://ilyasig.ro') => new Request('https://ilyasig.ro/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json', origin, 'x-vercel-forwarded-for': '192.0.2.1' }, body: JSON.stringify(data) });
 
 test('A confirmed stored record is required; forwarding is signed and keeps the request ID', async () => {
   const data = valid();

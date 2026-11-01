@@ -33,7 +33,7 @@ Build-ul verifică TypeScript. Testele folosesc date fictive și un serviciu Goo
 
 ## Vercel
 
-Repository: IlyIonut/Initial-insurance-consultant-site, ramura main. Producție: https://initial-insurance-consultant-site.vercel.app. Nu este un proiect Netlify. Se păstrează conexiunea Git și secretele formularului.
+Repository: IlyIonut/Initial-insurance-consultant-site, ramura main. Producție: https://ilyasig.ro. Nu este un proiect Netlify. Se păstrează conexiunea Git și secretele formularului.
 
 NEXT_PUBLIC_SITE_URL este domeniul canonic; previzualizările emit noindex. Variabilele publice sunt evaluate la build și schimbarea lor cere un build nou.
 

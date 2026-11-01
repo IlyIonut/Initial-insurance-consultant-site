@@ -17,7 +17,7 @@ export const SITE = {
   intermediaryRole: process.env.NEXT_PUBLIC_INTERMEDIARY_ROLE || "",
   complaintsEmail: process.env.NEXT_PUBLIC_COMPLAINTS_EMAIL || process.env.NEXT_PUBLIC_CONTACT_EMAIL || "Ionut.Ilies@kbagencies.ro",
   description: "Asigurări pentru firme și IMM-uri: bunuri, răspunderi, flote și angajați. Consultanță în toată România, inclusiv Cluj și Bihor. Soluții și pentru persoane fizice.",
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://initial-insurance-consultant-site.vercel.app").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://ilyasig.ro").replace(/\/$/, ""),
 };
 
 export const insuranceTypes = [
