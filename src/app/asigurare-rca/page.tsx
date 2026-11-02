@@ -4,22 +4,24 @@ import { FAQ } from "@/components/FAQ";
 import { ProductCard, ProductContact, ProductList, ProductPage, ProductSection } from "@/components/ProductPage";
 import { rcaArticleFaqs } from "@/lib/faq-content";
 import { rcaAccidentSteps, rcaAmiabilaRules, rcaBonusPrinciples, rcaBuyingSteps, rcaCoverage, rcaDamageDocs, rcaFaqs, rcaNotCoverage, rcaPolicyChecks, rcaQuoteData } from "@/lib/rca-content";
-import { pageMetadata } from "@/lib/seo";
+import { insuranceServiceSchema, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata("Asigurare RCA și ghid complet — Cluj și Bihor", "RCA pentru persoane fizice și firme: acoperiri, acte, cumpărare, bonus-malus, accident și daună. Toate explicațiile și întrebările frecvente într-o singură pagină.", "/asigurare-rca");
 const faqs = [...rcaFaqs, ...Object.values(rcaArticleFaqs).flat()];
 
 export default function RcaPage() {
+  const schema = insuranceServiceSchema("Asigurare RCA pentru persoane fizice și firme", "Consultanță și solicitări de ofertă RCA pentru clienți din toată România.", "/asigurare-rca");
   return <ProductPage
     eyebrow="AUTO · PENTRU PERSOANE FIZICE ȘI FIRME"
-    title="RCA. Toate răspunsurile, în același loc."
-    description="Ce acoperă polița, cum o cumperi și ce faci la daună. Un ghid complet, fără să treci dintr-o pagină în alta pentru fiecare întrebare."
+    title="Asigurare RCA: de la ofertă la daună."
+    description="Ce acoperă asigurarea obligatorie auto, ce acte pregătești, cum funcționează bonus-malus și ce faci după un accident. Explicațiile și întrebările frecvente sunt reunite aici."
     icon="car"
     tone="peach"
     breadcrumbs={[{ label: "Persoane fizice", href: "/persoane-fizice" }, { label: "RCA", href: "/asigurare-rca" }]}
     facts={["Protejează terții păgubiți", "Nu înlocuiește protecția CASCO", "Datele și valabilitatea trebuie verificate"]}
     navigation={[{ id: "acoperiri", label: "Ce acoperă" }, { id: "acte", label: "Acte și cumpărare" }, { id: "bonus-malus", label: "Bonus-malus" }, { id: "daune", label: "Accident și daună" }, { id: "intrebari", label: "Întrebări frecvente" }]}
   >
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
     <ProductSection id="acoperiri" number="01" title="Ce acoperă RCA. Și unde se oprește." description="RCA este asigurarea obligatorie de răspundere civilă auto, în categoriile și situațiile prevăzute de lege. Ea privește prejudiciile produse altor persoane prin vehiculul asigurat.">
       <div className="product-grid"><ProductCard title="Prejudicii produse terților" tone="mint"><ProductList items={rcaCoverage} /></ProductCard><ProductCard title="Ce nu acoperă propria RCA" tone="peach"><ProductList items={rcaNotCoverage} /></ProductCard></div>
       <p className="product-note"><strong>RCA și CASCO au roluri diferite.</strong> RCA acoperă răspunderea față de terți. <Link href="/asigurare-casco">CASCO</Link> este facultativă și poate proteja propriul vehicul, în condițiile produsului. Chiar dacă ai CASCO, obligația RCA rămâne aplicabilă. Pentru mai multe vehicule ale firmei, poți consulta pagina despre <Link href="/asigurari-firme/flote-auto">flote auto</Link>.</p>

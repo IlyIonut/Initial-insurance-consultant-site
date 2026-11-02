@@ -13,6 +13,32 @@ export const metadata: Metadata = {
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#164cf5" };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const schema = { "@context": "https://schema.org", "@type": "InsuranceAgency", "@id": `${SITE.url}/#organization`, name: SITE.name, url: SITE.url, logo: { "@type": "ImageObject", url: `${SITE.url}/brand/ilyasig-logo.svg`, width: 1352, height: 445 }, description: SITE.description, ...(SITE.phoneRaw ? { telephone: `+${SITE.phoneRaw}` } : {}), ...(SITE.email ? { email: SITE.email } : {}), areaServed: [{ "@type": "Country", name: "România" }, ...SITE.seoAreas.map(name => ({ "@type": "AdministrativeArea", name: `${name}, România` }))], knowsAbout: ["Asigurări pentru IMM-uri", "Asigurări de bunuri", "Răspundere civilă", "Flote auto", "Asigurări de sănătate", "Asigurări pentru persoane fizice"] };
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${SITE.url}/#organization`,
+        name: SITE.name,
+        url: `${SITE.url}/`,
+        ...(SITE.operatorName ? { legalName: SITE.operatorName } : {}),
+        ...(SITE.registration ? { identifier: { "@type": "PropertyValue", name: "Înregistrare profesională", value: SITE.registration } } : {}),
+        logo: { "@type": "ImageObject", url: `${SITE.url}/brand/ilyasig-logo.svg`, width: 1352, height: 445 },
+        description: SITE.description,
+        ...(SITE.phoneRaw ? { telephone: `+${SITE.phoneRaw}` } : {}),
+        email: SITE.email,
+        areaServed: [{ "@type": "Country", name: "România" }, ...SITE.seoAreas.map(name => ({ "@type": "AdministrativeArea", name: `${name}, România` }))],
+        knowsAbout: ["Asigurări pentru IMM-uri", "Asigurări de bunuri", "Răspundere civilă", "Flote auto", "Asigurări de sănătate", "Asigurări pentru persoane fizice"],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE.url}/#website`,
+        name: SITE.name,
+        url: `${SITE.url}/`,
+        inLanguage: "ro-RO",
+        publisher: { "@id": `${SITE.url}/#organization` },
+      },
+    ],
+  };
   return <html lang="ro"><body><a className="skip-link" href="#continut">Sari la conținut</a><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} /><Navbar /><div id="continut" tabIndex={-1}>{children}</div><Footer /></body></html>;
 }

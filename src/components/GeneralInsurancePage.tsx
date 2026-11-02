@@ -2,6 +2,7 @@ import { EditorialNote } from "./EditorialNote";
 import { FAQ } from "./FAQ";
 import { ProductCard, ProductContact, ProductList, ProductPage, ProductSection } from "./ProductPage";
 import type { InsuranceContentPage } from "@/lib/general-insurance-content";
+import { insuranceServiceSchema } from "@/lib/seo";
 
 const productVisuals: Record<string, { icon: string; tone: "blue" | "mint" | "peach" }> = {
   "/asigurare-casco": { icon: "car", tone: "peach" },
@@ -15,6 +16,7 @@ const productVisuals: Record<string, { icon: string; tone: "blue" | "mint" | "pe
 
 export function GeneralInsurancePage({ content: c }: { content: InsuranceContentPage }) {
   const visual = productVisuals[c.slug] || { icon: "shield", tone: "blue" as const };
+  const schema = insuranceServiceSchema(c.title, c.metaDescription, c.slug);
   return <ProductPage
     eyebrow={`PENTRU TINE · ${c.eyebrow.toUpperCase()}`}
     title={c.title}
@@ -24,6 +26,7 @@ export function GeneralInsurancePage({ content: c }: { content: InsuranceContent
     facts={c.heroBullets}
     navigation={[{ id: "acoperiri", label: "Acoperiri" }, { id: "alegere", label: "Cum alegi" }, { id: "date-pentru-oferta", label: "Date utile" }, { id: "intrebari", label: "Întrebări frecvente" }]}
   >
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
     <ProductSection id="acoperiri" number="01" title="Cui i se potrivește și ce poate acoperi">
       <div className="product-grid"><ProductCard title="Cui i se poate potrivi" tone="mint"><ProductList items={c.suitableFor} /></ProductCard><ProductCard title="Acoperiri de analizat" tone="blue"><ProductList items={c.commonCoverages} /></ProductCard></div>
       <p className="product-note"><strong>De reținut: </strong>{c.importantNote}</p>

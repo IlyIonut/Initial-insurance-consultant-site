@@ -3,7 +3,15 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     const { productRedirects } = await import("./src/lib/product-redirects.mjs");
-    return productRedirects;
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "initial-insurance-consultant-site.vercel.app" }],
+        destination: "https://ilyasig.ro/:path*",
+        permanent: true,
+      },
+      ...productRedirects,
+    ];
   },
 };
 

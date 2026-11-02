@@ -5,8 +5,7 @@ import { FAQ } from "@/components/FAQ";
 import { ProductCard, ProductContact, ProductList, ProductPage, ProductSection } from "@/components/ProductPage";
 import { businessSolutions, solutionHref } from "@/lib/business-content";
 import { guides } from "@/lib/guides";
-import { pageMetadata } from "@/lib/seo";
-import { SITE } from "@/lib/site";
+import { insuranceServiceSchema, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() { return businessSolutions.map(solution => ({ slug: solution.slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -21,7 +20,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
   if (!s) notFound();
   const continuityGuide = s.slug === "intreruperea-activitatii" ? guides.find(guide => guide.slug === "bunuri-versus-intreruperea-activitatii") : undefined;
   const navigation = [{ id: "acoperiri", label: "Cui și ce acoperă" }, { id: "comparatie", label: "Cum compari" }, ...(continuityGuide ? [{ id: "bunuri-si-continuitate", label: "Bunuri și continuitate" }] : []), { id: "intrebari", label: "Întrebări frecvente" }];
-  const schema = { "@context": "https://schema.org", "@type": "Service", name: s.title, description: s.description, url: SITE.url + solutionHref(s.slug), provider: { "@id": `${SITE.url}/#organization` }, areaServed: { "@type": "Country", name: "România" } };
+  const schema = insuranceServiceSchema(s.title, s.description, solutionHref(s.slug));
   return <ProductPage eyebrow={`PENTRU FIRME · ${s.label}`} title={s.title} description={s.intro} icon={s.icon} tone={s.color === "mint" ? "mint" : s.color === "peach" ? "peach" : "blue"} breadcrumbs={[{ label: "Pentru firme", href: "/asigurari-firme" }, { label: s.name, href: solutionHref(s.slug) }]} facts={s.coverages.slice(0, 3)} navigation={navigation}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
     <ProductSection id="acoperiri" number="01" title="Cui îi poate fi utilă și ce analizăm">

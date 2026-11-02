@@ -31,9 +31,9 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
     title: "Asigurare CASCO explicată clar, dincolo de preț",
     description:
       "CASCO este asigurarea facultativă care poate proteja propriul vehicul pentru avarii, furt și alte evenimente, în funcție de condițiile produsului ales. Te ajut să compari acoperirile importante, nu doar prima anuală.",
-    metaTitle: "Asigurare CASCO | Consultanță pentru acoperiri, franșiză și daune",
+    metaTitle: "Asigurare CASCO — acoperiri, franșize și ofertă",
     metaDescription:
-      "Consultanță CASCO pentru autoturisme: acoperiri uzuale, franșiză, furt, avarii, fenomene naturale, service-uri și date necesare pentru ofertă.",
+      "Compară acoperirile CASCO pentru avarii și furt, franșizele și condițiile de reparație. Consultanță în toată România, inclusiv Cluj și Bihor.",
     ctaLabel: "Cere ofertă CASCO",
     whatsappMessage: "Bună! Doresc o ofertă CASCO și aș vrea să compar acoperirile disponibile.",
     heroBullets: ["Pentru mașina ta, nu pentru prejudiciile produse terților", "Utilă mai ales pentru mașini noi, valoroase sau finanțate", "Condițiile diferă mult între pachete și asigurători"],
@@ -108,9 +108,9 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
     title: "Asigurare locuință: PAD și facultativă, explicate simplu",
     description:
       "Pentru o protecție corectă a casei sau apartamentului, trebuie înțeleasă diferența dintre PAD, polița obligatorie pentru dezastre naturale, și asigurarea facultativă, care poate extinde protecția pentru locuință, bunuri și răspundere civilă.",
-    metaTitle: "Asigurare locuință | PAD și facultativă pentru casă sau apartament",
+    metaTitle: "Asigurare locuință — PAD și poliță facultativă",
     metaDescription:
-      "Consultanță pentru asigurarea locuinței: PAD obligatoriu, facultativă, bunuri, incendiu, furt, inundații, răspundere civilă și locuințe cu credit.",
+      "PAD și asigurare facultativă pentru casă sau apartament: riscuri, bunuri, limite și credit. Solicitări din toată România, inclusiv Cluj și Bihor.",
     ctaLabel: "Cere ofertă locuință",
     whatsappMessage: "Bună! Doresc o ofertă pentru asigurarea locuinței: PAD și/sau facultativă.",
     heroBullets: ["PAD este obligatorie pentru proprietarii de locuințe", "Facultativa poate completa protecția pentru riscuri uzuale", "Poți include bunuri, răspundere față de vecini și asistență la domiciliu"],
@@ -185,9 +185,9 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
     title: "Asigurare de călătorie pentru vacanțe, city break-uri și deplasări business",
     description:
       "Asigurarea de călătorie poate acoperi cheltuieli medicale neprevăzute, asistență, bagaje sau anularea călătoriei, în funcție de pachet. Alegerea corectă depinde de destinație, durată, scopul călătoriei și activitățile planificate.",
-    metaTitle: "Asigurare de călătorie | Travel insurance pentru vacanțe și business",
+    metaTitle: "Asigurare de călătorie — medicală, bagaje și storno",
     metaDescription:
-      "Consultanță pentru asigurare de călătorie: medical, asistență, bagaje, storno, sporturi, familie, Europa, SUA/Canada și alte destinații.",
+      "Ce compari la o asigurare de călătorie: cheltuieli medicale, asistență, bagaje, storno și sporturi. Date utile pentru ofertă și întrebări frecvente.",
     ctaLabel: "Cere ofertă călătorie",
     whatsappMessage: "Bună! Doresc o ofertă pentru asigurare de călătorie.",
     heroBullets: ["Pentru vacanțe, business travel sau deplasări în familie", "Atenție la destinație, durată și activități sportive", "Poate include clauze suplimentare: bagaje, storno, sporturi"],
@@ -263,9 +263,9 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
     title: "Asigurare privată de sănătate pentru acces mai clar la servicii medicale",
     description:
       "Asigurările private de sănătate pot acoperi servicii medicale în ambulatoriu, spitalizare, intervenții sau tratament în anumite rețele, în funcție de produs. Discuția inițială trebuie făcută fără transmiterea datelor medicale sensibile prin formularul public.",
-    metaTitle: "Asigurare privată de sănătate | Consultanță pentru persoane și familii",
+    metaTitle: "Asigurare privată de sănătate — servicii și limite",
     metaDescription:
-      "Consultanță pentru asigurări private de sănătate: consultații, investigații, spitalizare, intervenții, rețea medicală, rambursare și beneficii pentru angajați.",
+      "Asigurare privată de sănătate pentru persoane și familii: rețea medicală, consultații, spitalizare, excluderi și diferențe față de abonament.",
     ctaLabel: "Cere discuție sănătate",
     whatsappMessage: "Bună! Doresc o discuție despre o asigurare privată de sănătate.",
     heroBullets: ["Pentru persoane, familii sau beneficii pentru angajați", "Nu trimite diagnostice sau documente medicale prin formular", "Comparația se face pe servicii, limite, rețea și excluderi"],
@@ -339,9 +339,9 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
     title: "Asigurare de viață pentru protecție financiară, credit sau familie",
     description:
       "Asigurarea de viață se alege în funcție de obiectiv: protecția familiei, acoperirea unui credit, economisire, protecție pentru copii sau boli grave. Recomandarea corectă pornește de la nevoie, perioadă și buget, nu de la un produs generic.",
-    metaTitle: "Asigurare de viață | Protecție financiară pentru familie sau credit",
+    metaTitle: "Asigurare de viață — protecție pentru familie și credit",
     metaDescription:
-      "Consultanță pentru asigurare de viață: protecție familie, credit, sumă descrescătoare, economisire, copii, boli grave și obiective financiare.",
+      "Cum compari o asigurare de viață pentru familie sau credit: sumă asigurată, durată, clauze și excluderi. Întrebări utile înainte de alegere.",
     ctaLabel: "Cere discuție viață",
     whatsappMessage: "Bună! Doresc o discuție despre o asigurare de viață.",
     heroBullets: ["Pentru protecția familiei sau a unui credit", "Poate fi simplă, cu economisire sau cu clauze suplimentare", "Nu trimite date medicale prin formularul public"],
@@ -418,9 +418,9 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
     title: "Asigurări de răspundere civilă și profesională",
     description:
       "Răspunderea civilă acoperă, în anumite condiții, prejudicii produse altor persoane sau bunurilor acestora. Pentru profesii și firme, răspunderea profesională poate fi esențială când o eroare produce pierderi clientului.",
-    metaTitle: "Asigurare răspundere civilă și profesională | Consultanță pentru firme și profesii",
+    metaTitle: "Răspundere civilă — asigurare pentru prejudicii față de terți",
     metaDescription:
-      "Consultanță pentru asigurări de răspundere civilă legală, profesională, față de terți, manageri, profesii liberale, PFA și SRL.",
+      "Ce înseamnă asigurarea de răspundere civilă: prejudicii față de terți, limite și excluderi. Diferențe între răspunderea generală și cea profesională.",
     ctaLabel: "Cere ofertă răspundere",
     whatsappMessage: "Bună! Doresc o ofertă pentru asigurare de răspundere civilă/profesională.",
     heroBullets: ["Pentru profesii, firme și situații cu risc față de terți", "Limita de răspundere și excluderile sunt decisive", "Poate fi cerută prin lege sau prin contract"],
@@ -495,9 +495,9 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
     title: "Asigurare de accidente pentru persoane, familie sau pasageri",
     description:
       "Asigurarea de accidente poate oferi protecție financiară în cazul unor evenimente accidentale, precum invaliditate, spitalizare, intervenții sau alte consecințe, în funcție de pachet. Este diferită de asigurarea de sănătate și de asigurarea de viață.",
-    metaTitle: "Asigurare accidente | Persoane, familie, șoferi și pasageri",
+    metaTitle: "Asigurare de accidente — persoane, familie și pasageri",
     metaDescription:
-      "Consultanță pentru asigurări de accidente: invaliditate, spitalizare, intervenții, fracturi, familie, șoferi și persoane transportate.",
+      "Asigurarea de accidente explicată: invaliditate, spitalizare, sume și clauze. Cum o compari și ce o diferențiază de asigurarea de sănătate sau viață.",
     ctaLabel: "Cere ofertă accidente",
     whatsappMessage: "Bună! Doresc o ofertă pentru asigurare de accidente.",
     heroBullets: ["Pentru persoane individuale, familie sau pasageri", "Poate completa viața sau sănătatea", "Se aleg sume și clauze în funcție de activitate"],
