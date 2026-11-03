@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 const paths: Record<string, string[]> = {
+  leaf: ["M20 4C12 2 4 6 4 12a7 7 0 0 0 7 7c6 0 10-7 9-15Z", "M4 21 15 10"],
   arrow: ["M5 12h14", "m13 6 6 6-6 6"], diagonal: ["M6 18 18 6", "M6 6h12v12"],
   shield: ["M12 3 3.5 6.5v5c0 5 5 8.5 8.5 10 3.5-1.5 8.5-5 8.5-10v-5L12 3Z", "m8 12 2.5 2.5 5.5-5.5"],
   building: ["M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16", "M2 21h20", "M8 7h2m4 0h2M8 11h2m4 0h2M10 21v-5h4v5"],

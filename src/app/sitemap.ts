@@ -6,6 +6,8 @@ import { businessSolutions, industries, solutionHref } from "@/lib/business-cont
 const contentRevision = new Date("2026-10-29T00:00:00Z");
 const searchLaunchRevision = new Date("2026-11-02T00:00:00Z");
 const brandRevision = new Date("2026-11-03T00:00:00Z");
+const agricultureRevision = new Date("2026-11-03T00:00:00Z");
+const agriculturePaths = new Set(["/asigurari-firme/agricole", "/asigurari-firme", "/domenii", "/ghiduri", "/contact"]);
 const unchangedPaths = new Set(["/domenii", "/contact", "/confidentialitate", "/cookies", "/termeni-si-conditii"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,6 +20,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return paths.map(path => ({
     url: SITE.url + (path === "/" ? "/" : path),
-    lastModified: path === "/" ? brandRevision : unchangedPaths.has(path) || path.startsWith("/domenii/") ? contentRevision : searchLaunchRevision,
+    lastModified: agriculturePaths.has(path) ? agricultureRevision : path === "/" ? brandRevision : unchangedPaths.has(path) || path.startsWith("/domenii/") ? contentRevision : searchLaunchRevision,
   }));
 }

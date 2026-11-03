@@ -2,7 +2,7 @@
 
 Serviciile sunt prezentate pentru clienți din toată România. Cluj și Bihor rămân în titlurile și descrierile relevante și în datele structurate. Service.areaServed și organizația includ România. Nu sunt inventate adrese sau sedii locale.
 
-Sitemap-ul include 29 de pagini canonice, inclusiv /termeni-si-conditii. Se păstrează cele șase soluții business, cinci domenii și opt pagini personale. Ghidurile generale sunt reunite, iar informațiile RCA și cele despre continuitate sunt în paginile produselor. /asigurare-travel redirecționează permanent la /asigurare-calatorie.
+Sitemap-ul include 30 de pagini canonice, inclusiv /termeni-si-conditii și /asigurari-firme/agricole. Sunt șapte soluții business, cinci pagini de domenii și opt pagini personale. Categoria Agricultură din pagina Domenii duce direct la pagina produsului, fără o pagină intermediară. Ghidurile generale sunt reunite, iar informațiile RCA și cele despre continuitate sunt în paginile produselor. /asigurare-travel redirecționează permanent la /asigurare-calatorie.
 
 Titlurile și descrierile sunt distincte, cu un H1 pe pagină. Datele structurate folosesc Organization, WebSite, BreadcrumbList și Service. Identitatea este cea a intermediarului secundar, prin brokerul partener. Nu se inventează o adresă pentru a obține rezultate locale. Întrebările sunt vizibile în HTML cu details/summary. Nu se promit rich snippets sau poziții Google.
 

@@ -18,6 +18,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
   const { slug } = await params;
   const s = businessSolutions.find(item => item.slug === slug);
   if (!s) notFound();
+  const agricultural = s.slug === "agricole";
   const continuityGuide = s.slug === "intreruperea-activitatii" ? guides.find(guide => guide.slug === "bunuri-versus-intreruperea-activitatii") : undefined;
   const navigation = [{ id: "acoperiri", label: "Cui și ce acoperă" }, { id: "comparatie", label: "Cum compari" }, ...(continuityGuide ? [{ id: "bunuri-si-continuitate", label: "Bunuri și continuitate" }] : []), { id: "intrebari", label: "Întrebări frecvente" }];
   const schema = insuranceServiceSchema(s.title, s.description, solutionHref(s.slug));
@@ -34,6 +35,6 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
     {continuityGuide && <ProductSection id="bunuri-si-continuitate" number="03" title="Bunurile sunt asigurate. Dar activitatea?" description={continuityGuide.intro}><div className="product-grid product-copy">{continuityGuide.sections.map(section => <section key={section.title}><h3>{section.title}</h3>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</section>)}</div></ProductSection>}
     <ProductSection id="intrebari" number={continuityGuide ? "04" : "03"} title="Întrebări frecvente"><FAQ items={[...s.faqs, ...(continuityGuide?.faqs || [])]} /><EditorialNote /></ProductSection>
     <p className="product-related">Alte protecții pentru firmă: {businessSolutions.filter(item => item.slug !== s.slug).slice(0, 3).map(item => <Link key={item.slug} href={solutionHref(item.slug)}>{item.name}</Link>)}</p>
-    <ProductContact title="Cum se aplică în firma ta?" description="Pornim de la activitatea și polițele existente. Nu sunt necesare documente sensibile în formularul inițial." href={`/contact?tip=${encodeURIComponent(s.name)}`} label="Solicită o discuție" />
+    <ProductContact title={agricultural ? "Ce vrei să protejezi în fermă?" : "Cum se aplică în firma ta?"} description={agricultural ? "Spune-mi ce cultivi, în ce zonă și pe ce suprafață aproximativă. Începem fără documente în formular." : "Pornim de la activitatea și polițele existente. Nu sunt necesare documente sensibile în formularul inițial."} href={`/contact?tip=${encodeURIComponent(s.name)}`} label={agricultural ? "Discutăm despre fermă" : "Solicită o discuție"} />
   </ProductPage>;
 }

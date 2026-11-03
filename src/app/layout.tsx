@@ -36,7 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         ...(SITE.phoneRaw ? { telephone: `+${SITE.phoneRaw}` } : {}),
         email: SITE.email,
         areaServed: [{ "@type": "Country", name: "România" }, ...SITE.seoAreas.map(name => ({ "@type": "AdministrativeArea", name: `${name}, România` }))],
-        knowsAbout: ["Asigurări pentru IMM-uri", "Asigurări de bunuri", "Răspundere civilă", "Flote auto", "Asigurări de sănătate", "Asigurări pentru persoane fizice"],
+        knowsAbout: ["Asigurări pentru IMM-uri", "Asigurări de bunuri", "Răspundere civilă", "Flote auto", "Asigurări de sănătate", "Asigurări pentru persoane fizice", "Asigurări agricole"],
       },
       {
         "@type": "WebSite",

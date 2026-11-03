@@ -1,4 +1,5 @@
 import { businessFaqExtras } from "./faq-content";
+import { agriculturalSolution } from "./agricultural-content";
 export type BusinessSolution = {
   slug: string; name: string; title: string; description: string; intro: string; icon: string; color: string; label: string;
   suitable: string[]; coverages: string[]; questions: string[]; note: string;
@@ -88,6 +89,7 @@ export const businessSolutions: BusinessSolution[] = [
     sections: [{ title: "Eligibilitatea începe cu situația reală a firmei", body: "Chestionarul de risc poate solicita informații despre autentificare, actualizări, copii de siguranță și accesul la sisteme. Răspunsurile trebuie să reflecte controalele implementate. Colaborarea cu responsabilul IT ajută la completarea corectă și la înțelegerea condițiilor cerute." }, { title: "Cyber și răspunderea profesională se pot întâlni", body: "Pentru o firmă IT, un incident de securitate și o eroare de livrare a unui serviciu pot ridica probleme diferite. Verificăm împreună secțiunile ofertelor, suprapunerile, excluderile și cerințele partenerilor. Disponibilitatea unei soluții depinde de activitate și de acceptarea riscului." }],
     faqs: [...[{ question: "Este utilă doar firmelor IT?", answer: "Nu. Pot exista expuneri și în alte activități care depind de sisteme și date. Relevanța se analizează pornind de la impactul posibil asupra firmei." }, { question: "Acoperă orice fraudă prin email?", answer: "Nu. Frauda și transferurile de bani pot avea condiții speciale sau excluderi. Acest aspect trebuie verificat explicit." }, { question: "Poate înlocui măsurile de securitate?", answer: "Nu. Măsurile de prevenție și de răspuns rămân necesare și pot face parte din condițiile de acceptare a riscului." }], ...businessFaqExtras["riscuri-cibernetice"]], 
   },
+  agriculturalSolution,
 ];
 
 export const industries = [

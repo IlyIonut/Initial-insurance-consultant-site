@@ -139,3 +139,7 @@ Referință: https://github.com/vercel/next.js/security/advisories/GHSA-vcvr-r3j
 Cele șapte pagini RCA din tabelul reviziei inițiale au fost reunite în `/asigurare-rca`, cu păstrarea listelor de acoperiri, actelor, verificărilor, principiilor bonus-malus, pașilor după accident și tuturor celor 21 de întrebări distincte. Ghidurile generale pentru firme sunt reunite pe `/ghiduri`; ghidul despre bunuri și întrerupere este inclus integral în produsul de întrerupere a activității. Informațiile contractuale nu au fost extinse cu promisiuni noi de acoperire. Datele reviziei factuale rămân cele originale, distincte de revizia de prezentare.
 
 Adresa profesională de contact public este `Ionut.Ilies@kbagencies.ro`. Notificările formularului și registrul Google nu au fost modificate. Versiunea informării și a termenilor formularului a fost actualizată la `2026-10-29`; formularul respinge versiunile vechi. Identificarea profesională și punctele juridice de validat cu brokerul rămân în evidența de mai sus.
+
+## Asigurări agricole — 3 noiembrie 2026
+
+A fost adăugată pagina unică `/asigurari-firme/agricole`, cu categorii generale, explicații despre secetă, întrebări de ofertare și FAQ. Sursele și limitele verificării sunt în [revizia agricolă](agricultural-review.md). Conținutul public nu include nume de asigurători, denumiri comerciale sau legături către surse externe.
