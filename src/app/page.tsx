@@ -5,11 +5,11 @@ import { FAQ } from "@/components/FAQ";
 import { Icon } from "@/components/Icon";
 import { IndustryFinder } from "@/components/IndustryFinder";
 import { SolutionCards } from "@/components/SolutionCards";
-import { faqs } from "@/lib/site";
+import { faqs, SITE } from "@/lib/site";
 import { industries } from "@/lib/business-content";
 import { guides, guideHref } from "@/lib/guides";
 import { pageMetadata } from "@/lib/seo";
-export const metadata = pageMetadata("Asigurări pentru firme și IMM-uri în Cluj și Bihor", "Asigurări pentru afacerea ta: bunuri, răspunderi, flote, angajați și continuitate. Consultanță în toată România, inclusiv Cluj și Bihor. Soluții și pentru persoane fizice.", "/");
+export const metadata = pageMetadata("Asigurări pentru firme și persoane fizice", SITE.description, "/");
 const steps = [
   ["01", "Înțelegem afacerea", "Discutăm despre activitate, bunuri, oameni și ce ar putea întrerupe munca."],
   ["02", "Comparăm protecția", "Privim acoperirile, limitele, franșizele și excluderile din variantele disponibile."],
@@ -18,7 +18,7 @@ const steps = [
 ];
 export default function Home() {
   return <main>
-    <section className="home-hero"><div className="shell hero-layout"><div className="hero-copy"><p className="eyebrow"><span className="tiny-line" />PROTECȚIE PENTRU AFACEREA TA</p><h1>Asigurări<br />pentru firme<br /><span className="highlight-word">și IMM-uri.</span></h1><p className="hero-description">Bunuri și echipamente, răspundere civilă, flote auto și sănătate pentru angajați. Te ajut să compari asigurările potrivite activității tale.</p><div className="hero-actions"><ButtonLink href="#solutii" arrow>Descoperă soluțiile pentru firmă</ButtonLink></div><IndustryFinder /><p className="hero-local"><Icon name="pin" size={16} />Pentru firme și persoane fizice din toată România.</p></div>
+    <section className="home-hero"><div className="shell hero-layout"><div className="hero-copy"><p className="eyebrow"><span className="tiny-line" />PROTECȚIE PENTRU AFACEREA TA</p><h1>Asigurări<br />pentru firme<br /><span className="highlight-word">și IMM-uri.</span></h1><p className="hero-description">La IlyAsig, te ajut să compari asigurările potrivite activității tale: bunuri și echipamente, răspundere civilă, flote auto și sănătate pentru angajați.</p><div className="hero-actions"><ButtonLink href="#solutii" arrow>Descoperă soluțiile pentru firmă</ButtonLink></div><IndustryFinder /><p className="hero-local"><Icon name="pin" size={16} />Pentru firme și persoane fizice din toată România.</p></div>
     <div className="hero-visual"><div className="hero-mint-shape" /><div className="hero-photo"><Image src="/images/antreprenori-atelier.webp" width={1122} height={1402} preload sizes="(max-width: 540px) calc(100vw - 90px), (max-width: 700px) 440px, (max-width: 1200px) 43vw, 520px" alt="Doi antreprenori discută despre activitatea unui atelier de ceramică" /><span className="photo-caption">PENTRU CE CONSTRUIEȘTI, ZI DE ZI.</span></div><div className="hero-stamp"><Icon name="spark" size={27} /><span>PLANURI MARI.<br /><strong>GRIJĂ PENTRU DETALII.</strong></span></div><div className="protection-note"><span className="note-shield"><Icon name="shield" size={27} /></span><div><strong>Afacerea ta, privită în ansamblu.</strong><p>Bunuri <span>·</span> Răspunderi <span>·</span> Oameni</p></div></div><div className="hero-coral-dot" /></div></div></section>
     <section className="benefits-strip" aria-label="Cum te ajut"><div className="shell benefits-grid">{[["document", "Analiza nevoilor reale"], ["scale", "Comparație pe acoperiri"], ["people", "Un singur interlocutor"], ["clock", "Atenție la reînnoire"]].map(([icon, text]) => <div key={text}><Icon name={icon} size={23} /><span>{text}</span></div>)}</div></section>
     <section id="solutii" className="section solutions-section"><div className="shell"><div className="section-heading split-heading"><div><p className="eyebrow">PROTECȚIE CU SENS</p><h2>Firma ta are planuri.<br />Asigurările au un rol în ele.</h2></div><p>De la echipamente și spații, până la răspunderi și oameni. Începem cu ce contează pentru activitatea ta.</p></div><SolutionCards /></div></section>

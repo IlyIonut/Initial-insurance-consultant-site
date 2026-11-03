@@ -30,6 +30,14 @@ Se urmăresc paginile indexate, interogările, afișările, clicurile și poziț
 
 Repere tehnice: [numele site-ului](https://developers.google.com/search/docs/appearance/site-names), [sitemap-uri](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap), [conținut util și de încredere](https://developers.google.com/search/docs/fundamentals/creating-helpful-content).
 
+## Numele IlyAsig și favicon — 3 noiembrie 2026
+
+Pagina principală are titlul `IlyAsig | Asigurări pentru firme și persoane fizice`, cu același nume în descriere, textul introductiv, Open Graph și WebSite. Titlurile specifice produselor rămân distincte. Descrierea păstrează acoperirea națională și mențiunile SEO Cluj/Bihor. Nu sunt adăugate nume alternative inventate sau cuvinte-cheie ascunse.
+
+Simbolul albastru și coral din logo, deja disponibil în `public/icon.svg`, este exportat fără redesenare în PNG 96×96, ICO cu variante 16/32/48/64 și Apple Touch Icon 180×180. Metadatele declară aceste fișiere la adrese stabile, fără parametri de versiune. Organization folosește același simbol în PNG 512×512. Logo-ul orizontal din interfață rămâne intact.
+
+Configurația urmează [documentația Google pentru favicon](https://developers.google.com/search/docs/appearance/favicon-in-search). Afișarea iconiței și alegerea numelui în rezultate depind de recitirea și procesarea de către Google. Nu se deduce starea indexării dintr-o simplă căutare după brand. După publicare, se verifică URL-ul principal în Search Console și se solicită o singură recitire pentru această revizie, dacă există acces autentificat; acceptarea trebuie confirmată în interfața Google.
+
 ## Consolidare la 29 octombrie 2026
 
 Canonical RCA: `/asigurare-rca`, cu secțiunile `acoperiri`, `acte`, `bonus-malus`, `daune` și `intrebari`. Vechile pagini RCA și cele trei adrese de ghid pentru firme au redirecționări HTTP 308 către pagina ori secțiunea care păstrează conținutul. Legăturile interne și sitemap-ul folosesc numai noile destinații. SEO local rămâne în metadate; serviciile rămân disponibile în toată România.

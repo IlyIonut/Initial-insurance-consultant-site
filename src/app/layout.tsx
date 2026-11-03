@@ -5,11 +5,19 @@ import { Navbar } from "@/components/Navbar";
 import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: { default: `Asigurări pentru firme și IMM-uri în Cluj și Bihor | ${SITE.name}`, template: `%s | ${SITE.name}` },
+  title: { default: `${SITE.name} | Asigurări pentru firme și persoane fizice`, template: `%s | ${SITE.name}` },
   description: SITE.description, alternates: { canonical: "/" },
-  openGraph: { title: `Asigurări care țin pasul cu afacerea ta | ${SITE.name}`, description: SITE.description, url: SITE.url, siteName: SITE.name, locale: "ro_RO", type: "website", images: [{ url: "/og", width: 1200, height: 630, alt: `${SITE.name} — Asigurări pentru firme și persoane fizice din România` }] },
-  twitter: { card: "summary_large_image", title: `Asigurări pentru firme și IMM-uri | ${SITE.name}`, description: SITE.description, images: ["/og"] },
-  robots: { index: process.env.VERCEL_ENV !== "preview", follow: true }, icons: { icon: "/icon.svg?v=ilyasig", apple: "/apple-touch-icon.png" },
+  openGraph: { title: `${SITE.name} | Asigurări pentru firme și persoane fizice`, description: SITE.description, url: SITE.url, siteName: SITE.name, locale: "ro_RO", type: "website", images: [{ url: "/og", width: 1200, height: 630, alt: `${SITE.name} — Asigurări pentru firme și persoane fizice din România` }] },
+  twitter: { card: "summary_large_image", title: `${SITE.name} | Asigurări pentru firme și persoane fizice`, description: SITE.description, images: ["/og"] },
+  robots: { index: process.env.VERCEL_ENV !== "preview", follow: true },
+  icons: {
+    icon: [
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "16x16 32x32 48x48 64x64" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
+  },
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#164cf5" };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -23,7 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         url: `${SITE.url}/`,
         ...(SITE.operatorName ? { legalName: SITE.operatorName } : {}),
         ...(SITE.registration ? { identifier: { "@type": "PropertyValue", name: "Înregistrare profesională", value: SITE.registration } } : {}),
-        logo: { "@type": "ImageObject", url: `${SITE.url}/brand/ilyasig-logo.svg`, width: 1352, height: 445 },
+        logo: { "@type": "ImageObject", url: `${SITE.url}/brand/ilyasig-symbol-512.png`, width: 512, height: 512 },
         description: SITE.description,
         ...(SITE.phoneRaw ? { telephone: `+${SITE.phoneRaw}` } : {}),
         email: SITE.email,

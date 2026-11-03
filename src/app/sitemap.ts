@@ -5,6 +5,7 @@ import { businessSolutions, industries, solutionHref } from "@/lib/business-cont
 // Keep real revision dates rather than refreshing every URL on every build.
 const contentRevision = new Date("2026-10-29T00:00:00Z");
 const searchLaunchRevision = new Date("2026-11-02T00:00:00Z");
+const brandRevision = new Date("2026-11-03T00:00:00Z");
 const unchangedPaths = new Set(["/domenii", "/contact", "/confidentialitate", "/cookies", "/termeni-si-conditii"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -17,6 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return paths.map(path => ({
     url: SITE.url + (path === "/" ? "/" : path),
-    lastModified: unchangedPaths.has(path) || path.startsWith("/domenii/") ? contentRevision : searchLaunchRevision,
+    lastModified: path === "/" ? brandRevision : unchangedPaths.has(path) || path.startsWith("/domenii/") ? contentRevision : searchLaunchRevision,
   }));
 }
