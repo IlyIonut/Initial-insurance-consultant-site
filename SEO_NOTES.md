@@ -41,3 +41,9 @@ Configurația urmează [documentația Google pentru favicon](https://developers.
 ## Consolidare la 29 octombrie 2026
 
 Canonical RCA: `/asigurare-rca`, cu secțiunile `acoperiri`, `acte`, `bonus-malus`, `daune` și `intrebari`. Vechile pagini RCA și cele trei adrese de ghid pentru firme au redirecționări HTTP 308 către pagina ori secțiunea care păstrează conținutul. Legăturile interne și sitemap-ul folosesc numai noile destinații. SEO local rămâne în metadate; serviciile rămân disponibile în toată România.
+
+## Căutări agricole și sprijin pentru primă — 3 noiembrie 2026
+
+Pagina agricolă are un titlu de căutare distinct de H1, cu intenții relevante pentru culturi și sprijin APIA/AFIR. Textul explică asigurările pentru grindină/secetă și delimitează programele de rambursare a primei. Service declară intermediere în asigurări agricole, cu același furnizor și acoperire națională. Din ghiduri există o legătură directă la `#sprijin-prima`, în aceeași pagină canonică.
+
+Descrierea paginii principale și metadatele hubului pentru firme includ fermierii și culturile agricole; întrebarea nouă de pe homepage răspunde acestei categorii de clienți. Brandul IlyAsig, favicon-ul, adresele canonice și sitemap-ul cu 30 de pagini rămân coerente. Nu se multiplică paginile pe culturi ori localități. Indexarea și clasarea se verifică separat de publicare, în Search Console; nu sunt garantate poziții sau termene.

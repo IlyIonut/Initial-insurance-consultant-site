@@ -4,7 +4,8 @@ export const agriculturalSolution: BusinessSolution = {
   slug: "agricole",
   name: "Asigurări agricole",
   title: "Asigurări agricole pentru culturi, vii și livezi",
-  description: "Asigurări agricole pentru culturi de câmp, vii, livezi, legume, sere și solarii. Riscuri și condiții explicate pentru fermieri din România.",
+  seoTitle: "Asigurări agricole, culturi și sprijin APIA / AFIR",
+  description: "Asigurări agricole în România: culturi, vii, livezi și sere. Grindină, secetă și sprijin APIA/AFIR pentru prima eligibilă, explicate pe scurt.",
   intro: "Un sezon de muncă depinde și de vreme. Analizăm protecția culturilor de câmp, a viilor, livezilor și legumelor, precum și a serelor și solariilor. Pornim de la ce cultivi, unde și pe ce suprafață, apoi clarificăm riscurile și condițiile potrivite fermei tale.",
   icon: "leaf",
   color: "mint",
@@ -78,8 +79,8 @@ export const agriculturalSolution: BusinessSolution = {
       answer: "Notifică asigurătorul în termenul și prin canalul prevăzute în poliță. Notează data, cultura și parcelele afectate, păstrează fotografiile și documentele relevante și clarifică instrucțiunile pentru constatare înainte de recoltare sau alte intervenții care pot modifica urmele daunei.",
     },
     {
-      question: "Există sprijin pentru plata primei de asigurare?",
-      answer: "Pot exista programe de sprijin cu reguli, cheltuieli eligibile și perioade de depunere distincte. Eligibilitatea se verifică după ghidul final și sesiunea aplicabilă. Încheierea poliței nu garantează aprobarea unei finanțări; nu includem un procent de sprijin ca reducere sigură a costului.",
+      question: "Cum funcționează decontarea poliței prin APIA?",
+      answer: "Pentru recolta de struguri pentru vin se verifică intervenția IS-V-03, polița plătită, identificarea parcelelor și documentele pentru cererea online. Pentru alte situații se verifică programele AFIR sau regulile sectoriale aplicabile. Înscrierea la APIA și încheierea unei polițe nu confirmă singure finanțarea primei.",
     },
     {
       question: "Sunt incluse și utilajele, clădirile sau animalele fermei?",

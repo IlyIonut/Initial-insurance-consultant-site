@@ -16,7 +16,7 @@ export const SITE = {
   tradeRegister: process.env.NEXT_PUBLIC_TRADE_REGISTER || "",
   intermediaryRole: process.env.NEXT_PUBLIC_INTERMEDIARY_ROLE || "",
   complaintsEmail: process.env.NEXT_PUBLIC_COMPLAINTS_EMAIL || process.env.NEXT_PUBLIC_CONTACT_EMAIL || "Ionut.Ilies@kbagencies.ro",
-  description: "IlyAsig: asigurări pentru firme și persoane fizice. RCA, CASCO, locuință, bunuri și răspunderi. Consultanță în România, inclusiv Cluj și Bihor.",
+  description: "IlyAsig: asigurări pentru firme, fermieri și persoane fizice. Culturi agricole, bunuri, răspunderi, RCA și CASCO. Consultanță în România, inclusiv Cluj și Bihor.",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://ilyasig.ro").replace(/\/$/, ""),
 };
 
@@ -38,4 +38,5 @@ export const faqs = [
   { question: "Pot solicita o discuție din orice județ?", answer: "Da. Preluăm cereri de la firme și persoane fizice din toată România. Documentele, acceptarea riscului și eventuala evaluare a locației se stabilesc pentru situația concretă și cerințele asigurătorului." },
   { question: "Ce pregătesc pentru prima discuție?", answer: "Domeniul de activitate, localitatea, ce vrei să protejezi și, dacă ai polițe, data următoarei reînnoiri. Documentele și datele suplimentare se cer ulterior, în funcție de soluția analizată." },
   { question: "Pot solicita și asigurări pentru mine sau familie?", answer: "Da. Secțiunea pentru persoane fizice include RCA, CASCO, locuință, călătorie, sănătate, viață și accidente. Poți începe din pagina dedicată sau din formularul de contact." },
+  { question: "Ce asigurări pot analiza fermierii?", answer: "Putem discuta despre culturi agricole, vii, livezi, legume, sere și solarii. Clarificăm riscurile precum grindina și seceta, condițiile de ofertare și programul de sprijin pentru prima de asigurare, dacă este aplicabil. Disponibilitatea protecției și eligibilitatea pentru finanțare se verifică separat." },
 ];

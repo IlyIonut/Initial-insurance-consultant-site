@@ -2,6 +2,7 @@ import { businessFaqExtras } from "./faq-content";
 import { agriculturalSolution } from "./agricultural-content";
 export type BusinessSolution = {
   slug: string; name: string; title: string; description: string; intro: string; icon: string; color: string; label: string;
+  seoTitle?: string;
   suitable: string[]; coverages: string[]; questions: string[]; note: string;
   scenario: { title: string; body: string }; sections: { title: string; body: string }[];
   faqs: { question: string; answer: string }[];

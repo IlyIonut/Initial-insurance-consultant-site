@@ -6,12 +6,13 @@ import { ProductCard, ProductContact, ProductList, ProductPage, ProductSection }
 import { businessSolutions, solutionHref } from "@/lib/business-content";
 import { guides } from "@/lib/guides";
 import { insuranceServiceSchema, pageMetadata } from "@/lib/seo";
+import { AgriculturalSupport } from "@/components/AgriculturalSupport";
 
 export function generateStaticParams() { return businessSolutions.map(solution => ({ slug: solution.slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const solution = businessSolutions.find(item => item.slug === slug);
-  return solution ? pageMetadata(solution.title, solution.description, solutionHref(solution.slug)) : {};
+  return solution ? pageMetadata(solution.seoTitle || solution.title, solution.description, solutionHref(solution.slug)) : {};
 }
 
 export default async function SolutionPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -20,8 +21,8 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
   if (!s) notFound();
   const agricultural = s.slug === "agricole";
   const continuityGuide = s.slug === "intreruperea-activitatii" ? guides.find(guide => guide.slug === "bunuri-versus-intreruperea-activitatii") : undefined;
-  const navigation = [{ id: "acoperiri", label: "Cui și ce acoperă" }, { id: "comparatie", label: "Cum compari" }, ...(continuityGuide ? [{ id: "bunuri-si-continuitate", label: "Bunuri și continuitate" }] : []), { id: "intrebari", label: "Întrebări frecvente" }];
-  const schema = insuranceServiceSchema(s.title, s.description, solutionHref(s.slug));
+  const navigation = [{ id: "acoperiri", label: "Cui și ce acoperă" }, { id: "comparatie", label: "Cum compari" }, ...(continuityGuide ? [{ id: "bunuri-si-continuitate", label: "Bunuri și continuitate" }] : []), ...(agricultural ? [{ id: "sprijin-prima", label: "Sprijin APIA / AFIR" }] : []), { id: "intrebari", label: "Întrebări frecvente" }];
+  const schema = { ...insuranceServiceSchema(s.title, s.description, solutionHref(s.slug)), ...(agricultural ? { serviceType: "Intermediere în asigurări agricole" } : {}) };
   return <ProductPage eyebrow={`PENTRU FIRME · ${s.label}`} title={s.title} description={s.intro} icon={s.icon} tone={s.color === "mint" ? "mint" : s.color === "peach" ? "peach" : "blue"} breadcrumbs={[{ label: "Pentru firme", href: "/asigurari-firme" }, { label: s.name, href: solutionHref(s.slug) }]} facts={s.coverages.slice(0, 3)} navigation={navigation}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
     <ProductSection id="acoperiri" number="01" title="Cui îi poate fi utilă și ce analizăm">
@@ -33,7 +34,8 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
       <div className="product-example"><span>EXEMPLU ORIENTATIV</span><h3>{s.scenario.title}</h3><p>{s.scenario.body}</p></div>
     </ProductSection>
     {continuityGuide && <ProductSection id="bunuri-si-continuitate" number="03" title="Bunurile sunt asigurate. Dar activitatea?" description={continuityGuide.intro}><div className="product-grid product-copy">{continuityGuide.sections.map(section => <section key={section.title}><h3>{section.title}</h3>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</section>)}</div></ProductSection>}
-    <ProductSection id="intrebari" number={continuityGuide ? "04" : "03"} title="Întrebări frecvente"><FAQ items={[...s.faqs, ...(continuityGuide?.faqs || [])]} /><EditorialNote /></ProductSection>
+    {agricultural && <AgriculturalSupport />}
+    <ProductSection id="intrebari" number={continuityGuide || agricultural ? "04" : "03"} title="Întrebări frecvente"><FAQ items={[...s.faqs, ...(continuityGuide?.faqs || [])]} /><EditorialNote /></ProductSection>
     <p className="product-related">Alte protecții pentru firmă: {businessSolutions.filter(item => item.slug !== s.slug).slice(0, 3).map(item => <Link key={item.slug} href={solutionHref(item.slug)}>{item.name}</Link>)}</p>
     <ProductContact title={agricultural ? "Ce vrei să protejezi în fermă?" : "Cum se aplică în firma ta?"} description={agricultural ? "Spune-mi ce cultivi, în ce zonă și pe ce suprafață aproximativă. Începem fără documente în formular." : "Pornim de la activitatea și polițele existente. Nu sunt necesare documente sensibile în formularul inițial."} href={`/contact?tip=${encodeURIComponent(s.name)}`} label={agricultural ? "Discutăm despre fermă" : "Solicită o discuție"} />
   </ProductPage>;

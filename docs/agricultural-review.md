@@ -20,3 +20,5 @@ Conținutul este redactat în cuvinte proprii și folosește categorii generale.
 Exemplul cu două parcele este ipotetic și este etichetat astfel. Întrebările au fost selectate pentru utilitatea lor în ofertare și din temele FAQ-urilor oficiale; nu sunt prezentate drept un clasament măsurat al căutărilor.
 
 Categoria `Asigurări agricole` este inclusă în lista comună a formularului și validării API. Se păstrează destinația notificărilor, registrul privat, semnarea cererilor, versiunea informării și schema de date. Formularul inițial nu solicită fișiere sau identificatori sensibili noi. Nu se modifică scriptul Google ori configurările sale.
+
+Completarea despre sprijinul APIA/AFIR și verificarea procentelor, programelor și termenelor sunt documentate în [revizia finanțării primelor](agricultural-support-review.md). Rezumatul public este în aceeași pagină de produs, fără o pagină separată pentru finanțare.
