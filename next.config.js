@@ -10,6 +10,11 @@ const nextConfig = {
         destination: "https://ilyasig.ro/:path*",
         permanent: true,
       },
+      {
+        source: "/asigurari-bihor-cluj",
+        destination: "/zone-deservite",
+        permanent: true,
+      },
       ...productRedirects,
     ];
   },

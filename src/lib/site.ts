@@ -3,7 +3,12 @@ export const SITE = {
   consultantName: process.env.NEXT_PUBLIC_CONSULTANT_NAME || "",
   city: "România",
   serviceAreas: ["România"],
-  seoAreas: ["Cluj", "Bihor"],
+  seoAreas: [
+    { "@type": "AdministrativeArea", name: "Județul Bihor, România" },
+    { "@type": "AdministrativeArea", name: "Județul Cluj, România" },
+    { "@type": "City", name: "Ștei, România" },
+    { "@type": "City", name: "Beiuș, România" },
+  ],
   phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || "",
   phoneRaw: (process.env.NEXT_PUBLIC_PHONE || "").replace(/\D/g, ""),
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "Ionut.Ilies@kbagencies.ro",
