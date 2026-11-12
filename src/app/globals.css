@@ -342,7 +342,7 @@ summary::-webkit-details-marker { display:none; }
 .product-list li { display:flex; align-items:flex-start; gap:9px; font-size:14px; line-height:1.75; color:#3e5268; }
 .product-list svg { margin-top:4px; color:#355b42; }
 .product-note { background:#f2f4eb; border-left:3px solid #91b67d; padding:16px 20px; margin-top:18px; border-radius:0 8px 8px 0; font-size:13px; line-height:1.8; color:#44533f; }
-.product-note a { color:#1644b8; text-decoration:underline; }
+.product-note a,.product-card p a { color:#1644b8; text-decoration:underline; }
 .product-caption { margin-top:17px; font-size:13px; line-height:1.8; color:var(--muted); }
 .product-copy { min-width:0; }
 .product-copy>section+section { margin-top:25px; }

@@ -108,9 +108,9 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
     title: "Asigurare locuință: PAD și facultativă, explicate simplu",
     description:
       "Pentru o protecție corectă a casei sau apartamentului, trebuie înțeleasă diferența dintre PAD, polița obligatorie pentru dezastre naturale, și asigurarea facultativă, care poate extinde protecția pentru locuință, bunuri și răspundere civilă.",
-    metaTitle: "Asigurare locuință — PAD și poliță facultativă",
+    metaTitle: "Asigurare locuință: preț PAD și poliță facultativă",
     metaDescription:
-      "PAD și asigurare facultativă pentru casă sau apartament: riscuri, bunuri, limite și credit. Solicitări din toată România, inclusiv Cluj și Bihor.",
+      "Cât costă PAD, ce poate acoperi asigurarea facultativă și ce date pregătești pentru o ofertă la casă sau apartament, inclusiv pentru credit.",
     ctaLabel: "Cere ofertă locuință",
     whatsappMessage: "Bună! Doresc o ofertă pentru asigurarea locuinței: PAD și/sau facultativă.",
     heroBullets: ["PAD este obligatorie pentru proprietarii de locuințe", "Facultativa poate completa protecția pentru riscuri uzuale", "Poți include bunuri, răspundere față de vecini și asistență la domiciliu"],
@@ -149,14 +149,14 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       "PAD acoperă doar riscurile de dezastru natural prevăzute de lege și în limitele legale. Pentru incendiu, furt, daune de apă, bunuri sau răspundere față de vecini este necesară, de regulă, o asigurare facultativă adecvată.",
     sections: [
       {
-        title: "PAD, pe scurt",
+        title: "Cât costă asigurarea obligatorie PAD?",
         body:
           "PAD privește construcțiile cu destinație de locuință, în condițiile și cu excepțiile legale. La 25 octombrie 2026, pentru tip A suma asigurată este 100.000 lei și prima anuală 130 lei; pentru tip B, 50.000 lei și 50 lei. Tipul este determinat de caracteristicile construcției conform legii, nu de valoarea aleasă de proprietar.",
       },
       {
-        title: "Facultativa de locuință",
+        title: "Cum se stabilește prețul poliței facultative?",
         body:
-          "Asigurarea facultativă nu trebuie prezentată ca un produs unic universal. În funcție de asigurător și pachet, poate include clădirea, bunurile, instalațiile, riscuri de apă, incendiu, furt, fenomene naturale, răspundere civilă sau servicii de asistență la domiciliu.",
+          "Prima depinde de datele casei sau apartamentului, sumele asigurate, riscurile incluse și franșiză. Cere comparația pe aceeași sumă pentru clădire și verifică separat cât este acoperit pentru bunuri, daune de apă și prejudicii față de vecini. Așa poți vedea de ce două oferte cu preț diferit nu oferă aceeași protecție.",
       },
     ],
     faqs: [...[
@@ -187,7 +187,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       "Asigurarea de călătorie poate acoperi cheltuieli medicale neprevăzute, asistență, bagaje sau anularea călătoriei, în funcție de pachet. Alegerea corectă depinde de destinație, durată, scopul călătoriei și activitățile planificate.",
     metaTitle: "Asigurare de călătorie — medicală, bagaje și storno",
     metaDescription:
-      "Ce compari la o asigurare de călătorie: cheltuieli medicale, asistență, bagaje, storno și sporturi. Date utile pentru ofertă și întrebări frecvente.",
+      "Compară asigurările de călătorie după destinație, zile și activități: cheltuieli medicale, asistență, bagaje și storno. Vezi ce verifici înainte să pleci.",
     ctaLabel: "Cere ofertă călătorie",
     whatsappMessage: "Bună! Doresc o ofertă pentru asigurare de călătorie.",
     heroBullets: ["Pentru vacanțe, business travel sau deplasări în familie", "Atenție la destinație, durată și activități sportive", "Poate include clauze suplimentare: bagaje, storno, sporturi"],
@@ -253,6 +253,10 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       {
         question: "Am nevoie de clauză pentru sporturi?",
         answer: "Dacă mergi la schi, sporturi nautice, drumeții dificile sau alte activități speciale, trebuie verificată acoperirea dedicată.",
+      },
+      {
+        question: "Ce verific la asigurarea pentru o excursie de o zi în străinătate?",
+        answer: "Verifică dacă polița este valabilă în țara vizitată pe toată durata deplasării și ce include pentru urgențe medicale și asistență. Dacă ai o poliță anuală sau o asigurare prin cardul bancar, verifică dacă deplasarea și activitățile planificate intră în acoperire și dacă există condiții de activare.",
       },
     ], ...personalFaqExtras["calatorie"]],
   },

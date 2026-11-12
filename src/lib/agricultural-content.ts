@@ -4,8 +4,8 @@ export const agriculturalSolution: BusinessSolution = {
   slug: "agricole",
   name: "Asigurări agricole",
   title: "Asigurări agricole pentru culturi, vii și livezi",
-  seoTitle: "Asigurări agricole, culturi și sprijin APIA / AFIR",
-  description: "Asigurări agricole în România: culturi, vii, livezi și sere. Grindină, secetă și sprijin APIA/AFIR pentru prima eligibilă, explicate pe scurt.",
+  seoTitle: "Asigurări agricole: culturi, secetă și costuri",
+  description: "De ce depinde prețul asigurării culturilor, viilor și livezilor, cum verifici acoperirea pentru secetă și ce condiții verifici pentru sprijinul la primă prin APIA sau AFIR.",
   intro: "Un sezon de muncă depinde și de vreme. Analizăm protecția culturilor de câmp, a viilor, livezilor și legumelor, precum și a serelor și solariilor. Pornim de la ce cultivi, unde și pe ce suprafață, apoi clarificăm riscurile și condițiile potrivite fermei tale.",
   icon: "leaf",
   color: "mint",
@@ -41,7 +41,7 @@ export const agriculturalSolution: BusinessSolution = {
       body: "Pentru cereale, porumb, floarea-soarelui și alte culturi se verifică separat riscurile climatice, etapele de vegetație și suprafețele. Grindina, incendiul, furtuna, ploaia torențială sau înghețul pot face obiectul unor acoperiri. Cheltuielile de reînsămânțare au condiții proprii și nu reprezintă o garanție pentru orice cultură nereușită.",
     },
     {
-      title: "Vii și livezi: rodul și sistemele de protecție",
+      title: "Asigurarea viilor și a pomilor fructiferi",
       body: "La vița de vie contează destinația producției și stadiul plantei. La livezi se verifică specia, tipul plantației și existența protecției antigrindină. Rodul, sistemul de protecție și echipamentele sunt obiecte diferite. Înghețul târziu de primăvară și pierderile de calitate necesită verificarea expresă a condițiilor; nu se presupun acoperite pentru orice plantație.",
     },
     {
@@ -51,6 +51,10 @@ export const agriculturalSolution: BusinessSolution = {
     {
       title: "Secetă: pierdere în teren sau criterii meteorologice",
       body: "Unele variante urmăresc pierderea constatată în cultură; altele folosesc deficitul de precipitații și temperaturile măsurate pentru un punct de referință și o perioadă stabilite în contract. La varianta bazată pe date meteorologice, despăgubirea urmează formula convenită, iar pierderea din parcela ta poate să nu coincidă cu rezultatul acelui calcul. Cultura, zona, pragurile și condițiile de acces se verifică înainte de alegere.",
+    },
+    {
+      title: "Cât costă asigurarea culturilor agricole pe hectar?",
+      body: "Prima depinde de cultură, amplasament, suprafață, suma asigurată pe hectar, riscuri și franșiză. Pentru o comparație corectă, cere oferte pentru aceleași culturi, parcele și sume asigurate. Compară apoi riscurile și pragurile de despăgubire: un preț mai mic pe hectar poate însemna o protecție diferită.",
     },
   ],
   faqs: [
@@ -69,10 +73,6 @@ export const agriculturalSolution: BusinessSolution = {
     {
       question: "Ce informații pregătesc pentru ofertă?",
       answer: "Pentru început: cultura, localitatea sau zona, suprafața aproximativă și riscurile de interes. Ulterior pot fi necesare identificarea parcelelor, hărți, suprafețe actualizate, producția ori valoarea asigurată și informații despre irigații sau protecția antigrindină. Documentele se stabilesc la ofertare; nu se încarcă în formularul inițial.",
-    },
-    {
-      question: "Cât costă asigurarea agricolă?",
-      answer: "Nu există un preț unic pe hectar pentru toate fermele. Oferta ține cont de cultură, amplasament, suprafață, suma asigurată, riscuri și franșize. Comparăm ce primești pentru prima cerută, inclusiv limitele și condițiile de despăgubire.",
     },
     {
       question: "Ce fac după grindină, îngheț sau altă daună?",

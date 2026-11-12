@@ -6,7 +6,7 @@ import { rcaArticleFaqs } from "@/lib/faq-content";
 import { rcaAccidentSteps, rcaAmiabilaRules, rcaBonusPrinciples, rcaBuyingSteps, rcaCoverage, rcaDamageDocs, rcaFaqs, rcaNotCoverage, rcaPolicyChecks, rcaQuoteData } from "@/lib/rca-content";
 import { insuranceServiceSchema, pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata("Asigurare RCA și ghid complet — Cluj și Bihor", "RCA pentru persoane fizice și firme: acoperiri, acte, cumpărare, bonus-malus, accident și daună. Toate explicațiile și întrebările frecvente într-o singură pagină.", "/asigurare-rca");
+export const metadata = pageMetadata("Asigurare RCA: acte, ofertă și bonus-malus", "Ce acte pregătești pentru o ofertă RCA, cum verifici polița la reînnoire și ce acoperă. Pentru persoane fizice și firme din Bihor, Cluj și restul țării.", "/asigurare-rca");
 const faqs = [...rcaFaqs, ...Object.values(rcaArticleFaqs).flat()];
 
 export default function RcaPage() {
@@ -26,7 +26,7 @@ export default function RcaPage() {
       <div className="product-grid"><ProductCard title="Prejudicii produse terților" tone="mint"><ProductList items={rcaCoverage} /></ProductCard><ProductCard title="Ce nu acoperă propria RCA" tone="peach"><ProductList items={rcaNotCoverage} /></ProductCard></div>
       <p className="product-note"><strong>RCA și CASCO au roluri diferite.</strong> RCA acoperă răspunderea față de terți. <Link href="/asigurare-casco">CASCO</Link> este facultativă și poate proteja propriul vehicul, în condițiile produsului. Chiar dacă ai CASCO, obligația RCA rămâne aplicabilă. Pentru mai multe vehicule ale firmei, poți consulta pagina despre <Link href="/asigurari-firme/flote-auto">flote auto</Link>.</p>
     </ProductSection>
-    <ProductSection id="acte" number="02" title="Acte, cumpărare și verificarea poliței" description="Compară ofertele pe aceleași date. Contează prețul, dar și asigurătorul, valabilitatea, corectitudinea poliței și suportul ulterior.">
+    <ProductSection id="acte" number="02" title="Ce acte sunt necesare pentru o ofertă RCA?" description="Pentru un vehicul deja înmatriculat, pregătește datele proprietarului sau ale firmei, talonul și, dacă este necesar, cartea de identitate a vehiculului. La reînnoire, verifică data exactă la care expiră polița și semnalează orice schimbare de proprietar sau de date ale vehiculului.">
       <ol className="product-steps">{rcaBuyingSteps.map((step, index) => <li key={step.title}><span aria-hidden="true">{index + 1}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol>
       <div className="product-grid"><ProductCard title="Ce date pregătești" tone="blue"><ProductList items={rcaQuoteData} /></ProductCard><ProductCard title="Ce verifici înainte de confirmare" tone="mint"><ProductList items={rcaPolicyChecks} /></ProductCard></div>
       <p className="product-note"><strong>La primul contact, fără acte.</strong> Nu trimite CNP sau fotografii ale documentelor prin formularul public. Pentru înmatriculare, leasing sau regim temporar, documentele se stabilesc pentru situația concretă. Datele proprietarului și utilizatorului trebuie să corespundă actelor și situației legale.</p>
