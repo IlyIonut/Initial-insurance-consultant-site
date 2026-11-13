@@ -7,10 +7,14 @@ const contentRevision = new Date("2026-10-29T00:00:00Z");
 const searchLaunchRevision = new Date("2026-11-02T00:00:00Z");
 const agricultureRevision = new Date("2026-11-03T00:00:00Z");
 const localSearchRevision = new Date("2026-11-12T00:00:00Z");
-const localSearchPaths = new Set([
-  "/", "/zone-deservite", "/asigurare-rca", "/asigurare-locuinta", "/asigurare-calatorie", "/asigurari-firme", "/asigurari-firme/agricole", "/persoane-fizice",
+const searchSnippetRevision = new Date("2026-11-13T00:00:00Z");
+const searchSnippetPaths = new Set([
+  "/", "/zone-deservite", "/asigurare-rca", "/asigurare-casco", "/asigurari-firme", "/persoane-fizice", "/domenii",
 ]);
-const agriculturePaths = new Set(["/domenii", "/ghiduri", "/contact"]);
+const localSearchPaths = new Set([
+  "/asigurare-locuinta", "/asigurare-calatorie", "/asigurari-firme/agricole",
+]);
+const agriculturePaths = new Set(["/ghiduri", "/contact"]);
 const unchangedPaths = new Set(["/confidentialitate", "/cookies", "/termeni-si-conditii"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -23,8 +27,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return paths.map(path => ({
     url: SITE.url + (path === "/" ? "/" : path),
-    lastModified: localSearchPaths.has(path) ? localSearchRevision
+    lastModified: searchSnippetPaths.has(path) || path.startsWith("/domenii/") ? searchSnippetRevision
+      : localSearchPaths.has(path) ? localSearchRevision
       : agriculturePaths.has(path) ? agricultureRevision
-      : unchangedPaths.has(path) || path.startsWith("/domenii/") ? contentRevision : searchLaunchRevision,
+      : unchangedPaths.has(path) ? contentRevision : searchLaunchRevision,
   }));
 }

@@ -7,7 +7,7 @@ import { SolutionCards } from "@/components/SolutionCards";
 import { industries } from "@/lib/business-content";
 import { faqs } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
-export const metadata = pageMetadata("Asigurări pentru firme și IMM-uri", "Asigurări pentru IMM-uri și ferme: bunuri, răspunderi, flote, culturi agricole și angajați. Consultanță în România, inclusiv Cluj și Bihor.", "/asigurari-firme");
+export const metadata = pageMetadata("Asigurări pentru firme și IMM-uri", "Compară asigurările pentru bunuri, răspundere, flote, culturi agricole și angajați. Vezi ce polițe merită analizate în funcție de activitatea firmei.", "/asigurari-firme");
 const businessFaqs = [
   {
     question: "Ce asigurări îi trebuie unei firme mici?",

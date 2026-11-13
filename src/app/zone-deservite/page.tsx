@@ -6,8 +6,8 @@ import { pageMetadata } from "@/lib/seo";
 const path = "/zone-deservite";
 
 export const metadata = pageMetadata(
-  "Zone deservite: asigurări în toată România",
-  "Consultanță în asigurări pentru clienți din toată România, inclusiv Ștei, Beiuș și județele Bihor și Cluj. Vezi ce date pregătești pentru o ofertă.",
+  "Asigurări în toată România",
+  "Află ce date pregătești pentru asigurarea mașinii, locuinței, firmei sau fermei. Preluăm solicitări din toată România.",
   path,
 );
 

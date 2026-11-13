@@ -6,7 +6,7 @@ import { rcaArticleFaqs } from "@/lib/faq-content";
 import { rcaAccidentSteps, rcaAmiabilaRules, rcaBonusPrinciples, rcaBuyingSteps, rcaCoverage, rcaDamageDocs, rcaFaqs, rcaNotCoverage, rcaPolicyChecks, rcaQuoteData } from "@/lib/rca-content";
 import { insuranceServiceSchema, pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata("Asigurare RCA: acte, ofertă și bonus-malus", "Ce acte pregătești pentru o ofertă RCA, cum verifici polița la reînnoire și ce acoperă. Pentru persoane fizice și firme din Bihor, Cluj și restul țării.", "/asigurare-rca");
+export const metadata = pageMetadata("Asigurare RCA: acte, ofertă și bonus-malus", "Vezi ce acte pregătești pentru o ofertă RCA, ce verifici la reînnoire și cum influențează clasa bonus-malus prețul poliței.", "/asigurare-rca");
 const faqs = [...rcaFaqs, ...Object.values(rcaArticleFaqs).flat()];
 
 export default function RcaPage() {

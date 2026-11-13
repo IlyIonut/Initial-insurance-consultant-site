@@ -33,7 +33,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       "CASCO este asigurarea facultativă care poate proteja propriul vehicul pentru avarii, furt și alte evenimente, în funcție de condițiile produsului ales. Te ajut să compari acoperirile importante, nu doar prima anuală.",
     metaTitle: "Asigurare CASCO — acoperiri, franșize și ofertă",
     metaDescription:
-      "Compară acoperirile CASCO pentru avarii și furt, franșizele și condițiile de reparație. Consultanță în toată România, inclusiv Cluj și Bihor.",
+      "Compară acoperirile CASCO pentru avarii și furt, franșizele și condițiile de reparație. Vezi ce date pregătești pentru o ofertă.",
     ctaLabel: "Cere ofertă CASCO",
     whatsappMessage: "Bună! Doresc o ofertă CASCO și aș vrea să compar acoperirile disponibile.",
     heroBullets: ["Pentru mașina ta, nu pentru prejudiciile produse terților", "Utilă mai ales pentru mașini noi, valoroase sau finanțate", "Condițiile diferă mult între pachete și asigurători"],

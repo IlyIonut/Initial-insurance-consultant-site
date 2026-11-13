@@ -21,7 +21,7 @@ export const SITE = {
   tradeRegister: process.env.NEXT_PUBLIC_TRADE_REGISTER || "",
   intermediaryRole: process.env.NEXT_PUBLIC_INTERMEDIARY_ROLE || "",
   complaintsEmail: process.env.NEXT_PUBLIC_COMPLAINTS_EMAIL || process.env.NEXT_PUBLIC_CONTACT_EMAIL || "Ionut.Ilies@kbagencies.ro",
-  description: "IlyAsig: asigurări pentru firme, fermieri și persoane fizice. Culturi agricole, bunuri, răspunderi, RCA și CASCO. Consultanță în România, inclusiv Cluj și Bihor.",
+  description: "IlyAsig oferă consultanță în asigurări pentru firme, fermieri și persoane fizice. Compară protecțiile pentru bunuri, culturi agricole, mașină și locuință.",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://ilyasig.ro").replace(/\/$/, ""),
 };
 
