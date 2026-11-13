@@ -54,7 +54,7 @@ export const agriculturalSolution: BusinessSolution = {
     },
     {
       title: "Cât costă asigurarea culturilor agricole pe hectar?",
-      body: "Prima depinde de cultură, amplasament, suprafață, suma asigurată pe hectar, riscuri și franșiză. Pentru o comparație corectă, cere oferte pentru aceleași culturi, parcele și sume asigurate. Compară apoi riscurile și pragurile de despăgubire: un preț mai mic pe hectar poate însemna o protecție diferită.",
+      body: "Prima depinde de cultură, amplasament, suprafață, suma asigurată pe hectar, riscuri și franșiză. Pentru o comparație corectă, cere oferte pentru aceleași culturi, parcele și sume asigurate. Compară apoi riscurile și pragurile de despăgubire. Dacă ai un buget fix, cere separat costul opțiunii pentru secetă și verifică pentru ce culturi și perioade se aplică. Calculează bugetul la prima totală din ofertă până când știi dacă primești sprijin.",
     },
   ],
   faqs: [

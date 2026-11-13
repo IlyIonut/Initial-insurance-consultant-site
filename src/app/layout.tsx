@@ -3,6 +3,7 @@ import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { SITE } from "@/lib/site";
+import { insuranceServiceAreas } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: { default: `${SITE.name} | Asigurări pentru firme și persoane fizice`, template: `%s | ${SITE.name}` },
@@ -35,7 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         description: SITE.description,
         ...(SITE.phoneRaw ? { telephone: `+${SITE.phoneRaw}` } : {}),
         email: SITE.email,
-        areaServed: [{ "@type": "Country", name: "România" }, ...SITE.seoAreas],
+        areaServed: insuranceServiceAreas,
         knowsAbout: ["Asigurări pentru IMM-uri", "Asigurări de bunuri", "Răspundere civilă", "Flote auto", "Asigurări de sănătate", "Asigurări pentru persoane fizice", "Asigurări agricole"],
       },
       {

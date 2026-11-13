@@ -6,7 +6,7 @@ import { rcaArticleFaqs } from "@/lib/faq-content";
 import { rcaAccidentSteps, rcaAmiabilaRules, rcaBonusPrinciples, rcaBuyingSteps, rcaCoverage, rcaDamageDocs, rcaFaqs, rcaNotCoverage, rcaPolicyChecks, rcaQuoteData } from "@/lib/rca-content";
 import { insuranceServiceSchema, pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata("Asigurare RCA: acte, ofertă și bonus-malus", "Vezi ce acte pregătești pentru o ofertă RCA, ce verifici la reînnoire și cum influențează clasa bonus-malus prețul poliței.", "/asigurare-rca");
+export const metadata = pageMetadata("Asigurare RCA: preț, acte și reînnoire", "Află de ce depinde prețul RCA, cum compari ofertele pe aceeași perioadă și ce acte pregătești pentru o poliță nouă sau o reînnoire.", "/asigurare-rca");
 const faqs = [...rcaFaqs, ...Object.values(rcaArticleFaqs).flat()];
 
 export default function RcaPage() {
@@ -19,7 +19,7 @@ export default function RcaPage() {
     tone="peach"
     breadcrumbs={[{ label: "Persoane fizice", href: "/persoane-fizice" }, { label: "RCA", href: "/asigurare-rca" }]}
     facts={["Protejează terții păgubiți", "Nu înlocuiește protecția CASCO", "Datele și valabilitatea trebuie verificate"]}
-    navigation={[{ id: "acoperiri", label: "Ce acoperă" }, { id: "acte", label: "Acte și cumpărare" }, { id: "bonus-malus", label: "Bonus-malus" }, { id: "daune", label: "Accident și daună" }, { id: "intrebari", label: "Întrebări frecvente" }]}
+    navigation={[{ id: "acoperiri", label: "Ce acoperă" }, { id: "acte", label: "Acte și reînnoire" }, { id: "bonus-malus", label: "Preț și bonus-malus" }, { id: "daune", label: "Accident și daună" }, { id: "intrebari", label: "Întrebări frecvente" }]}
   >
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
     <ProductSection id="acoperiri" number="01" title="Ce acoperă RCA. Și unde se oprește." description="RCA este asigurarea obligatorie de răspundere civilă auto, în categoriile și situațiile prevăzute de lege. Ea privește prejudiciile produse altor persoane prin vehiculul asigurat.">
@@ -32,9 +32,10 @@ export default function RcaPage() {
       <p className="product-note"><strong>La primul contact, fără acte.</strong> Nu trimite CNP sau fotografii ale documentelor prin formularul public. Pentru înmatriculare, leasing sau regim temporar, documentele se stabilesc pentru situația concretă. Datele proprietarului și utilizatorului trebuie să corespundă actelor și situației legale.</p>
       <p className="product-caption">După emitere, verifică valabilitatea raportată în AIDA, baza administrată de BAAR. Dacă polița nu apare după raportarea datelor sau observi neconcordanțe, cere clarificări asigurătorului ori intermediarului. Cererea de ofertă și plata nu confirmă, singure, că protecția a început.</p>
     </ProductSection>
-    <ProductSection id="bonus-malus" number="03" title="Bonus-malus, fără confuzii" description="Istoricul daunelor plătite poate influența prima. Prețul final depinde și de tariful curent și de criteriile de risc ale fiecărui asigurător.">
+    <ProductSection id="bonus-malus" number="03" title="Cât costă RCA și cum contează bonus-malus?" description="Tariful diferă în funcție de vehicul, datele proprietarului, perioada solicitată și criteriile asigurătorului. Clasa bonus-malus reflectă istoricul daunelor plătite.">
       <div className="product-grid">{rcaBonusPrinciples.map((item, index) => <ProductCard key={item.title} title={item.title} tone={index % 2 === 0 ? "mint" : "blue"}><p>{item.text}</p></ProductCard>)}</div>
       <p className="product-note"><strong>Clasa și prețul sunt lucruri diferite.</strong> Un bonus păstrat nu garantează același preț ca anul trecut. Tipul și caracteristicile vehiculului, localitatea, vârsta și celelalte criterii ale asigurătorului pot influența tariful. Dacă nu ești de acord cu încadrarea, cere justificarea și corectarea erorilor la asigurătorul care a raportat informațiile.</p>
+      <p className="product-note"><strong>Cauți un RCA mai ieftin?</strong> Compară suma totală pentru același vehicul, aceeași dată de început și aceeași perioadă. Verifică separat dacă oferta include decontare directă și cât costă această opțiune. Dacă plata poate fi eșalonată, compară totalul datorat, nu doar prima rată.</p>
     </ProductSection>
     <ProductSection id="daune" number="04" title="Ce faci după un accident" description="Mai întâi siguranța, apoi procedura corectă, documentele și avizarea daunei.">
       <ol className="product-steps accident-steps">{rcaAccidentSteps.map((step, index) => <li key={step.title}><span aria-hidden="true">{index + 1}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol>

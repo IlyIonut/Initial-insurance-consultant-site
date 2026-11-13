@@ -8,6 +8,8 @@ export const SITE = {
     { "@type": "AdministrativeArea", name: "Județul Cluj, România" },
     { "@type": "City", name: "Ștei, România" },
     { "@type": "City", name: "Beiuș, România" },
+    { "@type": "City", name: "Cluj-Napoca, România" },
+    { "@type": "City", name: "Oradea, România" },
   ],
   phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || "",
   phoneRaw: (process.env.NEXT_PUBLIC_PHONE || "").replace(/\D/g, ""),
