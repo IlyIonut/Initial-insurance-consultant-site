@@ -4,7 +4,7 @@ export type BusinessSolution = {
   slug: string; name: string; title: string; description: string; intro: string; icon: string; color: string; label: string;
   seoTitle?: string;
   suitable: string[]; coverages: string[]; questions: string[]; note: string;
-  scenario: { title: string; body: string }; sections: { title: string; body: string }[];
+  scenario: { title: string; body: string }; sections: { id?: string; title: string; body: string }[];
   faqs: { question: string; answer: string }[];
 };
 export const businessSolutions: BusinessSolution[] = [
@@ -28,8 +28,8 @@ export const businessSolutions: BusinessSolution[] = [
   },
   {
     slug: "raspundere-civila-profesionala", name: "Răspundere civilă și profesională", title: "Asigurări de răspundere pentru firme și profesii",
-    seoTitle: "Asigurare de răspundere profesională pentru firme și PFA",
-    description: "Răspundere civilă și profesională pentru IMM-uri, PFA și servicii. Verificăm activitățile, cerințele contractuale, limitele și excluderile.",
+    seoTitle: "Asigurare de răspundere profesională și malpraxis",
+    description: "Răspundere profesională și malpraxis: ce date pregătești pentru ofertă și cum verifici activitățile acoperite, limitele și excluderile.",
     intro: "O greșeală sau un incident poate afecta un client, un vizitator ori un partener. Identificăm tipul de răspundere relevant pentru activitatea ta și verificăm dacă oferta răspunde riscurilor și cerințelor contractuale.",
     icon: "scale", color: "mint", label: "RELAȚIA CU CLIENȚII",
     suitable: ["Firme care primesc clienți sau desfășoară lucrări la terți", "Consultanți, profesii liberale și furnizori de servicii specializate", "Producători și distribuitori, în funcție de răspunderea pentru produse", "Firme cărora un partener le cere o anumită limită de asigurare"],
@@ -39,6 +39,11 @@ export const businessSolutions: BusinessSolution[] = [
     scenario: { title: "Clientul cere o limită de răspundere în contract.", body: "O firmă de servicii primește o cerință de asigurare înainte de semnarea unui proiect. Comparăm cerința cu activitatea efectivă, teritoriul, excluderile și momentul în care este acoperită reclamația. Simplul titlu al poliței nu confirmă adecvarea." },
     sections: [{ title: "Două tipuri de răspundere, două întrebări diferite", body: "Pentru un incident care deteriorează bunurile unui client poate fi relevantă răspunderea civilă generală. Pentru o eroare într-un serviciu de specialitate poate fi necesară răspunderea profesională. Analiza pornește de la prejudiciul posibil și de la activitatea declarată, nu de la alegerea unui titlu de produs." }, { title: "Continuitatea polițelor merită verificată", body: "La unele asigurări profesionale, data retroactivă și momentul formulării sau notificării reclamației sunt esențiale. Dacă schimbi asigurătorul ori întrerupi protecția, clarificăm aceste aspecte înainte de reînnoire. Cerințele pentru subcontractori și proiectele internaționale se analizează distinct." },
       { title: "De ce depinde oferta de răspundere profesională?", body: "Pentru o ofertă, pregătește serviciile prestate, tipurile de clienți, țările în care lucrezi și limita cerută în contract. Asigurătorul poate cere și cifra de afaceri relevantă sau istoricul reclamațiilor. Compară primele pentru aceleași activități, limite și condiții de notificare." },
+      {
+        id: "malpraxis",
+        title: "Ce verifici la o ofertă de asigurare de malpraxis medical?",
+        body: "Spune ce profesie și specialitate ai, ce servicii prestezi și în ce unități lucrezi. Verifică dacă toate activitățile care te interesează sunt declarate și acoperite. Compară limitele pe eveniment și pe întreaga perioadă, cheltuielile de apărare și condițiile de notificare a unei reclamații. Polița personalului medical nu confirmă automat acoperirea răspunderii cabinetului sau a aparaturii.",
+      },
     ],
     faqs: [...[{ question: "O poliță generală acoperă și erorile profesionale?", answer: "Nu automat. Tipul de prejudiciu și serviciul prestat trebuie să corespundă produsului și activităților acceptate." }, { question: "Poți verifica o cerință de la un client extern?", answer: "Putem compara cerința de asigurare cu variantele disponibile, inclusiv limitele, teritoriul și jurisdicția. Acceptarea riscului și condițiile finale aparțin asigurătorului." }, { question: "Este obligatorie pentru orice firmă?", answer: "Obligațiile diferă în funcție de profesie și de cadrul aplicabil. Pot exista și cerințe contractuale. Situația exactă trebuie verificată înainte de alegerea poliței." }], ...businessFaqExtras["raspundere-civila-profesionala"]], 
   },
@@ -60,7 +65,7 @@ export const businessSolutions: BusinessSolution[] = [
   },
   {
     slug: "sanatate-angajati", name: "Sănătate pentru angajați", title: "Asigurări de sănătate pentru angajații firmei",
-    seoTitle: "Asigurare de sănătate pentru angajați: ofertă de grup",
+    seoTitle: "Asigurare de sănătate pentru angajați",
     description: "Soluții de sănătate de grup pentru angajați. Comparăm rețelele medicale, serviciile, limitele, perioadele de așteptare și administrarea planului.",
     intro: "Un beneficiu util începe cu nevoile echipei. Analizăm serviciile medicale relevante, accesul în localitățile în care lucrați și regulile de utilizare, pentru ca diferențele dintre planuri să fie ușor de înțeles.",
     icon: "heart", color: "mint", label: "OAMENII DIN ECHIPĂ",
@@ -76,7 +81,7 @@ export const businessSolutions: BusinessSolution[] = [
   },
   {
     slug: "intreruperea-activitatii", name: "Întreruperea activității", title: "Asigurarea pentru întreruperea activității firmei",
-    seoTitle: "Asigurare pentru întreruperea activității: pierderi și ofertă",
+    seoTitle: "Asigurare pentru întreruperea activității",
     description: "Ce înseamnă Business Interruption: pierderi financiare după un eveniment asigurat. Verificăm declanșarea acoperirii, limitele și perioada de despăgubire.",
     intro: "Repararea spațiului sau a utilajului poate dura. Între timp, unele cheltuieli continuă. Analizăm dacă protecția pentru întreruperea activității poate completa asigurarea bunurilor și cum se aplică în situația firmei tale.",
     icon: "clock", color: "blue", label: "CONTINUITATEA AFACERII",

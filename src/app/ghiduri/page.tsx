@@ -7,7 +7,7 @@ import { insuranceTypes } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 import { solutionHref } from "@/lib/business-content";
 
-export const metadata = pageMetadata("Ghiduri de asigurări pentru firme și persoane fizice", "Ce asigurări analizezi pentru un IMM și cum compari ofertele, explicate în aceeași pagină. Informațiile despre fiecare produs sunt reunite în pagina sa.", "/ghiduri");
+export const metadata = pageMetadata("Ghiduri de asigurări și comparații de oferte", "Ce asigurări analizezi pentru un IMM și cum compari ofertele, explicate în aceeași pagină. Informațiile despre fiecare produs sunt reunite în pagina sa.", "/ghiduri");
 const generalGuides = guides.filter(guide => guide.slug !== "bunuri-versus-intreruperea-activitatii");
 
 export default function GuidesPage() {

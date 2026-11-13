@@ -5,7 +5,7 @@ export const agriculturalSolution: BusinessSolution = {
   name: "Asigurări agricole",
   title: "Asigurări agricole pentru culturi, vii și livezi",
   seoTitle: "Asigurări agricole: culturi, secetă și costuri",
-  description: "De ce depinde prețul asigurării culturilor, viilor și livezilor, cum verifici acoperirea pentru secetă și ce condiții verifici pentru sprijinul la primă prin APIA sau AFIR.",
+  description: "Vezi de ce depinde prețul asigurării culturilor pe hectar, ce verifici pentru secetă și când poți solicita sprijin pentru primă prin APIA sau AFIR.",
   intro: "Un sezon de muncă depinde și de vreme. Analizăm protecția culturilor de câmp, a viilor, livezilor și legumelor, precum și a serelor și solariilor. Pornim de la ce cultivi, unde și pe ce suprafață, apoi clarificăm riscurile și condițiile potrivite fermei tale.",
   icon: "leaf",
   color: "mint",

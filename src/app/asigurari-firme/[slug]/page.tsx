@@ -30,7 +30,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
       <p className="product-note"><strong>De verificat înainte de decizie: </strong>{s.note}</p>
     </ProductSection>
     <ProductSection id="comparatie" number="02" title="Detaliile care fac diferența">
-      <div className="product-grid product-detail-grid"><div className="product-copy">{s.sections.map(section => <section key={section.title}><h3>{section.title}</h3><p>{section.body}</p></section>)}</div><ProductCard title="Întrebări pentru comparația ofertelor" tone="peach"><ProductList items={s.questions} /></ProductCard></div>
+      <div className="product-grid product-detail-grid"><div className="product-copy">{s.sections.map(section => <section key={section.title} id={section.id} className={section.id ? "product-copy-anchor" : undefined}><h3>{section.title}</h3><p>{section.body}</p></section>)}</div><ProductCard title="Întrebări pentru comparația ofertelor" tone="peach"><ProductList items={s.questions} /></ProductCard></div>
       <div className="product-example"><span>EXEMPLU ORIENTATIV</span><h3>{s.scenario.title}</h3><p>{s.scenario.body}</p></div>
     </ProductSection>
     {continuityGuide && <ProductSection id="bunuri-si-continuitate" number="03" title="Bunurile sunt asigurate. Dar activitatea?" description={continuityGuide.intro}><div className="product-grid product-copy">{continuityGuide.sections.map(section => <section key={section.title}><h3>{section.title}</h3>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</section>)}</div></ProductSection>}

@@ -5,17 +5,15 @@ import { businessSolutions, industries, solutionHref } from "@/lib/business-cont
 // Keep real revision dates rather than refreshing every URL on every build.
 const contentRevision = new Date("2026-10-29T00:00:00Z");
 const searchLaunchRevision = new Date("2026-11-02T00:00:00Z");
-const agricultureRevision = new Date("2026-11-03T00:00:00Z");
 const searchRevision = new Date("2026-11-13T00:00:00Z");
 const productPaths = [
   ...insuranceTypes.map(product => product.href),
   ...businessSolutions.map(solution => solutionHref(solution.slug)),
 ];
 const searchPaths = new Set([
-  "/", "/zone-deservite", "/asigurari-firme", "/persoane-fizice", "/domenii",
+  "/", "/zone-deservite", "/asigurari-firme", "/persoane-fizice", "/domenii", "/contact", "/ghiduri",
   ...productPaths,
 ]);
-const agriculturePaths = new Set(["/ghiduri", "/contact"]);
 const unchangedPaths = new Set(["/confidentialitate", "/cookies", "/termeni-si-conditii"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -27,7 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return paths.map(path => ({
     url: SITE.url + (path === "/" ? "/" : path),
     lastModified: searchPaths.has(path) || path.startsWith("/domenii/") ? searchRevision
-      : agriculturePaths.has(path) ? agricultureRevision
       : unchangedPaths.has(path) ? contentRevision : searchLaunchRevision,
   }));
 }

@@ -14,7 +14,7 @@ export default function RcaPage() {
   return <ProductPage
     eyebrow="AUTO · PENTRU PERSOANE FIZICE ȘI FIRME"
     title="Asigurare RCA: de la ofertă la daună."
-    description="Ce acoperă asigurarea obligatorie auto, ce acte pregătești, cum funcționează bonus-malus și ce faci după un accident. Explicațiile și întrebările frecvente sunt reunite aici."
+    description="Află cum compari ofertele de asigurare auto obligatorie (RCA), ce acte pregătești la reînnoire, cum se aplică bonus-malus și ce faci după un accident."
     icon="car"
     tone="peach"
     breadcrumbs={[{ label: "Persoane fizice", href: "/persoane-fizice" }, { label: "RCA", href: "/asigurare-rca" }]}

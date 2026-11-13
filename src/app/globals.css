@@ -345,6 +345,7 @@ summary::-webkit-details-marker { display:none; }
 .product-note a,.product-card p a { color:#1644b8; text-decoration:underline; }
 .product-caption { margin-top:17px; font-size:13px; line-height:1.8; color:var(--muted); }
 .product-copy { min-width:0; }
+.product-copy-anchor { scroll-margin-top:108px; }
 .product-copy>section+section { margin-top:25px; }
 .product-copy h3 { font-size:20px; line-height:1.35; margin-bottom:11px; }
 .product-copy p+p { margin-top:13px; }
