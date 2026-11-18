@@ -67,7 +67,7 @@ export default function ServiceAreasPage() {
           </ProductCard>
           <ProductCard title="Ai culturi sau o livadă?" tone="mint">
             <p>
-              Grupează parcelele după localitate, cultură și suprafață. Pentru livadă, notează specia și dacă există protecție antigrindină. Așa poți compara ce riscuri și ce sumă pe hectar are fiecare ofertă. Vezi <Link href="/asigurari-firme/agricole#comparatie">cum compari asigurările pentru culturi</Link> și <Link href="/asigurari-firme/agricole#sprijin-prima">când poți verifica sprijinul pentru primă</Link>.
+              Grupează parcelele după localitate, cultură și suprafață. Pentru livadă, notează specia și dacă există protecție antigrindină. Așa poți compara ce riscuri și ce sumă pe hectar are fiecare ofertă. Vezi <Link href="/asigurari-firme/agricole#comparatie">cum compari asigurările pentru culturi</Link> și <Link href="/asigurari-firme/agricole#sprijin-prima">ce sprijin poți verifica pentru costul poliței</Link>.
             </p>
           </ProductCard>
         </div>
@@ -79,7 +79,7 @@ export default function ServiceAreasPage() {
 
       <ProductContact
         title="Spune-mi ce vrei să asiguri"
-        description="În prima cerere sunt suficiente localitatea, tipul asigurării și datele de contact. Actele se stabilesc ulterior."
+        description="În prima cerere sunt suficiente localitatea, tipul asigurării și datele de contact. Îți explic apoi ce acte sunt necesare."
         href="/contact"
         label="Cere o ofertă"
       />

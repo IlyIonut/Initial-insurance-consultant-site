@@ -1,15 +1,15 @@
 import { ProductCard, ProductSection } from "./ProductPage";
 
 export function AgriculturalSupport() {
-  return <ProductSection id="sprijin-prima" number="03" title="Decontarea primei: APIA și AFIR" description="Sprijinul poate rambursa o parte din prima eligibilă deja plătită. Despăgubirea pentru o daună agricolă se solicită separat asigurătorului.">
+  return <ProductSection id="sprijin-prima" number="03" title="Sprijin pentru costul poliței: APIA și AFIR" description="Poți primi înapoi o parte din costul eligibil al poliței, numit și primă de asigurare, dacă îndeplinești regulile programului. Acest sprijin este separat de despăgubirea pe care o ceri asigurătorului pentru o pagubă la culturi.">
     <div className="product-grid">
       <ProductCard title="APIA: struguri pentru vin" tone="mint">
-        <p>Intervenția IS-V-03 poate acoperi <strong>până la 80%</strong> pentru anumite pierderi climatice asimilate dezastrelor naturale sau <strong>până la 50%</strong> pentru alte acoperiri eligibile, în funcție de poliță. Sunt plafoane; suma aprobată poate fi redusă pentru încadrarea în buget.</p>
+        <p>Intervenția IS-V-03 poate acoperi <strong>până la 80%</strong> din costul eligibil al poliței pentru anumite pierderi climatice asimilate dezastrelor naturale sau <strong>până la 50%</strong> pentru alte acoperiri eligibile, în funcție de poliță. Acestea sunt procente maxime, nu sume garantate. Sprijinul aprobat poate fi mai mic, în funcție de bugetul programului.</p>
         <p>Se verifică inclusiv minimum 0,1 ha, soiurile pentru vin, înscrierea în Registrul Plantațiilor Viticole, declararea la APIA și identificarea parcelelor în poliță.</p>
         <p>Termenul publicat pentru 2026 a fost <strong>15 octombrie 2026</strong>, cu transmitere online. Pentru o cerere viitoare se verifică regulile și calendarul aplicabile.</p>
       </ProductCard>
       <ProductCard title="AFIR: verifică programul și sesiunea" tone="blue">
-        <p>Submăsura 17.1 prevede <strong>70%</strong> din prima eligibilă plătită; documentația consultată privește sesiunea 2025. Procentul nu confirmă existența unei sesiuni deschise în prezent.</p>
+        <p>Submăsura 17.1 prevede <strong>70%</strong> din costul eligibil al poliței deja plătite; documentația consultată privește sesiunea 2025. Procentul nu confirmă existența unei sesiuni deschise în prezent.</p>
         <p>Pentru DR-31, documentația consultativă identificată prevede <strong>50%</strong>. Depunerea și condițiile efective se confirmă prin ghidul final și anunțul de lansare; această informație nu reprezintă confirmarea unui apel deschis.</p>
       </ProductCard>
     </div>

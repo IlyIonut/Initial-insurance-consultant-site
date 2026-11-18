@@ -27,18 +27,18 @@ export function GeneralInsurancePage({ content: c }: { content: InsuranceContent
     navigation={[{ id: "acoperiri", label: "Acoperiri" }, { id: "alegere", label: "Cum alegi" }, { id: "date-pentru-oferta", label: "Date utile" }, { id: "intrebari", label: "Întrebări frecvente" }]}
   >
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
-    <ProductSection id="acoperiri" number="01" title="Cui i se potrivește și ce poate acoperi">
-      <div className="product-grid"><ProductCard title="Cui i se poate potrivi" tone="mint"><ProductList items={c.suitableFor} /></ProductCard><ProductCard title="Acoperiri de analizat" tone="blue"><ProductList items={c.commonCoverages} /></ProductCard></div>
+    <ProductSection id="acoperiri" number="01" title="Când îți poate fi utilă și ce poate acoperi">
+      <div className="product-grid"><ProductCard title="Îți poate fi utilă dacă…" tone="mint"><ProductList items={c.suitableFor} /></ProductCard><ProductCard title="Ce poate acoperi, în funcție de poliță" tone="blue"><ProductList items={c.commonCoverages} /></ProductCard></div>
       <p className="product-note"><strong>De reținut: </strong>{c.importantNote}</p>
     </ProductSection>
     <ProductSection id="alegere" number="02" title="Cum alegi o variantă potrivită">
       <div className="product-grid product-detail-grid"><div className="product-copy">{c.sections.map(section => <section key={section.title}><h3>{section.title}</h3><p>{section.body}</p>{section.items && <ProductList items={section.items} />}</section>)}</div><ProductCard title="Ce comparăm în ofertă" tone="peach"><ProductList items={c.compareChecklist} /></ProductCard></div>
     </ProductSection>
     <ProductSection id="date-pentru-oferta" number="03" title="Ce informații pregătești">
-      <ProductCard title="Date utile pentru o discuție despre ofertă"><ProductList items={c.offerData} /></ProductCard>
-      <p className="product-note">Pentru primul contact sunt suficiente informațiile generale. Nu trimite CNP, date medicale sau copii ale actelor prin formularul public. Documentele necesare se stabilesc ulterior.</p>
+      <ProductCard title="Cu ce informații începem"><ProductList items={c.offerData} /></ProductCard>
+      <p className="product-note">Pentru început, spune-mi ce cauți și cum te pot contacta. Nu trimite CNP, date medicale sau copii ale actelor prin formular. Îți explic apoi ce documente sunt necesare și cum le poți transmite.</p>
     </ProductSection>
     <ProductSection id="intrebari" number="04" title="Întrebări frecvente"><FAQ items={c.faqs} /><EditorialNote /></ProductSection>
-    <ProductContact title="Vrei să discutăm situația ta?" description="O singură cerere, cu câteva date generale. Clarificăm apoi nevoile și informațiile necesare." href={`/contact?pentru=personal&tip=${encodeURIComponent(c.eyebrow)}`} label={c.ctaLabel} />
+    <ProductContact title="Vrei să discutăm situația ta?" description="Spune-mi ce ai vrea să asiguri și ce întrebări ai. Pornim de aici și stabilim împreună pașii pentru ofertă." href={`/contact?pentru=personal&tip=${encodeURIComponent(c.eyebrow)}`} label={c.ctaLabel} />
   </ProductPage>;
 }

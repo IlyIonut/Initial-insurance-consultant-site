@@ -28,82 +28,73 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
   casco: {
     slug: "/asigurare-casco",
     eyebrow: "CASCO",
-    title: "Asigurare CASCO explicată clar, dincolo de preț",
+    title: "Asigurare CASCO pentru mașina ta",
     description:
-      "CASCO este asigurarea facultativă care poate proteja propriul vehicul pentru avarii, furt și alte evenimente, în funcție de condițiile produsului ales. Te ajut să compari acoperirile importante, nu doar prima anuală.",
+      "Cu o asigurare CASCO, poți primi ajutor pentru costul reparațiilor sau pentru furtul mașinii, dacă situația este inclusă în poliță. Te ajut să înțelegi ce primești pentru prețul plătit și ce cheltuieli ar rămâne în grija ta.",
     metaTitle: "Asigurare CASCO: preț, franșiză și ofertă",
     metaDescription:
-      "Vezi de ce depinde prețul CASCO pentru mașina ta. Compară riscurile de avarii și furt, franșiza și condițiile de reparație.",
+      "Află cât poate costa CASCO, ce daune poate acoperi și ce parte din reparație plătești tu. Compară ofertele pentru mașina ta.",
     ctaLabel: "Cere ofertă CASCO",
     whatsappMessage: "Bună! Doresc o ofertă CASCO și aș vrea să compar acoperirile disponibile.",
-    heroBullets: ["Pentru mașina ta, nu pentru prejudiciile produse terților", "Utilă mai ales pentru mașini noi, valoroase sau finanțate", "Condițiile diferă mult între pachete și asigurători"],
+    heroBullets: ["Poate acoperi daunele la mașina ta, inclusiv când provoci accidentul", "Poți alege protecție pentru avarii, furt și fenomene naturale", "Verificăm împreună ce include fiecare ofertă și cât ai plăti tu la daună"],
     suitableFor: [
-      "autoturisme noi sau cu valoare ridicată",
-      "mașini cumpărate prin leasing sau credit",
-      "șoferi care parchează frecvent în spații expuse",
-      "persoane care vor protecție pentru furt, avarii și fenomene naturale",
-      "firme care folosesc autovehicule în activitatea curentă",
-    ],
+  "ai o mașină nouă sau cu o valoare importantă pentru bugetul tău",
+  "ai cumpărat mașina prin leasing sau credit",
+  "parchezi frecvent în locuri expuse avariilor",
+  "vrei protecție pentru furt, avarii sau fenomene naturale",
+  "folosești mașina pentru firmă și vrei să verifici opțiunile disponibile"
+],
     commonCoverages: [
-      "coliziuni, zgârieri, răsturnare sau derapaj",
-      "incendiu, trăsnet, explozie",
-      "fenomene naturale sau atmosferice: furtună, grindină, inundație, căderi de corpuri",
-      "furt sau tentativă de furt, în condițiile poliței",
-      "vandalism sau evenimente cu autor necunoscut, dacă pachetul include riscul",
-      "elemente vitrate, asistență rutieră sau extindere teritorială, ca opțiuni/pachete suplimentare",
-    ],
-    compareChecklist: [
-      "riscurile incluse în pachetul de bază și opțiunile suplimentare",
-      "franșiza: valoare fixă, procentuală sau pe anumite tipuri de daune",
-      "excluderile și condițiile pentru utilizare comercială, șoferi, uzură și daune anterioare",
-      "modul de stabilire a valorii asigurate și a despăgubirii",
-      "service agreat, service ales și modul de decontare a reparației",
-      "acoperirea în afara României și eventualele limite teritoriale",
-    ],
+  "lovituri, zgârieturi, răsturnare sau derapaj",
+  "incendiu, trăsnet și explozie",
+  "furtună, grindină, inundație sau obiecte căzute pe mașină, dacă sunt acoperite",
+  "furt sau tentativă de furt, în condițiile poliței",
+  "vandalism sau daune cu autor necunoscut, dacă sunt incluse",
+  "geamuri, asistență rutieră sau protecție în alte țări, în funcție de pachet"
+],
+    compareChecklist: ["ce evenimente sunt acoperite și ce opțiuni plătești separat", "franșiza: partea din daună pe care o plătești tu; poate fi fixă sau procentuală", "excluderile: situațiile pentru care asigurătorul nu plătește", "valoarea pentru care asiguri mașina și cum se calculează despăgubirea", "unde poți repara mașina și cum se achită reparația", "în ce țări este valabilă polița"],
     offerData: [
-      "marca, modelul, anul fabricației și motorizarea",
-      "numărul de kilometri și valoarea orientativă a vehiculului",
-      "persoană fizică sau juridică, utilizare personală sau profesională",
-      "dacă mașina este în leasing/credit",
-      "istoricul de daune, dacă este relevant",
-      "preferințe: franșiză, service, asistență rutieră, extindere externă",
-    ],
+  "marca, modelul, anul fabricației și motorizarea",
+  "kilometrajul și valoarea aproximativă a mașinii",
+  "cine deține mașina și dacă o folosești personal sau pentru muncă",
+  "dacă mașina este cumpărată prin leasing sau credit",
+  "informații despre daunele anterioare, dacă sunt necesare",
+  "ce service preferi, dacă vrei asistență rutieră și în ce țări călătorești"
+],
     importantNote:
-      "CASCO nu înlocuiește RCA. RCA rămâne obligatorie și acoperă prejudiciile produse terților; CASCO poate acoperi propriul vehicul, în limitele și condițiile poliței alese.",
+      "RCA și CASCO au roluri diferite. RCA acoperă daunele pe care le produci altora cu mașina. CASCO poate acoperi daunele la mașina ta, pentru evenimentele incluse în contract. Ai nevoie în continuare de RCA chiar dacă alegi și CASCO.",
     sections: [
-      {
-        title: "Ce este CASCO",
-        body:
-          "CASCO este o asigurare auto facultativă. Rolul ei este să reducă impactul financiar al daunelor la propriul vehicul, atunci când riscul este inclus în poliță. De aceea, două oferte cu preț apropiat pot fi foarte diferite ca valoare reală pentru client.",
-      },
-      {
-        title: "De ce contează comparația pe acoperiri",
-        body:
-          "În piață există pachete de bază, pachete extinse și clauze opționale. Unele includ doar riscuri limitate, altele adaugă furt, vandalism, fenomene naturale, elemente vitrate, asistență rutieră sau extindere teritorială. Recomandarea trebuie făcută după nevoia clientului, nu după un singur beneficiu promovat de un asigurător.",
-      },
-      {
-        title: "Cum compari un CASCO mai ieftin?",
-        body: "Cere variante pentru aceeași valoare a mașinii, aceleași riscuri și aceleași condiții de reparație. Compară cât economisești la primă cu suma pe care ai plăti-o din buzunar la fiecare daună. Pentru o mașină în leasing, verifică mai întâi franșiza și service-ul acceptate de finanțator.",
-      },
-    ],
+  {
+    "title": "Ce este CASCO și cum te poate ajuta?",
+    "body": "CASCO este o asigurare opțională pentru mașina ta. Poate acoperi daune precum cele produse de un accident sau de grindină, dar și furtul, dacă sunt incluse în poliță. Două oferte cu prețuri apropiate pot acoperi situații diferite sau pot lăsa în grija ta o parte mai mare din costul reparației. De aceea, merită să vezi ce include fiecare înainte să alegi."
+  },
+  {
+    "title": "La ce să te uiți, pe lângă preț?",
+    "body": "Unele oferte includ furtul, vandalismul, geamurile sparte sau asistența rutieră; în altele, le alegi separat. Contează și unde parchezi, cum folosești mașina și unde ai vrea să o repari. Pornim de la aceste lucruri și îți explic ce acoperă fiecare variantă."
+  },
+  {
+    "title": "Cum compari un CASCO mai ieftin?",
+    "body": "Compară oferte pentru aceeași valoare a mașinii, aceleași evenimente acoperite și aceleași condiții de reparație. O franșiză mai mare poate reduce prețul poliței, dar înseamnă că plătești tu mai mult la o daună. Dacă mașina este în leasing, verificăm și ce franșiză și ce service acceptă finanțatorul."
+  }
+],
     faqs: [...[
-      {
-        question: "Cât costă CASCO pentru o mașină nouă sau second hand?",
-        answer: "Prima depinde de valoarea, vechimea și utilizarea vehiculului, de riscurile alese, de franșiză și de condițiile de reparație. Pentru o mașină rulată se pot aplica limite de vechime sau o inspecție, în funcție de produs. Dacă există leasing sau credit, verifică cerințele din contractul de finanțare.",
-      },
-      {
-        question: "CASCO acoperă orice daună?",
-        answer: "Nu. Acoperirea depinde de riscurile incluse, excluderi, franșiză și condițiile asigurătorului. De aceea este importantă verificarea condițiilor înainte de emitere.",
-      },
-      {
-        question: "Ce este franșiza?",
-        answer: "Franșiza este partea din daună suportată de client. Poate reduce prețul poliței, dar influențează despăgubirea la daună.",
-      },
-      {
-        question: "Pot alege service-ul?",
-        answer: "Depinde de poliță. Unele produse lucrează cu service-uri agreate, altele permit o libertate mai mare. Acest aspect trebuie verificat din ofertă.",
-      },
-    ], ...personalFaqExtras["casco"]],
+  {
+    "question": "Cât costă CASCO pentru o mașină nouă sau second hand?",
+    "answer": "Prețul depinde de valoarea și vechimea mașinii, de cum o folosești și de protecțiile alese. Contează și franșiza, adică partea din daună pe care o plătești tu. Pentru o mașină rulată, asigurătorul poate cere o inspecție sau poate avea o limită de vechime. Dacă ai leasing ori credit, verificăm și cerințele finanțatorului."
+  },
+  {
+    "question": "CASCO acoperă orice daună?",
+    "answer": "Nu. Înainte să alegi, verificăm împreună ce evenimente sunt incluse, ce situații sunt excluse și cât ai plăti tu din reparație. Aceste detalii apar în oferta și condițiile poliței."
+  },
+  {
+    "question": "Ce este franșiza?",
+    "answer": "Franșiza este partea din daună pe care o plătești tu. Într-un exemplu simplificat, la o reparație acoperită de 3.000 lei și o franșiză fixă de 500 lei, tu plătești 500 lei. Calculul exact depinde de contract. O franșiză mai mare poate reduce prețul asigurării."
+  },
+  {
+    "question": "Pot alege service-ul?",
+    "answer": "Depinde de poliță. Unele variante îți permit să alegi service-ul, iar altele prevăd reparații în service-urile partenere ale asigurătorului. Spune-mi unde ai vrea să repari mașina, ca să verificăm oferta potrivită."
+  }
+], ...personalFaqExtras["casco"]],
   },
 
   locuinta: {
@@ -111,36 +102,23 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
     eyebrow: "Locuință",
     title: "Asigurare locuință: PAD și facultativă, explicate simplu",
     description:
-      "Pentru o protecție corectă a casei sau apartamentului, trebuie înțeleasă diferența dintre PAD, polița obligatorie pentru dezastre naturale, și asigurarea facultativă, care poate extinde protecția pentru locuință, bunuri și răspundere civilă.",
+      "Vrei să îți asiguri casa sau apartamentul? Începem cu diferența dintre PAD, asigurarea obligatorie pentru trei dezastre naturale, și polița facultativă. Apoi vedem cum poți proteja și bunurile din locuință sau cum te poate ajuta asigurarea dacă inunzi un vecin.",
     metaTitle: "Asigurare locuință: preț PAD și poliță facultativă",
     metaDescription:
       "Cât costă PAD și de ce depinde prețul asigurării facultative pentru casă sau apartament. Vezi ce date pregătești, inclusiv pentru credit.",
     ctaLabel: "Cere ofertă locuință",
     whatsappMessage: "Bună! Doresc o ofertă pentru asigurarea locuinței: PAD și/sau facultativă.",
-    heroBullets: ["PAD este obligatorie pentru proprietarii de locuințe", "Facultativa poate completa protecția pentru riscuri uzuale", "Poți include bunuri, răspundere față de vecini și asistență la domiciliu"],
-    suitableFor: [
-      "apartamente și case de locuit",
-      "locuințe cumpărate prin credit ipotecar",
-      "proprietari care vor protecție peste limita PAD",
-      "persoane care vor să includă bunuri, instalații sau răspundere civilă",
-      "locuințe închiriate, în funcție de calitatea clientului: proprietar sau chiriaș",
-    ],
+    heroBullets: ["PAD acoperă cutremurul, inundațiile naturale și alunecările de teren", "Polița facultativă poate adăuga protecție pentru incendiu, furt și daune de apă", "Verificăm separat bunurile din casă și daunele pe care le-ai putea produce vecinilor"],
+    suitableFor: ["ai un apartament sau o casă", "ai cumpărat locuința prin credit ipotecar", "vrei protecție și pentru alte evenimente decât cele acoperite de PAD", "vrei să asiguri mobilierul, electrocasnicele sau alte bunuri", "închiriezi o locuință, ca proprietar sau chiriaș; verificăm ce poți asigura în fiecare situație"],
     commonCoverages: [
       "PAD: cutremur, inundații naturale și alunecări de teren, în limitele legale",
       "incendiu, trăsnet, explozie",
       "furtună, grindină, greutatea stratului de zăpadă sau alte fenomene naturale, în funcție de poliță",
       "daune produse de apă din conducte sau instalații",
       "furt, vandalism sau avarii accidentale, dacă sunt incluse",
-      "bunuri casnice, elemente vitrate, răspundere civilă față de terți/vecini și asistență la domiciliu",
+      "bunuri din casă, geamuri, daune produse vecinilor și asistență la domiciliu, dacă sunt incluse",
     ],
-    compareChecklist: [
-      "dacă există PAD valabilă și ce tip de locuință este: A sau B",
-      "suma asigurată pentru clădire și dacă reflectă valoarea de reconstrucție",
-      "dacă sunt asigurate și bunurile din locuință",
-      "riscurile incluse în pachet și riscurile opționale",
-      "franșize, excluderi și obligații de întreținere a locuinței",
-      "beneficiarul poliței, dacă locuința este ipotecată în favoarea băncii",
-    ],
+    compareChecklist: ["dacă ai PAD valabilă și în ce categorie se încadrează locuința", "suma asigurată: valoarea pentru care este protejată clădirea, calculată după regulile poliței", "ce mobilier, electrocasnice și alte bunuri sunt incluse", "ce evenimente sunt acoperite și ce opțiuni alegi separat", "franșiza: partea din daună pe care o plătești tu; excluderile și obligațiile de întreținere", "cine primește despăgubirea și ce cere banca, dacă ai credit"],
     offerData: [
       "tip locuință: apartament sau casă",
       "localitate, suprafață utilă/construită și anul construcției",
@@ -150,101 +128,89 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       "acoperiri dorite: bunuri, răspundere civilă, asistență, furt, apă, fenomene naturale",
     ],
     importantNote:
-      "PAD acoperă doar riscurile de dezastru natural prevăzute de lege și în limitele legale. Pentru incendiu, furt, daune de apă, bunuri sau răspundere față de vecini este necesară, de regulă, o asigurare facultativă adecvată.",
+      "PAD protejează clădirea doar pentru cutremur, inundații naturale și alunecări de teren, în limitele legale. Pentru incendiu, furt, apă din conducte, bunuri sau daune produse vecinilor, verificăm o poliță facultativă care include aceste situații.",
     sections: [
-      {
-        title: "Cât costă asigurarea obligatorie PAD?",
-        body:
-          "PAD privește construcțiile cu destinație de locuință, în condițiile și cu excepțiile legale. La 25 octombrie 2026, pentru tip A suma asigurată este 100.000 lei și prima anuală 130 lei; pentru tip B, 50.000 lei și 50 lei. Tipul este determinat de caracteristicile construcției conform legii, nu de valoarea aleasă de proprietar.",
-      },
-      {
-        title: "Cum se stabilește prețul poliței facultative?",
-        body:
-          "Prima depinde de datele casei sau apartamentului, sumele asigurate, riscurile incluse și franșiză. Cere comparația pe aceeași sumă pentru clădire și verifică separat cât este acoperit pentru bunuri, daune de apă și prejudicii față de vecini. Așa poți vedea de ce două oferte cu preț diferit nu oferă aceeași protecție.",
-      },
-      {
-        title: "Cum alegi dacă ai un buget fix pentru asigurarea casei?",
-        body: "Verifică întâi dacă ai o poliță PAD valabilă și ce obligații ai. Pentru facultativă, spune ce pierdere te-ar afecta cel mai mult: refacerea clădirii după incendiu, bunurile din locuință sau o daună de apă. Cere variante cu aceeași sumă pentru clădire și vezi care acoperiri ori franșize se schimbă la prețul propus.",
-      },
-    ],
+  {
+    "title": "Cât costă asigurarea obligatorie PAD?",
+    "body": "Costul PAD depinde de categoria construcției. La data de 25 octombrie 2026, pentru o locuință de tip A prețul este de 130 lei pe an, cu o sumă asigurată de 100.000 lei. Pentru tip B, prețul este de 50 lei pe an, cu o sumă asigurată de 50.000 lei. Categoria se stabilește după materialele și structura clădirii, conform legii; nu alegi tu categoria în funcție de preț. Verificăm încadrarea și eventualele excepții înainte de emitere."
+  },
+  {
+    "title": "De ce depinde prețul asigurării facultative?",
+    "body": "Contează caracteristicile casei sau apartamentului, valoarea asigurată și evenimentele pentru care vrei protecție. Dacă incluzi și bunurile sau daunele produse vecinilor, verificăm separat limitele pentru ele. Două oferte pot avea prețuri diferite pentru că una acoperă mai multe situații sau lasă în grija ta o parte mai mică din daună."
+  },
+  {
+    "title": "Cum alegi dacă ai un buget fix?",
+    "body": "Verificăm mai întâi PAD și obligațiile tale, apoi discutăm ce pierdere ți-ar fi cel mai greu să acoperi: refacerea casei după incendiu, înlocuirea bunurilor sau repararea unei daune de apă. Comparăm ofertele pentru aceeași valoare a clădirii și îți explic ce se schimbă când alegi un preț mai mic."
+  }
+],
     faqs: [...[
-      {
-        question: "PAD este suficientă pentru locuință?",
-        answer: "PAD acoperă doar riscurile obligatorii prevăzute de lege. Pentru protecție extinsă este utilă o poliță facultativă.",
-      },
-      {
-        question: "Pot face facultativă fără PAD?",
-        answer: "Regula legală este că asigurarea facultativă a locuinței se încheie dacă există PAD valabilă, cu excepțiile prevăzute de lege. Facultativa nu înlocuiește PAD. Situațiile speciale, inclusiv cele privind riscul seismic, se verifică înainte de emitere.",
-      },
-      {
-        question: "Pot asigura și bunurile?",
-        answer: "Da, multe polițe facultative pot include bunuri casnice, electrocasnice, mobilier sau alte categorii, în limitele și condițiile poliței.",
-      },
-      {
-        question: "Ce înseamnă răspundere civilă față de vecini?",
-        answer: "Este acoperirea care poate ajuta dacă produci accidental prejudicii altor persoane, de exemplu o daună de apă către un vecin, dacă riscul este inclus.",
-      },
-    ], ...personalFaqExtras["locuinta"]],
+  {
+    "question": "PAD este suficientă pentru locuință?",
+    "answer": "PAD acoperă clădirea pentru cele trei dezastre naturale prevăzute de lege, în limitele stabilite. Dacă vrei protecție și pentru incendiu, furt, apă din conducte sau bunuri, ai nevoie de o poliță facultativă care le include."
+  },
+  {
+    "question": "Pot face facultativă fără PAD?",
+    "answer": "De regulă, trebuie să ai PAD valabilă ca să închei asigurarea facultativă a locuinței. Există excepții legale, iar situațiile speciale se verifică înainte de emitere. Polița facultativă nu înlocuiește PAD."
+  },
+  {
+    "question": "Pot asigura și bunurile?",
+    "answer": "Da, multe polițe facultative îți permit să incluzi mobilierul, electrocasnicele și alte bunuri din casă. Stabilim ce vrei să protejezi și verificăm limitele și condițiile pentru fiecare categorie."
+  },
+  {
+    "question": "Ce înseamnă răspundere civilă față de vecini?",
+    "answer": "Este protecția care te poate ajuta să acoperi daune produse accidental altor persoane. De exemplu, dacă o scurgere din locuința ta afectează apartamentul vecinului, polița poate acoperi despăgubirea dacă situația și răspunderea ta se încadrează în condițiile contractului."
+  }
+], ...personalFaqExtras["locuinta"]],
   },
 
   calatorie: {
     slug: "/asigurare-calatorie",
-    eyebrow: "Călătorie / Travel",
-    title: "Asigurare de călătorie pentru vacanțe, city break-uri și deplasări business",
+    eyebrow: "Călătorie",
+    title: "Asigurare de călătorie pentru vacanțe și deplasări",
     description:
-      "Asigurarea de călătorie poate acoperi cheltuieli medicale neprevăzute, asistență, bagaje sau anularea călătoriei, în funcție de pachet. Alegerea corectă depinde de destinație, durată, scopul călătoriei și activitățile planificate.",
+      "O problemă medicală îți poate schimba planurile când ești în străinătate. Asigurarea de călătorie te poate ajuta cu cheltuieli medicale și asistență, iar unele pachete includ bagajele sau anularea plecării. Alegem în funcție de destinație, durată și ce ai de gând să faci în călătorie.",
     metaTitle: "Asigurare medicală de călătorie: preț și storno",
     metaDescription:
       "Vezi de ce depinde prețul asigurării de călătorie. Compară cheltuielile medicale, asistența, bagajele și storno pentru destinația și durata ta.",
     ctaLabel: "Cere ofertă călătorie",
     whatsappMessage: "Bună! Doresc o ofertă pentru asigurare de călătorie.",
-    heroBullets: ["Pentru vacanțe, business travel sau deplasări în familie", "Atenție la destinație, durată și activități sportive", "Poate include clauze suplimentare: bagaje, storno, sporturi"],
+    heroBullets: ["Pentru vacanțe, călătorii în familie și deplasări de serviciu", "Alegem acoperirea pentru destinația și activitățile tale", "Bagajele, anularea călătoriei și sporturile pot necesita opțiuni suplimentare"],
     suitableFor: [
-      "persoane care călătoresc în străinătate",
-      "familii cu copii",
-      "călătorii business",
-      "city break-uri și vacanțe scurte",
-      "călătorii cu zboruri, bagaje de cală sau rezervări scumpe",
-      "persoane care practică sporturi recreative sau activități speciale, dacă se pot include clauze dedicate",
-    ],
+  "pleci în străinătate, chiar și pentru câteva zile",
+  "călătorești cu familia sau cu copiii",
+  "mergi într-o deplasare de serviciu",
+  "ai zboruri, bagaje de cală sau rezervări costisitoare",
+  "vrei să practici sporturi ori activități pentru care trebuie verificată o acoperire dedicată"
+],
     commonCoverages: [
-      "cheltuieli medicale de urgență în caz de accident sau îmbolnăvire",
-      "asistență medicală și suport în străinătate",
-      "transport medical, repatriere sau alte servicii de asistență, în funcție de poliță",
-      "bagaje pierdute, furate, deteriorate sau întârziate, conform condițiilor",
-      "anulare călătorie / storno, dacă este inclusă clauza",
-      "sporturi, activități de iarnă sau sporturi extreme, de regulă prin opțiuni suplimentare",
-    ],
-    compareChecklist: [
-      "suma asigurată pentru cheltuieli medicale",
-      "zona de acoperire: Europa, worldwide, SUA/Canada sau alte destinații",
-      "limitele pentru bagaje, întârziere, anulare sau întrerupere călătorie",
-      "excluderi pentru boli preexistente, alcool, sporturi sau activități riscante",
-      "vârsta persoanelor asigurate și durata maximă a călătoriei",
-      "modul de contactare a asistenței în caz de urgență",
-    ],
+  "urgențe medicale în caz de accident sau îmbolnăvire",
+  "asistență și sprijin medical în străinătate",
+  "transport medical și, după caz, transport înapoi în țară, numit repatriere",
+  "bagaje pierdute, furate, deteriorate sau întârziate, în condițiile poliței",
+  "anularea călătoriei pentru cauze prevăzute în contract, numită storno",
+  "sporturi sau activități speciale, de obicei prin opțiuni suplimentare"
+],
+    compareChecklist: ["până la ce sumă sunt acoperite urgențele medicale", "în ce țări este valabilă polița, inclusiv pentru SUA sau Canada", "cât poți primi pentru bagaje, întârzieri sau anularea călătoriei", "ce reguli se aplică bolilor deja existente, sporturilor și consumului de alcool", "vârstele acceptate și numărul maxim de zile acoperite", "cum contactezi serviciul de asistență dacă ai nevoie de ajutor"],
     offerData: [
-      "destinația sau țările vizitate",
-      "perioada exactă a călătoriei",
-      "numărul de persoane și vârstele aproximative",
-      "scopul călătoriei: turism, business, studii, muncă",
-      "dacă sunt planificate sporturi, schi, drumeții sau alte activități speciale",
-      "dacă dorești acoperire pentru bagaje sau storno",
-    ],
+  "țara sau țările în care mergi",
+  "datele de plecare și întoarcere",
+  "numărul persoanelor și vârstele aproximative",
+  "scopul: vacanță, deplasare de serviciu, studii sau muncă",
+  "sporturile, schiul, drumețiile ori alte activități planificate",
+  "dacă vrei protecție pentru bagaje sau anularea călătoriei"
+],
     importantNote:
-      "Nu toate polițele de călătorie includ automat bagaje, anulare, sporturi sau afecțiuni preexistente. Aceste aspecte trebuie verificate înainte de emitere, mai ales pentru destinații îndepărtate sau călătorii costisitoare.",
+      "Spune-mi dacă vrei protecție pentru bagaje, anulare sau sporturi și dacă ai nevoie să verifici regulile pentru boli deja existente. Acestea nu sunt incluse în orice poliță; le verificăm înainte de plecare.",
     sections: [
-      {
-        title: "Ce problemă rezolvă",
-        body:
-          "În străinătate, costurile medicale și de asistență pot fi ridicate. O poliță de călătorie bine aleasă poate ajuta în situații precum accident, îmbolnăvire, bagaje afectate sau anularea călătoriei, în funcție de pachet.",
-      },
-      {
-        title: "Cât costă asigurarea medicală de călătorie?",
-        body:
-          "Prețul depinde de destinație, numărul de zile, vârstele călătorilor, activități și acoperiri. Pentru o ofertă în buget, compară mai întâi aceeași limită pentru urgențe medicale și verifică repatrierea. Apoi compară separat bagajele, storno și sporturile pe care le vei practica.",
-      },
-    ],
+  {
+    "title": "Cum te poate ajuta în călătorie?",
+    "body": "Dacă te îmbolnăvești sau ai un accident în străinătate, consultațiile, tratamentul ori transportul medical pot costa mult. O poliță care include aceste situații te poate ajuta cu plata și cu accesul la asistență. Pentru bagaje și anularea plecării, verificăm separat ce opțiuni sunt disponibile."
+  },
+  {
+    "title": "Cât costă asigurarea medicală de călătorie?",
+    "body": "Prețul depinde de destinație, numărul de zile, vârsta persoanelor și activitățile planificate. Comparăm mai întâi suma disponibilă pentru urgențe medicale și condițiile pentru transportul înapoi în țară, numit repatriere. Apoi vedem dacă ai nevoie de protecție pentru bagaje, anulare sau sporturi."
+  }
+],
     faqs: [...[
       {
         question: "Este suficient cardul european de sănătate?",
@@ -256,7 +222,7 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       },
       {
         question: "Pot include anularea călătoriei?",
-        answer: "Anumite produse oferă storno pentru cauzele de anulare expres prevăzute. Nu înseamnă anulare din orice motiv. Verifică momentul încheierii, cauzele, sumele nerambursabile, franșiza și documentele justificative.",
+        answer: "Unele produse includ anularea călătoriei, numită storno, pentru cauze precizate în contract. Nu este acoperită renunțarea din orice motiv. Verificăm până când o poți cumpăra, ce sume deja plătite poți recupera, ce parte din pierdere suporți tu și ce documente sunt necesare.",
       },
       {
         question: "Am nevoie de clauză pentru sporturi?",
@@ -272,118 +238,88 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
   sanatate: {
     slug: "/asigurare-sanatate",
     eyebrow: "Sănătate",
-    title: "Asigurare privată de sănătate pentru acces mai clar la servicii medicale",
+    title: "Asigurare privată de sănătate pentru tine și familie",
     description:
-      "Asigurările private de sănătate pot acoperi servicii medicale în ambulatoriu, spitalizare, intervenții sau tratament în anumite rețele, în funcție de produs. Discuția inițială trebuie făcută fără transmiterea datelor medicale sensibile prin formularul public.",
+      "Cauți o asigurare pentru consultații, analize, spitalizare sau intervenții? Te ajut să compari serviciile incluse, clinicile disponibile și cât poate plăti asigurătorul. Pentru prima discuție, spune-mi ce cauți, fără să trimiți diagnostice sau documente medicale prin formular.",
     metaTitle: "Asigurare privată de sănătate: preț și acoperire",
     metaDescription:
       "Vezi de ce depinde prețul asigurării private de sănătate pentru tine sau familie. Compară clinicile, consultațiile, spitalizarea și limitele.",
-    ctaLabel: "Cere discuție sănătate",
+    ctaLabel: "Discutăm despre sănătate",
     whatsappMessage: "Bună! Doresc o discuție despre o asigurare privată de sănătate.",
-    heroBullets: ["Pentru persoane, familii sau beneficii pentru angajați", "Nu trimite diagnostice sau documente medicale prin formular", "Comparația se face pe servicii, limite, rețea și excluderi"],
+    heroBullets: ["Pentru tine, familie sau angajații firmei", "Verificăm clinicile, serviciile incluse și costurile care rămân în grija ta", "La primul contact, nu trimite diagnostice sau documente medicale"],
     suitableFor: [
-      "persoane care vor acces la servicii medicale private",
-      "familii care vor o soluție predictibilă pentru consultații și investigații",
-      "angajatori care vor beneficii pentru angajați",
-      "persoane care vor acoperire pentru spitalizare sau intervenții, dacă produsul o permite",
-    ],
-    commonCoverages: [
-      "consultații și investigații în regim ambulatoriu, în funcție de pachet",
-      "spitalizare și intervenții chirurgicale, dacă sunt incluse",
-      "servicii în rețea medicală parteneră sau prin rambursare",
-      "a doua opinie medicală sau tratament în străinătate, la produse specializate",
-      "beneficii de grup pentru angajați, în funcție de contract",
-      "servicii de prevenție sau beneficii în sumă fixă, numai dacă sunt incluse",
-    ],
-    compareChecklist: [
-      "ce servicii sunt incluse: ambulatoriu, spitalizare, chirurgie, investigații",
-      "rețeaua de clinici și spitale disponibile",
-      "dacă plata este directă către clinică sau prin rambursare",
-      "limite anuale, sub-limite și coplată/franșiză",
-      "perioade de așteptare și excluderi",
-      "condiții pentru persoane fizice versus grupuri de angajați",
-    ],
-    offerData: [
-      "persoană individuală, familie sau firmă",
-      "numărul de persoane și intervale de vârstă",
-      "tip de acoperire dorit: ambulatoriu, spitalizare, intervenții, internațional",
-      "localitatea unde vrei acces la servicii",
-      "buget orientativ",
-      "nu trimite diagnostice, analize sau documente medicale prin formularul public",
-    ],
+  "vrei acces la servicii medicale private",
+  "cauți o variantă pentru consultațiile și investigațiile familiei",
+  "vrei să oferi angajaților un beneficiu medical",
+  "te interesează spitalizarea sau operațiile și vrei să verifici ce variante le includ"
+],
+    commonCoverages: ["consultații și investigații fără internare, dacă sunt incluse", "spitalizare și operații, în funcție de pachet", "servicii plătite direct clinicii sau recuperarea ulterioară a cheltuielilor", "a doua opinie medicală sau tratament în străinătate, la produse dedicate", "asigurare pentru echipa firmei, prin planuri de grup", "prevenție sau plata unei sume fixe pentru anumite situații, dacă sunt prevăzute în contract"],
+    compareChecklist: ["ce consultații, analize, investigații și intervenții sunt incluse", "la ce clinici și spitale poți merge", "dacă asigurătorul plătește clinica sau plătești tu și ceri banii înapoi", "cât poate plăti asigurătorul pe an și pe serviciu; ce parte din cost plătești tu", "după cât timp poți folosi fiecare serviciu și ce situații sunt excluse", "ce condiții se aplică pentru tine, familie sau echipa firmei"],
+    offerData: ["pentru cine cauți asigurare: tine, familie sau angajați", "numărul de persoane și vârstele aproximative", "ce te interesează: consultații, analize, spitalizare, operații sau tratament în străinătate", "localitatea în care ai vrea să mergi la medic", "bugetul lunar sau anual aproximativ", "fără diagnostice, analize ori documente medicale prin formularul public"],
     importantNote:
-      "Pentru primul contact, descrie doar nevoia generală. Datele medicale sunt sensibile și nu se transmit prin formularul public; dacă sunt necesare, se gestionează ulterior prin canalele și documentele asigurătorului.",
+      "La început, am nevoie doar de informații generale despre ce cauți. Dacă pentru ofertă sunt necesare date medicale, îți explic ulterior cum le transmiți prin canalele asigurătorului.",
     sections: [
-      {
-        title: "Asigurare de sănătate vs. abonament medical",
-        body:
-          "Un abonament medical oferă de regulă acces la servicii într-o rețea, în timp ce o asigurare funcționează pe condiții de asigurare, limite, riscuri acoperite și proceduri de despăgubire/rambursare. Cele două pot semăna la nivel de experiență, dar nu sunt identice.",
-      },
-      {
-        title: "Pentru firme",
-        body:
-          "Pentru companii, asigurarea de sănătate poate fi un beneficiu pentru angajați. Analiza pornește de la numărul de persoane, profilul echipei, localități, buget și nivelul de acoperire dorit.",
-      },
-      {
-        title: "Cât costă asigurarea privată de sănătate?",
-        body: "Prima depinde de persoanele incluse și de nivelul de acoperire. Dacă ai un buget lunar, compară costul pe an, clinicile pe care le poți folosi și cât ai plăti din buzunar pentru serviciile care te interesează. Uită-te separat la consultații și spitalizare: o limită pentru una nu se aplică automat celeilalte.",
-      },
-    ],
+  {
+    "title": "Asigurare de sănătate sau abonament medical?",
+    "body": "Un abonament îți oferă, de regulă, acces la anumite servicii din rețeaua furnizorului. O asigurare acoperă cheltuielile sau plătește beneficiile prevăzute în contract, până la limitele stabilite. Uneori experiența este asemănătoare, dar merită să verifici ce servicii primești, unde mergi și ce costuri rămân în grija ta la fiecare variantă."
+  },
+  {
+    "title": "Cauți un beneficiu pentru angajați?",
+    "body": "Pornim de la numărul de persoane, localitățile în care lucrează și bugetul firmei. Apoi comparăm serviciile și clinicile pe care echipa le-ar putea folosi, precum și regulile pentru adăugarea sau retragerea unui angajat din plan."
+  },
+  {
+    "title": "Cât costă asigurarea privată de sănătate?",
+    "body": "Costul depinde de persoanele asigurate și de serviciile alese. Dacă ai un buget lunar, verificăm și costul pe an, clinicile disponibile și cât ai plăti tu pentru serviciile care te interesează. Sumele pentru consultații și pentru spitalizare pot avea limite separate."
+  }
+],
     faqs: [...[
-      {
-        question: "Trebuie să trimit analize sau diagnostice prin formular?",
-        answer: "Nu. Formularul public trebuie folosit doar pentru solicitarea de contact. Datele medicale se tratează separat, conform procedurilor asigurătorului.",
-      },
-      {
-        question: "Se poate face pentru familie?",
-        answer: "Da, în funcție de produs, pot exista variante individuale sau de familie.",
-      },
-      {
-        question: "Este valabilă în orice clinică?",
-        answer: "Depinde de produs: unele funcționează în rețele partenere, altele permit rambursare. Trebuie verificat înainte de alegere.",
-      },
-      {
-        question: "Pot face asigurare pentru angajați?",
-        answer: "Da, există soluții de grup pentru companii, cu condiții stabilite în funcție de echipă și acoperiri.",
-      },
-    ], ...personalFaqExtras["sanatate"]],
+  {
+    "question": "Trebuie să trimit analize sau diagnostice prin formular?",
+    "answer": "Nu. Scrie doar ce tip de asigurare cauți și cum te pot contacta. Dacă sunt necesare informații medicale pentru ofertare, îți explic pașii și canalul asigurătorului prin care le poți transmite."
+  },
+  {
+    "question": "Pot face asigurare pentru familie?",
+    "answer": "Pot exista variante pentru tine și membrii familiei. Verificăm persoanele care pot fi incluse, vârstele acceptate și condițiile produsului ales."
+  },
+  {
+    "question": "Pot merge la orice clinică?",
+    "answer": "Depinde de asigurare. Unele variante au clinici partenere; altele îți permit să ceri înapoi costul unor servicii făcute în afara rețelei. Verificăm clinicile, limitele și aprobările necesare înainte să alegi."
+  },
+  {
+    "question": "Pot face asigurare pentru angajați?",
+    "answer": "Da, există planuri de grup pentru firme. Oferta depinde de echipă și de serviciile pe care vrei să le incluzi."
+  }
+], ...personalFaqExtras["sanatate"]],
   },
 
   viata: {
     slug: "/asigurare-viata",
     eyebrow: "Viață",
-    title: "Asigurare de viață pentru protecție financiară, credit sau familie",
+    title: "Asigurare de viață pentru familie și credit",
     description:
-      "Asigurarea de viață se alege în funcție de obiectiv: protecția familiei, acoperirea unui credit, economisire, protecție pentru copii sau boli grave. Recomandarea corectă pornește de la nevoie, perioadă și buget, nu de la un produs generic.",
+      "Dacă venitul tău nu ar mai fi disponibil, cum s-ar descurca oamenii apropiați? O asigurare de viață poate oferi sprijin financiar pentru familie sau pentru un credit, în situațiile prevăzute în contract. Pornim de la ce vrei să protejezi, pentru cât timp și cu ce buget.",
     metaTitle: "Asigurare de viață: cost, familie și credit",
     metaDescription:
       "De ce depinde costul asigurării de viață și cum compari suma, durata și clauzele pentru protecția familiei sau a unui credit.",
-    ctaLabel: "Cere discuție viață",
+    ctaLabel: "Discutăm despre asigurarea de viață",
     whatsappMessage: "Bună! Doresc o discuție despre o asigurare de viață.",
-    heroBullets: ["Pentru protecția familiei sau a unui credit", "Poate fi simplă, cu economisire sau cu clauze suplimentare", "Nu trimite date medicale prin formularul public"],
+    heroBullets: ["Pentru sprijinul familiei sau protecția unui credit", "Comparăm suma care poate fi plătită și situațiile în care se plătește", "Verificăm separat opțiunile de economisire și costurile lor"],
     suitableFor: [
-      "persoane cu familie sau copii dependenți financiar",
-      "persoane cu credit ipotecar sau alte obligații financiare",
-      "persoane care vor protecție în caz de deces, invaliditate sau boli grave, dacă produsul include",
-      "părinți care urmăresc economisire/protecție pentru copii",
-      "persoane care vor un plan pe termen mediu sau lung",
-    ],
+  "ai copii sau alte persoane care depind de venitul tău",
+  "ai un credit ori alte obligații financiare",
+  "vrei sprijin financiar în caz de deces, invaliditate sau boli grave, dacă sunt incluse",
+  "te interesează o variantă de protecție sau economisire pentru copii",
+  "vrei să construiești un plan pe care îl poți susține mai mulți ani"
+],
     commonCoverages: [
-      "deces din orice cauză sau din accident, în funcție de produs",
-      "invaliditate permanentă, ca risc inclus sau clauză suplimentară",
-      "boli grave, la produse sau clauze dedicate",
-      "sumă asigurată constantă sau descrescătoare pentru credit",
-      "componentă de economisire, maturitate sau investiție, pentru anumite produse",
-      "clauze suplimentare: spitalizare, intervenții, accidente, scutire de plată, în funcție de asigurător",
-    ],
-    compareChecklist: [
-      "obiectivul principal: protecție pură, credit, economisire, copii, boli grave",
-      "suma asigurată necesară și perioada contractului",
-      "beneficiarii și rolul poliței în planul financiar al familiei",
-      "costul total și flexibilitatea plății",
-      "excluderi, perioade de așteptare și cerințe de evaluare medicală",
-      "dacă produsul are valoare de răscumpărare sau este doar protecție",
-    ],
+  "deces din cauzele prevăzute în contract, inclusiv variante doar pentru accident",
+  "invaliditate permanentă, dacă este inclusă sau adăugată separat",
+  "boli grave dintre cele definite în produs",
+  "protecție pentru credit, cu o sumă constantă sau care scade pe parcurs",
+  "economisire sau investiții și, la anumite produse, o plată la finalul contractului",
+  "opțiuni pentru spitalizare, operații, accidente sau preluarea plății primelor în anumite situații"
+],
+    compareChecklist: ["ce vrei să protejezi: familia, un credit sau un obiectiv de economisire", "ce sumă ar fi necesară și pentru câți ani", "cine primește banii în situațiile prevăzute în contract", "cât plătești în total și dacă poți modifica plățile", "ce situații sunt excluse, ce perioade de așteptare există și dacă este necesară evaluarea medicală", "dacă primești o sumă înapoi când renunți și cum se calculează aceasta"],
     offerData: [
       "scopul poliței: familie, credit, economisire, protecție copii",
       "perioada dorită și suma orientativă de protecție",
@@ -393,41 +329,39 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       "dacă există cerințe ale băncii pentru credit",
     ],
     importantNote:
-      "Asigurările de viață sunt produse pe termen mediu/lung. Înainte de alegere, trebuie clarificat dacă obiectivul este protecția simplă, acoperirea unui credit, economisirea sau o combinație între acestea.",
+      "Alege o durată și un cost pe care le poți susține. Dacă polița include economisire sau investiții, verificăm și costurile, riscurile și ce se întâmplă cu banii dacă renunți înainte de termen.",
     sections: [
-      {
-        title: "Protecție simplă vs. economisire",
-        body:
-          "O poliță de protecție pură urmărește plata unei sume în caz de eveniment asigurat. O poliță cu economisire/investiție poate avea și componentă de acumulare sau maturitate. Costurile, flexibilitatea și riscurile sunt diferite.",
-      },
-      {
-        title: "Asigurarea pentru credit",
-        body:
-          "Pentru credite, unele polițe urmăresc protejarea soldului datoriei, uneori cu sumă asigurată descrescătoare. Este important să verificăm cerințele băncii, beneficiarul și perioada creditului.",
-      },
-      {
-        title: "Cum compari prețul unei asigurări de viață?",
-        body: "Pentru o comparație utilă, cere aceeași sumă asigurată și aceeași durată. Vârsta, evaluarea asigurătorului și clauzele suplimentare pot influența prima. Dacă bugetul este fix, pornește de la perioada în care familia depinde de venitul tău sau de la obligația pe care vrei să o acoperi. Verifică dacă prima rămâne aceeași pe durata contractului.",
-      },
-    ],
+  {
+    "title": "Protecție pentru familie sau și economisire?",
+    "body": "O asigurare simplă de viață plătește suma stabilită dacă are loc un eveniment acoperit, de exemplu decesul persoanei asigurate. Alte variante includ și economisire sau investiții. Acestea au costuri și reguli diferite, iar partea de investiții poate avea riscuri. Îți explic ce primești în fiecare variantă și ce se întâmplă dacă renunți."
+  },
+  {
+    "title": "Cum te poate ajuta pentru un credit?",
+    "body": "Unele polițe pot acoperi soldul creditului, adică suma rămasă de plată, dacă are loc evenimentul asigurat. Suma protejată poate scădea odată cu datoria. Verificăm ce cere banca, cine primește banii și dacă durata asigurării corespunde creditului tău."
+  },
+  {
+    "title": "Cum compari prețul unei asigurări de viață?",
+    "body": "Cere oferte pentru aceeași sumă și aceeași durată. Prețul poate depinde de vârstă, evaluarea asigurătorului și opțiunile suplimentare. Dacă ai un buget fix, începem cu perioada în care familia depinde de venitul tău sau cu datoria pe care vrei să o protejezi. Verificăm și dacă prețul rămâne același pe durata contractului."
+  }
+],
     faqs: [...[
-      {
-        question: "Ce sumă asigurată ar trebui să aleg?",
-        answer: "Depinde de venit, datorii, persoane dependente și perioada în care familia ar avea nevoie de sprijin. Se calculează orientativ în discuția de consultanță.",
-      },
-      {
-        question: "Este același lucru cu o asigurare de sănătate?",
-        answer: "Nu. Viața urmărește protecție financiară în caz de evenimente majore; sănătatea urmărește acces la servicii medicale sau despăgubiri medicale, în funcție de produs.",
-      },
-      {
-        question: "Trebuie control medical?",
-        answer: "Depinde de asigurător, vârstă, sumă asigurată și produs. Nu se trimit date medicale prin formularul public.",
-      },
-      {
-        question: "Pot acoperi un credit ipotecar?",
-        answer: "Da, există produse dedicate sau adaptabile pentru credite, dar trebuie verificate cerințele băncii.",
-      },
-    ], ...personalFaqExtras["viata"]],
+  {
+    "question": "Ce sumă asigurată ar trebui să aleg?",
+    "answer": "Ne uităm la venitul tău, la datorii, la persoanele care depind financiar de tine și la cât timp ar avea nevoie de sprijin. Pe baza lor, putem estima o sumă potrivită pentru obiectivul și bugetul tău."
+  },
+  {
+    "question": "Este același lucru cu o asigurare de sănătate?",
+    "answer": "Nu. Asigurarea de viață oferă sprijin financiar când are loc un eveniment prevăzut în contract. Asigurarea de sănătate se referă la servicii medicale sau la plata unor beneficii medicale. Unele protecții se pot completa."
+  },
+  {
+    "question": "Am nevoie de un control medical?",
+    "answer": "Depinde de produs, vârstă, suma aleasă și cerințele asigurătorului. Îți explic ce este necesar la ofertare. Nu trimite date sau documente medicale prin formularul public."
+  },
+  {
+    "question": "Pot acoperi un credit ipotecar?",
+    "answer": "Există polițe care pot fi folosite pentru protecția unui credit. Verificăm împreună condițiile băncii și ale asigurării înainte să alegi."
+  }
+], ...personalFaqExtras["viata"]],
   },
 
 
@@ -437,36 +371,21 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
     eyebrow: "Răspundere civilă",
     title: "Asigurări de răspundere civilă și profesională",
     description:
-      "Răspunderea civilă acoperă, în anumite condiții, prejudicii produse altor persoane sau bunurilor acestora. Pentru profesii și firme, răspunderea profesională poate fi esențială când o eroare produce pierderi clientului.",
+      "Dacă produci accidental o pagubă altei persoane, poți avea de plătit reparații sau despăgubiri. O asigurare de răspundere civilă te poate ajuta în situațiile incluse în poliță. Dacă lucrezi cu clienți, verificăm separat și protecția pentru greșeli făcute în exercitarea profesiei.",
     metaTitle: "Asigurare de răspundere civilă: cost și limite",
     metaDescription:
       "Vezi de ce depinde costul asigurării de răspundere civilă și cum compari activitățile acoperite, limitele și franșiza.",
     ctaLabel: "Cere ofertă răspundere",
     whatsappMessage: "Bună! Doresc o ofertă pentru asigurare de răspundere civilă/profesională.",
-    heroBullets: ["Pentru profesii, firme și situații cu risc față de terți", "Limita de răspundere și excluderile sunt decisive", "Poate fi cerută prin lege sau prin contract"],
+    heroBullets: ["Pentru pagube pe care le-ai putea produce altor persoane", "Alegem protecția în funcție de activitatea și obligațiile tale", "Verificăm suma maximă plătită și situațiile excluse"],
     suitableFor: [
-      "PFA-uri și SRL-uri care prestează servicii",
-      "profesii liberale sau reglementate",
-      "firme cu vizitatori, clienți sau lucrări la sediul clientului",
-      "manageri, administratori sau persoane cu responsabilități de conducere, dacă produsul este disponibil",
-      "persoane care au cerințe contractuale de asigurare impuse de parteneri",
-    ],
-    commonCoverages: [
-      "prejudicii materiale produse terților",
-      "vătămări corporale produse accidental, în funcție de poliță",
-      "cheltuieli de judecată sau apărare, dacă sunt incluse",
-      "prejudicii patrimoniale din erori profesionale, la polițele profesionale",
-      "răspunderea angajaților/prepușilor, dacă este inclusă",
-      "retroactivitate sau perioadă extinsă de notificare, la anumite polițe profesionale",
-    ],
-    compareChecklist: [
-      "tipul răspunderii: generală, profesională, produs, managerială sau altă formă",
-      "limita de răspundere per eveniment și agregat anual",
-      "franșiză, excluderi și activități neacoperite",
-      "cerințe legale sau contractuale pentru profesia/activitatea ta",
-      "teritoriul acoperit și jurisdicția aplicabilă",
-      "modul de notificare a daunelor și perioada de acoperire",
-    ],
+  "prestezi servicii ca PFA, SRL sau printr-o profesie liberală",
+  "ai clienți ori vizitatori la sediu sau lucrezi în spațiile lor",
+  "conduci o firmă și vrei să verifici protecția pentru responsabilitățile tale",
+  "un partener îți cere o asigurare prin contract"
+],
+    commonCoverages: ["pagube produse bunurilor altor persoane", "vătămări produse accidental altor persoane, dacă sunt acoperite", "cheltuieli de apărare sau judecată, dacă sunt incluse", "pierderi financiare ale clienților provocate de greșeli profesionale, prin produse dedicate", "fapte ale angajaților pentru care răspunzi, dacă sunt incluse", "protecție pentru unele fapte anterioare sau timp suplimentar pentru anunțarea reclamațiilor, la anumite polițe profesionale"],
+    compareChecklist: ["ce tip de răspundere ai nevoie să acoperi: personală, profesională, pentru produse sau conducerea firmei", "suma maximă pe eveniment și suma maximă pentru toate daunele dintr-un an", "ce parte din daună plătești tu și ce situații sunt excluse", "ce asigurare îți cere legea sau un contract pentru activitatea ta", "în ce țări ești protejat și ce instanțe sau legi sunt acceptate de poliță", "când și cum trebuie să anunți o daună sau o reclamație"],
     offerData: [
       "profesia sau activitatea exactă",
       "cifra de afaceri orientativă sau volumul activității, dacă este relevant",
@@ -476,62 +395,60 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       "nu trimite contracte sau documente sensibile prin formularul public; le discutăm ulterior dacă este necesar",
     ],
     importantNote:
-      "Răspunderea civilă generală și răspunderea profesională nu sunt același lucru. Prima se referă, de regulă, la prejudicii accidentale față de terți; a doua la pierderi produse prin erori profesionale, în condițiile poliței.",
+      "Răspunderea civilă generală și cea profesională acoperă situații diferite. Una poate privi, de exemplu, deteriorarea accidentală a bunului cuiva; cealaltă, o pierdere provocată de o greșeală în serviciul prestat. Verificăm de care ai nevoie și ce include oferta.",
     sections: [
-      {
-        title: "De ce nu există o recomandare universală",
-        body:
-          "O firmă de servicii IT, un cabinet medical, un avocat, un magazin și un administrator de clădire au riscuri diferite. Trebuie analizată activitatea, limita de răspundere cerută și obligațiile contractuale.",
-      },
-      {
-        title: "Ce înseamnă limită de răspundere",
-        body:
-          "Limita de răspundere este suma maximă până la care asigurătorul poate despăgubi, conform poliței. O limită prea mică poate face polița insuficientă pentru contracte sau riscuri reale.",
-      },
-      {
-        title: "De ce depinde prețul unei polițe de răspundere civilă?",
-        body: "La ofertare contează ce activități trebuie acoperite, suma maximă de despăgubire, teritoriul și franșiza. Compară oferte pentru aceleași situații și verifică dacă o limită este pe eveniment sau pentru întreaga perioadă. Dacă riscul vine dintr-un serviciu prestat pentru un client, discută separat răspunderea profesională.",
-      },
-    ],
+  {
+    "title": "Ce variantă se potrivește activității tale?",
+    "body": "Un consultant IT, un medic și un proprietar de magazin pot produce pagube în moduri diferite. Pornim de la ce faci, cui i-ai putea produce o pierdere și ce îți cer contractele. Așa putem căuta protecția potrivită situației tale."
+  },
+  {
+    "title": "Ce este limita de răspundere?",
+    "body": "Este suma maximă pe care o poate plăti asigurătorul, în condițiile poliței. Poate exista o limită pentru fiecare eveniment și o altă limită pentru toate daunele dintr-un an. Dacă paguba depășește suma acoperită, diferența poate rămâne în grija ta."
+  },
+  {
+    "title": "De ce depinde prețul?",
+    "body": "Contează activitatea, suma maximă de despăgubire, țările în care lucrezi și franșiza, adică partea din daună pe care o plătești tu. Comparăm oferte pentru aceleași situații. Dacă riscul vine dintr-o greșeală în serviciul prestat unui client, verificăm și răspunderea profesională."
+  }
+],
     faqs: [...[
-      {
-        question: "Este obligatorie răspunderea profesională?",
-        answer: "Pentru unele profesii poate fi obligatorie sau cerută de organizații profesionale/contracte. Trebuie verificat cazul concret.",
-      },
-      {
-        question: "Acoperă greșelile angajaților?",
-        answer: "Unele polițe pot include faptele angajaților/prepușilor, dar depinde de condițiile produsului.",
-      },
-      {
-        question: "Ce limită de răspundere aleg?",
-        answer: "Depinde de cerințele contractuale, riscul activității și impactul financiar posibil al unei daune.",
-      },
-      {
-        question: "Pot asigura o activitate desfășurată și în afara României?",
-        answer: "Depinde de teritoriul și jurisdicția acceptate de asigurător. Trebuie menționat înainte de ofertare.",
-      },
-    ], ...personalFaqExtras["raspundere"]],
+  {
+    "question": "Este obligatorie răspunderea profesională?",
+    "answer": "Pentru unele profesii există obligații legale sau profesionale. Asigurarea poate fi cerută și prin contractul cu un client. Verificăm cerințele care se aplică activității tale."
+  },
+  {
+    "question": "Acoperă greșelile angajaților?",
+    "answer": "Unele polițe pot include faptele angajaților pentru care răspunzi. Verificăm cine este asigurat, ce activități desfășoară și ce condiții se aplică."
+  },
+  {
+    "question": "Ce limită de răspundere aleg?",
+    "answer": "Pornim de la ce cer contractele și de la cât de mare ar putea fi o pagubă în activitatea ta. Apoi comparăm suma acoperită pe eveniment și pentru întreaga perioadă."
+  },
+  {
+    "question": "Pot asigura și activitatea din afara României?",
+    "answer": "Poate fi posibil, dacă asigurătorul acceptă țările și regulile juridice respective. Spune-mi de la început unde lucrezi și ce cerințe ai în contracte."
+  }
+], ...personalFaqExtras["raspundere"]],
   },
 
   accidente: {
     slug: "/asigurare-accidente",
     eyebrow: "Accidente",
-    title: "Asigurare de accidente pentru persoane, familie sau pasageri",
+    title: "Asigurare de accidente pentru tine și familie",
     description:
-      "Asigurarea de accidente poate oferi protecție financiară în cazul unor evenimente accidentale, precum invaliditate, spitalizare, intervenții sau alte consecințe, în funcție de pachet. Este diferită de asigurarea de sănătate și de asigurarea de viață.",
+      "Un accident poate aduce cheltuieli și o perioadă în care nu poți lucra ca înainte. O asigurare de accidente îți poate oferi sprijin financiar pentru spitalizare, invaliditate sau alte urmări incluse în contract. Verificăm ce se potrivește activităților tale și cine poate fi asigurat.",
     metaTitle: "Asigurare de accidente: preț și despăgubiri",
     metaDescription:
       "Compară costul asigurării de accidente, sumele pentru invaliditate și spitalizare, activitățile acoperite și condițiile de despăgubire.",
     ctaLabel: "Cere ofertă accidente",
     whatsappMessage: "Bună! Doresc o ofertă pentru asigurare de accidente.",
-    heroBullets: ["Pentru persoane individuale, familie sau pasageri", "Poate completa viața sau sănătatea", "Se aleg sume și clauze în funcție de activitate"],
+    heroBullets: ["Pentru tine, familie sau, prin produse dedicate, șofer și pasageri", "Poate completa asigurarea de viață sau de sănătate", "Verificăm activitățile acoperite și suma plătită pentru fiecare situație"],
     suitableFor: [
-      "persoane active care vor protecție financiară în caz de accident",
-      "familii cu copii",
-      "șoferi și persoane transportate",
-      "angajatori care vor beneficii pentru angajați",
-      "persoane care practică activități cu risc moderat, dacă produsul permite",
-    ],
+  "vrei sprijin financiar pentru urmările unui accident",
+  "cauți o variantă pentru membrii familiei",
+  "te interesează protecția șoferului și a pasagerilor",
+  "vrei să asiguri angajații firmei",
+  "practici sporturi sau activități pentru care trebuie verificată protecția"
+],
     commonCoverages: [
       "deces ca urmare a unui accident",
       "invaliditate permanentă din accident",
@@ -541,13 +458,13 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       "acoperire pentru șofer și pasageri, prin produse dedicate",
     ],
     compareChecklist: [
-      "ce evenimente sunt considerate accidente acoperite",
-      "sumele asigurate pentru fiecare risc",
-      "teritoriul de valabilitate și durata acoperirii",
-      "excluderi pentru sporturi, activități profesionale sau comportamente riscante",
-      "dacă produsul este individual, familial sau de grup",
-      "procedura de despăgubire și documentele necesare",
-    ],
+  "ce situații sunt considerate accidente acoperite",
+  "ce sumă poți primi pentru fiecare urmare a accidentului",
+  "unde și pentru cât timp este valabilă polița",
+  "ce sporturi, ocupații și alte activități sunt excluse",
+  "dacă poți include doar o persoană, familia sau un grup",
+  "cum ceri plata și ce documente sunt necesare"
+],
     offerData: [
       "persoană individuală, familie sau grup",
       "vârste aproximative și ocupație/activitate generală",
@@ -557,36 +474,34 @@ export const insuranceContent: Record<string, InsuranceContentPage> = {
       "buget orientativ",
     ],
     importantNote:
-      "Asigurarea de accidente acoperă evenimente accidentale definite în poliță. Nu este identică cu sănătatea privată și nu acoperă automat orice problemă medicală.",
+      "Polița se referă la accidentele și urmările descrise în contract. Nu acoperă automat o îmbolnăvire și nu înlocuiește asigurarea de sănătate.",
     sections: [
-      {
-        title: "Când este utilă",
-        body:
-          "Poate fi utilă când vrei o protecție financiară simplă pentru consecințe ale accidentelor: invaliditate, spitalizare, intervenții sau alte riscuri incluse. Pentru familii sau angajatori, poate fi integrată într-un pachet mai larg.",
-      },
-      {
-        title: "Cum compari costul unei asigurări de accidente?",
-        body:
-          "Cere oferte pentru aceleași persoane și activități. Compară separat sumele pentru invaliditate și eventualele indemnizații pentru spitalizare. Un cost mai mic poate însemna o sumă mai mică sau excluderea unui sport ori a unei activități profesionale care contează pentru tine.",
-      },
-    ],
+  {
+    "title": "Cum te poate ajuta?",
+    "body": "Dacă un accident duce la spitalizare, fracturi sau invaliditate, polița poate plăti sumele prevăzute pentru acele situații. Ce primești și cum se calculează plata depind de contract. Putem verifica variante pentru tine, familie sau angajații firmei."
+  },
+  {
+    "title": "Cum compari costul unei asigurări de accidente?",
+    "body": "Compară oferte pentru aceleași persoane și activități. Uită-te separat la suma pentru invaliditate și la banii plătiți pentru zilele de spitalizare. O ofertă mai ieftină poate avea sume mai mici sau poate exclude un sport ori o activitate pe care o practici."
+  }
+],
     faqs: [...[
-      {
-        question: "Este același lucru cu asigurarea de viață?",
-        answer: "Nu. Poate include deces din accident, dar este concentrată pe evenimente accidentale și consecințele lor, conform condițiilor.",
-      },
-      {
-        question: "Acoperă sporturile?",
-        answer: "Depinde de produs. Sporturile sau activitățile cu risc pot necesita clauze speciale sau pot fi excluse.",
-      },
-      {
-        question: "Se poate face pentru familie?",
-        answer: "Da, unele produse permit acoperire individuală sau familială.",
-      },
-      {
-        question: "Pot face pentru angajați?",
-        answer: "Da, există soluții de grup pentru angajați, în funcție de asigurător și condiții.",
-      },
-    ], ...personalFaqExtras["accidente"]],
+  {
+    "question": "Este același lucru cu asigurarea de viață?",
+    "answer": "Nu. Asigurarea de accidente se concentrează pe urmările unui accident și poate include decesul din accident. O asigurare de viață poate acoperi și alte cauze, în funcție de contract."
+  },
+  {
+    "question": "Acoperă sporturile pe care le practic?",
+    "answer": "Depinde de sport și de produs. Spune-mi ce practici, ca să verificăm dacă activitatea este inclusă, necesită o opțiune suplimentară sau este exclusă."
+  },
+  {
+    "question": "Pot face asigurare pentru familie?",
+    "answer": "Unele produse permit includerea membrilor familiei. Verificăm persoanele și vârstele acceptate, precum și sumele disponibile pentru fiecare."
+  },
+  {
+    "question": "Pot face asigurare pentru angajați?",
+    "answer": "Da, există și variante de grup. Oferta depinde de numărul de persoane, activitățile lor și condițiile asigurătorului."
+  }
+], ...personalFaqExtras["accidente"]],
   },
 };

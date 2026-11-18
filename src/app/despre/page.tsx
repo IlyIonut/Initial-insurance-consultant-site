@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata(
   SITE.consultantName ? `${SITE.consultantName} — consultanță în asigurări` : "Consultanță în asigurări — cum lucrăm",
-  "Cine răspunde solicitărilor IlyAsig, identitatea profesională și modul de lucru. Analiza nevoilor și explicarea asigurărilor pentru clienți din toată România.",
+  "Află cine te ajută la IlyAsig și cum lucrăm: pornim de la întrebările tale, comparăm ofertele și explicăm ce include fiecare asigurare.",
   "/despre",
 );
 
@@ -19,7 +19,7 @@ export default function AboutPage() {
       <Breadcrumbs items={[{ label: "Cum lucrăm", href: "/despre" }]} />
       <p className="eyebrow">CLARITATE, ÎNAINTE DE TOATE</p>
       <h1>Consultanță în asigurări.<br />Cu explicații clare.</h1>
-      <p className="lead">Consultanța începe cu înțelegerea activității tale. Prețul contează, alături de riscurile acoperite, limite, excluderi și felul în care se aplică polița.</p>
+      <p className="lead">Înainte să alegi o asigurare, ai nevoie să știi ce primești pentru banii plătiți. Te ascult, îți explic variantele disponibile și verificăm împreună ce se potrivește situației tale.</p>
     </div></section>
     <section className="section"><div className="shell article-columns">
       <article className="prose">
@@ -28,17 +28,17 @@ export default function AboutPage() {
           <LegalIdentity />
         </section>
         <h2>Întâi, situația ta</h2>
-        <p>Pentru o firmă, discutăm despre activitate, locații, echipamente, răspunderi, vehicule și oameni. Pentru o persoană fizică, pornim de la bunurile și nevoile de protecție relevante. O listă de produse nu înlocuiește această conversație.</p>
+        <p>Dacă ai o firmă, îmi spui cu ce te ocupi, ce bunuri folosești și ce te preocupă. Dacă vrei o asigurare personală, pornim de la mașină, locuință, călătorie sau familie. Nu trebuie să cunoști deja produsele; le parcurgem împreună.</p>
         <h2>Apoi, diferențele dintre variante</h2>
-        <p>Comparăm opțiunile disponibile pentru cerințele tale și explicăm detaliile care pot schimba protecția: sume și limite, franșize, activități acceptate, excluderi și obligații. Condițiile și acceptarea finală aparțin asigurătorului.</p>
+        <p>Îți explic ce poate plăti fiecare poliță, până la ce sumă, cât ar rămâne în grija ta și ce situații nu sunt incluse. Verificăm și obligațiile pe care le ai. Asigurătorul stabilește condițiile și decide dacă poate oferi asigurarea pentru situația ta.</p>
         <h2>Și după alegere, atenție la schimbări</h2>
         <p>O investiție, o activitate nouă sau un alt sediu pot schimba datele declarate. La reînnoire și atunci când apar schimbări, este util să verificăm din nou dacă polițele corespund situației reale.</p>
         <h2>Cum folosești informațiile de pe site</h2>
-        <p>Ghidurile și răspunsurile explică noțiuni generale și întrebări de pus înainte de alegerea unei polițe. Condițiile produsului și legea aplicabilă prevalează. Pentru o recomandare adaptată situației tale, discutăm cerințele și nevoile concrete înainte de încheierea asigurării.</p>
+        <p>Ghidurile te ajută să înțelegi produsele și să știi ce să întrebi. Pentru a afla ce cumperi, citim oferta și condițiile contractului, împreună cu regulile legale aplicabile. Recomandarea pentru tine vine după ce discutăm situația și nevoile tale.</p>
       </article>
       <aside className="scenario-card">
         <Icon name="shield" size={45} />
-        <h3>Pentru clienți<br />din toată România.</h3>
+        <h3>Te pot ajuta<br />oriunde în România.</h3>
         <p>O conversație directă, pornită de la întrebările tale. Începem cu activitatea și nevoile tale, indiferent de județ.</p>
         <div style={{ marginTop: 25 }}><ButtonLink href="/contact" arrow>Să discutăm</ButtonLink></div>
       </aside>

@@ -11,115 +11,223 @@ export const businessSolutions: BusinessSolution[] = [
   {
     slug: "bunuri-si-echipamente", name: "Bunuri și echipamente", title: "Asigurarea bunurilor și echipamentelor firmei",
     seoTitle: "Asigurare bunuri, utilaje și stocuri pentru firme",
-    description: "Protecție pentru spații, echipamente, utilaje și stocuri. Analizăm valorile asigurate, riscurile, franșizele și condițiile relevante pentru firma ta.",
-    intro: "Spațiul, echipamentele și stocurile susțin fiecare zi de lucru. Pornim de la ce deții sau folosești și de la modul în care îți desfășori activitatea, pentru a compara protecții care au sens pentru afacerea ta.",
-    icon: "box", color: "blue", label: "ACTIVELE AFACERII",
+    description: "Asigură spațiile, utilajele și stocurile firmei. Vezi ce evenimente pot fi acoperite, cum alegi valorile și ce parte din daună plătești tu.",
+    intro: "Dacă un incendiu sau o avarie ți-ar afecta echipamentele ori stocurile, cât de greu ar fi să le înlocuiești? Pornim de la bunurile pe care le folosești și căutăm o asigurare potrivită activității și bugetului tău.",
+    icon: "box", color: "blue", label: "BUNURILE FIRMEI",
     suitable: ["Magazine și firme de servicii cu spații proprii sau închiriate", "Ateliere, mici producători și firme cu utilaje", "Birouri, cabinete și afaceri cu echipamente valoroase", "Firme cu stocuri și amenajări realizate în spații închiriate"],
     coverages: ["Clădiri, amenajări și bunuri declarate în poliță", "Incendiu, explozie și anumite fenomene naturale", "Furt prin efracție, apă de conductă sau vandalism, dacă sunt incluse", "Avarii accidentale ale unor utilaje sau echipamente, prin acoperiri adecvate"],
-    questions: ["Care sunt valorile actualizate ale bunurilor și cum se stabilesc?", "Ce locații și activități sunt declarate?", "Ce condiții există pentru securitate, întreținere și prevenirea incendiilor?", "Cum se tratează stocurile sezoniere, bunurile închiriate și franșiza?"],
-    note: "Uzura, întreținerea și orice tip de defecțiune nu sunt automat acoperite. Unele bunuri, activități sau locații necesită produse distincte ori acceptare specială.",
+    questions: [
+  "Cât ar costa acum repararea sau înlocuirea bunurilor?",
+  "Sunt incluse toate punctele de lucru și activitățile tale?",
+  "Ce măsuri de siguranță și întreținere cere asigurătorul?",
+  "Sunt incluse stocurile sezoniere și bunurile închiriate? Ce parte din daună plătești tu?"
+],
+    note: "Uzura și întreținerea obișnuită nu sunt acoperite automat. Nici orice defecțiune nu este despăgubită. Spune-mi ce echipamente ai și cum le folosești, ca să verificăm evenimentele și bunurile acceptate.",
     scenario: { title: "Un echipament esențial se avariază.", body: "Un atelier rămâne fără utilajul folosit pentru majoritatea comenzilor. Analiza urmărește separat paguba materială și efectele opririi activității. O poliță pentru bunuri nu include automat pierderea de profit." },
     sections: [
-      { title: "Valoarea asigurată contează la fel de mult ca prețul", body: "O sumă rămasă la nivelul unei investiții vechi poate fi insuficientă pentru înlocuirea bunurilor. Verificăm baza de evaluare, inventarul, eventualele limite pe categorii și modul în care se aplică subasigurarea. Un inventar actualizat ajută atât la ofertare, cât și la clarificarea unei daune." },
-      { title: "Proprietar sau chiriaș: interesele sunt diferite", body: "Dacă firma lucrează într-un spațiu închiriat, polița proprietarului poate viza clădirea, fără să protejeze stocurile și investițiile tale. Discutăm ce aparține firmei, cine suportă riscul prin contractul de închiriere și ce amenajări merită declarate separat." },
-      { title: "Cum alegi acoperirea bunurilor firmei dacă ai un buget fix?", body: "Cere oferte cu aceleași valori pentru clădire, utilaje și stocuri. Verifică separat limita pentru stocurile din perioadele de vârf și dacă sunt acoperite avariile interne ale utilajelor. Dacă bugetul este limitat, pornește de la echipamentul sau stocul a cărui pierdere ar opri activitatea." },
-    ],
-    faqs: [...[{ question: "Pot asigura doar echipamentele?", answer: "Poate fi posibil, în funcție de produs, tipul echipamentelor și activitate. Este important să precizăm locația, utilizarea și riscurile pentru care dorești protecție." }, { question: "Stocurile sunt incluse automat?", answer: "Nu. Se verifică includerea lor, valoarea declarată, fluctuațiile sezoniere și condițiile de depozitare." }, { question: "Sunt acoperite bunurile folosite la sediul clientului?", answer: "Depinde de teritorialitate, locațiile declarate și clauzele produsului. Bunurile mobile sau aflate în transport pot necesita protecții distincte." }], ...businessFaqExtras["bunuri-si-echipamente"]], 
+  {
+    "title": "Pentru ce valoare îți asiguri bunurile?",
+    "body": "Prețul plătit acum câțiva ani pentru un utilaj poate fi mai mic decât costul înlocuirii lui astăzi. Verificăm împreună valorile și regulile de calcul din ofertă. Dacă asiguri bunurile pentru mai puțin decât valoarea cerută de contract, despăgubirea poate fi redusă proporțional. Aceasta se numește subasigurare."
+  },
+  {
+    "title": "Lucrezi într-un spațiu închiriat?",
+    "body": "Asigurarea proprietarului poate proteja clădirea, fără să includă echipamentele, stocurile sau amenajările tale. Verificăm ce aparține firmei și ce responsabilități ai prin contractul de închiriere, apoi stabilim ce bunuri trebuie declarate separat."
+  },
+  {
+    "title": "Cum alegi dacă ai un buget fix?",
+    "body": "Începem cu bunurile a căror pierdere ți-ar opri activitatea. Comparăm oferte pentru aceleași valori ale clădirii, utilajelor și stocurilor. Verificăm și avariile interne ale echipamentelor, precum și stocurile mai mari din perioadele aglomerate, ca să vezi ce primești pentru suma plătită."
+  }
+],
+    faqs: [...[{ question: "Pot asigura doar echipamentele?", answer: "Poate fi posibil. Spune-mi ce echipamente ai, unde le folosești și pentru ce situații vrei să le asiguri. Verificăm apoi produsele și condițiile disponibile." }, { question: "Stocurile sunt incluse automat?", answer: "Nu. Declarăm ce stocuri ai, cât valorează, unde le păstrezi și dacă valoarea lor crește în anumite perioade. Verificăm apoi ce include oferta." }, { question: "Sunt acoperite bunurile folosite la sediul clientului?", answer: "Depinde de locurile și utilizările acceptate în poliță. Spune-mi dacă duci echipamentele la clienți sau le transporți frecvent, ca să verificăm și aceste situații." }], ...businessFaqExtras["bunuri-si-echipamente"]],
   },
   {
     slug: "raspundere-civila-profesionala", name: "Răspundere civilă și profesională", title: "Asigurări de răspundere pentru firme și profesii",
     seoTitle: "Asigurare de răspundere profesională și malpraxis",
     description: "Răspundere profesională și malpraxis: ce date pregătești pentru ofertă și cum verifici activitățile acoperite, limitele și excluderile.",
-    intro: "O greșeală sau un incident poate afecta un client, un vizitator ori un partener. Identificăm tipul de răspundere relevant pentru activitatea ta și verificăm dacă oferta răspunde riscurilor și cerințelor contractuale.",
+    intro: "O greșeală în serviciul prestat sau un incident la sediu poate produce o pagubă unui client ori unui vizitator. Te ajut să vezi ce tip de răspundere ai nevoie să asiguri și dacă oferta respectă cerințele din contractele tale.",
     icon: "scale", color: "mint", label: "RELAȚIA CU CLIENȚII",
     suitable: ["Firme care primesc clienți sau desfășoară lucrări la terți", "Consultanți, profesii liberale și furnizori de servicii specializate", "Producători și distribuitori, în funcție de răspunderea pentru produse", "Firme cărora un partener le cere o anumită limită de asigurare"],
-    coverages: ["Anumite prejudicii materiale sau vătămări produse terților", "Răspundere profesională pentru erori și omisiuni, în produsele dedicate", "Răspundere pentru produse sau lucrări, când este acceptată", "Cheltuieli de apărare, în condițiile și limitele contractului"],
-    questions: ["Ce servicii și activități trebuie să fie nominalizate?", "Ce limite, teritorii și jurisdicții cere contractul cu clientul?", "Sunt vizate prejudicii materiale sau pierderi financiare pure?", "Când trebuie formulată și notificată cererea de despăgubire?"],
-    note: "Răspunderea civilă generală nu înlocuiește automat răspunderea profesională. Penalitățile, garanțiile contractuale și toate pierderile financiare nu sunt implicit asigurate.",
-    scenario: { title: "Clientul cere o limită de răspundere în contract.", body: "O firmă de servicii primește o cerință de asigurare înainte de semnarea unui proiect. Comparăm cerința cu activitatea efectivă, teritoriul, excluderile și momentul în care este acoperită reclamația. Simplul titlu al poliței nu confirmă adecvarea." },
-    sections: [{ title: "Două tipuri de răspundere, două întrebări diferite", body: "Pentru un incident care deteriorează bunurile unui client poate fi relevantă răspunderea civilă generală. Pentru o eroare într-un serviciu de specialitate poate fi necesară răspunderea profesională. Analiza pornește de la prejudiciul posibil și de la activitatea declarată, nu de la alegerea unui titlu de produs." }, { title: "Continuitatea polițelor merită verificată", body: "La unele asigurări profesionale, data retroactivă și momentul formulării sau notificării reclamației sunt esențiale. Dacă schimbi asigurătorul ori întrerupi protecția, clarificăm aceste aspecte înainte de reînnoire. Cerințele pentru subcontractori și proiectele internaționale se analizează distinct." },
-      { title: "De ce depinde oferta de răspundere profesională?", body: "Pentru o ofertă, pregătește serviciile prestate, tipurile de clienți, țările în care lucrezi și limita cerută în contract. Asigurătorul poate cere și cifra de afaceri relevantă sau istoricul reclamațiilor. Compară primele pentru aceleași activități, limite și condiții de notificare." },
-      {
-        id: "malpraxis",
-        title: "Ce verifici la o ofertă de asigurare de malpraxis medical?",
-        body: "Spune ce profesie și specialitate ai, ce servicii prestezi și în ce unități lucrezi. Verifică dacă toate activitățile care te interesează sunt declarate și acoperite. Compară limitele pe eveniment și pe întreaga perioadă, cheltuielile de apărare și condițiile de notificare a unei reclamații. Polița personalului medical nu confirmă automat acoperirea răspunderii cabinetului sau a aparaturii.",
-      },
-    ],
-    faqs: [...[{ question: "O poliță generală acoperă și erorile profesionale?", answer: "Nu automat. Tipul de prejudiciu și serviciul prestat trebuie să corespundă produsului și activităților acceptate." }, { question: "Poți verifica o cerință de la un client extern?", answer: "Putem compara cerința de asigurare cu variantele disponibile, inclusiv limitele, teritoriul și jurisdicția. Acceptarea riscului și condițiile finale aparțin asigurătorului." }, { question: "Este obligatorie pentru orice firmă?", answer: "Obligațiile diferă în funcție de profesie și de cadrul aplicabil. Pot exista și cerințe contractuale. Situația exactă trebuie verificată înainte de alegerea poliței." }], ...businessFaqExtras["raspundere-civila-profesionala"]], 
+    coverages: [
+  "pagube materiale sau vătămări produse altor persoane, în situațiile incluse",
+  "greșeli sau omisiuni profesionale, prin polițe dedicate",
+  "pagube produse de produsele ori lucrările tale, dacă sunt acceptate",
+  "cheltuieli pentru apărarea juridică, în limitele contractului"
+],
+    questions: [
+  "Sunt incluse toate serviciile și activitățile pe care le prestezi?",
+  "Ce sume, țări și condiții juridice îți cere contractul cu clientul?",
+  "Sunt acoperite și pierderile financiare care nu pornesc de la o pagubă materială?",
+  "Când trebuie să primești și să anunți reclamația pentru a fi acoperită?"
+],
+    note: "O poliță de răspundere generală nu acoperă automat greșelile profesionale. Verificăm separat penalitățile, obligațiile de rezultat și pierderile financiare, deoarece pot fi excluse sau limitate.",
+    scenario: { title: "Clientul cere o limită de răspundere în contract.", body: "O firmă de servicii primește o cerință de asigurare înainte de semnarea unui proiect. Comparăm cerința cu activitatea efectivă, teritoriul, excluderile și momentul în care este acoperită reclamația. Verificăm ce include polița, nu doar cum se numește." },
+    sections: [
+  {
+    "title": "Ce tip de răspundere ai nevoie să asiguri?",
+    "body": "Dacă deteriorezi accidental un bun al clientului, poate fi relevantă răspunderea civilă generală. Dacă o greșeală în serviciul tău îi produce o pierdere, poate fi necesară răspunderea profesională. Îmi descrii ce faci, iar eu te ajut să înțelegi ce variantă poate acoperi situațiile care te preocupă."
+  },
+  {
+    "title": "Ce verifici când reînnoiești sau schimbi asigurătorul?",
+    "body": "La unele polițe profesionale contează atât când ai făcut greșeala, cât și când ai primit și ai anunțat reclamația. Data retroactivă arată cât de departe în trecut pot fi luate în calcul faptele, în condițiile contractului. Verificăm aceste date înainte să renunți la vechea poliță, pentru a evita o perioadă fără protecția de care ai nevoie."
+  },
+  {
+    "title": "De ce depinde prețul asigurării profesionale?",
+    "body": "Contează serviciile prestate, tipurile de clienți, țările în care lucrezi și suma pe care trebuie să o acopere polița. Asigurătorul poate cere și cifra de afaceri sau informații despre reclamațiile anterioare. Comparăm costul pentru aceleași activități, limite și reguli de anunțare a reclamațiilor."
+  },
+  {
+    "id": "malpraxis",
+    "title": "Ce verifici la asigurarea de malpraxis medical?",
+    "body": "Începem cu profesia, specialitatea, serviciile oferite și unitățile în care lucrezi. Verificăm dacă acestea sunt incluse și ce sumă se poate plăti pentru o reclamație sau pentru toate reclamațiile dintr-un an. Contează și cheltuielile de apărare și termenele în care anunți o reclamație. Polița ta profesională nu protejează automat și cabinetul ori aparatura."
+  }
+],
+    faqs: [...[{ question: "O poliță generală acoperă și erorile profesionale?", answer: "Nu automat. Verificăm separat ce greșeli profesionale pot fi incluse, pentru serviciile pe care le oferi și pagubele pe care le-ai putea produce." }, { question: "Poți verifica o cerință de la un client extern?", answer: "Da, putem verifica cerința clientului și variantele disponibile: sumele, țările și regulile juridice acceptate. Asigurătorul decide ce poate acoperi și în ce condiții." }, { question: "Este obligatorie pentru orice firmă?", answer: "Depinde de profesia și activitatea ta. Pot exista obligații legale sau cerințe din contractele cu partenerii. Le verificăm înainte să alegi polița." }], ...businessFaqExtras["raspundere-civila-profesionala"]],
   },
   {
     slug: "flote-auto", name: "Flote auto", title: "Asigurări RCA și CASCO pentru flotele firmelor",
     seoTitle: "Asigurare flotă auto: ofertă RCA și CASCO",
     description: "RCA și CASCO pentru vehiculele firmei: comparație de acoperiri, franșize, condiții de reparație și organizarea reînnoirilor pentru flote.",
-    intro: "Fie că ai câteva autoturisme sau mai multe autovehicule de lucru, administrarea lor trebuie să rămână simplă. Privim împreună utilizarea, istoricul de daune, finanțarea și condițiile de protecție pentru fiecare categorie.",
+    intro: "Ai câteva mașini de serviciu sau mai multe autoutilitare? Te ajut să compari RCA și CASCO pentru felul în care le folosești și să urmărești reînnoirile. Verificăm fiecare categorie de vehicule, inclusiv cerințele de leasing.",
     icon: "car", color: "peach", label: "MOBILITATEA FIRMEI",
     suitable: ["Firme cu autoturisme de serviciu și autoutilitare", "Echipe comerciale, de intervenție sau mentenanță", "Companii cu vehicule cumpărate în leasing", "Afaceri care vor un calendar clar al polițelor auto"],
-    coverages: ["RCA pentru răspunderea față de terți, în cadrul aplicabil", "CASCO pentru propriile vehicule, conform riscurilor alese", "Asistență rutieră și alte opțiuni, unde sunt disponibile", "Soluții diferențiate pentru categoriile și utilizările acceptate"],
+    coverages: [
+  "RCA pentru daunele produse altor persoane cu vehiculele firmei",
+  "CASCO pentru daunele la vehiculele tale, dacă sunt incluse în poliță",
+  "asistență rutieră și alte opțiuni, acolo unde sunt disponibile",
+  "variante adaptate tipului de vehicul și utilizării declarate"
+],
     questions: ["Cum sunt folosite vehiculele și de către cine?", "Care este istoricul de daune și ce cerințe are finanțatorul?", "Ce franșize, service-uri și teritorii sunt potrivite?", "Cum gestionăm intrările, ieșirile și expirările din flotă?"],
-    note: "Numărul de vehicule nu garantează automat un tarif de flotă. Transportul de mărfuri, curieratul, închirierea și alte utilizări speciale trebuie declarate și analizate separat.",
+    note: "Mai multe mașini nu înseamnă automat un tarif de flotă sau o reducere. Spune-mi dacă le folosești pentru curierat, transport, închiriere ori alte activități speciale, pentru a verifica ofertele potrivite.",
     scenario: { title: "Un vehicul de intervenție este avariat.", body: "Pe lângă reparație, firma trebuie să reorganizeze vizitele la clienți. Verificăm ce acoperă CASCO, ce franșiză se aplică, opțiunile de service și dacă există beneficii relevante de asistență. Pierderea veniturilor sau vehiculul de înlocuire nu sunt presupuse automat." },
-    sections: [{ title: "Aceeași flotă poate avea nevoi diferite", body: "Un autoturism de management și o autoutilitară folosită zilnic pe șantier au expuneri diferite. În locul unei comparații bazate exclusiv pe prima totală, urmărim costul franșizelor, condițiile de reparație, utilizarea declarată și eventualele limite teritoriale." }, { title: "Reînnoirile sunt un moment bun pentru ordine", body: "O evidență actualizată a vehiculelor, polițelor și daunelor ajută la ofertare. La reînnoire verificăm schimbările de utilizare, vânzările și achizițiile, cerințele de leasing și documentele necesare. Pentru transport discutăm distinct răspunderea transportatorului și protecția mărfii." },
-      { title: "Cum compari prețul unei asigurări de flotă auto?", body: "Cere costul separat pe vehicul și pe tip de poliță. Compară RCA pentru aceeași perioadă, iar la CASCO pune alături franșiza, reparația în service și condițiile de utilizare. Așa poți vedea dacă merită protecție suplimentară pentru autoutilitarele fără de care echipa nu poate lucra." },
-    ],
-    faqs: [...[{ question: "Poți analiza și o flotă mică?", answer: "Da. Putem discuta despre câteva vehicule. Încadrarea într-un program de flotă și condițiile comerciale depind de fiecare asigurător." }, { question: "RCA protejează și mașina firmei care provoacă accidentul?", answer: "RCA privește răspunderea pentru prejudiciile produse terților. Protecția propriului vehicul se analizează prin CASCO și condițiile sale." }, { question: "Marfa transportată intră în CASCO?", answer: "Nu trebuie presupus acest lucru. Protecția vehiculului, răspunderea transportatorului și asigurarea mărfii sunt riscuri și contracte distincte." }], ...businessFaqExtras["flote-auto"]], 
+    sections: [
+  {
+    "title": "Cum folosești fiecare vehicul?",
+    "body": "O mașină de serviciu și o autoutilitară care merge zilnic pe șantier au nevoi diferite. Pe lângă prețul total, verificăm cât plătești tu la o daună, unde poți repara vehiculul și în ce țări este valabilă asigurarea. Utilizarea declarată trebuie să corespundă activității reale."
+  },
+  {
+    "title": "Ce verificăm la reînnoire?",
+    "body": "Pornim de la o listă actualizată cu vehiculele, polițele și daunele. Îmi spui ce ai cumpărat sau vândut, dacă s-a schimbat utilizarea și ce condiții impune leasingul. Dacă transporți marfă, verificăm separat protecția mărfii și răspunderea ta ca transportator."
+  },
+  {
+    "title": "Cum compari prețul unei asigurări de flotă auto?",
+    "body": "Cere costul pe vehicul și pe tip de asigurare. La RCA, compară aceeași perioadă. La CASCO, verifică franșiza, adică partea de daună plătită de tine, service-urile acceptate și condițiile de utilizare. Așa poți decide unde merită o protecție suplimentară pentru vehiculele esențiale echipei."
+  }
+],
+    faqs: [...[{ question: "Poți analiza și o flotă mică?", answer: "Da, putem începe și cu câteva vehicule. Verificăm ce oferte sunt disponibile; fiecare asigurător are propriile condiții pentru programele de flotă." }, { question: "RCA protejează și mașina firmei care provoacă accidentul?", answer: "RCA acoperă daunele produse altor persoane. Pentru reparația mașinii firmei care a provocat accidentul, verificăm separat o poliță CASCO." }, { question: "Marfa transportată intră în CASCO?", answer: "Nu automat. CASCO protejează vehiculul în condițiile poliței. Pentru marfă și pentru răspunderea ta ca transportator verificăm asigurări separate." }], ...businessFaqExtras["flote-auto"]],
   },
   {
     slug: "sanatate-angajati", name: "Sănătate pentru angajați", title: "Asigurări de sănătate pentru angajații firmei",
     seoTitle: "Asigurare de sănătate pentru angajați",
     description: "Soluții de sănătate de grup pentru angajați. Comparăm rețelele medicale, serviciile, limitele, perioadele de așteptare și administrarea planului.",
-    intro: "Un beneficiu util începe cu nevoile echipei. Analizăm serviciile medicale relevante, accesul în localitățile în care lucrați și regulile de utilizare, pentru ca diferențele dintre planuri să fie ușor de înțeles.",
+    intro: "Vrei să oferi echipei acces la servicii medicale? Începem cu localitățile în care lucrează angajații, clinicile disponibile și bugetul firmei. Îți explic ce include fiecare plan și cum îl poate folosi echipa.",
     icon: "heart", color: "mint", label: "OAMENII DIN ECHIPĂ",
     suitable: ["IMM-uri care analizează un beneficiu medical pentru echipă", "Companii cu angajați în mai multe localități", "Firme care vor să revizuiască un plan de grup existent", "Angajatori interesați și de accidente sau viață de grup"],
     coverages: ["Consultații și investigații, în limitele planului", "Spitalizare și intervenții, în produsele care le includ", "Servicii în rețea sau rambursare, conform regulilor contractuale", "Opțiuni pentru alte protecții de grup, analizate separat"],
-    questions: ["Ce servicii contează pentru echipă și în ce localități?", "Cum se accesează serviciile și ce autorizări sunt necesare?", "Ce excluderi, limite și perioade de așteptare există?", "Cum se adaugă sau se retrag angajații pe parcurs?"],
-    note: "Asigurarea de sănătate și abonamentul medical au mecanisme diferite. Un plan nu acoperă automat orice serviciu sau afecțiune. Nu solicităm date medicale individuale prin formularul de contact.",
+    questions: [
+  "Ce consultații, analize și spitale sunt utile echipei?",
+  "Cum se face programarea și când este necesară aprobarea asigurătorului?",
+  "Cât poate plăti planul și după cât timp pot fi folosite serviciile?",
+  "Cum adaugi un angajat nou sau retragi o persoană care pleacă din firmă?"
+],
+    note: "Un abonament medical și o asigurare de sănătate pot oferi servicii diferite. Verificăm ce include planul, ce limite are și ce afecțiuni pot fi excluse. Pentru prima discuție, nu am nevoie de datele medicale ale angajaților.",
     scenario: { title: "Echipa lucrează în două orașe.", body: "Un angajator compară două planuri cu preț apropiat. Verificăm rețeaua disponibilă efectiv în fiecare oraș, accesul la investigații, regulile pentru spitalizare și modul în care angajații folosesc beneficiul." },
-    sections: [{ title: "Disponibilitatea serviciilor este o parte a comparației", body: "O listă extinsă de servicii trebuie privită împreună cu rețeaua medicală, limitele și procedura de acces. Discutăm diferența dintre decontarea directă și rambursare, condițiile pentru anumite investigații și ce informații trebuie comunicate echipei." }, { title: "Un plan de grup trebuie și administrat", body: "Numărul de angajați, eligibilitatea și modificările din echipă influențează oferta și administrarea contractului. Stabilim ce informații sunt necesare pentru ofertare și cum se gestionează schimbările. Tratamentul fiscal se verifică separat, împreună cu specialistul contabil sau fiscal al firmei." },
-      { title: "Cum compari costul asigurării de sănătate pe angajat?", body: "Pentru un buget fix, compară costul pe angajat pentru aceeași perioadă. Verifică în ce clinici poate merge echipa, ce servicii sunt incluse și ce limite există pentru consultații sau spitalizare. Clarifică prețul separat pentru membrii familiei, dacă pot fi adăugați." },
-    ],
-    faqs: [...[{ question: "Este același lucru cu un abonament medical?", answer: "Nu. Furnizorul, mecanismul de acoperire, rețeaua și serviciile pot fi diferite. Comparația trebuie făcută pe contractele și nevoile concrete." }, { question: "Există un număr minim de angajați?", answer: "Condițiile de eligibilitate și numărul minim diferă de la un produs la altul. Pornim de la structura reală a firmei." }, { question: "Pot fi incluși membrii familiei?", answer: "Unele planuri permit includerea lor, în anumite condiții și cu costuri specifice. Verificăm această opțiune în ofertă." }], ...businessFaqExtras["sanatate-angajati"]], 
+    sections: [
+  {
+    "title": "La ce clinici poate merge echipa?",
+    "body": "Lista de servicii este utilă dacă angajații le pot accesa în localitățile lor. Verificăm rețeaua medicală și modul de plată: direct către clinică sau prin rambursare, când angajatul plătește și cere ulterior banii înapoi. Îți explic și ce aprobări sunt necesare înainte de anumite investigații."
+  },
+  {
+    "title": "Cum gestionezi planul pe parcurs?",
+    "body": "Stabilim cine poate fi inclus și cum anunți schimbările din echipă. Numărul de angajați și condițiile de includere pot influența oferta. Pentru modul în care costul este tratat fiscal, verifică situația firmei împreună cu persoana care îți ține contabilitatea."
+  },
+  {
+    "title": "Cum compari costul pe angajat?",
+    "body": "Compară aceeași perioadă, clinicile disponibile, serviciile incluse și sumele maxime pentru consultații sau spitalizare. Verifică dacă angajatul plătește o parte din cost. Dacă vrei să incluzi membrii familiei, cerem separat condițiile și prețul pentru ei."
+  }
+],
+    faqs: [...[{ question: "Este același lucru cu un abonament medical?", answer: "Nu. Pot fi diferite serviciile, clinicile și felul în care se plătesc cheltuielile. Comparăm ce poate folosi efectiv echipa ta și ce condiții are fiecare variantă." }, { question: "Există un număr minim de angajați?", answer: "Numărul minim diferă între produse. Spune-mi câți angajați ai, ca să verific ce variante sunt disponibile pentru echipa ta." }, { question: "Pot fi incluși membrii familiei?", answer: "Unele planuri îți permit să adaugi membrii familiei. Verificăm cine poate fi inclus și care este costul suplimentar." }], ...businessFaqExtras["sanatate-angajati"]],
   },
   {
     slug: "intreruperea-activitatii", name: "Întreruperea activității", title: "Asigurarea pentru întreruperea activității firmei",
     seoTitle: "Asigurare pentru întreruperea activității",
-    description: "Ce înseamnă Business Interruption: pierderi financiare după un eveniment asigurat. Verificăm declanșarea acoperirii, limitele și perioada de despăgubire.",
-    intro: "Repararea spațiului sau a utilajului poate dura. Între timp, unele cheltuieli continuă. Analizăm dacă protecția pentru întreruperea activității poate completa asigurarea bunurilor și cum se aplică în situația firmei tale.",
+    description: "Dacă o daună îți oprește firma, unele cheltuieli continuă. Află ce poate acoperi asigurarea pentru întreruperea activității și pentru cât timp.",
+    intro: "Dacă un incendiu ți-ar închide temporar spațiul, chiria și alte cheltuieli ar putea continua. Pe lângă repararea bunurilor, putem analiza o protecție pentru anumite pierderi din perioada în care nu poți lucra. Îți explic în ce situații se aplică și pentru cât timp.",
     icon: "clock", color: "blue", label: "CONTINUITATEA AFACERII",
     suitable: ["Firme dependente de un spațiu sau de echipamente esențiale", "Ateliere și producători cu timpi lungi de înlocuire a utilajelor", "Magazine și afaceri HoReCa cu cheltuieli fixe importante", "Companii care verifică protecția dincolo de paguba materială"],
-    coverages: ["Anumite pierderi financiare după producerea unui eveniment acoperit", "Profit și cheltuieli fixe eligibile, conform definițiilor produsului", "Unele cheltuieli suplimentare pentru limitarea întreruperii", "Protecție pe perioada și în limitele de despăgubire contractate"],
-    questions: ["Ce eveniment trebuie să se producă pentru activarea acoperirii?", "Cum este definit și calculat interesul financiar asigurat?", "Cât ar dura realist reluarea activității?", "Ce franșiză temporală, limite și obligații se aplică?"],
-    note: "Această protecție nu acoperă automat scăderea vânzărilor, lipsa clienților sau orice oprire a activității. Trebuie îndeplinite condițiile de declanșare prevăzute în poliță.",
+    coverages: [
+  "anumite pierderi financiare după un eveniment inclus în poliță",
+  "profit și cheltuieli fixe, calculate după regulile contractului",
+  "unele costuri suplimentare pentru a relua mai repede activitatea",
+  "plăți în limitele și pe perioada stabilite în contract"
+],
+    questions: [
+  "Ce trebuie să se întâmple pentru a putea cere despăgubirea?",
+  "Cum se calculează pierderea acoperită?",
+  "Cât timp ți-ar lua să poți lucra din nou?",
+  "Există o perioadă inițială fără despăgubire? Ce limite și obligații ai?"
+],
+    note: "Asigurarea nu plătește pentru orice scădere a vânzărilor sau lipsă de clienți. Oprirea trebuie să fie legată de un eveniment și de condițiile prevăzute în contract.",
     scenario: { title: "Spațiul poate fi reparat. Între timp, costurile continuă.", body: "După un incendiu, un magazin are nevoie de timp pentru refacere. Polița pentru bunuri și clauza de întrerupere a activității au roluri diferite. Pentru pierderile financiare se verifică evenimentul, modul de calcul, perioada și limita convenite." },
-    sections: [{ title: "Refacerea bunurilor și refacerea veniturilor sunt legate", body: "Înlocuirea unui echipament sau repararea clădirii nu readuce imediat firma la nivelul anterior. Pot exista termene de livrare, autorizări și etape de repornire. De aceea, perioada de despăgubire trebuie discutată pornind de la modul real de funcționare a afacerii." }, { title: "Documentele financiare fac parte din analiză", body: "În funcție de produs, sunt relevante cifra de afaceri, structura cheltuielilor și elementele folosite la calculul pierderii. Clarificăm definițiile din ofertă împreună cu persoanele care cunosc finanțele firmei. Exemplele generale nu înlocuiesc formula și condițiile din contract." },
-      { title: "Cum ceri o ofertă pentru întreruperea activității?", body: "Pentru ofertă, estimează cât ar dura repornirea dacă sediul sau un utilaj esențial nu ar mai fi disponibil. Compară costul pentru aceleași evenimente acoperite, aceeași perioadă de despăgubire și aceeași bază de calcul. Întreabă ce cheltuieli fixe sau costuri suplimentare pot intra în despăgubire." },
-    ],
-    faqs: [...[{ question: "Este inclusă automat în asigurarea bunurilor?", answer: "Nu trebuie presupus acest lucru. Poate fi o secțiune a unui pachet, o clauză sau o protecție ce trebuie solicitată distinct." }, { question: "Acoperă și o scădere generală a vânzărilor?", answer: "Nu în mod obișnuit prin simplul fapt al scăderii vânzărilor. Contează evenimentul asigurat și condițiile precise ale produsului." }, { question: "Cum aleg perioada de despăgubire?", answer: "Pornind de la timpul realist de refacere: spațiu, echipamente, livrări și repornire. Perioada disponibilă și adecvarea ei se discută pe oferta concretă." }], ...businessFaqExtras["intreruperea-activitatii"]],
-    
+    sections: [
+  {
+    "title": "Cât ar dura să reiei activitatea?",
+    "body": "Pe lângă reparația clădirii, poate fi nevoie să comanzi un utilaj, să îl instalezi și să repornești producția. Discutăm acești pași ca să alegi o perioadă de despăgubire potrivită: intervalul pentru care pot fi acoperite pierderile după eveniment, în condițiile poliței."
+  },
+  {
+    "title": "Ce informații financiare sunt necesare?",
+    "body": "Asigurătorul poate cere cifra de afaceri, cheltuielile fixe și alte date folosite la calculul pierderii. Împreună cu persoana care cunoaște finanțele firmei, verificăm ce sume pot fi acoperite și cum se calculează. Polița nu plătește automat toate încasările pierdute."
+  },
+  {
+    "title": "Cum ceri și compari o ofertă?",
+    "body": "Estimează cât timp ai avea nevoie pentru a lucra din nou dacă sediul sau un utilaj esențial ar fi afectat. Comparăm oferte pentru aceleași evenimente, aceeași perioadă și aceeași metodă de calcul. Verificăm ce cheltuieli pot fi plătite și dacă există o perioadă inițială pentru care nu primești despăgubire, numită franșiză temporală."
+  }
+],
+    faqs: [...[{ question: "Este inclusă automat în asigurarea bunurilor?", answer: "Nu automat. Poate fi inclusă într-un pachet sau adăugată separat. Verificăm dacă oferta ta o conține și ce condiții are." }, { question: "Acoperă și o scădere generală a vânzărilor?", answer: "O scădere a vânzărilor nu este suficientă. Pierderea trebuie să fie legată de un eveniment acoperit, în condițiile contractului." }, { question: "Cum aleg perioada de despăgubire?", answer: "Estimează cât ar dura să repari spațiul, să înlocuiești echipamentele și să reiei lucrul. Verificăm apoi ce perioadă de protecție poate oferi asigurătorul." }], ...businessFaqExtras["intreruperea-activitatii"]],
+
   },
   {
     slug: "riscuri-cibernetice", name: "Riscuri cibernetice", title: "Asigurări pentru riscurile cibernetice ale firmelor",
     seoTitle: "Asigurare cyber pentru firme: acoperire și ofertă",
-    description: "Orientare pentru asigurarea cyber a firmei: incidente, date, răspundere și continuitate. Discutăm eligibilitatea, controalele de securitate și excluderile.",
-    intro: "Datele, aplicațiile și sistemele informatice fac parte din activitatea firmei. Discutăm ce impact ar avea un incident și ce rol poate avea o asigurare cyber, alături de măsurile de prevenție și răspuns.",
+    description: "Asigurare cyber pentru firma ta: ce costuri poate acoperi un incident informatic, ce măsuri de securitate sunt cerute și ce verifici în ofertă.",
+    intro: "Dacă nu ai mai putea accesa comenzile, datele sau aplicațiile firmei, cât de greu ar fi să continui munca? O asigurare cyber poate ajuta cu anumite costuri ale unui incident informatic. Verificăm ce poate acoperi și ce măsuri de securitate trebuie să ai.",
     icon: "cyber", color: "peach", label: "ACTIVITATEA DIGITALĂ",
     suitable: ["Firme IT și furnizori de servicii digitale", "Afaceri care prelucrează date sau depind de sisteme informatice", "Comerț online și servicii cu operațiuni digitale", "Companii cu cerințe de asigurare cyber din partea clienților"],
     coverages: ["Costuri de răspuns la anumite incidente, în condițiile produsului", "Unele costuri de refacere a datelor sau sistemelor", "Răspundere față de terți pentru incidente acceptate", "Anumite pierderi din întreruperea operațiunilor digitale"],
-    questions: ["Ce sisteme și date susțin activitatea?", "Ce controale de securitate și copii de siguranță sunt implementate?", "Ce servicii și costuri sunt incluse în răspunsul la incident?", "Cum sunt tratate frauda, furnizorii externi și evenimentele cunoscute?"],
-    note: "Protecția cyber nu înlocuiește securitatea informatică. Ransomware, frauda prin email, amenzile și plățile cerute de atacatori nu sunt automat incluse sau despăgubibile.",
+    questions: [
+  "Fără ce aplicații și date nu ai putea lucra?",
+  "Cum protejezi conturile și unde păstrezi copiile de siguranță?",
+  "Ce specialiști și ce cheltuieli sunt incluși dacă apare un incident?",
+  "Ce reguli se aplică fraudelor prin email, furnizorilor externi și incidentelor deja cunoscute?"
+],
+    note: "Asigurarea nu înlocuiește securitatea informatică. Atacurile care blochează datele și cer bani, fraudele prin email, amenzile sau plățile către atacatori nu sunt acoperite automat. Le verificăm separat în ofertă.",
     scenario: { title: "Un incident blochează accesul la sistemul de comenzi.", body: "Firma trebuie să înțeleagă ce s-a întâmplat, să refacă sistemele și să gestioneze efectele asupra clienților. Analiza unei oferte cyber urmărește costurile și serviciile eligibile, perioada de așteptare și obligațiile de notificare." },
-    sections: [{ title: "Eligibilitatea începe cu situația reală a firmei", body: "Chestionarul de risc poate solicita informații despre autentificare, actualizări, copii de siguranță și accesul la sisteme. Răspunsurile trebuie să reflecte controalele implementate. Colaborarea cu responsabilul IT ajută la completarea corectă și la înțelegerea condițiilor cerute." }, { title: "Cyber și răspunderea profesională se pot întâlni", body: "Pentru o firmă IT, un incident de securitate și o eroare de livrare a unui serviciu pot ridica probleme diferite. Verificăm împreună secțiunile ofertelor, suprapunerile, excluderile și cerințele partenerilor. Disponibilitatea unei soluții depinde de activitate și de acceptarea riscului." },
-      { title: "Ce compari în bugetul pentru asigurare cyber?", body: "Pornește de la costurile pe care firma nu le-ar putea suporta singură: intervenție tehnică, refacerea datelor, întreruperea activității sau reclamații de la clienți. Compară ofertele pentru aceleași limite și verifică sub-limitele și condițiile de securitate cerute." },
-    ],
-    faqs: [...[{ question: "Este utilă doar firmelor IT?", answer: "Nu. Pot exista expuneri și în alte activități care depind de sisteme și date. Relevanța se analizează pornind de la impactul posibil asupra firmei." }, { question: "Acoperă orice fraudă prin email?", answer: "Nu. Frauda și transferurile de bani pot avea condiții speciale sau excluderi. Acest aspect trebuie verificat explicit." }, { question: "Poate înlocui măsurile de securitate?", answer: "Nu. Măsurile de prevenție și de răspuns rămân necesare și pot face parte din condițiile de acceptare a riscului." }], ...businessFaqExtras["riscuri-cibernetice"]], 
+    sections: [
+  {
+    "title": "Ce informații îți cere asigurătorul?",
+    "body": "De obicei, completezi un chestionar despre protecția conturilor, actualizări, copii de siguranță și accesul la sisteme. Îl parcurgi cu persoana care se ocupă de IT, folosind măsurile pe care le aveți deja în funcțiune. Pe baza acestor răspunsuri, asigurătorul stabilește dacă poate oferi protecția și în ce condiții."
+  },
+  {
+    "title": "Cyber sau răspundere profesională?",
+    "body": "Dacă ai o firmă IT, un atac asupra sistemelor și o greșeală în serviciul livrat clientului pot avea consecințe diferite. Verificăm ce acoperă fiecare poliță, unde se completează și ce situații rămân excluse. Luăm în calcul și ce îți cer clienții prin contract."
+  },
+  {
+    "title": "Cum compari costul unei asigurări cyber?",
+    "body": "Pornim de la cheltuielile greu de suportat pentru firmă: intervenția specialiștilor, refacerea datelor, oprirea activității sau reclamațiile clienților. Comparăm sumele maxime pentru fiecare și măsurile de securitate cerute. O limită totală mare nu înseamnă că orice cost al incidentului este acoperit până la acea sumă."
+  }
+],
+    faqs: [...[{ question: "Este utilă doar firmelor IT?", answer: "Nu. Dacă firma ta depinde de date, aplicații sau comenzi online, un incident informatic poate avea costuri importante. Discutăm ce impact ar avea și dacă asigurarea poate fi utilă." }, { question: "Acoperă orice fraudă prin email?", answer: "Nu. Fraudele și transferurile de bani pot fi excluse sau acoperite doar în anumite condiții. Verificăm explicit ce situații include oferta." }, { question: "Poate înlocui măsurile de securitate?", answer: "Nu. Ai nevoie în continuare de prevenție și de un plan pentru incidente. Asigurătorul poate cere anumite măsuri de securitate pentru a oferi polița." }], ...businessFaqExtras["riscuri-cibernetice"]],
   },
   agriculturalSolution,
 ];
 
 export const industries = [
-  { slug: "comert-si-servicii", name: "Comerț și servicii", icon: "building", description: "Pentru magazine, saloane, birouri și afaceri aproape de clienți.", intro: "Un spațiu deschis publicului, echipamentele și stocurile aduc nevoi diferite. Analiza pornește de la activitatea efectivă, relația cu proprietarul spațiului și interacțiunea cu clienții.", solutions: ["bunuri-si-echipamente", "raspundere-civila-profesionala", "intreruperea-activitatii"], risks: ["Ce se întâmplă cu stocurile și amenajările dacă apare un incendiu?", "Cine răspunde pentru un incident suferit de un vizitator?", "Ce cheltuieli continuă dacă spațiul nu poate fi folosit?"], detail: "Pentru un magazin contează variațiile stocurilor și condițiile de depozitare. Pentru un salon pot conta echipamentele, activitățile efectiv prestate și tipul de răspundere acceptat. Nu toate aceste afaceri intră în același produs. Clarificăm activitatea, măsurile de siguranță, investițiile în amenajări și eventualele cerințe ale proprietarului înainte de a cere oferta.", preparation: "Pregătește o descriere a activității, localitatea, situația spațiului și valori orientative pentru bunuri, amenajări și stocuri." },
-  { slug: "productie-si-ateliere", name: "Producție și ateliere", icon: "tools", description: "Pentru utilajele, produsele și continuitatea muncii tale.", intro: "Într-un atelier, un singur utilaj poate susține o mare parte din comenzi. Urmărim protecția bunurilor, dependențele din proces și răspunderea asociată produselor sau lucrărilor.", solutions: ["bunuri-si-echipamente", "intreruperea-activitatii", "raspundere-civila-profesionala"], risks: ["Cât ar dura înlocuirea unui utilaj esențial?", "Ce materii prime, stocuri și produse finite sunt expuse?", "Pot produsele sau lucrările să producă prejudicii unui client?"], detail: "Tipul procesului de producție, materialele folosite, instalațiile și protecția la incendiu influențează acceptarea riscului. Verificăm separat avariile utilajelor, bunurile clienților aflate în lucru și perioadele necesare repornirii. O listă de echipamente și o descriere corectă a fluxului sunt mai utile decât o cerere generică de asigurare a halei.", preparation: "Pregătește lista principalelor utilaje, valorile orientative, descrierea procesului și timpul estimat de refacere a operațiunilor." },
-  { slug: "it-si-consultanta", name: "IT și consultanță", icon: "laptop", description: "Pentru servicii profesionale, contracte și activitatea digitală.", intro: "O eroare într-un serviciu sau un incident informatic poate avea efecte asupra clientului și a firmei. Citim cerințele de asigurare din contracte și clarificăm ce riscuri corespund activității tale.", solutions: ["raspundere-civila-profesionala", "riscuri-cibernetice", "sanatate-angajati"], risks: ["Ce pierderi poate produce clientului o eroare profesională?", "Ce limite, teritorii și jurisdicții sunt cerute în contract?", "Cum ar afecta firma pierderea accesului la date sau sisteme?"], detail: "Un contract internațional poate cere mai mult decât denumirea unei polițe. Verificăm serviciile declarate, subcontractorii, excluderile și momentul în care trebuie formulată și notificată o reclamație. Răspunderea profesională și protecția cyber se analizează împreună când este relevant, fără să presupunem că una o înlocuiește pe cealaltă.", preparation: "Pregătește descrierea serviciilor, piețele pe care lucrezi, cerințele de asigurare și informațiile generale despre securitatea sistemelor." },
-  { slug: "horeca", name: "HoReCa", icon: "coffee", description: "Pentru spațiu, echipamente și zilele în care activitatea se oprește.", intro: "Un restaurant, o cafenea sau o pensiune depinde de spațiu, echipamente și experiența oaspeților. Discutăm expunerile concrete, inclusiv perioadele aglomerate și relația cu proprietarul clădirii.", solutions: ["bunuri-si-echipamente", "raspundere-civila-profesionala", "intreruperea-activitatii"], risks: ["Ce impact ar avea un incendiu sau o avarie importantă?", "Ce răspunderi pot apărea față de clienți și oaspeți?", "Cât timp ar dura redeschiderea după o pagubă?"], detail: "Instalațiile, bucătăria, capacitatea, serviciile prestate și măsurile de prevenție contează la ofertare. Deteriorarea alimentelor, bunurile oaspeților sau evenimentele organizate nu se presupun incluse. Le discutăm explicit și verificăm condițiile. Pentru continuitate, urmărim cum sunt definite cheltuielile și pierderile eligibile după un eveniment asigurat.", preparation: "Pregătește tipul locației, serviciile oferite, valorile echipamentelor și informații despre sezonalitate și cheltuielile fixe." },
-  { slug: "cabinete-medicale", name: "Cabinete medicale", icon: "heart", description: "Pentru spații, aparatură și răspunderile activității medicale.", intro: "Activitatea unui cabinet combină investiții în aparatură cu răspunderi specifice profesiei. Acestea trebuie discutate separat, pornind de la specialități, servicii și persoanele care desfășoară activitatea.", solutions: ["bunuri-si-echipamente", "raspundere-civila-profesionala", "riscuri-cibernetice"], risks: ["Ce aparatură este critică pentru programările cabinetului?", "Cine trebuie asigurat și pentru ce servicii medicale?", "Cum sunt protejate sistemele și datele cabinetului?"], detail: "Polița pentru aparatură, răspunderea unității și răspunderea profesională a personalului pot avea obiecte diferite. Nu presupunem că un singur contract le acoperă pe toate. Verificăm specialitățile declarate, limitele și persoanele asigurate. Datele medicale ale pacienților nu sunt necesare pentru discuția inițială și nu se transmit prin formular.", preparation: "Pregătește descrierea cabinetului, specialitățile, lista orientativă a aparaturii și cerințele de asigurare pe care dorești să le verifici." },
+  { slug: "comert-si-servicii", name: "Comerț și servicii", icon: "building", description: "Pentru magazine, saloane, birouri și afaceri aproape de clienți.", intro: "Ai un magazin, un salon sau un birou? Discutăm despre spațiu, echipamente, stocuri și ce s-ar putea întâmpla cu clienții care te vizitează. Verificăm și ce responsabilități ai dacă lucrezi într-un spațiu închiriat.", solutions: ["bunuri-si-echipamente", "raspundere-civila-profesionala", "intreruperea-activitatii"], risks: ["Ce se întâmplă cu stocurile și amenajările dacă apare un incendiu?", "Cine răspunde pentru un incident suferit de un vizitator?", "Ce cheltuieli continuă dacă spațiul nu poate fi folosit?"], detail: "Dacă ai un magazin, ne uităm la valoarea stocurilor, inclusiv în perioadele aglomerate, și la cum le depozitezi. Pentru un salon, verificăm echipamentele și serviciile pe care le oferi. Îmi explici activitatea și măsurile de siguranță, apoi vedem ce variante pot fi disponibile. Discutăm separat amenajările făcute de tine și cerințele proprietarului.", preparation: "Spune-mi cu ce te ocupi, în ce localitate și dacă spațiul este al tău sau închiriat. Ajută și o valoare aproximativă a echipamentelor, amenajărilor și stocurilor." },
+  { slug: "productie-si-ateliere", name: "Producție și ateliere", icon: "tools", description: "Pentru utilajele, produsele și continuitatea muncii tale.", intro: "Dacă un utilaj esențial s-ar opri, cât de multe comenzi ai putea continua? Te ajut să verifici protecția echipamentelor, a materiilor prime și a produselor. Discutăm și ce se întâmplă cu veniturile cât timp nu poți lucra.", solutions: ["bunuri-si-echipamente", "intreruperea-activitatii", "raspundere-civila-profesionala"], risks: ["Cât ar dura înlocuirea unui utilaj esențial?", "Ce materii prime, stocuri și produse finite sunt expuse?", "Pot produsele sau lucrările să producă prejudicii unui client?"], detail: "Îmi explici ce produci, ce materiale folosești și cum este protejat spațiul împotriva incendiului. Verificăm separat avariile utilajelor, bunurile clienților aflate în lucru și timpul necesar pentru repornire. Lista echipamentelor și o descriere a etapelor de lucru ne ajută să cerem oferte pentru activitatea ta reală.", preparation: "Pregătește o listă cu utilajele principale și valorile lor aproximative. Notează și cât ar dura să le înlocuiești și să reiei lucrul." },
+  { slug: "it-si-consultanta", name: "IT și consultanță", icon: "laptop", description: "Pentru servicii profesionale, contracte și activitatea digitală.", intro: "O greșeală într-un proiect sau un incident informatic îți poate afecta atât clientul, cât și firma. Pornim de la serviciile tale și de la cerințele din contracte, apoi verificăm răspunderea profesională și protecția pentru incidente informatice.", solutions: ["raspundere-civila-profesionala", "riscuri-cibernetice", "sanatate-angajati"], risks: [
+  "Cât de mare ar putea fi pierderea clientului dacă faci o greșeală în proiect?",
+  "Ce sume, țări și condiții juridice îți cer contractele?",
+  "Cum ai continua munca dacă nu ai mai avea acces la date sau aplicații?"
+], detail: "În contractele internaționale contează mai mult decât numele poliței. Verificăm serviciile, subcontractorii, țările și regulile juridice acceptate, precum și când trebuie să primești și să anunți o reclamație. Analizăm separat greșelile profesionale și incidentele informatice, pentru a vedea ce acoperă fiecare variantă.", preparation: "Spune-mi ce servicii oferi, în ce țări sunt clienții tăi și ce asigurare îți cer contractele. Pentru protecția cyber, discutăm și măsurile generale de securitate ale firmei." },
+  { slug: "horeca", name: "HoReCa", icon: "coffee", description: "Pentru spațiu, echipamente și zilele în care activitatea se oprește.", intro: "Restaurantul, cafeneaua sau pensiunea ta depinde de spațiu, echipamente și experiența oaspeților. Discutăm ce ai nevoie să protejezi, ce pagube ai putea produce altora și cum ai gestiona o oprire temporară.", solutions: ["bunuri-si-echipamente", "raspundere-civila-profesionala", "intreruperea-activitatii"], risks: ["Ce impact ar avea un incendiu sau o avarie importantă?", "Ce răspunderi pot apărea față de clienți și oaspeți?", "Cât timp ar dura redeschiderea după o pagubă?"], detail: "Începem cu locația, bucătăria, instalațiile, capacitatea și serviciile oferite. Spune-mi dacă vrei să verificăm și alimentele păstrate la rece, bunurile oaspeților sau evenimentele organizate: nu sunt incluse automat. Pentru perioadele în care nu poți deschide după o daună, verificăm separat cheltuielile și pierderile care pot fi acoperite.", preparation: "Pregătește o descriere a locației și serviciilor, valorile aproximative ale echipamentelor și informații despre perioadele aglomerate și cheltuielile fixe." },
+  { slug: "cabinete-medicale", name: "Cabinete medicale", icon: "heart", description: "Pentru spații, aparatură și răspunderile activității medicale.", intro: "Vrei să protejezi aparatura cabinetului și să verifici răspunderea pentru activitatea medicală? Începem cu specialitățile, serviciile și persoanele care lucrează în cabinet. Polițele pot avea roluri diferite, pe care ți le explic separat.", solutions: ["bunuri-si-echipamente", "raspundere-civila-profesionala", "riscuri-cibernetice"], risks: ["Ce aparatură este critică pentru programările cabinetului?", "Cine trebuie asigurat și pentru ce servicii medicale?", "Cum sunt protejate sistemele și datele cabinetului?"], detail: "Asigurarea aparaturii, răspunderea cabinetului și malpraxisul personalului nu se acoperă automat prin aceeași poliță. Verificăm cine este asigurat, pentru ce specialități și până la ce sume. Pentru prima discuție am nevoie doar de informații generale despre cabinet, fără date sau documente ale pacienților.", preparation: "Spune-mi ce servicii și specialități are cabinetul, ce aparatură folosiți și ce cerințe de asigurare vrei să verificăm." },
 ];
 export function solutionHref(slug: string) { return `/asigurari-firme/${slug}`; }

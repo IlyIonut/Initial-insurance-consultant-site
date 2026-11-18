@@ -7,33 +7,102 @@ export function guideHref(slug: string) {
 
 export const guides = [
   {
-    slug: "ce-asigurari-are-nevoie-un-imm", title: "Ce asigurări merită să analizezi pentru un IMM?", description: "Un punct de pornire pentru bunuri, răspunderi, vehicule și echipă. Fără o listă universală de polițe.", category: "Primii pași", icon: "document", readTime: 4,
-    intro: "O firmă de servicii, un magazin și un atelier pot avea aceeași formă juridică, dar expuneri foarte diferite. O analiză utilă începe cu activitatea efectivă și cu pierderile pe care firma le-ar putea suporta cu dificultate.",
+    slug: "ce-asigurari-are-nevoie-un-imm", title: "Ce asigurări merită să analizezi pentru un IMM?", description: "De unde începi cu asigurarea firmei: ce bunuri folosești, ce pagube ai putea produce și cum ai continua după un incident.", category: "Primii pași", icon: "document", readTime: 4,
+    intro: "Ai o firmă mică și nu știi ce asigurări îți trebuie? Începem cu activitatea ta și cu pierderile pe care ți-ar fi greu să le plătești. Un magazin, un atelier și o firmă de consultanță pot avea nevoi foarte diferite.",
     sections: [
-      { title: "Pornește de la ce susține activitatea", paragraphs: ["Notează spațiile, echipamentele, stocurile și vehiculele pe care le folosești. Separă bunurile proprii de cele închiriate sau ale clienților. Pentru fiecare, întreabă-te cât ar costa înlocuirea și cât timp ai putea lucra fără el.", "O poliță pentru clădire nu înseamnă automat protecție pentru bunurile chiriașului. La fel, asigurarea unui utilaj nu confirmă că toate cauzele unei defecțiuni sunt acoperite. Valorile, riscurile și excluderile trebuie citite împreună."] },
-      { title: "Privește și relația cu alte persoane", paragraphs: ["Un incident poate produce prejudicii unui vizitator, unui client sau unui partener. O eroare profesională poate avea alt tip de consecință decât deteriorarea accidentală a unui bun. Identificarea acestor diferențe ajută la alegerea tipului de răspundere care merită analizat.", "Dacă ai o cerință de asigurare într-un contract, pregătește textul ei pentru discuție. Limita solicitată este doar unul dintre aspecte: contează activitățile acceptate, teritoriul, jurisdicția și condițiile de notificare."] },
-      { title: "Întreabă-te ce se întâmplă după o pagubă", paragraphs: ["Repararea spațiului poate dura, iar unele cheltuieli continuă. De aceea, pierderile din întreruperea activității se analizează separat. Această protecție presupune un eveniment și condiții de declanșare prevăzute în contract; nu acoperă orice scădere a încasărilor.", "Vehiculele, sănătatea echipei și riscurile informatice completează discuția atunci când sunt relevante. Obiectivul este un program justificat de nevoile firmei, cu un buget și limite înțelese."] },
-      { title: "Ce pregătești pentru o discuție eficientă", paragraphs: ["Descrierea activității, locațiile, valorile orientative, numărul de vehicule și angajați și polițele existente sunt un început bun. Menționează investițiile recente și următoarele date de reînnoire. Documentele detaliate se cer ulterior, în funcție de produs."] },
-    ], related: ["bunuri-si-echipamente", "raspundere-civila-profesionala", "intreruperea-activitatii"], faqs: guideFaqs["ce-asigurari-are-nevoie-un-imm"],
+  {
+    "title": "Ce bunuri îți trebuie ca să poți lucra?",
+    "paragraphs": [
+      "Notează spațiile, utilajele, echipamentele, stocurile și vehiculele pe care le folosești. Separă ce este al firmei de ce ai închiriat sau ai primit de la clienți. Întreabă-te cât ar costa înlocuirea fiecăruia și cât timp ai putea lucra fără el.",
+      "Dacă închiriezi spațiul, polița proprietarului poate proteja doar clădirea. Iar dacă asiguri un utilaj, nu înseamnă că orice defecțiune este inclusă. Verificăm împreună bunurile, valorile și situațiile pentru care poate plăti asigurătorul."
+    ]
+  },
+  {
+    "title": "Cui ai putea produce o pagubă?",
+    "paragraphs": [
+      "Un vizitator se poate accidenta la sediu sau poți deteriora un bun al clientului. O greșeală în serviciul prestat poate provoca o pierdere financiară diferită. Aceste situații ne ajută să vedem ce tip de răspundere merită asigurat.",
+      "Dacă un contract îți cere o asigurare, pregătește cerința pentru discuție. Verificăm suma cerută, serviciile și țările acoperite, regulile juridice și când trebuie anunțată o reclamație."
+    ]
+  },
+  {
+    "title": "Cum ai continua după o pagubă?",
+    "paragraphs": [
+      "Dacă repari spațiul după un incendiu, chiria și unele salarii pot continua. Asigurarea pentru întreruperea activității poate ajuta cu anumite pierderi, dacă evenimentul și condițiile sunt incluse în contract. Nu plătește pentru orice scădere a încasărilor.",
+      "În funcție de firmă, discutăm și mașinile, sănătatea echipei sau incidentele informatice. Scopul este să înțelegi ce protejează fiecare poliță și ce poți susține din bugetul tău."
+    ]
+  },
+  {
+    "title": "Ce pregătești pentru prima discuție?",
+    "paragraphs": [
+      "Spune-mi cu ce te ocupi, unde lucrezi, ce bunuri importante ai și câți angajați sau câte vehicule folosești. Dacă ai deja polițe, notează când expiră și ce s-a schimbat în firmă. Documentele detaliate le stabilim ulterior."
+    ]
+  }
+], related: ["bunuri-si-echipamente", "raspundere-civila-profesionala", "intreruperea-activitatii"], faqs: guideFaqs["ce-asigurari-are-nevoie-un-imm"],
   },
   {
     slug: "bunuri-versus-intreruperea-activitatii", title: "Bunurile sunt asigurate. Dar activitatea firmei?", description: "Diferența dintre refacerea bunurilor și protecția pentru pierderile financiare din perioada de oprire.", category: "Continuitatea afacerii", icon: "clock", readTime: 4,
-    intro: "După un incendiu sau alt eveniment acoperit, refacerea bunurilor este numai o parte a revenirii. În perioada în care spațiul nu poate fi folosit, firma poate avea în continuare costuri și poate pierde venituri.",
+    intro: "După un incendiu, ai nevoie să repari bunurile, dar și să treci prin perioada în care nu poți lucra. Chiria și alte costuri pot continua chiar dacă nu ai încasările obișnuite. Cele două nevoi se verifică separat în asigurare.",
     sections: [
-      { title: "Două nevoi care trebuie discutate distinct", paragraphs: ["Asigurarea bunurilor urmărește paguba materială, în condițiile contractului. Protecția pentru întreruperea activității, întâlnită și sub denumirea Business Interruption, vizează anumite consecințe financiare ale unui eveniment asigurat.", "Nu trebuie presupus că o poliță de bunuri include automat această protecție. Unele pachete au o secțiune cu limite proprii, iar alte soluții necesită o clauză sau o analiză distinctă."] },
-      { title: "Ce declanșează acoperirea?", paragraphs: ["Punctul de plecare este evenimentul prevăzut în contract. În funcție de produs, poate fi necesară o pagubă materială asigurată. Pierderea clienților, o scădere generală a pieței sau orice oprire a activității nu devin automat riscuri acoperite.", "Definițiile pentru profit, cheltuieli fixe și costuri suplimentare trebuie citite în oferta concretă. Polițele pot avea formule, limite și condiții diferite, chiar când folosesc o denumire asemănătoare."] },
-      { title: "Perioada de despăgubire trebuie să fie realistă", paragraphs: ["Imaginează-ți etapele refacerii: reparații, comandarea utilajelor, instalare și repornire. Dacă echipamentul esențial are un termen lung de livrare, timpul de recuperare poate depăși durata reparațiilor clădirii.", "Discută și franșiza temporală, limita totală, documentele financiare necesare și obligațiile firmei pentru limitarea pierderii. O perioadă aleasă doar pentru o primă mai mică poate fi nepotrivită nevoii reale."] },
-      { title: "Un exemplu orientativ", paragraphs: ["Un magazin se închide temporar după un incendiu. Protecția bunurilor și cea pentru pierderile financiare se verifică separat. Faptul că firma are chirie și salarii de plătit nu confirmă singur că aceste sume sunt despăgubibile; se aplică definițiile, limitele și condițiile poliței."] },
-    ], related: ["intreruperea-activitatii", "bunuri-si-echipamente"], faqs: guideFaqs["bunuri-versus-intreruperea-activitatii"],
+  {
+    "title": "Repararea bunurilor și pierderile din oprire",
+    "paragraphs": [
+      "Asigurarea bunurilor poate plăti pentru paguba materială, precum refacerea spațiului sau înlocuirea echipamentelor. Protecția pentru întreruperea activității, numită și Business Interruption, poate acoperi anumite pierderi financiare cauzate de oprire.",
+      "Verificăm dacă această protecție este inclusă în pachet, trebuie adăugată printr-o clauză sau are nevoie de o ofertă separată. Polița de bunuri nu o include automat."
+    ]
   },
   {
-    slug: "cum-compari-ofertele-pentru-firma", title: "Cum compari două oferte de asigurare pentru firmă", description: "Prețul este un început. Activitățile declarate, limitele, franșizele și excluderile explică diferențele importante.", category: "Alegerea poliței", icon: "scale", readTime: 4,
-    intro: "Două oferte cu prime apropiate pot oferi protecții diferite. Pentru o comparație utilă, verifică mai întâi dacă ambele pornesc de la aceleași informații despre firmă și urmăresc aceeași nevoie.",
+    "title": "În ce situații poate plăti asigurarea?",
+    "paragraphs": [
+      "Oprirea trebuie să aibă legătură cu un eveniment acoperit de contract. Unele produse cer și existența unei pagube materiale asigurate. Pierderea clienților sau o scădere a pieței nu sunt acoperite automat.",
+      "Verificăm cum definește contractul profitul, cheltuielile fixe și costurile suplimentare. Două oferte cu nume asemănătoare pot calcula diferit pierderile pe care le plătesc."
+    ]
+  },
+  {
+    "title": "Pentru cât timp ai nevoie de protecție?",
+    "paragraphs": [
+      "Ia în calcul reparațiile, livrarea utilajelor, instalarea și reluarea lucrului. Dacă un echipament ajunge greu, oprirea poate dura mai mult decât repararea clădirii.",
+      "Discutăm suma maximă și perioada pentru care pot fi plătite pierderile. Verificăm și dacă există zile inițiale fără despăgubire, numite franșiză temporală, ce documente financiare sunt necesare și ce ai de făcut pentru a limita paguba."
+    ]
+  },
+  {
+    "title": "Un exemplu: magazinul se închide după un incendiu",
+    "paragraphs": [
+      "Reparația spațiului poate fi acoperită de asigurarea bunurilor. Pentru chiria, salariile sau profitul pierdut cât timp magazinul este închis, verificăm separat protecția pentru întreruperea activității. Faptul că ai aceste cheltuieli nu înseamnă că sunt toate incluse; se aplică regulile și limitele poliței."
+    ]
+  }
+], related: ["intreruperea-activitatii", "bunuri-si-echipamente"], faqs: guideFaqs["bunuri-versus-intreruperea-activitatii"],
+  },
+  {
+    slug: "cum-compari-ofertele-pentru-firma", title: "Cum compari două oferte de asigurare pentru firmă", description: "Cum vezi ce primești pentru prețul plătit: evenimentele incluse, suma maximă de despăgubire și partea din daună pe care o suporți tu.", category: "Alegerea poliței", icon: "scale", readTime: 4,
+    intro: "Ai primit două oferte cu prețuri apropiate? Înainte să alegi, verifică dacă asigură aceleași bunuri și activități și dacă te ajută în aceleași situații. Iată ce merită să compari.",
     sections: [
-      { title: "Verifică datele și obiectul asigurării", paragraphs: ["Sunt aceleași activități, locații și bunuri? Au fost incluse amenajările din spațiul închiriat, stocurile sezoniere sau lucrările la sediul clientului? O ofertă poate părea mai accesibilă pentru că descrie o expunere mai restrânsă.", "Pentru răspunderi, simpla denumire a produsului este insuficientă. Contează cine este asigurat, pentru ce activități, în ce teritoriu și pentru ce tipuri de prejudicii."] },
-      { title: "Pune limitele și franșizele una lângă alta", paragraphs: ["Suma asigurată totală nu arată întotdeauna cât se poate plăti pentru un anumit risc. Verifică sub-limitele, agregatele și condițiile de evaluare. O acoperire suplimentară poate avea o limită mult mai mică decât cea pentru bunuri.", "Franșiza reprezintă partea rămasă în sarcina asiguratului. Poate fi fixă, procentuală sau temporală, în funcție de produs. Compar-o pe scenarii relevante pentru firmă, fără să presupui că prețul cel mai mic înseamnă și costul total cel mai mic."] },
-      { title: "Citește excluderile și obligațiile", paragraphs: ["Unele activități, cauze de daună sau categorii de bunuri pot fi excluse. Există și obligații privind declararea schimbărilor, măsurile de siguranță, notificarea evenimentului sau păstrarea documentelor.", "La răspunderea profesională, data retroactivă și momentul formulării ori notificării reclamației pot influența protecția. La sănătate contează accesul la servicii și perioadele de așteptare. Întrebările diferă de la un produs la altul."] },
-      { title: "Cere o explicație pentru recomandare", paragraphs: ["O comparație bună leagă diferențele dintre oferte de nevoile tale. Cere clarificări pentru aspectele neînțelese și păstrează documentația relevantă. Decizia finală se ia pe oferta și condițiile contractuale concrete, nu pe un rezumat comercial."] },
-    ], related: ["raspundere-civila-profesionala", "bunuri-si-echipamente", "flote-auto"], faqs: guideFaqs["cum-compari-ofertele-pentru-firma"],
+  {
+    "title": "Sunt asigurate aceleași lucruri?",
+    "paragraphs": [
+      "Uită-te la activități, locații și bunuri. Sunt incluse amenajările tale din spațiul închiriat, stocurile din sezon și bunurile folosite la clienți? O ofertă mai ieftină poate lăsa în afara poliței lucruri importante pentru tine.",
+      "La răspundere, verifică cine este asigurat, pentru ce servicii, în ce țări și pentru ce pagube. Numele produsului nu arată singur toate aceste detalii."
+    ]
+  },
+  {
+    "title": "Cât se plătește și cât rămâne în grija ta?",
+    "paragraphs": [
+      "O poliță poate avea o sumă totală mare, dar limite mai mici pentru furt, anumite bunuri sau anumite cheltuieli. Verifică separat fiecare situație importantă, precum și plafonul pentru toate daunele dintr-un an.",
+      "Franșiza este partea din daună pe care o plătești tu. Poate fi o sumă fixă, un procent sau, la întreruperea activității, un interval fără despăgubire. Compară prețul poliței și costul pe care l-ai suporta dacă se întâmplă o daună."
+    ]
+  },
+  {
+    "title": "Ce este exclus și ce obligații ai?",
+    "paragraphs": [
+      "Excluderile sunt situațiile pentru care asigurătorul nu plătește. Verifică și ce ai de făcut: să anunți schimbările din firmă, să păstrezi măsurile de siguranță sau să declari dauna în termen.",
+      "La răspunderea profesională pot conta data greșelii și când primești sau anunți reclamația. La sănătate, verifică serviciile și perioadele de așteptare. Îți explic termenii care se aplică produsului pe care îl compari."
+    ]
+  },
+  {
+    "title": "Cere o recomandare pe care o înțelegi",
+    "paragraphs": [
+      "Întreabă de ce o variantă răspunde mai bine nevoilor tale și cere clarificări pentru ce nu este limpede. Păstrează oferta și condițiile contractului. Rezumatul comercial este util, dar documentele complete arată ce cumperi."
+    ]
+  }
+], related: ["raspundere-civila-profesionala", "bunuri-si-echipamente", "flote-auto"], faqs: guideFaqs["cum-compari-ofertele-pentru-firma"],
   },
 ];

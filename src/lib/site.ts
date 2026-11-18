@@ -29,21 +29,21 @@ export const SITE = {
 
 export const insuranceTypes = [
   { title: "RCA", href: "/asigurare-rca", icon: "car", tag: "Auto", description: "Oferte RCA, verificarea datelor și explicații despre bonus-malus." },
-  { title: "CASCO", href: "/asigurare-casco", icon: "shield", tag: "Auto", description: "Avarii, furt, franșize și opțiuni de reparație pentru mașina ta." },
-  { title: "Locuință", href: "/asigurare-locuinta", icon: "home", tag: "Acasă", description: "PAD și asigurare facultativă pentru locuință, bunuri și răspundere." },
+  { title: "CASCO", href: "/asigurare-casco", icon: "shield", tag: "Auto", description: "Vezi ce poate acoperi CASCO, unde repari mașina și ce costuri rămân în grija ta." },
+  { title: "Locuință", href: "/asigurare-locuinta", icon: "home", tag: "Acasă", description: "Protejează casa și bunurile tale. Află diferența dintre PAD și polița facultativă." },
   { title: "Călătorie", href: "/asigurare-calatorie", icon: "plane", tag: "În deplasare", description: "Protecție medicală și opțiuni pentru călătoriile tale." },
   { title: "Sănătate", href: "/asigurare-sanatate", icon: "heart", tag: "Pentru tine", description: "Consultații, investigații și spitalizare, în funcție de plan." },
   { title: "Viață", href: "/asigurare-viata", icon: "people", tag: "Familie", description: "Protecție financiară pentru tine și oamenii care depind de tine." },
   { title: "Accidente", href: "/asigurare-accidente", icon: "check", tag: "Protecție", description: "Soluții pentru consecințele financiare ale unui accident." },
-  { title: "Răspundere civilă", href: "/asigurare-raspundere-civila", icon: "scale", tag: "Față de terți", description: "Acoperiri pentru prejudicii accidentale produse altor persoane." },
+  { title: "Răspundere civilă", href: "/asigurare-raspundere-civila", icon: "scale", tag: "Față de alții", description: "Protecție pentru pagubele pe care le-ai putea produce accidental altor persoane." },
 ];
 
 export const faqs = [
-  { question: "Cu ce tipuri de firme putem începe o discuție?", answer: "Cu IMM-uri, SRL-uri, PFA-uri și profesii liberale. Începem cu activitatea efectivă, locațiile și riscurile relevante. Disponibilitatea unei soluții depinde de activitate și de acceptarea asigurătorului." },
-  { question: "Am deja polițe. Mai are sens o analiză?", answer: "Da. Putem verifica ce bunuri și activități sunt declarate, sumele și limitele asigurate, franșizele, excluderile și schimbările apărute în firmă. O analiză poate confirma o protecție adecvată sau poate identifica aspecte de clarificat." },
-  { question: "Pot primi o singură poliță pentru toată firma?", answer: "Unele produse reunesc mai multe protecții, dar nu toate riscurile intră în același contract. Pentru flote, răspundere profesională, sănătate de grup sau riscuri cibernetice pot fi necesare polițe distincte." },
-  { question: "Pot solicita o discuție din orice județ?", answer: "Da. Preluăm cereri de la firme și persoane fizice din toată România. Documentele, acceptarea riscului și eventuala evaluare a locației se stabilesc pentru situația concretă și cerințele asigurătorului." },
-  { question: "Ce pregătesc pentru prima discuție?", answer: "Domeniul de activitate, localitatea, ce vrei să protejezi și, dacă ai polițe, data următoarei reînnoiri. Documentele și datele suplimentare se cer ulterior, în funcție de soluția analizată." },
-  { question: "Pot solicita și asigurări pentru mine sau familie?", answer: "Da. Secțiunea pentru persoane fizice include RCA, CASCO, locuință, călătorie, sănătate, viață și accidente. Poți începe din pagina dedicată sau din formularul de contact." },
-  { question: "Ce asigurări pot analiza fermierii?", answer: "Putem discuta despre culturi agricole, vii, livezi, legume, sere și solarii. Clarificăm riscurile precum grindina și seceta, condițiile de ofertare și programul de sprijin pentru prima de asigurare, dacă este aplicabil. Disponibilitatea protecției și eligibilitatea pentru finanțare se verifică separat." },
+  { question: "Mă poți ajuta dacă am o firmă mică sau un PFA?", answer: "Da. Putem discuta despre un IMM, SRL, PFA sau o profesie liberală. Spune-mi cu ce te ocupi, unde lucrezi și ce ai vrea să protejezi, iar eu verific variantele disponibile și condițiile asigurătorilor." },
+  { question: "Am deja polițe. Mai are sens să le verificăm?", answer: "Da, mai ales dacă ai făcut investiții, ai schimbat sediul ori ai adăugat servicii. Verificăm ce este declarat, valorile, limitele și situațiile excluse. Putem confirma că polițele încă se potrivesc sau putem vedea ce trebuie clarificat." },
+  { question: "Pot avea o singură poliță pentru toată firma?", answer: "Unele pachete reunesc mai multe protecții. Pentru mașini, greșeli profesionale, sănătatea echipei sau incidente informatice pot fi necesare polițe separate. Îți explic rolul fiecăreia înainte să alegi." },
+  { question: "Pot cere o discuție din orice județ?", answer: "Da, pentru tine sau pentru firmă, oriunde în România. Îți explic ce date sunt necesare, dacă asigurătorul cere o evaluare a locației și ce variante poate oferi pentru situația ta." },
+  { question: "Ce pregătesc pentru prima discuție?", answer: "Spune-mi cu ce te ocupi, localitatea și ce ai vrea să asiguri. Dacă ai deja polițe, notează când expiră. Pentru început nu ai nevoie să trimiți acte; stabilim apoi documentele necesare pentru ofertă." },
+  { question: "Pot cere și asigurări pentru mine sau familie?", answer: "Da. Te pot ajuta să compari RCA, CASCO, locuință, călătorie, sănătate, viață și accidente. Alege produsul care te interesează sau scrie-mi pe scurt ce cauți în formularul de contact." },
+  { question: "Mă poți ajuta cu asigurarea culturilor agricole?", answer: "Da, putem discuta despre culturi de câmp, vii, livezi, legume, sere și solarii. Verificăm ce fenomene pot fi acoperite, inclusiv dacă există o variantă pentru secetă. Separat, verificăm dacă poți cere sprijin pentru costul poliței; încheierea asigurării nu garantează finanțarea." },
 ];
