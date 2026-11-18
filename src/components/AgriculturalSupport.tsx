@@ -1,7 +1,7 @@
 import { ProductCard, ProductSection } from "./ProductPage";
 
-export function AgriculturalSupport() {
-  return <ProductSection id="sprijin-prima" number="03" title="Sprijin pentru costul poliței: APIA și AFIR" description="Poți primi înapoi o parte din costul eligibil al poliței, numit și primă de asigurare, dacă îndeplinești regulile programului. Acest sprijin este separat de despăgubirea pe care o ceri asigurătorului pentru o pagubă la culturi.">
+export function AgriculturalSupport({ number = "03" }: { number?: string }) {
+  return <ProductSection id="sprijin-prima" number={number} title="Sprijin pentru costul poliței: APIA și AFIR" description="Poți primi înapoi o parte din costul eligibil al poliței, numit și primă de asigurare, dacă îndeplinești regulile programului. Acest sprijin este separat de despăgubirea pe care o ceri asigurătorului pentru o pagubă la culturi.">
     <div className="product-grid">
       <ProductCard title="APIA: struguri pentru vin" tone="mint">
         <p>Intervenția IS-V-03 poate acoperi <strong>până la 80%</strong> din costul eligibil al poliței pentru anumite pierderi climatice asimilate dezastrelor naturale sau <strong>până la 50%</strong> pentru alte acoperiri eligibile, în funcție de poliță. Acestea sunt procente maxime, nu sume garantate. Sprijinul aprobat poate fi mai mic, în funcție de bugetul programului.</p>
