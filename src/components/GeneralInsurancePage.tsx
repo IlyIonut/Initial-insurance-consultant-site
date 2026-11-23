@@ -24,6 +24,7 @@ export function GeneralInsurancePage({ content: c }: { content: InsuranceContent
     {...visual}
     breadcrumbs={[{ label: "Persoane fizice", href: "/persoane-fizice" }, { label: c.eyebrow, href: c.slug }]}
     facts={c.heroBullets}
+    request={{ href: `/contact?pentru=personal&tip=${encodeURIComponent(c.eyebrow)}`, label: c.ctaLabel }}
     navigation={[{ id: "acoperiri", label: "Acoperiri" }, { id: "alegere", label: "Cum alegi" }, { id: "date-pentru-oferta", label: "Date utile" }, { id: "intrebari", label: "Întrebări frecvente" }]}
   >
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />

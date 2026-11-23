@@ -15,6 +15,7 @@ const industryMetaDescriptions: Record<string, string> = {
   horeca: "Asigurări pentru restaurante, cafenele și pensiuni: spații, echipamente, răspundere față de clienți și întreruperea activității.",
   "cabinete-medicale": "Asigurări pentru cabinete medicale: aparatură, răspunderea unității și ce verifici separat la malpraxisul personalului.",
 };
+export const dynamicParams = false;
 export function generateStaticParams(){return industries.map(x=>({slug:x.slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}) {const {slug}=await params;const x=industries.find(x=>x.slug===slug);return x?pageMetadata(`Asigurări pentru ${(x.name.startsWith("IT")||x.name==="HoReCa"?x.name:x.name.toLowerCase())}`,industryMetaDescriptions[x.slug] ?? x.description, `/domenii/${x.slug}`):{};}
 export default async function IndustryPage({params}:{params:Promise<{slug:string}>}) {const {slug}=await params;const x=industries.find(x=>x.slug===slug);if(!x)notFound();const solutions=x.solutions.map(s=>businessSolutions.find(b=>b.slug===s)!);
