@@ -3,6 +3,6 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 30;
 export async function GET() {
-  return Response.json({ available: contactConfigured() }, { headers: { 'Cache-Control': 'no-store' } });
+  return Response.json({ available: contactConfigured() }, { headers: { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' } });
 }
 export async function POST(request: Request) { return submitContact(request); }

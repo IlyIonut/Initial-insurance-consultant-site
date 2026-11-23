@@ -1,8 +1,11 @@
 import { createHmac } from 'node:crypto';
 import { businessTypes, personalTypes, privacyVersion } from './contact-fields.mjs';
+import { createContactRateLimiter } from './contact-rate-limit.mjs';
 
-const headers = { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' };
+const headers = { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'X-Robots-Tag': 'noindex' };
 const uuid = /^[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ab][\da-f]{3}-[\da-f]{12}$/i;
+const burstLimit = createContactRateLimiter();
+const maxBodyBytes = 12000;
 
 export function contactConfigured(env = process.env) {
   return Boolean(env.CONTACT_GOOGLE_SCRIPT_URL && env.CONTACT_SHARED_SECRET?.length >= 32
@@ -13,7 +16,7 @@ export function validateContact(body) {
   if (!body || typeof body !== 'object' || Array.isArray(body)) throw new Error('Verifică datele din formular.');
   const text = (key, max, required = false) => {
     const value = body[key] ?? '';
-    if (typeof value !== 'string' || value.length > max || /[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value)) throw new Error('Verifică lungimea și formatul câmpurilor.');
+    if (typeof value !== 'string' || value.length > max || /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/.test(value) || (key !== 'message' && /[\r\n\t]/.test(value))) throw new Error('Verifică lungimea și formatul câmpurilor.');
     const clean = value.trim();
     if (required && !clean) throw new Error('Completează toate câmpurile obligatorii.');
     return clean;
@@ -37,20 +40,43 @@ export function validateContact(body) {
   return { requestId, audience, name, email, phone, business, city: text('city', 100), insuranceType, renewal, message: text('message', 1800), consent: 'accepted', privacyVersion };
 }
 
-function json(body, status = 200) { return Response.json(body, { status, headers }); }
+function json(body, status = 200, extraHeaders = {}) { return Response.json(body, { status, headers: { ...headers, ...extraHeaders } }); }
 
-export async function submitContact(request, { env = process.env, fetcher = fetch, now = Date.now } = {}) {
+async function readBody(request) {
+  if (!request.body) throw new SyntaxError('empty');
+  const reader = request.body.getReader();
+  const chunks = [];
+  let size = 0;
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      size += value.byteLength;
+      if (size > maxBodyBytes) {
+        // Do not buffer an unbounded body even when Content-Length is absent.
+        void reader.cancel().catch(() => {});
+        throw new RangeError('body size');
+      }
+      chunks.push(value);
+    }
+  } finally { reader.releaseLock(); }
+  return JSON.parse(Buffer.concat(chunks, size).toString('utf8'));
+}
+
+export async function submitContact(request, { env = process.env, fetcher = fetch, now = Date.now, rateLimiter = burstLimit } = {}) {
   const origin = request.headers.get('origin');
-  const allowed = new Set([new URL(request.url).origin, env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '')].filter(Boolean));
-  if (origin && !allowed.has(origin)) return json({ ok: false, error: 'Cererea trebuie trimisă din formularul site-ului.' }, 403);
-  if (!request.headers.get('content-type')?.toLowerCase().startsWith('application/json')) return json({ ok: false, error: 'Format de cerere invalid.' }, 415);
-  if (Number(request.headers.get('content-length') || 0) > 12000) return json({ ok: false, error: 'Cererea este prea mare.' }, 413);
+  const siteOrigin = new URL(env.NEXT_PUBLIC_SITE_URL || 'https://ilyasig.ro').origin;
+  const allowed = new Set([siteOrigin]);
+  if (env.VERCEL_ENV !== 'production') allowed.add(new URL(request.url).origin);
+  if ((origin && !allowed.has(origin)) || request.headers.get('sec-fetch-site') === 'cross-site') return json({ ok: false, error: 'Cererea trebuie trimisă din formularul site-ului.' }, 403);
+  if (!/^application\/json(?:\s*;|$)/i.test(request.headers.get('content-type') || '')) return json({ ok: false, error: 'Format de cerere invalid.' }, 415);
+  if (Number(request.headers.get('content-length') || 0) > maxBodyBytes) return json({ ok: false, error: 'Cererea este prea mare.' }, 413);
   let body;
   try {
-    const raw = await request.text();
-    if (Buffer.byteLength(raw, 'utf8') > 12000) return json({ ok: false, error: 'Cererea este prea mare.' }, 413);
-    body = JSON.parse(raw);
-  } catch { return json({ ok: false, error: 'Verifică datele din formular.' }, 400); }
+    body = await readBody(request);
+  } catch (error) {
+    return error instanceof RangeError ? json({ ok: false, error: 'Cererea este prea mare.' }, 413) : json({ ok: false, error: 'Verifică datele din formular.' }, 400);
+  }
   if (body?.website) return json({ ok: false, error: 'Cererea nu a putut fi validată.' }, 400);
   let data;
   try { data = validateContact(body); }
@@ -60,6 +86,8 @@ export async function submitContact(request, { env = process.env, fetcher = fetc
   const ip = request.headers.get('x-vercel-forwarded-for')?.split(',')[0]?.trim()
     || request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
   const clientHash = createHmac('sha256', env.CONTACT_SHARED_SECRET).update(ip).digest('hex');
+  const rate = rateLimiter(clientHash, issuedAt);
+  if (!rate.allowed) return json({ ok: false, error: 'Ai trimis mai multe solicitări într-un interval scurt. Încearcă din nou puțin mai târziu.' }, 429, { 'Retry-After': String(rate.retryAfter) });
   const payload = JSON.stringify({ action: 'submit', data, receivedAt: new Date(issuedAt).toISOString(), clientHash });
   const signature = createHmac('sha256', env.CONTACT_SHARED_SECRET).update(`${issuedAt}.${payload}`).digest('base64url');
   try {
@@ -72,7 +100,7 @@ export async function submitContact(request, { env = process.env, fetcher = fetc
     if (result.ok === true && result.stored === true && result.requestId === data.requestId) {
       return json({ ok: true, stored: true, requestId: data.requestId });
     }
-    if (result.code === 'rate_limited') return json({ ok: false, error: 'Ai trimis mai multe solicitări într-un interval scurt. Încearcă din nou puțin mai târziu.' }, 429);
+    if (result.code === 'rate_limited') return json({ ok: false, error: 'Ai trimis mai multe solicitări într-un interval scurt. Încearcă din nou puțin mai târziu.' }, 429, { 'Retry-After': '600' });
     if (result.code === 'id_conflict') return json({ ok: false, error: 'Datele diferă de cererea trimisă anterior. Reîncarcă pagina pentru o cerere nouă.' }, 409);
     throw new Error('unconfirmed');
   } catch {

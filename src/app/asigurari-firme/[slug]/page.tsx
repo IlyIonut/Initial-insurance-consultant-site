@@ -10,6 +10,7 @@ import { AgriculturalSupport } from "@/components/AgriculturalSupport";
 import { AgriculturalCrops } from "@/components/AgriculturalCrops";
 import { agriculturalOfferCatalog, agriculturalServiceAreas } from "@/lib/agricultural-crops";
 
+export const dynamicParams = false;
 export function generateStaticParams() { return businessSolutions.map(solution => ({ slug: solution.slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -25,7 +26,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
   const continuityGuide = s.slug === "intreruperea-activitatii" ? guides.find(guide => guide.slug === "bunuri-versus-intreruperea-activitatii") : undefined;
   const navigation = [{ id: "acoperiri", label: "Când te poate ajuta" }, ...(agricultural ? [{ id: "culturi-agricole", label: "Alege cultura" }] : []), { id: "comparatie", label: agricultural ? "Preț și riscuri" : "Cum compari" }, ...(continuityGuide ? [{ id: "bunuri-si-continuitate", label: "Bunuri și continuitate" }] : []), ...(agricultural ? [{ id: "sprijin-prima", label: "Sprijin APIA / AFIR" }] : []), { id: "intrebari", label: "Întrebări frecvente" }];
   const schema = { ...insuranceServiceSchema(s.title, s.description, solutionHref(s.slug)), ...(agricultural ? { serviceType: "Intermediere în asigurări agricole", areaServed: agriculturalServiceAreas, hasOfferCatalog: agriculturalOfferCatalog(solutionHref(s.slug)) } : {}) };
-  return <ProductPage eyebrow={`PENTRU FIRME · ${s.label}`} title={s.title} description={s.intro} icon={s.icon} tone={s.color === "mint" ? "mint" : s.color === "peach" ? "peach" : "blue"} breadcrumbs={[{ label: "Pentru firme", href: "/asigurari-firme" }, { label: s.name, href: solutionHref(s.slug) }]} facts={s.coverages.slice(0, 3)} navigation={navigation}>
+  return <ProductPage eyebrow={`PENTRU FIRME · ${s.label}`} title={s.title} description={s.intro} icon={s.icon} tone={s.color === "mint" ? "mint" : s.color === "peach" ? "peach" : "blue"} breadcrumbs={[{ label: "Pentru firme", href: "/asigurari-firme" }, { label: s.name, href: solutionHref(s.slug) }]} facts={s.coverages.slice(0, 3)} navigation={navigation} request={{ href: `/contact?tip=${encodeURIComponent(s.name)}`, label: agricultural ? "Cere ofertă pentru culturile tale" : "Cere o ofertă pentru firmă" }}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
     <ProductSection id="acoperiri" number="01" title="Când îți poate fi utilă și ce poate acoperi">
       <div className="product-grid"><ProductCard title="Pentru ce firme poate fi utilă" tone="mint"><ProductList items={s.suitable} /></ProductCard><ProductCard title="Ce poate acoperi, în funcție de poliță" tone="blue"><ProductList items={s.coverages} /></ProductCard></div>

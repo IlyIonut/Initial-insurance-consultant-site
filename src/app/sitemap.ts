@@ -6,6 +6,7 @@ import { businessSolutions, industries, solutionHref } from "@/lib/business-cont
 const contentRevision = new Date("2026-10-29T00:00:00Z");
 const searchLaunchRevision = new Date("2026-11-02T00:00:00Z");
 const searchRevision = new Date("2026-11-18T00:00:00Z");
+const auditRevision = new Date("2026-11-23T00:00:00Z");
 const productPaths = [
   ...insuranceTypes.map(product => product.href),
   ...businessSolutions.map(solution => solutionHref(solution.slug)),
@@ -14,6 +15,7 @@ const searchPaths = new Set([
   "/", "/zone-deservite", "/asigurari-firme", "/persoane-fizice", "/domenii", "/contact", "/ghiduri", "/despre",
   ...productPaths,
 ]);
+const auditPaths = new Set(["/", "/asigurari-firme", "/persoane-fizice", "/contact", "/confidentialitate", "/termeni-si-conditii", ...productPaths]);
 const unchangedPaths = new Set(["/confidentialitate", "/cookies", "/termeni-si-conditii"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -24,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return paths.map(path => ({
     url: SITE.url + (path === "/" ? "/" : path),
-    lastModified: searchPaths.has(path) || path.startsWith("/domenii/") ? searchRevision
+    lastModified: auditPaths.has(path) ? auditRevision : searchPaths.has(path) || path.startsWith("/domenii/") ? searchRevision
       : unchangedPaths.has(path) ? contentRevision : searchLaunchRevision,
   }));
 }

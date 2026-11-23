@@ -17,6 +17,7 @@ export default function RcaPage() {
     description="Află cum compari ofertele de asigurare auto obligatorie (RCA), ce acte pregătești la reînnoire, cum se aplică bonus-malus și ce faci după un accident."
     icon="car"
     tone="peach"
+    request={{ href: "/contact?pentru=personal&tip=RCA", label: "Cere ofertă RCA" }}
     breadcrumbs={[{ label: "Persoane fizice", href: "/persoane-fizice" }, { label: "RCA", href: "/asigurare-rca" }]}
     facts={["Acoperă daunele produse altor persoane", "Pentru daunele la mașina ta, verificăm separat CASCO", "Verificăm datele și momentul în care începe protecția"]}
     navigation={[{ id: "acoperiri", label: "Ce acoperă" }, { id: "acte", label: "Acte și reînnoire" }, { id: "bonus-malus", label: "Preț și bonus-malus" }, { id: "daune", label: "Accident și daună" }, { id: "intrebari", label: "Întrebări frecvente" }]}

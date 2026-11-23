@@ -16,7 +16,7 @@ Sursele și limitele verificării sunt în [docs/content-review.md](docs/content
 
 ## Dezvoltare
 
-Node.js 22.x, Next.js 16.3.4, React 19.2.6. Dependențele sunt fixate în package-lock.json.
+Node.js 24.x, Next.js 16.4.6, React 19.2.9. Dependențele sunt fixate în package-lock.json.
 
 ```bash
 npm ci
@@ -77,6 +77,20 @@ Logo-ul vectorial și fotografia ilustrativă au fost păstrate. Fotografia nu r
 
 Fiecare produs are o singură pagină cu acoperiri, comparație, informații de pregătit și întrebări frecvente. RCA este la `/asigurare-rca`; vechile pagini de ghid și articolul despre acte au redirecționări permanente către secțiunile relevante. Ghidurile generale pentru firme sunt reunite în `/ghiduri`, iar explicația despre bunuri și continuitate este inclusă în pagina întreruperii activității. Maparea adreselor vechi se află în `src/lib/product-redirects.mjs`. Sitemap-ul include numai paginile canonice.
 
-Paginile de produs păstrează un singur buton de solicitare la final; cuprinsurile navighează în aceeași pagină. Formularul este centralizat pe `/contact`.
+Paginile de produs păstrează un singur buton principal de solicitare la final și au o legătură textuală directă către formular în introducere; cuprinsurile navighează în aceeași pagină. Formularul este centralizat pe `/contact`.
 
-Adresa publică este configurabilă prin `NEXT_PUBLIC_CONTACT_EMAIL`. Fallback-ul manual prin email al formularului poate folosi separat `NEXT_PUBLIC_REQUEST_EMAIL`, fără o adresă personală implicită în sursa publică. Dacă nu este configurat, rămân copierea și descărcarea cererii. Destinatarul notificărilor automate este stabilit exclusiv de proprietatea privată `NOTIFICATION_EMAIL` din Google Apps Script; schimbarea adresei publice nu îl modifică.
+Adresa publică este configurabilă prin `NEXT_PUBLIC_CONTACT_EMAIL`. Fallback-ul manual prin email al formularului poate folosi separat `NEXT_PUBLIC_REQUEST_EMAIL`, fără o adresă personală implicită în sursa publică. Dacă nu este configurat, alternativa manuală folosește adresa publică de contact, alături de copierea și descărcarea cererii. Destinatarul notificărilor automate este stabilit exclusiv de proprietatea privată `NOTIFICATION_EMAIL` din Google Apps Script; schimbarea adresei publice nu îl modifică.
+
+## Revizia din 23 noiembrie 2026
+
+- Actualizate Next.js, React și dependențele de dezvoltare; runtime Node 24 aliniat cu Vercel.
+- Adăugate CSP pentru resurse locale, protecție împotriva încadrării în alte pagini, nosniff și Permissions-Policy. CSP permite scripturile inline necesare randării statice; nu este o politică strictă cu nonce.
+- Formularul citește corpul cererii cu o limită de 12 KB înainte de a-l bufferiza complet, verifică originea și are o limită suplimentară de 8 cereri/minut per amprentă și instanță. Limita comună din Apps Script rămâne activă. Nu există protecție anti-abuz distribuită completă.
+- Preselecția clientului și produsului se face pe server; contactul se randează dinamic. Paginile de produs rămân statice.
+- Verificarea disponibilității trimiterii are timeout de 8 secunde. Erorile păstrează câmpurile, iar alternativa prin email rămâne disponibilă.
+- Numărul profesional confirmat pentru publicare este 0729 062 563. Adresa poștală profesională nu este completată fără confirmarea titularului.
+- Ajustate lizibilitatea, contrastul, legăturile personale și meniul mobil cu dialog nativ, Escape și revenirea focusului.
+- Datele de revizie ale sitemap-ului sunt actualizate doar pentru paginile modificate. Variantele cu parametri ale contactului indică aceeași adresă canonică.
+
+Verificare suplimentară a HTML-ului generat: `python3 scripts/audit-site.py --build`.
+Pentru un server local obișnuit se poate utiliza `python3 scripts/audit-site.py http://localhost:3000`; acesta verifică și variantele contactului, antetele și răspunsurile 404. Testul nu trimite cereri de ofertă.

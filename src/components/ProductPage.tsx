@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { ButtonLink } from "./ButtonLink";
 import { Icon } from "./Icon";
@@ -6,7 +7,7 @@ import { Icon } from "./Icon";
 type ProductNavItem = { id: string; label: string };
 type ProductTone = "blue" | "mint" | "peach";
 
-export function ProductPage({ eyebrow, title, description, icon, tone = "blue", breadcrumbs, facts, navigation, children }: {
+export function ProductPage({ eyebrow, title, description, icon, tone = "blue", breadcrumbs, facts, navigation, request, children }: {
   eyebrow: string;
   title: string;
   description: string;
@@ -15,6 +16,7 @@ export function ProductPage({ eyebrow, title, description, icon, tone = "blue", 
   breadcrumbs: { label: string; href: string }[];
   facts: string[];
   navigation: ProductNavItem[];
+  request?: { href: string; label: string };
   children: ReactNode;
 }) {
   return <main className={`product-page product-tone-${tone}`}>
@@ -22,7 +24,7 @@ export function ProductPage({ eyebrow, title, description, icon, tone = "blue", 
       <div className="shell">
         <Breadcrumbs items={breadcrumbs} />
         <div className="product-intro">
-          <div><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p className="product-description">{description}</p></div>
+          <div><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p className="product-description">{description}</p>{request && <div className="product-quick-request"><Link className="text-link" href={request.href}>{request.label}</Link><p>Fără acte la primul contact. Fără obligația de a cumpăra.</p></div>}</div>
           <aside className="product-at-a-glance" aria-label="De reținut">
             <div className="product-symbol"><Icon name={icon} size={32} /><span>DE REȚINUT</span></div>
             <ul>{facts.map(fact => <li key={fact}><Icon name="check" size={17} /><span>{fact}</span></li>)}</ul>
